@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../../ip_repo/dds_compiler_0_3/sim/dds_compiler_0.vhd" \
+
+nosort

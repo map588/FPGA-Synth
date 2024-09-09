@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1725788865">
   <File Type="PA-TCL" Name="oscillator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="oscillator_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="oscillator_reports.tcl"/>
   <File Type="RDS-RDS" Name="oscillator.vds"/>
   <File Type="RDS-UTIL" Name="oscillator_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="oscillator_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="oscillator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="oscillator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="oscillator_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../ip_repo/dds_compiler_0_3/dds_compiler_0.xci">
@@ -18,8 +15,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../RNG.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/Vivado_Projects/RNG.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../RNG.vhd"/>
+        <Attr Name="ImportTime" Val="1695172300"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -112,9 +111,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

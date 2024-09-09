@@ -1,45 +1,58 @@
 {
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
+preplace port uart_rtl -pg 1 -y 580 -defaultsOSRD
 preplace port DDR -pg 1 -y 520 -defaultsOSRD
+preplace port reset_rtl -pg 1 -y 790 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 550 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 4 -y 370 -defaultsOSRD
 preplace inst vca_env_conf -pg 1 -lvl 1 -y 130 -defaultsOSRD -resize 200 120
 preplace inst i2s_transmitter_0 -pg 1 -lvl 6 -y 240 -defaultsOSRD
+preplace inst clock_divider_0 -pg 1 -lvl 2 -y 670 -defaultsOSRD
 preplace inst audio_mixer_0 -pg 1 -lvl 4 -y 180 -defaultsOSRD
+preplace inst clock_divider_1 -pg 1 -lvl 2 -y 800 -defaultsOSRD
 preplace inst mod_env_conf -pg 1 -lvl 1 -y 430 -defaultsOSRD -resize 200 120
 preplace inst xlconcat_0 -pg 1 -lvl 3 -y 190 -defaultsOSRD
 preplace inst vcf_env_conf -pg 1 -lvl 1 -y 280 -defaultsOSRD -resize 200 120
 preplace inst ps7_0_axi_periph -pg 1 -lvl 5 -y 390 -defaultsOSRD
 preplace inst audio_formatter_i2s_0 -pg 1 -lvl 5 -y 170 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 800 -defaultsOSRD
+preplace inst axi_uart16550_0 -pg 1 -lvl 2 -y 530 -defaultsOSRD
 preplace inst oscillator_0 -pg 1 -lvl 2 -y 200 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 4 -y 630 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 4 3 NJ 530 1630J 520 NJ
+preplace netloc processing_system7_0_DDR 1 4 3 NJ 530 1700J 520 NJ
 preplace netloc oscillator_0_inv_out 1 2 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 4 1 1290
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 2 810 470 1250
-preplace netloc audio_formatter_i2s_0_m_axis_aud_aclk 1 5 1 1620
+preplace netloc processing_system7_0_M_AXI_GP0 1 4 1 1340
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 3 2 860 270 1300
+preplace netloc audio_formatter_i2s_0_m_axis_aud_aclk 1 5 1 1680
 preplace netloc vca_env_conf_adsr_out 1 1 1 250J
 preplace netloc oscillator_0_osc_out 1 2 1 N
-preplace netloc rst_ps7_0_50M_peripheral_reset 1 4 2 1270 270 NJ
+preplace netloc axi_uart16550_0_UART 1 2 5 630J 50 NJ 50 NJ 50 NJ 50 1990J
+preplace netloc ps7_0_axi_periph_M01_AXI 1 1 5 280 20 NJ 20 NJ 20 NJ 20 1660
+preplace netloc rst_ps7_0_50M_peripheral_reset 1 4 2 1310 80 1700J
+preplace netloc clock_divider_0_clk_out 1 2 1 640
 preplace netloc xlconcat_0_dout 1 3 1 N
-preplace netloc mod_env_conf_adsr_out 1 1 1 250J
+preplace netloc mod_env_conf_adsr_out 1 1 1 270J
 preplace netloc processing_system7_0_FIXED_IO 1 4 3 NJ 550 NJ 550 NJ
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 4 2 1280 80 1650
-preplace netloc oscillator_0_data_valid 1 2 3 600 10 NJ 10 1270J
-preplace netloc audio_formatter_i2s_0_m_axis_aud_aresetn 1 5 1 1610
-preplace netloc processing_system7_0_FCLK_CLK0 1 1 5 260 20 NJ 20 800 270 1260 260 1640
-preplace netloc Net 1 1 1 260
-preplace netloc ps7_0_axi_periph_M00_AXI 1 5 1 1630
-preplace netloc audio_formatter_i2s_0_m_axis_aud 1 5 1 1640
+preplace netloc clk_wiz_0_clk_out1 1 1 1 N
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 5 290 440 N 440 840 470 1320 70 1720
+preplace netloc oscillator_0_data_valid 1 2 3 640 90 NJ 90 1340J
+preplace netloc audio_formatter_i2s_0_m_axis_aud_aresetn 1 5 1 1670
+preplace netloc clock_divider_1_clk_out 1 1 2 290 870 640
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 520 260 10 NJ 10 850 60 1330 60 1730
+preplace netloc Net 1 1 1 290
+preplace netloc ps7_0_axi_periph_M00_AXI 1 5 1 1690
+preplace netloc audio_formatter_i2s_0_m_axis_aud 1 5 1 1710
 preplace netloc audio_mixer_0_audio_out 1 4 1 N
 preplace netloc vcf_env_conf_adsr_out 1 1 1 NJ
-levelinfo -pg 1 0 130 430 700 1030 1450 1780 1930 -top 0 -bot 790
+preplace netloc reset_rtl_1 1 0 1 N
+levelinfo -pg 1 -10 130 460 740 1080 1500 1860 2010 -top -60 -bot 1090
 "
 }
 {
-   "da_axi4_cnt":"1",
+   "da_axi4_cnt":"2",
+   "da_board_cnt":"2",
    "da_clkrst_cnt":"6",
    "da_ps7_cnt":"1"
 }

@@ -1,4 +1,4 @@
 [libraries]
-std = "C:/Xilinx/Vivado/2021.1/data/vhdl/src/standard"
-ieee = "C:/Xilinx/Vivado/2021.1/data/vhdl/src/ieee/distributable"
-dummy = "C:/Xilinx/Vivado/2021.1/data/vhdl/src/ieee/dummy"
+std = "/Users/matthewprock/projects/vhdl-libs/std/"
+ieee = "/Users/matthewprock/projects/vhdl-libs/ieee/"
+

@@ -50,22 +50,36 @@ end midi_receiver;
 architecture Behavioral of midi_receiver is
   type status_type is (TRIGGER, OFF, PARAM, BEND, IDLE);
     signal status_data : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal byte_shift : STD_LOGIC_VECTOR(6 downto 0) := (others => '0');
     signal status_code: STD_LOGIC_VECTOR(2 downto 0);
     signal packet_1 : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal packet_2 : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal status_ready : STD_LOGIC := '0';
     signal data_ready : STD_LOGIC := '0';
     signal status : status_type := IDLE;
+
+    signal int_clk : STD_LOGIC := '0';
 begin
 
-    status_recieve: process(clk, reset, en)
+    -- Clock divider /32
+    clk_divider: process(clk)
+    variable count : integer := 0;
+    begin
+        if rising_edge(clk) then
+            count := count + 1;
+            if count = 16 then
+                int_clk <= not int_clk;
+                count := 0;
+            end if;
+        end if;
+    end process;
+
+    status_recieve: process(int_clk, reset, en, status_ready)
         variable count : integer := 0;
         begin
-            if reset = '1' and status_ready = '0' then
+            if reset = '1' then
                 status_data <= (others => '0');
                 count := 0;
-            elsif rising_edge(clk) and en = '1' then
+            elsif rising_edge(int_clk) and en = '1' then
               status_data <= SerialIn & status_data(7 downto 1);
                 count := count + 1;
     
@@ -80,11 +94,11 @@ begin
 
     status_code <= status_data(6 downto 4);
 
-    status_decode: process(clk, reset)
+    status_decode: process(int_clk, reset, status_ready, status_code)
     begin
         if reset = '1' or status_ready = '0' then
             status <= IDLE;
-        elsif rising_edge(clk) then
+        elsif rising_edge(int_clk) then
             case status_code is
                 when "000" =>
                     status <= TRIGGER;
@@ -101,14 +115,14 @@ begin
    
     end process;
 
-    data_receive: process(clk, reset, status)
+    data_receive: process(int_clk, reset, status, status_ready)
     variable count : integer := 0;
     begin
         if reset = '1' then
             packet_1 <= (others => '0');
             packet_2 <= (others => '0');
-        elsif rising_edge(clk) then
-          if status_ready = '1' and status /= IDLE then
+        elsif rising_edge(int_clk) then
+            if status_ready = '1' and status /= IDLE then
                 if count < 8 then
                     packet_1 <= SerialIn & packet_1(7 downto 1);
                     count := count + 1;
@@ -123,7 +137,7 @@ begin
         end if;
     end process;
 
-data_output: process(clk, reset, data_ready, status)
+data_output: process(int_clk, reset, data_ready, status)
     begin
     if reset = '1' then
         note_on <= '0';
@@ -133,21 +147,21 @@ data_output: process(clk, reset, data_ready, status)
         velocity <= (others => '0');
         param_select <= (others => '0');
         param_value <= (others => '0');
-    elsif rising_edge(clk) then
+    elsif rising_edge(int_clk) then
         if data_ready = '1' then
             case status is
                 when TRIGGER =>
                     note_on <= '1';
-                    note_number  <= packet_1(6 downto 0);
-                    velocity     <= packet_2(6 downto 0);
+                    note_number  <= packet_1(7 downto 0);
+                    velocity     <= packet_2(7 downto 0);
                 when OFF =>
                     note_off <= '1';
-                    note_number  <= packet_1(6 downto 0);
-                    velocity     <= packet_2(6 downto 0);
+                    note_number  <= packet_1(7 downto 0);
+                    velocity     <= packet_2(7 downto 0);
                 when PARAM =>
                     param_change <= '1';
-                    param_select <= packet_1(6 downto 0);
-                    param_value  <= packet_2(6 downto 0);
+                    param_select <= packet_1(7 downto 0);
+                    param_value  <= packet_2(7 downto 0);
                 -- when BEND =>
                 --     param_change <= '1';
                 --   param_select <= packet_1(6 downto 0);

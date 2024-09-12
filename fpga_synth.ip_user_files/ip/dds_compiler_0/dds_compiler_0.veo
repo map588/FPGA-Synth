@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 // IP VLNV: xilinx.com:ip:dds_compiler:6.0
-// IP Revision: 17
+// IP Revision: 21
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections

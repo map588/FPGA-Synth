@@ -49,7 +49,7 @@ entity wave_generator is
     note_number         : in  std_logic_vector(7 downto 0);
     waveform_sel        : in  std_logic_vector(1 downto 0);
     unison_voices       : in  std_logic_vector(1 downto 0);
-    unison_detune       : in  std_logic_vector(2 downto 0)
+    unison_detune       : in  std_logic_vector(3 downto 0)
   );
 end entity;
 
@@ -60,6 +60,8 @@ architecture Behavioral of wave_generator is
       aresetn             : in  std_logic;
       s_axis_phase_tvalid : in  std_logic;
       s_axis_phase_tdata  : in  std_logic_vector(39 downto 0);
+      m_axis_phase_tvalid  : out std_logic;
+      m_axis_phase_tdata  : out std_logic_vector(15 downto 0);
       m_axis_data_tvalid  : out std_logic;
       m_axis_data_tdata   : out std_logic_vector(47 downto 0)
     );

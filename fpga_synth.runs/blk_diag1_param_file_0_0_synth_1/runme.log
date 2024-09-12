@@ -1,0 +1,371 @@
+
+*** Running vivado
+    with args -log blk_diag1_param_file_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source blk_diag1_param_file_0_0.tcl
+
+
+
+****** Vivado v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source blk_diag1_param_file_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/project_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matt/Documents/Vivado_Projects/user_ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matt/Documents/Vivado_Projects/ip_repo'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Matt/AppData/Roaming/Xilinx/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+Command: synth_design -top blk_diag1_param_file_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 41932
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'blk_diag1_param_file_0_0' [c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.gen/sources_1/bd/blk_diag1/ip/blk_diag1_param_file_0_0/synth/blk_diag1_param_file_0_0.vhd:72]
+INFO: [Synth 8-3491] module 'param_file' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:34' bound to instance 'U0' of component 'param_file' [c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.gen/sources_1/bd/blk_diag1/ip/blk_diag1_param_file_0_0/synth/blk_diag1_param_file_0_0.vhd:103]
+INFO: [Synth 8-638] synthesizing module 'param_file' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:52]
+INFO: [Synth 8-3491] module 'range_mapper' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:25' bound to instance 'wav_map' of component 'range_mapper' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'range_mapper' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'range_mapper' (1#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:36]
+	Parameter INPUT_WIDTH bound to: 8 - type: integer 
+	Parameter OUTPUT_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'range_mapper' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:25' bound to instance 'detune_map' of component 'range_mapper' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'range_mapper__parameterized1' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'range_mapper__parameterized1' (1#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:36]
+INFO: [Synth 8-3491] module 'range_mapper' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/ranger_mapper.vhd:25' bound to instance 'detune_voices_map' of component 'range_mapper' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:122]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'wavetype_reg' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'd_ff' (2#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:17]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'pl_reg' (3#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'detune_voices_reg' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:138]
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'detune_amt_reg' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'pl_reg__parameterized2' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'pl_reg__parameterized2' (3#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+INFO: [Synth 8-3491] module 'adsr_config' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:24' bound to instance 'adsr_config_inst' of component 'adsr_config' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'adsr_config' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:34]
+INFO: [Synth 8-226] default block is never used [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:52]
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'reg_attack' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:73]
+INFO: [Synth 8-638] synthesizing module 'pl_reg__parameterized4' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-3491] module 'd_ff' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/dflipflop.vhd:5' bound to instance 'DFF' of component 'd_ff' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'pl_reg__parameterized4' (3#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:16]
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'reg_decay' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:81]
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'reg_sustain' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:89]
+INFO: [Synth 8-3491] module 'pl_reg' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/new/n_parallel_register.vhd:5' bound to instance 'reg_rel' of component 'pl_reg' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:97]
+INFO: [Synth 8-256] done synthesizing module 'adsr_config' (4#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:34]
+INFO: [Synth 8-3491] module 'adsr_config' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:24' bound to instance 'adsr_config_inst' of component 'adsr_config' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:164]
+INFO: [Synth 8-3491] module 'adsr_config' declared at 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/adsr_config.vhd:24' bound to instance 'adsr_config_inst' of component 'adsr_config' [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:164]
+INFO: [Synth 8-256] done synthesizing module 'param_file' (5#1) [C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/param_file.vhd:52]
+INFO: [Synth 8-256] done synthesizing module 'blk_diag1_param_file_0_0' (6#1) [c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.gen/sources_1/bd/blk_diag1/ip/blk_diag1_param_file_0_0/synth/blk_diag1_param_file_0_0.vhd:72]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'U0/wav_map' (range_mapper) to 'U0/detune_voices_map'
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 12    
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 107   
++---Muxes : 
+	   4 Input    4 Bit        Muxes := 3     
+	   5 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 12    
+	   5 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |     4|
+|2     |LUT3 |    16|
+|3     |LUT5 |     3|
+|4     |LUT6 |     3|
+|5     |FDCE |   104|
+|6     |FDRE |   114|
++------+-----+------+
+
+Report Instance Areas: 
++------+------------------------------------------+--------------------------+------+
+|      |Instance                                  |Module                    |Cells |
++------+------------------------------------------+--------------------------+------+
+|1     |top                                       |                          |   244|
+|2     |  U0                                      |param_file                |   244|
+|3     |    detune_amt_reg                        |pl_reg__parameterized2    |     4|
+|4     |      \gen[0].DFF                         |d_ff_113                  |     1|
+|5     |      \gen[1].DFF                         |d_ff_114                  |     1|
+|6     |      \gen[2].DFF                         |d_ff_115                  |     1|
+|7     |      \gen[3].DFF                         |d_ff_116                  |     1|
+|8     |    detune_voices_reg                     |pl_reg                    |     4|
+|9     |      \gen[0].DFF                         |d_ff_111                  |     2|
+|10    |      \gen[1].DFF                         |d_ff_112                  |     2|
+|11    |    \gen_adsr_config[0].adsr_config_inst  |adsr_config               |    73|
+|12    |      reg_attack                          |pl_reg__parameterized4_75 |     8|
+|13    |        \gen[0].DFF                       |d_ff_103                  |     1|
+|14    |        \gen[1].DFF                       |d_ff_104                  |     1|
+|15    |        \gen[2].DFF                       |d_ff_105                  |     1|
+|16    |        \gen[3].DFF                       |d_ff_106                  |     1|
+|17    |        \gen[4].DFF                       |d_ff_107                  |     1|
+|18    |        \gen[5].DFF                       |d_ff_108                  |     1|
+|19    |        \gen[6].DFF                       |d_ff_109                  |     1|
+|20    |        \gen[7].DFF                       |d_ff_110                  |     1|
+|21    |      reg_decay                           |pl_reg__parameterized4_76 |     8|
+|22    |        \gen[0].DFF                       |d_ff_95                   |     1|
+|23    |        \gen[1].DFF                       |d_ff_96                   |     1|
+|24    |        \gen[2].DFF                       |d_ff_97                   |     1|
+|25    |        \gen[3].DFF                       |d_ff_98                   |     1|
+|26    |        \gen[4].DFF                       |d_ff_99                   |     1|
+|27    |        \gen[5].DFF                       |d_ff_100                  |     1|
+|28    |        \gen[6].DFF                       |d_ff_101                  |     1|
+|29    |        \gen[7].DFF                       |d_ff_102                  |     1|
+|30    |      reg_rel                             |pl_reg__parameterized4_77 |     8|
+|31    |        \gen[0].DFF                       |d_ff_87                   |     1|
+|32    |        \gen[1].DFF                       |d_ff_88                   |     1|
+|33    |        \gen[2].DFF                       |d_ff_89                   |     1|
+|34    |        \gen[3].DFF                       |d_ff_90                   |     1|
+|35    |        \gen[4].DFF                       |d_ff_91                   |     1|
+|36    |        \gen[5].DFF                       |d_ff_92                   |     1|
+|37    |        \gen[6].DFF                       |d_ff_93                   |     1|
+|38    |        \gen[7].DFF                       |d_ff_94                   |     1|
+|39    |      reg_sustain                         |pl_reg__parameterized4_78 |     8|
+|40    |        \gen[0].DFF                       |d_ff_79                   |     1|
+|41    |        \gen[1].DFF                       |d_ff_80                   |     1|
+|42    |        \gen[2].DFF                       |d_ff_81                   |     1|
+|43    |        \gen[3].DFF                       |d_ff_82                   |     1|
+|44    |        \gen[4].DFF                       |d_ff_83                   |     1|
+|45    |        \gen[5].DFF                       |d_ff_84                   |     1|
+|46    |        \gen[6].DFF                       |d_ff_85                   |     1|
+|47    |        \gen[7].DFF                       |d_ff_86                   |     1|
+|48    |    \gen_adsr_config[1].adsr_config_inst  |adsr_config_0             |    72|
+|49    |      reg_attack                          |pl_reg__parameterized4_39 |     8|
+|50    |        \gen[0].DFF                       |d_ff_67                   |     1|
+|51    |        \gen[1].DFF                       |d_ff_68                   |     1|
+|52    |        \gen[2].DFF                       |d_ff_69                   |     1|
+|53    |        \gen[3].DFF                       |d_ff_70                   |     1|
+|54    |        \gen[4].DFF                       |d_ff_71                   |     1|
+|55    |        \gen[5].DFF                       |d_ff_72                   |     1|
+|56    |        \gen[6].DFF                       |d_ff_73                   |     1|
+|57    |        \gen[7].DFF                       |d_ff_74                   |     1|
+|58    |      reg_decay                           |pl_reg__parameterized4_40 |     8|
+|59    |        \gen[0].DFF                       |d_ff_59                   |     1|
+|60    |        \gen[1].DFF                       |d_ff_60                   |     1|
+|61    |        \gen[2].DFF                       |d_ff_61                   |     1|
+|62    |        \gen[3].DFF                       |d_ff_62                   |     1|
+|63    |        \gen[4].DFF                       |d_ff_63                   |     1|
+|64    |        \gen[5].DFF                       |d_ff_64                   |     1|
+|65    |        \gen[6].DFF                       |d_ff_65                   |     1|
+|66    |        \gen[7].DFF                       |d_ff_66                   |     1|
+|67    |      reg_rel                             |pl_reg__parameterized4_41 |     8|
+|68    |        \gen[0].DFF                       |d_ff_51                   |     1|
+|69    |        \gen[1].DFF                       |d_ff_52                   |     1|
+|70    |        \gen[2].DFF                       |d_ff_53                   |     1|
+|71    |        \gen[3].DFF                       |d_ff_54                   |     1|
+|72    |        \gen[4].DFF                       |d_ff_55                   |     1|
+|73    |        \gen[5].DFF                       |d_ff_56                   |     1|
+|74    |        \gen[6].DFF                       |d_ff_57                   |     1|
+|75    |        \gen[7].DFF                       |d_ff_58                   |     1|
+|76    |      reg_sustain                         |pl_reg__parameterized4_42 |     8|
+|77    |        \gen[0].DFF                       |d_ff_43                   |     1|
+|78    |        \gen[1].DFF                       |d_ff_44                   |     1|
+|79    |        \gen[2].DFF                       |d_ff_45                   |     1|
+|80    |        \gen[3].DFF                       |d_ff_46                   |     1|
+|81    |        \gen[4].DFF                       |d_ff_47                   |     1|
+|82    |        \gen[5].DFF                       |d_ff_48                   |     1|
+|83    |        \gen[6].DFF                       |d_ff_49                   |     1|
+|84    |        \gen[7].DFF                       |d_ff_50                   |     1|
+|85    |    \gen_adsr_config[2].adsr_config_inst  |adsr_config_1             |    75|
+|86    |      reg_attack                          |pl_reg__parameterized4    |     8|
+|87    |        \gen[0].DFF                       |d_ff_31                   |     1|
+|88    |        \gen[1].DFF                       |d_ff_32                   |     1|
+|89    |        \gen[2].DFF                       |d_ff_33                   |     1|
+|90    |        \gen[3].DFF                       |d_ff_34                   |     1|
+|91    |        \gen[4].DFF                       |d_ff_35                   |     1|
+|92    |        \gen[5].DFF                       |d_ff_36                   |     1|
+|93    |        \gen[6].DFF                       |d_ff_37                   |     1|
+|94    |        \gen[7].DFF                       |d_ff_38                   |     1|
+|95    |      reg_decay                           |pl_reg__parameterized4_4  |     8|
+|96    |        \gen[0].DFF                       |d_ff_23                   |     1|
+|97    |        \gen[1].DFF                       |d_ff_24                   |     1|
+|98    |        \gen[2].DFF                       |d_ff_25                   |     1|
+|99    |        \gen[3].DFF                       |d_ff_26                   |     1|
+|100   |        \gen[4].DFF                       |d_ff_27                   |     1|
+|101   |        \gen[5].DFF                       |d_ff_28                   |     1|
+|102   |        \gen[6].DFF                       |d_ff_29                   |     1|
+|103   |        \gen[7].DFF                       |d_ff_30                   |     1|
+|104   |      reg_rel                             |pl_reg__parameterized4_5  |     8|
+|105   |        \gen[0].DFF                       |d_ff_15                   |     1|
+|106   |        \gen[1].DFF                       |d_ff_16                   |     1|
+|107   |        \gen[2].DFF                       |d_ff_17                   |     1|
+|108   |        \gen[3].DFF                       |d_ff_18                   |     1|
+|109   |        \gen[4].DFF                       |d_ff_19                   |     1|
+|110   |        \gen[5].DFF                       |d_ff_20                   |     1|
+|111   |        \gen[6].DFF                       |d_ff_21                   |     1|
+|112   |        \gen[7].DFF                       |d_ff_22                   |     1|
+|113   |      reg_sustain                         |pl_reg__parameterized4_6  |     8|
+|114   |        \gen[0].DFF                       |d_ff_7                    |     1|
+|115   |        \gen[1].DFF                       |d_ff_8                    |     1|
+|116   |        \gen[2].DFF                       |d_ff_9                    |     1|
+|117   |        \gen[3].DFF                       |d_ff_10                   |     1|
+|118   |        \gen[4].DFF                       |d_ff_11                   |     1|
+|119   |        \gen[5].DFF                       |d_ff_12                   |     1|
+|120   |        \gen[6].DFF                       |d_ff_13                   |     1|
+|121   |        \gen[7].DFF                       |d_ff_14                   |     1|
+|122   |    wavetype_reg                          |pl_reg_2                  |     4|
+|123   |      \gen[0].DFF                         |d_ff                      |     2|
+|124   |      \gen[1].DFF                         |d_ff_3                    |     2|
++------+------------------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1156.469 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1156.469 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1156.469 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 3618e21c
+INFO: [Common 17-83] Releasing license: Synthesis
+64 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1156.469 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.runs/blk_diag1_param_file_0_0_synth_1/blk_diag1_param_file_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP blk_diag1_param_file_0_0, cache-ID = 0cf8d2734a765bb6
+INFO: [Coretcl 2-1174] Renamed 123 cell refs.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.runs/blk_diag1_param_file_0_0_synth_1/blk_diag1_param_file_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file blk_diag1_param_file_0_0_utilization_synth.rpt -pb blk_diag1_param_file_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 12 04:50:55 2024...

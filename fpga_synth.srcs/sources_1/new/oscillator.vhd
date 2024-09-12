@@ -34,7 +34,7 @@ entity oscillator is
     velocity      : in  std_logic_vector(7 downto 0);
     waveform_sel  : in  std_logic_vector(1 downto 0);
     unison_voices : in  std_logic_vector(1 downto 0);
-    unison_detune : in  std_logic_vector(2 downto 0);
+    unison_detune : in  std_logic_vector(3 downto 0);
 
     -- Control parameters
 
@@ -92,7 +92,7 @@ architecture Behavioral of oscillator is
     note_number         : in  std_logic_vector(7 downto 0);
     waveform_sel        : in  std_logic_vector(1 downto 0);
     unison_voices       : in  std_logic_vector(1 downto 0);
-    unison_detune       : in  std_logic_vector(2 downto 0)
+    unison_detune       : in  std_logic_vector(3 downto 0)
     );
   end component;
 

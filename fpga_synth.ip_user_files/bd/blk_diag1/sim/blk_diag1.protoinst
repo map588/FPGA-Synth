@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"blk_diag1": {
+			"proto_instances": {
+			}
+		}
+	}
+}

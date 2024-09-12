@@ -61,13 +61,14 @@ end component;
 
 
 component adsr_config is
-  port (clk, clear : in std_logic;
-        change : in std_logic;
-        param : in std_logic_vector(7 downto 0);
-        value : in std_logic_vector(7 downto 0);
-        vca_env, vcf_env, mod_env : out std_logic_vector(31 downto 0);
-        env_sel : out std_logic_vector(1 downto 0)
-        );
+    port (
+      clk      : in  std_logic;
+      clear    : in  std_logic;
+      change   : in  std_logic;
+      param    : in  std_logic_vector(1 downto 0);
+      value    : in  std_logic_vector(7 downto 0);
+      adsr_out : out std_logic_vector(31 downto 0)
+    );
 end component;
 
 component range_mapper is
@@ -82,17 +83,20 @@ component range_mapper is
 end component;
 
 type param_type is (ADSR, WAVEFORM, DETUNE_V, DETUNE_AMT, NONE);
+type adsr_out_array is array(0 to 2) of std_logic_vector(31 downto 0);
 
 -- Parameter outputs
 signal wav_type : std_logic_vector(1 downto 0);
 signal det_voices : std_logic_vector(1 downto 0);
 signal det_amt : std_logic_vector(3 downto 0);
+signal adsr_out : adsr_out_array;
 
 
 -- Selects for the registers
 signal wav_sel        : std_logic;
 signal detune_sel     : std_logic;
 signal detune_amt_sel : std_logic;
+signal sub_sel        : std_logic_vector(1 downto 0);
 signal adsr_sel       : std_logic_vector(2 downto 0);
 
 signal param_mask : std_logic_vector(2 downto 0);
@@ -120,7 +124,10 @@ detune_voices_map: range_mapper port map (
   output => det_voices
 );
 
-wavetype_reg: pl_reg port map (
+wavetype_reg: pl_reg generic map (
+  n => 2
+)
+port map (
   D => wav_type,
   CLK => clk,
   LOAD => wav_sel,
@@ -128,7 +135,11 @@ wavetype_reg: pl_reg port map (
   Q => waveform_sel
 );
 
-detune_voices_reg: pl_reg port map (
+detune_voices_reg: pl_reg 
+generic map(
+  n => 2
+)
+port map (
   D => det_voices,
   CLK => clk,
   LOAD => detune_sel,
@@ -136,7 +147,11 @@ detune_voices_reg: pl_reg port map (
   Q => detune_voices
 );
 
-detune_amt_reg: pl_reg port map (
+detune_amt_reg: pl_reg 
+generic map(
+  n => 4
+)
+port map (
   D => det_amt,
   CLK => clk,
   LOAD => detune_amt_sel,
@@ -144,22 +159,22 @@ detune_amt_reg: pl_reg port map (
   Q => detune
 );
 
--- ADSR Configurations have their own registers
-
-adsr_conf: adsr_config port map (
-  clk => clk,
-  clear => clear,
-  change => adsr_sel(0),
-  param => param,
-  value => value,
-  vca_env => vca_adsr,
-  vcf_env => vcf_adsr,
-  mod_env => mod_adsr,
-  env_sel => param(1 downto 0)
-);
+gen_adsr_config: for i in 0 to 2 generate
+begin
+  adsr_config_inst: adsr_config
+    port map (
+      clk      => clk,
+      clear    => clear,
+      change   => adsr_sel(i),
+      param    => sub_sel,
+      value    => value,
+      adsr_out => adsr_out(i)
+    );
+end generate;
 
 
 param_mask <= param(6 downto 4);
+sub_sel <= param(3 downto 2);
 
 
   with param_mask select
@@ -176,11 +191,15 @@ param_mask <= param(6 downto 4);
     if change = '1' then
       case param_sel is
         when ADSR =>
-        with param(3 downto 2) select
-          adsr_sel <= "001" when "00",
-                      "010" when "01",
-                      "100" when "10",
-                      "000" when others;
+          if sub_sel = "00" then
+            adsr_sel <= "001";
+          elsif sub_sel = "01" then
+            adsr_sel <= "010";
+          elsif sub_sel = "10" then
+            adsr_sel <= "100";
+          else
+            adsr_sel <= "000";
+          end if;
         when WAVEFORM =>
           wav_sel <= '1';
         when DETUNE_V =>
@@ -194,8 +213,8 @@ param_mask <= param(6 downto 4);
   end if;
 end process;
 
-waveform_sel <= wav_type;
-detune_voices <= det_voices;
-detune <= det_amt;
+vca_adsr <= adsr_out(0);
+vcf_adsr <= adsr_out(1);
+mod_adsr <= adsr_out(2);
 
 end Behavioral;

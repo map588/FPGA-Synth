@@ -1,0 +1,14 @@
+vhdl xil_defaultlib  \
+"../../../bd/blk_diag1/ip/blk_diag1_audio_mixer_0_0/sim/blk_diag1_audio_mixer_0_0.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_midi_receiver_0_0/sim/blk_diag1_midi_receiver_0_0.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_param_file_0_0/sim/blk_diag1_param_file_0_0.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_i2s_transmit1_0_0/sim/blk_diag1_i2s_transmit1_0_0.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_clock_divider_2_0/sim/blk_diag1_clock_divider_2_0.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_clock_divider_2_1/sim/blk_diag1_clock_divider_2_1.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_i2s_transmit1_0_1/sim/blk_diag1_i2s_transmit1_0_1.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_i2s_transmit1_0_2/sim/blk_diag1_i2s_transmit1_0_2.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_clock_divider_2_2/sim/blk_diag1_clock_divider_2_2.vhd" \
+"../../../bd/blk_diag1/ip/blk_diag1_oscillator_0_0/sim/blk_diag1_oscillator_0_0.vhd" \
+"../../../bd/blk_diag1/sim/blk_diag1.vhd" \
+
+nosort

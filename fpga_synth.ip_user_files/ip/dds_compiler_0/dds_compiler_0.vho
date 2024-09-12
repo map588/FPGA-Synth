@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:dds_compiler:6.0
--- IP Revision: 17
+-- IP Revision: 21
 
 -- The following code must appear in the VHDL architecture header.
 

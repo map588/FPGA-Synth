@@ -154,7 +154,7 @@ begin
               detune_offset := (others => '0');
               detune_temp := (others => '0');
             else
-              detune_temp := detune_temp + (signed(unison_detune) sll 6);
+              detune_temp := detune_temp + (signed(unison_detune) sll 6); -- arbitrary scaling factor
               detune_offset := resize(detune_temp, detune_offset'length);
             end if;
 

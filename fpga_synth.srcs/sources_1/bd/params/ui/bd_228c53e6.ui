@@ -1,0 +1,29 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port clock -pg 1 -y -600 -defaultsOSRD
+preplace port clear -pg 1 -y -570 -defaultsOSRD
+preplace port change -pg 1 -y -470 -defaultsOSRD
+preplace portBus vcf_env_params -pg 1 -y -370 -defaultsOSRD
+preplace portBus value -pg 1 -y -260 -defaultsOSRD
+preplace portBus param -pg 1 -y -330 -defaultsOSRD
+preplace portBus vca_env_params -pg 1 -y -550 -defaultsOSRD
+preplace portBus mod_env_params -pg 1 -y -180 -defaultsOSRD
+preplace inst adsr_config_0 -pg 1 -lvl 1 -y -550 -defaultsOSRD
+preplace inst adsr_config_1 -pg 1 -lvl 1 -y -370 -defaultsOSRD
+preplace inst adsr_config_2 -pg 1 -lvl 1 -y -180 -defaultsOSRD
+preplace netloc init_1 1 0 1 -10
+preplace netloc adsr_config_1_adsr_out 1 1 1 N
+preplace netloc value_1 1 0 1 20
+preplace netloc adsr_config_0_adsr_out 1 1 1 N
+preplace netloc change_1 1 0 1 0
+preplace netloc clock_1 1 0 1 -20
+preplace netloc adsr_config_2_adsr_out 1 1 1 N
+preplace netloc param_1 1 0 1 10
+levelinfo -pg 1 -40 160 360 -top -800 -bot 180
+"
+}
+{
+   "da_clkrst_cnt":"3"
+}

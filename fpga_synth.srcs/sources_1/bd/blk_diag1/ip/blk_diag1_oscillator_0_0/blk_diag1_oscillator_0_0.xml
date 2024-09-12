@@ -148,7 +148,7 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
-        <spirit:name>resync</spirit:name>
+        <spirit:name>note_off</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:wireTypeDefs>

@@ -1,0 +1,354 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xF51935689DA2C7F8",
+      "device": "xc7z020clg400-1",
+      "name": "params",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "adsr_config_0": "",
+      "adsr_config_1": "",
+      "adsr_config_2": ""
+    },
+    "ports": {
+      "vca_env_params": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "vcf_env_params": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "mod_env_params": {
+        "type": "data",
+        "direction": "O",
+        "left": "31",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "clock": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "clear": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "change": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "param": {
+        "type": "data",
+        "direction": "I",
+        "left": "1",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "value": {
+        "type": "data",
+        "direction": "I",
+        "left": "7",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "adsr_config_0": {
+        "vlnv": "xilinx.com:module_ref:adsr_config:1.0",
+        "xci_name": "params_adsr_config_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adsr_config",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clear": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "change": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "param": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "value": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "adsr_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "adsr_config_1": {
+        "vlnv": "xilinx.com:module_ref:adsr_config:1.0",
+        "xci_name": "params_adsr_config_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adsr_config",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clear": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "change": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "param": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "value": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "adsr_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "adsr_config_2": {
+        "vlnv": "xilinx.com:module_ref:adsr_config:1.0",
+        "xci_name": "params_adsr_config_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adsr_config",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "clear": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "change": {
+            "direction": "I",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "param": {
+            "direction": "I",
+            "left": "1",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "value": {
+            "direction": "I",
+            "left": "7",
+            "right": "0",
+            "parameters": {
+              "LAYERED_METADATA": {
+                "value": "undef",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "adsr_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "adsr_config_0_adsr_out": {
+        "ports": [
+          "adsr_config_0/adsr_out",
+          "vca_env_params"
+        ]
+      },
+      "adsr_config_1_adsr_out": {
+        "ports": [
+          "adsr_config_1/adsr_out",
+          "vcf_env_params"
+        ]
+      },
+      "adsr_config_2_adsr_out": {
+        "ports": [
+          "adsr_config_2/adsr_out",
+          "mod_env_params"
+        ]
+      },
+      "clock_1": {
+        "ports": [
+          "clock",
+          "adsr_config_0/clk",
+          "adsr_config_1/clk",
+          "adsr_config_2/clk"
+        ]
+      },
+      "init_1": {
+        "ports": [
+          "clear",
+          "adsr_config_0/clear",
+          "adsr_config_1/clear",
+          "adsr_config_2/clear"
+        ]
+      },
+      "change_1": {
+        "ports": [
+          "change",
+          "adsr_config_0/change",
+          "adsr_config_1/change",
+          "adsr_config_2/change"
+        ]
+      },
+      "param_1": {
+        "ports": [
+          "param",
+          "adsr_config_0/param",
+          "adsr_config_1/param",
+          "adsr_config_2/param"
+        ]
+      },
+      "value_1": {
+        "ports": [
+          "value",
+          "adsr_config_1/value",
+          "adsr_config_0/value",
+          "adsr_config_2/value"
+        ]
+      }
+    }
+  }
+}

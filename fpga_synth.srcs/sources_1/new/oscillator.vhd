@@ -29,7 +29,7 @@ entity oscillator is
     clk           : in  std_logic;
     rst_n         : in  std_logic;
     note_on       : in  std_logic;
-    resync        : in std_logic;
+    note_off      : in  std_logic;
     note_number   : in  std_logic_vector(7 downto 0);
     velocity      : in  std_logic_vector(7 downto 0);
     waveform_sel  : in  std_logic_vector(1 downto 0);
@@ -57,14 +57,13 @@ entity oscillator is
 end entity;
 
 architecture Behavioral of oscillator is
+  signal gate        : std_logic;
   signal osc_sig     : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal osc_inv_sig : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal vca_env_sig : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal vcf_env_sig : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal mod_env_sig : std_logic_vector(DATA_WIDTH - 1 downto 0);
-
-  
-
+  signal sync        : std_logic;
 
   -- Component declarations for oscillator and envelope generators
   component wave_generator is
@@ -130,6 +129,19 @@ architecture Behavioral of oscillator is
 
 begin
 
+  sync_latch: process(clk, rst_n, note_on)
+  begin
+    if rst_n = '0' then
+      sync <= '0';
+    elsif rising_edge(clk) then
+      if note_on = '1' then
+        sync <= '1';
+      else
+        sync <= '0';
+      end if;
+    end if;
+  end process;
+
   vca_attack <= vca_env(31 downto 24);
   vca_decay  <= vca_env(23 downto 16);
   vca_sustain<= vca_env(15 downto 8);
@@ -144,6 +156,8 @@ begin
   mod_decay  <= mod_env(23 downto 16);
   mod_sustain<= mod_env(15 downto 8);
   mod_release<= mod_env(7 downto 0);
+
+  gate <= note_on and (not note_off);
 
 
   -- Wave Generator instantiation
@@ -161,8 +175,8 @@ begin
     unison_voices => unison_voices,
     unison_detune => unison_detune,
 
-    note_on => note_on,
-    resync => resync,
+    note_on => gate,
+    resync => sync,
     note_number => note_number,
     velocity => velocity,
     waveform_sel => waveform_sel -- 00 = Sine, 01 = Saw, 10 = Square, 11 = Triangle
@@ -171,7 +185,7 @@ begin
   vca_envelope: envelope_generator port map (
     clk => clk,
     rst_n => rst_n,
-    gate => note_on,
+    gate => gate,
     attack_rate => vca_attack,
     decay_rate => vca_decay,
     sustain_level => vca_sustain,
@@ -182,7 +196,7 @@ begin
   vcf_envelope: envelope_generator port map (
     clk => clk,
     rst_n => rst_n,
-    gate => note_on,
+    gate => gate,
     attack_rate => vcf_attack,
     decay_rate => vcf_decay,
     sustain_level => vcf_sustain,
@@ -193,7 +207,7 @@ begin
   mod_envelope: envelope_generator port map (
     clk => clk,
     rst_n => rst_n,
-    gate => note_on,
+    gate => gate,
     attack_rate => mod_attack,
     decay_rate => mod_decay,
     sustain_level => mod_sustain,

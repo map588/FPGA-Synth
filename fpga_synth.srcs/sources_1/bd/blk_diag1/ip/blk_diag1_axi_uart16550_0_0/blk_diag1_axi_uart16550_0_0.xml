@@ -2266,7 +2266,7 @@ In FIFO mode, Transmitter FIFO and shift register are both empty.
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_IS_A_16550</spirit:name>
         <spirit:displayName>UART Mode</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_IS_A_16550" spirit:minimum="0" spirit:maximum="1" spirit:rangeType="long">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_IS_A_16550" spirit:minimum="0" spirit:maximum="1" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_HAS_EXTERNAL_XIN</spirit:name>
@@ -2330,7 +2330,7 @@ In FIFO mode, Transmitter FIFO and shift register are both empty.
     <spirit:parameter>
       <spirit:name>C_IS_A_16550</spirit:name>
       <spirit:displayName>UART Mode</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IS_A_16550" spirit:choiceRef="choice_list_6afe9129" spirit:order="1500">16450</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_IS_A_16550" spirit:choiceRef="choice_list_6afe9129" spirit:order="1500">16550</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>C_S_AXI_ACLK_FREQ_HZ_d</spirit:name>

@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -27,8 +29,10 @@ set_property webtalk.parent_dir C:/Users/Matt/Documents/Vivado_Projects/fpga_syn
 set_property parent.project_path C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part myir.com:mys-7z020:part0:2.1 [current_project]
+set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
 set_property ip_repo_paths {
+  c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/project_ip
+  c:/Users/Matt/Documents/Vivado_Projects/user_ip
   c:/Users/Matt/Documents/Vivado_Projects/ip_repo
   c:/Users/Matt/AppData/Roaming/Xilinx/ip_repo
 } [current_project]
@@ -36,13 +40,13 @@ update_ip_catalog
 set_property ip_output_repo c:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  C:/Users/Matt/Documents/Vivado_Projects/RNG.vhd
+  C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/imports/Vivado_Projects/RNG.vhd
   C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/envelope_generator.vhd
   C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/note_lut.vhd
   C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/wave_generator.vhd
   C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/new/oscillator.vhd
 }
-read_ip -quiet c:/Users/Matt/Documents/Vivado_Projects/ip_repo/dds_compiler_0_3/dds_compiler_0.xci
+read_ip -quiet C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/sources_1/ip/dds_compiler_0/dds_compiler_0.xci
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -52,8 +56,8 @@ read_ip -quiet c:/Users/Matt/Documents/Vivado_Projects/ip_repo/dds_compiler_0_3/
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Matt/Documents/Vivado_Projects/MYIR_constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/Matt/Documents/Vivado_Projects/MYIR_constraints.xdc]
+read_xdc C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/constrs_1/imports/PYNQ-data/PYNQ-Z1_C.xdc
+set_property used_in_implementation false [get_files C:/Users/Matt/Documents/Vivado_Projects/fpga_synth/fpga_synth.srcs/constrs_1/imports/PYNQ-data/PYNQ-Z1_C.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

@@ -1,0 +1,252 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../MIDI_Interface.gen/sim_1/bd/midi_tb",
+      "name": "midi_tb",
+      "pfm_name": "vendor:lib:midi_fpga_synth:1.0",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "None",
+      "tool_version": "2021.1"
+    },
+    "design_tree": {
+      "rst_clk_wiz_100M": "",
+      "ila_0": "",
+      "clk_wiz": "",
+      "midi_stimulus_0": "",
+      "sim_clk_gen_0": "",
+      "xlconstant_0": "",
+      "midi_decoder_fifo_0": ""
+    },
+    "components": {
+      "rst_clk_wiz_100M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "midi_tb_rst_clk_wiz_100M_1",
+        "xci_path": "ip\\midi_tb_rst_clk_wiz_100M_1\\midi_tb_rst_clk_wiz_100M_1.xci",
+        "inst_hier_path": "rst_clk_wiz_100M"
+      },
+      "ila_0": {
+        "vlnv": "xilinx.com:ip:ila:6.2",
+        "xci_name": "midi_tb_ila_0_1",
+        "xci_path": "ip\\midi_tb_ila_0_1\\midi_tb_ila_0_1.xci",
+        "inst_hier_path": "ila_0",
+        "parameters": {
+          "C_ENABLE_ILA_AXI_MON": {
+            "value": "false"
+          },
+          "C_MONITOR_TYPE": {
+            "value": "Native"
+          },
+          "C_NUM_OF_PROBES": {
+            "value": "11"
+          },
+          "C_PROBE10_WIDTH": {
+            "value": "2"
+          },
+          "C_PROBE11_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE1_WIDTH": {
+            "value": "16"
+          },
+          "C_PROBE2_WIDTH": {
+            "value": "28"
+          },
+          "C_PROBE3_WIDTH": {
+            "value": "28"
+          },
+          "C_PROBE4_WIDTH": {
+            "value": "28"
+          },
+          "C_PROBE5_WIDTH": {
+            "value": "7"
+          },
+          "C_PROBE6_WIDTH": {
+            "value": "7"
+          },
+          "C_PROBE7_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE8_WIDTH": {
+            "value": "1"
+          },
+          "C_PROBE9_WIDTH": {
+            "value": "5"
+          }
+        }
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "midi_tb_clk_wiz_2",
+        "xci_path": "ip\\midi_tb_clk_wiz_2\\midi_tb_clk_wiz_2.xci",
+        "inst_hier_path": "clk_wiz",
+        "pfm_attributes": {
+          "CLOCK": "clk_out1 {id \"2\" is_default \"false\" proc_sys_reset \"/rst_clk_wiz_100M\" status \"fixed\" freq_hz \"100000000\"}"
+        }
+      },
+      "midi_stimulus_0": {
+        "vlnv": "xilinx.com:user:midi_stimulus:1.0",
+        "xci_name": "midi_tb_midi_stimulus_0_0",
+        "xci_path": "ip\\midi_tb_midi_stimulus_0_0\\midi_tb_midi_stimulus_0_0.xci",
+        "inst_hier_path": "midi_stimulus_0"
+      },
+      "sim_clk_gen_0": {
+        "vlnv": "xilinx.com:ip:sim_clk_gen:1.0",
+        "xci_name": "midi_tb_sim_clk_gen_0_0",
+        "xci_path": "ip\\midi_tb_sim_clk_gen_0_0\\midi_tb_sim_clk_gen_0_0.xci",
+        "inst_hier_path": "sim_clk_gen_0",
+        "parameters": {
+          "RESET_POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "midi_tb_xlconstant_0_0",
+        "xci_path": "ip\\midi_tb_xlconstant_0_0\\midi_tb_xlconstant_0_0.xci",
+        "inst_hier_path": "xlconstant_0"
+      },
+      "midi_decoder_fifo_0": {
+        "vlnv": "xilinx.com:user:midi_decoder_fifo:1.0",
+        "xci_name": "midi_tb_midi_decoder_fifo_0_0",
+        "xci_path": "ip\\midi_tb_midi_decoder_fifo_0_0\\midi_tb_midi_decoder_fifo_0_0.xci",
+        "inst_hier_path": "midi_decoder_fifo_0"
+      }
+    },
+    "nets": {
+      "clk_wiz_clk_out1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "rst_clk_wiz_100M/slowest_sync_clk",
+          "ila_0/clk",
+          "midi_stimulus_0/clk",
+          "midi_decoder_fifo_0/clk"
+        ]
+      },
+      "midi_decoder_fifo_0_data_valid": {
+        "ports": [
+          "midi_decoder_fifo_0/data_valid",
+          "ila_0/probe0"
+        ]
+      },
+      "midi_decoder_fifo_0_dbg_queue_out": {
+        "ports": [
+          "midi_decoder_fifo_0/dbg_queue_out",
+          "ila_0/probe1"
+        ]
+      },
+      "midi_decoder_fifo_0_mod_adsr": {
+        "ports": [
+          "midi_decoder_fifo_0/mod_adsr",
+          "ila_0/probe2"
+        ]
+      },
+      "midi_decoder_fifo_0_note_index": {
+        "ports": [
+          "midi_decoder_fifo_0/note_index",
+          "ila_0/probe5"
+        ]
+      },
+      "midi_decoder_fifo_0_queue_cap": {
+        "ports": [
+          "midi_decoder_fifo_0/queue_cap",
+          "ila_0/probe9"
+        ]
+      },
+      "midi_decoder_fifo_0_trigger": {
+        "ports": [
+          "midi_decoder_fifo_0/trigger",
+          "ila_0/probe7"
+        ]
+      },
+      "midi_decoder_fifo_0_trigger_states": {
+        "ports": [
+          "midi_decoder_fifo_0/trigger_states",
+          "ila_0/probe8"
+        ]
+      },
+      "midi_decoder_fifo_0_vca_adsr": {
+        "ports": [
+          "midi_decoder_fifo_0/vca_adsr",
+          "ila_0/probe3"
+        ]
+      },
+      "midi_decoder_fifo_0_vcf_adsr": {
+        "ports": [
+          "midi_decoder_fifo_0/vcf_adsr",
+          "ila_0/probe4"
+        ]
+      },
+      "midi_decoder_fifo_0_velocity": {
+        "ports": [
+          "midi_decoder_fifo_0/velocity",
+          "ila_0/probe6"
+        ]
+      },
+      "midi_decoder_fifo_0_wait_push": {
+        "ports": [
+          "midi_decoder_fifo_0/wait_push",
+          "midi_stimulus_0/wait_push"
+        ]
+      },
+      "midi_decoder_fifo_0_wave_sel_out": {
+        "ports": [
+          "midi_decoder_fifo_0/wave_sel_out",
+          "ila_0/probe10"
+        ]
+      },
+      "midi_stimulus_0_data_out": {
+        "ports": [
+          "midi_stimulus_0/data_out",
+          "midi_decoder_fifo_0/data_in"
+        ]
+      },
+      "midi_stimulus_0_pop": {
+        "ports": [
+          "midi_stimulus_0/pop",
+          "midi_decoder_fifo_0/pop_ctrl"
+        ]
+      },
+      "midi_stimulus_0_pop_ctrl_en": {
+        "ports": [
+          "midi_stimulus_0/pop_ctrl_en",
+          "midi_decoder_fifo_0/pop_ctrl_en"
+        ]
+      },
+      "midi_stimulus_0_push": {
+        "ports": [
+          "midi_stimulus_0/push",
+          "midi_decoder_fifo_0/push"
+        ]
+      },
+      "rst_clk_wiz_100M_peripheral_reset": {
+        "ports": [
+          "rst_clk_wiz_100M/peripheral_reset",
+          "midi_stimulus_0/rst",
+          "midi_decoder_fifo_0/rst"
+        ]
+      },
+      "sim_clk_gen_0_clk": {
+        "ports": [
+          "sim_clk_gen_0/clk",
+          "clk_wiz/clk_in1"
+        ]
+      },
+      "sim_clk_gen_0_sync_rst": {
+        "ports": [
+          "sim_clk_gen_0/sync_rst",
+          "clk_wiz/reset",
+          "rst_clk_wiz_100M/ext_reset_in"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "midi_stimulus_0/enable"
+        ]
+      }
+    }
+  }
+}

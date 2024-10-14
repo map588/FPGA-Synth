@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="i2s_module_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="i2s_module_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="17,664,297.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="17,673,912.501 ns"></ZoomEndTime>
+      <Cursor1Time time="17,665,900.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="359"></NameColumnWidth>
+      <ValueColumnWidth column_width="277"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/i2s_module_tb/sys_clk" type="logic">
+      <obj_property name="ElementShortName">sys_clk</obj_property>
+      <obj_property name="ObjectShortName">sys_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/mclk" type="logic">
+      <obj_property name="ElementShortName">mclk</obj_property>
+      <obj_property name="ObjectShortName">mclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/bclk_out" type="logic">
+      <obj_property name="ElementShortName">bclk_out</obj_property>
+      <obj_property name="ObjectShortName">bclk_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/lrclk_out" type="logic">
+      <obj_property name="ElementShortName">lrclk_out</obj_property>
+      <obj_property name="ObjectShortName">lrclk_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[23:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[23:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/sdata" type="logic">
+      <obj_property name="ElementShortName">sdata</obj_property>
+      <obj_property name="ObjectShortName">sdata</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/push" type="logic">
+      <obj_property name="ElementShortName">push</obj_property>
+      <obj_property name="ObjectShortName">push</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/fifo_count" type="array">
+      <obj_property name="ElementShortName">fifo_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_count[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/fifo_full" type="logic">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/fifo_empty" type="logic">
+      <obj_property name="ElementShortName">fifo_empty</obj_property>
+      <obj_property name="ObjectShortName">fifo_empty</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/fifo_overflow" type="logic">
+      <obj_property name="ElementShortName">fifo_overflow</obj_property>
+      <obj_property name="ObjectShortName">fifo_overflow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_module_tb/fifo_overflow_count" type="array">
+      <obj_property name="ElementShortName">fifo_overflow_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_overflow_count[31:0]</obj_property>
+   </wvobject>
+</wave_config>

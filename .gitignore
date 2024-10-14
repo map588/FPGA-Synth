@@ -1,0 +1,71 @@
+*.wdb
+*.vscode
+*.v4p
+vhdl_ls.toml
+
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.xpr
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.impl/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated output files
+*.bit
+*.bin
+*.mcs
+*.svf
+*.image
+
+# Report files
+*.rpt
+*.vdi
+
+# Journal files
+*.jou
+
+# Directories to ignore
+.Xil/
+.hbs/
+
+# Exclude everything in these directories
+ip_repo/*
+vivado_proj/*
+
+# But include these specific file types in the above directories
+!ip_repo/**/*.xci
+!ip_repo/**/*.bd
+!ip_repo/**/*.v
+!ip_repo/**/*.vhd
+!ip_repo/**/*.sv
+
+!vivado_proj/**/*.xci
+!vivado_proj/**/*.bd
+!vivado_proj/**/*.v
+!vivado_proj/**/*.vhd
+!vivado_proj/**/*.sv
+
+# Include all files in the src directory
+!src/
+
+# Include specific project files
+!*.xpr
+!*.tcl
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

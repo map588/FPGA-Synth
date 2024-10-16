@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>clocked_i2s</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>CLK.CLK_125</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>clk_125</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.CLK_125.FREQ_HZ">125000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.CLK_125.PHASE">0.0</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>CLK.PL_CLK</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>pl_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>FREQ_HZ</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.PL_CLK.FREQ_HZ">100000000</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>PHASE</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.PL_CLK.PHASE">0.0</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK.PL_CLK.ASSOCIATED_RESET">async_resetn</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>RST.ASYNC_RESETN</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>async_resetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.RST.ASYNC_RESETN.POLARITY">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>clocked_i2s</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>ecb6c2b9</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>clocked_i2s</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>aff90a65</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>0e7ac19c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>async_resetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>bclk_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>clk_125</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">23</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_count</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_empty</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_full</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_overflow</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>lrclk_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>pl_clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>push</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_Clock_Manager_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_i2s_module_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clock_generation.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/N_D_FIFO.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/i2s_module.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_clk_wiz_0_0/clocked_i2s_clk_wiz_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_clk_wiz_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_ooc.xdc</spirit:name>
+        <spirit:userFileType>xdc</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>SCOPED_TO_REF_clocked_i2s</spirit:userFileType>
+        <spirit:userFileType>USED_IN_out_of_context</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_cbed4bd9</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s_Clock_Manager_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s_i2s_module_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clock_generation.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/N_D_FIFO.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/i2s_module.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_clk_wiz_0_0/clocked_i2s_clk_wiz_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/clocked_i2s_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_0e7ac19c</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>clocked_i2s_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">clocked_i2s_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DATA_WIDTH</spirit:name>
+      <spirit:displayName>Data Width</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_WIDTH"/>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FIFO_DEPTH</spirit:name>
+      <spirit:displayName>Fifo Depth</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.FIFO_DEPTH"/>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>FIFO_WIDTH</spirit:name>
+      <spirit:displayName>Fifo Width</spirit:displayName>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.FIFO_WIDTH"/>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>clocked_i2s_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>IPI</xilinx:definitionSource>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-10-16T12:01:16Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d1b0999_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ea5762c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2c7cfbe2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d4be541_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a43732c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@359c4012_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75bcc7e5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49546a03_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@314eb4a9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f8b4731_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38aefdb5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c3bff9e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b09407c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79a357bd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@233387d4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c6b02ec_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77ef88c0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@648eb233_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e2fbb1b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c695ea_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4bb1b53f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79b055da_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@22ac5022_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69eebdce_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@325dd920_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58378060_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66e5434f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48564459_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d59985e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@26b33869_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c63d26c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d8e2a36_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@280eb836_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b0219e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d4bcef3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46f2ecf0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f3d261a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3b8b6f2a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c4f1d41_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4730d459_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fd58f3f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d9381ad_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1fb1adbf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b14391f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ecfc5f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@494bee8b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1998ba19_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57e79073_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43216b82_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@767887bc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@257b44b8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77b0a8dc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30d3f640_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@578ada3b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5efeaae4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@228669d5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@671d2a8f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7749f7e2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@372ef7f3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1537d6d0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b169b57_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42ac56cc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@235159e5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65523fc3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d5d44fc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c63777f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3684b66b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@eed9b7f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1fa15a60_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@744af5b5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44225497_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7451ef79_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7aa469d4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25f6667_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2fc86ccf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6aa81aae_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b962035_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fa0e6a9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d095351_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@177c5320_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5a5d53d5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1deeb96a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@176c8039_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@65aa7d5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b9ce953_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2f637422_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37193c8d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21bb3174_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d62fe85_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25609e8c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b6fe014_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@226a99ab_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55459af8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a2a288d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@374b4a7c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77fe3545_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@48d47460_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d2a9ae9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@82de85c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16b48c7b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63ac22a3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36bb728c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24eb8269_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d76d216_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21af3477_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a1fdbea_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@353835fb_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6cb48377_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d42df6b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b30b3bd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5316adc1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ded8a5d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@34417973_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70e087ce_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8a7b2f7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4872de09_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@fec0c12_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40183920_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f94c89_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5e4e3c3d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6efade3d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56767b77_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e29d1fd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@392e1dd4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@471e0e54_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c05c1f4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@347216af_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7886b23c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37178f8d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a50ae59_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66c7c2bc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@208eacd2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3103600d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@c6ee9f6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7ac1f76d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d9f7a3f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@673f48fd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@254fd7dd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72fe1a0c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24c4e042_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24215669_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@668bc55a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@74176028_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55190ccc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e688f82_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@87fab49_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d63a3c0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25ee9646_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@591631dd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a408b37_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a8be2f1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ff3d1f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a043cf4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5fa2e979_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e1680f8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5163f1f0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@452452e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4413c044_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@654baab2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@36193249_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@8e6459b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23188b17_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b8f3e7e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6de8d111_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16a51113_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23d017a8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d9c8a2b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f7a3996_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44fbed4d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1026c5b1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c002dfd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60dbe999_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60e21d35_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32c5d5bf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@202b4d8c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dd713aa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f781c2d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@241435fc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@544aefad_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62fd0d62_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58171d78_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57711e86_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@552af312_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3aa3b536_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4df89bd2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2068b552_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@42f9a55d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a259fb6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b3dfc8d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68504f8f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4dae29b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4eddb234_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@149768b5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11c65065_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50e430ea_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1079adb2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66f6aadd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21e9f2ef_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cbd9790_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@79a73890_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@85e8354_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@207b6ec7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@21ee7e76_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3cf375a3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59fb1fb_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f5e4fde_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@49f4de0a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27376d64_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@f27264d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16a06d8f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@627b12d8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fd17284_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2028e1d9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f7a939a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c0ff399_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d33c9d7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@607f58d9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@343cf84e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@db7b076_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3302c4c8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@76331ed7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24f911a3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ed9f8ad_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6eab85e7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35cee58b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c97d7aa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62749ec6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@726984a5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57cacf30_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17397a38_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7875cc60_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43745da_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@497cdc4d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d727b8e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@502e931f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@347ee601_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3dc1f888_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a12af94_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7256a9a3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@24313e9f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5410bf9c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@271cd128_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c948a5e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cdfdfdd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@37326e4e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3182bac4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@81e9ed0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@178c6bf7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b045a55_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3fa0bc31_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@215851a5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@695f3b92_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c986a03_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6aa0496c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@241ac838_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60894fc8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7204fdbe_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72d0cf96_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c2d75a3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66c53a4e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1b9c9410_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@199d8106_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4843b3bd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@484a343c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@66024dd4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@11d6d688_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@625b833e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@441c918c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ec05da6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56b3a279_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a3e185f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3d691e72_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@15f840ea_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@23002548_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16ca96a6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3070f794_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d41414_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4dab8fcf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@68df95d8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3344eed2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c7a80cf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4088e8fa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4878f95_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5da6aa19_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7eae05de_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@451508aa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6bcbc9b6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ad84e7e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@113dfe40_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d8d838b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@330ba1b2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60bd890c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f1545c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f116f8c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43136b4c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@376981ce_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@19d29283_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13f548cd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d56e3c7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cd2e1db_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@185ff1f2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46ce7b91_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a90108a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10d0b8b8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5613ec24_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5bfcc5c9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c1dc493_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ffd2f0c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35d0e7b1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a37b9f4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4474062f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4d177b32_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7098b584_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3100de58_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@493d015b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cb33378_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@421b36c4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63df8bc9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@327a9599_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@772da3f4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f8fdc94_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@479d01d2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3de339ed_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@46104632_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@598348b6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2707ca0a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b2f3f7e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75f81a6f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@573e6f0a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a683fc7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e3c66ff_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@267ebd77_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@72f7657d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@677cc81d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@760e0e91_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56680399_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@59ff30ba_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4306310f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f0ed1be_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14cf9999_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@111898a4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5b625c57_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54151bb7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a9ffcb9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4447f659_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@784960a5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@206a00e1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2ab77c76_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4c478033_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d3d35ac_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3057e813_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@711d873_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78e2c008_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@58a0c2d4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c38277d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@20049b87_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a42c08d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cbe332a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5c2a2aaf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@13bd6c87_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6dcd6fc2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@cc33838_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41459edb_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a92abac_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44b43be8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@395a5be6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f8bbc3a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5564cf82_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f6fb243_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@54b31139_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62c4e2c0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4fa2f9c8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fffb3cd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d509619_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@86873e2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@52ce251c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@189b61c7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@331ad83f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@16967ae4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63ec196a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@45d55870_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3bfc16a8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@512077a9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6fa4207a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@25ebaa32_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1281a2bf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32df97c9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@77245020_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@497dd24b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@62fa6169_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@115c428a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6d3aab8f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6f42985b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1ec3eabf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40c8e5e3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6e20bb82_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7af58234_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@760665e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69c7308a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2201a39a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f1f8a41_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a566cb6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3a30935e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@40dc38b7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@29cafb4c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2447c768_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ac7edf3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4ca9086_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@219bc7f3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@390f139c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7f0add82_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7738e071_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@280dab96_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3019b474_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@466ff529_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@17dcf2ea_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@404833a1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f1d872c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2020faaf_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5f07b1ff_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1614eb1b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3c502136_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@443f277c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@38d06a5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64809515_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3997efa5_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32a112e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4166783e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1532524e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@201d780c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@148f6873_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b149590_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dbeae6d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2812d3e8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4f880fb_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@d5cf7e6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@722b2ba8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7864b932_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@27f716cd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a095dec_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@382d3748_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1cc833d8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b91461_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@699b0326_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69f52566_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e031f66_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@78555bb_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@70fc4909_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2116f10e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d4c6bda_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f98a203_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4535d718_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5752c41e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3aa4eae0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@10384d84_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@64f8ad4e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5aaba1fa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c130c4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7fb4a050_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5cd42c6a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@44abba57_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@829b9e9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56fd82e8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3f7370bd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@88ac071_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@463596d4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@55712354_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7b719df_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1d199436_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@50114cb2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7086b53b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@451701af_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3db22850_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6b3c40f4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@14a3d5ef_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7040cd6d_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@88c2a18_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7cbe8998_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@652ae490_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@12cb1db3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2a4538b3_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3e53e2d2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@791d2b28_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1c607fc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@198c4f0a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@237ce728_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@506d64fa_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cb04b33_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71fc9dab_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@212e4e99_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@43f6da83_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@892a7f1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@75338f0a_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c8d1376_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@353e3b2f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@28986768_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ba1eec2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6611adf0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@561281e4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@63c7862b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1f3332e1_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@71004762_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_fifo_clocked</xilinx:tag>
+      </xilinx:tags>
+      <xilinx:configElementInfos>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.CLK_125.FREQ_HZ" xilinx:valueSource="user"/>
+      </xilinx:configElementInfos>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a12282ba"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8a38df3f"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="7ae0eaae"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="e53e4eb0"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

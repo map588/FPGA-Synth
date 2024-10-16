@@ -80,7 +80,8 @@ ARCHITECTURE clocked_i2s_i2s_module_0_0_arch OF clocked_i2s_i2s_module_0_0 IS
     GENERIC (
       DATA_WIDTH : INTEGER;
       FIFO_DEPTH : INTEGER;
-      FIFO_WIDTH : INTEGER
+      FIFO_WIDTH : INTEGER;
+      DEBUG : BOOLEAN
     );
     PORT (
       sys_clk : IN STD_LOGIC;
@@ -105,7 +106,7 @@ ARCHITECTURE clocked_i2s_i2s_module_0_0_arch OF clocked_i2s_i2s_module_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF clocked_i2s_i2s_module_0_0_arch : ARCHITECTURE IS "clocked_i2s_i2s_module_0_0,i2s_module,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF clocked_i2s_i2s_module_0_0_arch: ARCHITECTURE IS "clocked_i2s_i2s_module_0_0,i2s_module,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=i2s_module,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DATA_WIDTH=24,FIFO_DEPTH=2048,FIFO_WIDTH=11}";
+  ATTRIBUTE CORE_GENERATION_INFO OF clocked_i2s_i2s_module_0_0_arch: ARCHITECTURE IS "clocked_i2s_i2s_module_0_0,i2s_module,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=i2s_module,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,DATA_WIDTH=24,FIFO_DEPTH=2048,FIFO_WIDTH=11,DEBUG=false}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF clocked_i2s_i2s_module_0_0_arch: ARCHITECTURE IS "module_ref";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -121,7 +122,8 @@ BEGIN
     GENERIC MAP (
       DATA_WIDTH => 24,
       FIFO_DEPTH => 2048,
-      FIFO_WIDTH => 11
+      FIFO_WIDTH => 11,
+      DEBUG => false
     )
     PORT MAP (
       sys_clk => sys_clk,

@@ -80,7 +80,8 @@ ARCHITECTURE clocked_i2s_i2s_module_0_0_arch OF clocked_i2s_i2s_module_0_0 IS
     GENERIC (
       DATA_WIDTH : INTEGER;
       FIFO_DEPTH : INTEGER;
-      FIFO_WIDTH : INTEGER
+      FIFO_WIDTH : INTEGER;
+      DEBUG : BOOLEAN
     );
     PORT (
       sys_clk : IN STD_LOGIC;
@@ -115,7 +116,8 @@ BEGIN
     GENERIC MAP (
       DATA_WIDTH => 24,
       FIFO_DEPTH => 2048,
-      FIFO_WIDTH => 11
+      FIFO_WIDTH => 11,
+      DEBUG => false
     )
     PORT MAP (
       sys_clk => sys_clk,

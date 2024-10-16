@@ -6,7 +6,8 @@ entity i2s_module is
   generic (
     DATA_WIDTH : positive := 24;
     FIFO_DEPTH : positive := 2048;
-    FIFO_WIDTH : positive := 11
+    FIFO_WIDTH : positive := 11;
+    DEBUG : boolean := false
   );
   port (
     sys_clk       : in  std_logic; -- System clock (data producer clock)
@@ -28,8 +29,6 @@ entity i2s_module is
 end entity;
 
 architecture Behavioral of i2s_module is
-
-  constant DEBUB : boolean := true;
 
     function clog2(n : positive) return natural is
         variable i : natural  := 0;
@@ -188,7 +187,7 @@ fifo_full  <= fifo_full_int;
         if fifo_empty_int = '0' then
           data_reg <= fifo_data_out;
           pop_en <= '1';
-          if(DEBUB) then
+          if(DEBUG) then
           data_reg(0) <= '1';
           data_reg(DATA_WIDTH - 1) <= '1';
           end if;

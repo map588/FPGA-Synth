@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Wed Oct 16 07:59:00 2024
+--Date        : Wed Oct 16 08:06:03 2024
 --Host        : bigolBox running 64-bit major release  (build 9200)
 --Command     : generate_target clocked_i2s_wrapper.bd
 --Design      : clocked_i2s_wrapper

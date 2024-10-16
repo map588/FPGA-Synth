@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="12,491.916 ns"></ZoomStartTime>
-      <ZoomEndTime time="24,776.917 ns"></ZoomEndTime>
-      <Cursor1Time time="14,486.916 ns"></Cursor1Time>
+      <ZoomStartTime time="2,940,088.942 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,941,149.093 ns"></ZoomEndTime>
+      <Cursor1Time time="1,027,079.782 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="338"></NameColumnWidth>
-      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+      <ValueColumnWidth column_width="97"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="16" />
    <wave_markers>
       <marker time="1008042507" label="" />
       <marker time="243315974" label="" />
@@ -64,25 +64,30 @@
       <obj_property name="ElementShortName">fifo_empty</obj_property>
       <obj_property name="ObjectShortName">fifo_empty</obj_property>
    </wvobject>
+   <wvobject fp_name="/clocked_i2s_tb/fifo_half" type="logic">
+      <obj_property name="ElementShortName">fifo_half</obj_property>
+      <obj_property name="ObjectShortName">fifo_half</obj_property>
+   </wvobject>
    <wvobject fp_name="/clocked_i2s_tb/fifo_full" type="logic">
       <obj_property name="ElementShortName">fifo_full</obj_property>
       <obj_property name="ObjectShortName">fifo_full</obj_property>
    </wvobject>
-   <wvobject fp_name="/clocked_i2s_tb/fifo_overflow" type="logic">
-      <obj_property name="ElementShortName">fifo_overflow</obj_property>
-      <obj_property name="ObjectShortName">fifo_overflow</obj_property>
+   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/stream_controller_0/has_data" type="logic">
+      <obj_property name="ElementShortName">has_data</obj_property>
+      <obj_property name="ObjectShortName">has_data</obj_property>
    </wvobject>
-   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/ila_0/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/ila_0/probe0" type="array">
-      <obj_property name="ElementShortName">probe0[11:0]</obj_property>
-      <obj_property name="ObjectShortName">probe0[11:0]</obj_property>
+   <wvobject fp_name="/clocked_i2s_tb/fifo_count" type="array">
+      <obj_property name="ElementShortName">fifo_count[11:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_count[11:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/ila_0/probe1" type="array">
-      <obj_property name="ElementShortName">probe1[23:0]</obj_property>
-      <obj_property name="ObjectShortName">probe1[23:0]</obj_property>
+   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/stream_controller_0/push_en" type="logic">
+      <obj_property name="ElementShortName">push_en</obj_property>
+      <obj_property name="ObjectShortName">push_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/clocked_i2s_tb/uut/drop_count" type="array">
+      <obj_property name="ElementShortName">drop_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">drop_count[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

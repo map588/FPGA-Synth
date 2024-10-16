@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>clocked_i2s</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>clk_125</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>clk_125</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_ASYNC_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.CLK_125.ASSOCIATED_ASYNC_RESET"/>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>mclk_out</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="gt_outclk" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="gt_outclk_rtl" spirit:version="1.0"/>
+      <spirit:master/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>mclk_out</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>async_resetn</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>async_resetn</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ASYNC_RESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>clocked_i2s</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>87a57968</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>VHDL</spirit:language>
+        <spirit:modelName>clocked_i2s</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>18e68c13</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>f64a5dae</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>async_resetn</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>bclk_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>clk_100</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>clk_125</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+        <spirit:vendorExtensions>
+          <xilinx:portInfo>
+            <xilinx:enablement>
+              <xilinx:presence>required</xilinx:presence>
+            </xilinx:enablement>
+          </xilinx:portInfo>
+        </spirit:vendorExtensions>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>data_in</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">23</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_count</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">11</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC_VECTOR</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>fifo_overflow</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>has_data</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>lrclk_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>mclk_out</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>sdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>STD_LOGIC</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_Clock_Manager_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_i2s_module_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_stream_controller_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_clk_wiz_0_0/clocked_i2s_clk_wiz_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_clk_wiz_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clock_generation.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/N_D_FIFO.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/i2s_module.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/stream_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_c6530766</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xsi:type="xilinx:componentRefType" xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s_Clock_Manager_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s_i2s_module_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>sim/clocked_i2s_stream_controller_0_0.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s_clk_wiz_0_0/clocked_i2s_clk_wiz_0_0.xci</spirit:name>
+        <spirit:userFileType>xci</spirit:userFileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:userFileType>CELL_NAME_clocked_i2s_i/clk_wiz_0</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clock_generation.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/N_D_FIFO.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/i2s_module.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/stream_controller.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/clocked_i2s.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_xilinx_com_ip_clk_wiz_6_0__ref_view_fileset</spirit:name>
+      <spirit:vendorExtensions>
+        <xilinx:subCoreRef>
+          <xilinx:componentRef xilinx:vendor="xilinx.com" xilinx:library="ip" xilinx:name="clk_wiz" xilinx:version="6.0">
+            <xilinx:mode xilinx:name="create_mode"/>
+          </xilinx:componentRef>
+        </xilinx:subCoreRef>
+      </spirit:vendorExtensions>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/clocked_i2s_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_f64a5dae</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>clocked_i2s_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">clocked_i2s_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>clocked_i2s_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>IPI</xilinx:definitionSource>
+      <xilinx:coreRevision>2</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-10-16T19:31:04Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1bdca1f0_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@ecf7757_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e46aec_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@690543fd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4cbcec24_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7657a9fd_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@306dc475_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47ed0460_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@480a8d2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5651d2ab_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@35aec5c9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5db25adc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@157118be_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@539bad22_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6c8809d9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6afd57da_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@589a91cc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@57dd13cc_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2b1e135_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2bc5b9a6_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@47e3744c_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@241dbd62_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@32dd233f_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@60c8ac6e_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7491dbd9_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@52871e58_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@1a4eb53_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@6a13b1b8_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@67df6457_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@5d243059_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@30a1a78b_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@41f001ba_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@69794c74_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@384ef894_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7d5c6988_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7e4eb3db_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7a30a962_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@2dfc34ef_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@3682dee7_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56d9e6a2_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@4e4bc3f4_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@56fbc093_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.df@7c2607ab_ARCHIVE_LOCATION">c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/project_ip/i2s_buffered_interface</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2021.1</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a7aed092"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="33dc13a0"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="332c4412"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="c117c5d8"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>

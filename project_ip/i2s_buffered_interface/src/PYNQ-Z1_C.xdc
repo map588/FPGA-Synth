@@ -5,13 +5,13 @@
 
 ## Clock signal 125 MHz
 
-set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports clk_125]
-create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_ports clk_125]
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports sysclk]
+create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_ports sysclk]
 
 
 ##Switches
 
-#set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS33} [get_ports has_data]
+set_property -dict {PACKAGE_PIN M20 IOSTANDARD LVCMOS33} [get_ports has_data]
 #set_property -dict { PACKAGE_PIN M19   IOSTANDARD LVCMOS33 } [get_ports { sw[1] }]; #IO_L7P_T1_AD2P_35 Sch=sw[1]
 
 ##RGB LEDs
@@ -32,7 +32,7 @@ create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_p
 
 ##Buttons
 
-#set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports btn]
+set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports btn]
 #set_property -dict { PACKAGE_PIN D20   IOSTANDARD LVCMOS33 } [get_ports { btn[1] }]; #IO_L4N_T0_35 Sch=btn[1]
 #set_property -dict { PACKAGE_PIN L20   IOSTANDARD LVCMOS33 } [get_ports { btn[2] }]; #IO_L9N_T1_DQS_AD3N_35 Sch=btn[2]
 #set_property -dict { PACKAGE_PIN L19   IOSTANDARD LVCMOS33 } [get_ports { btn[3] }]; #IO_L9P_T1_DQS_AD3P_35 Sch=btn[3]
@@ -137,7 +137,7 @@ create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_p
 set_property -dict {PACKAGE_PIN T14 IOSTANDARD LVCMOS33} [get_ports lrck_out]
 set_property -dict {PACKAGE_PIN U12 IOSTANDARD LVCMOS33} [get_ports sdata]
 set_property -dict {PACKAGE_PIN U13 IOSTANDARD LVCMOS33} [get_ports bclk_out]
-set_property -dict {PACKAGE_PIN V13 IOSTANDARD LVCMOS33} [get_ports mclk_out]
+set_property -dict {PACKAGE_PIN V13 IOSTANDARD LVCMOS33} [get_ports sck]
 #set_property -dict { PACKAGE_PIN Y8    IOSTANDARD LVCMOS33 } [get_ports { ck_io[39] }]; #IO_L14N_T2_SRCC_13 Sch=ck_io[39]
 #set_property -dict { PACKAGE_PIN W9    IOSTANDARD LVCMOS33 } [get_ports { ck_io[40] }]; #IO_L16N_T2_13 Sch=ck_io[40]
 #set_property -dict { PACKAGE_PIN Y9    IOSTANDARD LVCMOS33 } [get_ports { ck_io[41] }]; #IO_L14P_T2_SRCC_13 Sch=ck_io[41]

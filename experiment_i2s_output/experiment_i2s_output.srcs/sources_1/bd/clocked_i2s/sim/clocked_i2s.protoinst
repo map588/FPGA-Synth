@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"clocked_i2s": {
+			"proto_instances": {
+			}
+		}
+	}
+}

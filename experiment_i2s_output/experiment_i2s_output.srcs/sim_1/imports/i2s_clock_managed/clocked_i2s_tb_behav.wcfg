@@ -11,9 +11,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="985.459581 us"></ZoomEndTime>
-      <Cursor1Time time="99.822761 us"></Cursor1Time>
+      <ZoomStartTime time="180,498.351 ns"></ZoomStartTime>
+      <ZoomEndTime time="181,750.637 ns"></ZoomEndTime>
+      <Cursor1Time time="181,541.922 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="305"></NameColumnWidth>
@@ -48,6 +48,7 @@
    <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/i2s_module_0/U0/bit_counter" type="array">
       <obj_property name="ElementShortName">bit_counter[4:0]</obj_property>
       <obj_property name="ObjectShortName">bit_counter[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/i2s_module_0/U0/data_reg" type="array">
       <obj_property name="ElementShortName">data_reg[23:0]</obj_property>

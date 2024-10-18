@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Wed Oct 16 09:13:51 2024
+// Date        : Fri Oct 18 00:46:50 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top clocked_i2s_i2s_module_0_0 -prefix
 //               clocked_i2s_i2s_module_0_0_ clocked_i2s_i2s_module_0_0_sim_netlist.v
@@ -28,11 +28,12 @@ module clocked_i2s_i2s_module_0_0
     bclk_out,
     lrclk_out,
     fifo_full,
+    fifo_3_qtr,
     fifo_half,
     fifo_empty,
     fifo_overflow,
     fifo_count);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 sys_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_resetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN clocked_i2s_sys_clk_0, INSERT_VIP 0" *) input sys_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 sys_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_resetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input sys_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 sys_resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME sys_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input sys_resetn;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 mclk_resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME mclk_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input mclk_resetn;
   input mclk;
@@ -44,16 +45,18 @@ module clocked_i2s_i2s_module_0_0
   output bclk_out;
   output lrclk_out;
   output fifo_full;
+  output fifo_3_qtr;
   output fifo_half;
   output fifo_empty;
   output fifo_overflow;
   output [11:0]fifo_count;
 
   wire U0_n_0;
-  wire U0_n_6;
+  wire U0_n_7;
   wire bclk;
   wire [23:0]data_in;
   wire \data_reg_reg[23]_i_2_n_0 ;
+  wire fifo_3_qtr;
   wire [11:0]fifo_count;
   wire fifo_empty;
   wire fifo_full;
@@ -74,7 +77,8 @@ module clocked_i2s_i2s_module_0_0
         .data_in(data_in),
         .\data_reg_reg[23]_i_2 (\data_reg_reg[23]_i_2_n_0 ),
         .empty_int_reg(fifo_empty),
-        .empty_int_reg_0(U0_n_6),
+        .empty_int_reg_0(U0_n_7),
+        .fifo_3_qtr(fifo_3_qtr),
         .fifo_count(fifo_count),
         .fifo_full(fifo_full),
         .fifo_half(fifo_half),
@@ -91,7 +95,7 @@ module clocked_i2s_i2s_module_0_0
        (.C(mclk),
         .CE(1'b1),
         .CLR(U0_n_0),
-        .D(U0_n_6),
+        .D(U0_n_7),
         .Q(\data_reg_reg[23]_i_2_n_0 ));
 endmodule
 
@@ -102,10 +106,11 @@ module clocked_i2s_i2s_module_0_0_fifo
     empty_int_reg_0,
     fifo_half,
     empty_int_reg_1,
-    O16,
+    fifo_count,
     push_0,
     lrclk_edge_reg,
     D,
+    \wr_ptr_reg[10]_0 ,
     sys_clk,
     mclk,
     data_in,
@@ -123,10 +128,11 @@ module clocked_i2s_i2s_module_0_0_fifo
   output empty_int_reg_0;
   output fifo_half;
   output empty_int_reg_1;
-  output [11:0]O16;
+  output [11:0]fifo_count;
   output push_0;
   output lrclk_edge_reg;
   output [23:0]D;
+  output \wr_ptr_reg[10]_0 ;
   input sys_clk;
   input mclk;
   input [23:0]data_in;
@@ -140,7 +146,6 @@ module clocked_i2s_i2s_module_0_0_fifo
   input lrclk_edge;
 
   wire [23:0]D;
-  wire [11:0]O16;
   wire [23:0]data_in;
   wire \data_reg_reg[23]_i_2 ;
   wire empty_int_i_2_n_0;
@@ -153,6 +158,7 @@ module clocked_i2s_i2s_module_0_0_fifo
   wire empty_int_reg_i_1_n_1;
   wire empty_int_reg_i_1_n_2;
   wire empty_int_reg_i_1_n_3;
+  wire [11:0]fifo_count;
   wire fifo_full;
   wire fifo_half;
   wire fifo_ov_prev;
@@ -274,6 +280,7 @@ module clocked_i2s_i2s_module_0_0_fifo
   wire \wr_ptr_reg[0]_i_1_n_5 ;
   wire \wr_ptr_reg[0]_i_1_n_6 ;
   wire \wr_ptr_reg[0]_i_1_n_7 ;
+  wire \wr_ptr_reg[10]_0 ;
   wire \wr_ptr_reg[4]_i_1_n_0 ;
   wire \wr_ptr_reg[4]_i_1_n_1 ;
   wire \wr_ptr_reg[4]_i_1_n_2 ;
@@ -315,7 +322,7 @@ module clocked_i2s_i2s_module_0_0_fifo
   wire [3:2]\NLW_rd_ptr_reg_rep[10]_i_2_O_UNCONNECTED ;
   wire [3:3]\NLW_wr_ptr_reg[8]_i_1_CO_UNCONNECTED ;
 
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[0]_i_1 
@@ -323,7 +330,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_67),
         .I2(empty_int_reg_0),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[10]_i_1 
@@ -331,7 +338,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_57),
         .I2(empty_int_reg_0),
         .O(D[10]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[11]_i_1 
@@ -339,7 +346,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_56),
         .I2(empty_int_reg_0),
         .O(D[11]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[12]_i_1 
@@ -347,7 +354,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_55),
         .I2(empty_int_reg_0),
         .O(D[12]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[13]_i_1 
@@ -355,7 +362,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_54),
         .I2(empty_int_reg_0),
         .O(D[13]));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[14]_i_1 
@@ -363,7 +370,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_53),
         .I2(empty_int_reg_0),
         .O(D[14]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[15]_i_1 
@@ -371,7 +378,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_52),
         .I2(empty_int_reg_0),
         .O(D[15]));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[16]_i_1 
@@ -379,7 +386,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_75),
         .I2(empty_int_reg_0),
         .O(D[16]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[17]_i_1 
@@ -387,7 +394,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_74),
         .I2(empty_int_reg_0),
         .O(D[17]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[18]_i_1 
@@ -395,7 +402,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_31),
         .I2(empty_int_reg_0),
         .O(D[18]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[19]_i_1 
@@ -403,7 +410,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_30),
         .I2(empty_int_reg_0),
         .O(D[19]));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[1]_i_1 
@@ -411,7 +418,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_66),
         .I2(empty_int_reg_0),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[20]_i_1 
@@ -419,7 +426,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_29),
         .I2(empty_int_reg_0),
         .O(D[20]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[21]_i_1 
@@ -427,7 +434,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_28),
         .I2(empty_int_reg_0),
         .O(D[21]));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[22]_i_1 
@@ -435,7 +442,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_27),
         .I2(empty_int_reg_0),
         .O(D[22]));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[23]_i_1 
@@ -443,7 +450,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_1_n_26),
         .I2(empty_int_reg_0),
         .O(D[23]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hF4)) 
     \data_reg[23]_i_3 
@@ -451,7 +458,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(pop),
         .I2(\data_reg_reg[23]_i_2 ),
         .O(empty_int_reg_1));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[2]_i_1 
@@ -459,7 +466,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_65),
         .I2(empty_int_reg_0),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[3]_i_1 
@@ -467,7 +474,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_64),
         .I2(empty_int_reg_0),
         .O(D[3]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[4]_i_1 
@@ -475,7 +482,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_63),
         .I2(empty_int_reg_0),
         .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[5]_i_1 
@@ -483,7 +490,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_62),
         .I2(empty_int_reg_0),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[6]_i_1 
@@ -491,7 +498,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_61),
         .I2(empty_int_reg_0),
         .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[7]_i_1 
@@ -499,7 +506,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_60),
         .I2(empty_int_reg_0),
         .O(D[7]));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[8]_i_1 
@@ -507,7 +514,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .I1(mem_reg_0_n_59),
         .I2(empty_int_reg_0),
         .O(D[8]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \data_reg[9]_i_1 
@@ -570,6 +577,14 @@ module clocked_i2s_i2s_module_0_0_fifo
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(NLW_empty_int_reg_i_1_O_UNCONNECTED[3:0]),
         .S({empty_int_i_2_n_0,empty_int_i_3_n_0,empty_int_i_4_n_0,empty_int_i_5_n_0}));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT3 #(
+    .INIT(8'hEA)) 
+    fifo_3_qtr_int_i_1
+       (.I0(fifo_count[11]),
+        .I1(fifo_count[10]),
+        .I2(fifo_count[9]),
+        .O(\wr_ptr_reg[10]_0 ));
   LUT4 #(
     .INIT(16'hCF88)) 
     fifo_overflow_int_i_1
@@ -584,7 +599,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .CO({full_int1_carry_n_0,full_int1_carry_n_1,full_int1_carry_n_2,full_int1_carry_n_3}),
         .CYINIT(1'b1),
         .DI(write_count_reg[3:0]),
-        .O(O16[3:0]),
+        .O(fifo_count[3:0]),
         .S({full_int1_carry_i_1_n_0,full_int1_carry_i_2_n_0,full_int1_carry_i_3_n_0,full_int1_carry_i_4_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 full_int1_carry__0
@@ -592,7 +607,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .CO({full_int1_carry__0_n_0,full_int1_carry__0_n_1,full_int1_carry__0_n_2,full_int1_carry__0_n_3}),
         .CYINIT(1'b0),
         .DI(write_count_reg[7:4]),
-        .O(O16[7:4]),
+        .O(fifo_count[7:4]),
         .S({full_int1_carry__0_i_1_n_0,full_int1_carry__0_i_2_n_0,full_int1_carry__0_i_3_n_0,full_int1_carry__0_i_4_n_0}));
   LUT2 #(
     .INIT(4'h9)) 
@@ -624,7 +639,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .CO({NLW_full_int1_carry__1_CO_UNCONNECTED[3],full_int1_carry__1_n_1,full_int1_carry__1_n_2,full_int1_carry__1_n_3}),
         .CYINIT(1'b0),
         .DI({1'b0,write_count_reg[10:8]}),
-        .O(O16[11:8]),
+        .O(fifo_count[11:8]),
         .S({full_int1_carry__1_i_1_n_0,full_int1_carry__1_i_2_n_0,full_int1_carry__1_i_3_n_0,full_int1_carry__1_i_4_n_0}));
   LUT2 #(
     .INIT(4'h9)) 
@@ -677,12 +692,12 @@ module clocked_i2s_i2s_module_0_0_fifo
   LUT6 #(
     .INIT(64'hABAAAAAAAAAAAAAA)) 
     full_int_i_1
-       (.I0(O16[11]),
+       (.I0(fifo_count[11]),
         .I1(full_int_i_3_n_0),
         .I2(full_int_i_4_n_0),
-        .I3(O16[1]),
-        .I4(O16[3]),
-        .I5(O16[2]),
+        .I3(fifo_count[1]),
+        .I4(fifo_count[3]),
+        .I5(fifo_count[2]),
         .O(full_int0));
   LUT1 #(
     .INIT(2'h1)) 
@@ -692,18 +707,18 @@ module clocked_i2s_i2s_module_0_0_fifo
   LUT4 #(
     .INIT(16'h7FFF)) 
     full_int_i_3
-       (.I0(O16[5]),
-        .I1(O16[4]),
-        .I2(O16[7]),
-        .I3(O16[6]),
+       (.I0(fifo_count[5]),
+        .I1(fifo_count[4]),
+        .I2(fifo_count[7]),
+        .I3(fifo_count[6]),
         .O(full_int_i_3_n_0));
   LUT4 #(
     .INIT(16'h7FFF)) 
     full_int_i_4
-       (.I0(O16[9]),
-        .I1(O16[8]),
-        .I2(O16[0]),
-        .I3(O16[10]),
+       (.I0(fifo_count[9]),
+        .I1(fifo_count[8]),
+        .I2(fifo_count[0]),
+        .I3(fifo_count[10]),
         .O(full_int_i_4_n_0));
   FDCE #(
     .INIT(1'b0)) 
@@ -717,26 +732,27 @@ module clocked_i2s_i2s_module_0_0_fifo
     .INIT(64'hEEEEEEEFAAAAAAAA)) 
     half_int_i_1
        (.I0(half_int_i_2_n_0),
-        .I1(O16[11]),
+        .I1(fifo_count[11]),
         .I2(full_int_i_3_n_0),
         .I3(full_int_i_4_n_0),
         .I4(half_int_i_3_n_0),
         .I5(sys_resetn),
         .O(half_int_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'hEFE0)) 
     half_int_i_2
-       (.I0(O16[11]),
-        .I1(O16[10]),
+       (.I0(fifo_count[11]),
+        .I1(fifo_count[10]),
         .I2(sys_resetn),
         .I3(fifo_half),
         .O(half_int_i_2_n_0));
   LUT3 #(
     .INIT(8'h7F)) 
     half_int_i_3
-       (.I0(O16[1]),
-        .I1(O16[3]),
-        .I2(O16[2]),
+       (.I0(fifo_count[1]),
+        .I1(fifo_count[3]),
+        .I2(fifo_count[2]),
         .O(half_int_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -879,7 +895,7 @@ module clocked_i2s_i2s_module_0_0_fifo
         .RSTREGB(1'b0),
         .WEA({sys_resetn,sys_resetn}),
         .WEBWE({1'b0,1'b0,1'b0,1'b0}));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h2)) 
     pop_en_i_1
@@ -892,70 +908,70 @@ module clocked_i2s_i2s_module_0_0_fifo
        (.I0(read_count_reg[0]),
         .I1(read_count_reg[1]),
         .O(\xor [0]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[10]_i_1 
        (.I0(read_count_reg[10]),
         .I1(read_count_reg[11]),
         .O(\xor [10]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[1]_i_1 
        (.I0(read_count_reg[2]),
         .I1(read_count_reg[1]),
         .O(\xor [1]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[2]_i_1 
        (.I0(read_count_reg[3]),
         .I1(read_count_reg[2]),
         .O(\xor [2]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[3]_i_1 
        (.I0(read_count_reg[3]),
         .I1(read_count_reg[4]),
         .O(\xor [3]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[4]_i_1 
        (.I0(read_count_reg[5]),
         .I1(read_count_reg[4]),
         .O(\xor [4]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[5]_i_1 
        (.I0(read_count_reg[5]),
         .I1(read_count_reg[6]),
         .O(\xor [5]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[6]_i_1 
        (.I0(read_count_reg[6]),
         .I1(read_count_reg[7]),
         .O(\xor [6]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[7]_i_1 
        (.I0(read_count_reg[8]),
         .I1(read_count_reg[7]),
         .O(\xor [7]));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[8]_i_1 
        (.I0(read_count_reg[9]),
         .I1(read_count_reg[8]),
         .O(\xor [8]));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \rd_gray[9]_i_1 
@@ -1404,7 +1420,7 @@ module clocked_i2s_i2s_module_0_0_fifo
     sdata_reg_i_2
        (.I0(mclk_resetn),
         .O(mclk_resetn_0));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[0]_i_1 
@@ -1417,63 +1433,63 @@ module clocked_i2s_i2s_module_0_0_fifo
        (.I0(write_count_reg[11]),
         .I1(write_count_reg[10]),
         .O(xor1_out[10]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[1]_i_1 
        (.I0(write_count_reg[2]),
         .I1(write_count_reg[1]),
         .O(xor1_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[2]_i_1 
        (.I0(write_count_reg[3]),
         .I1(write_count_reg[2]),
         .O(xor1_out[2]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[3]_i_1 
        (.I0(write_count_reg[4]),
         .I1(write_count_reg[3]),
         .O(xor1_out[3]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[4]_i_1 
        (.I0(write_count_reg[5]),
         .I1(write_count_reg[4]),
         .O(xor1_out[4]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[5]_i_1 
        (.I0(write_count_reg[6]),
         .I1(write_count_reg[5]),
         .O(xor1_out[5]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[6]_i_1 
        (.I0(write_count_reg[7]),
         .I1(write_count_reg[6]),
         .O(xor1_out[6]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[7]_i_1 
        (.I0(write_count_reg[8]),
         .I1(write_count_reg[7]),
         .O(xor1_out[7]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[8]_i_1 
        (.I0(write_count_reg[9]),
         .I1(write_count_reg[8]),
         .O(xor1_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \wr_gray[9]_i_1 
@@ -1899,9 +1915,10 @@ module clocked_i2s_i2s_module_0_0_i2s_module
    (mclk_resetn_0,
     fifo_full,
     empty_int_reg,
-    fifo_overflow,
+    fifo_3_qtr,
     fifo_half,
     sdata,
+    fifo_overflow,
     empty_int_reg_0,
     fifo_count,
     sys_clk,
@@ -1916,9 +1933,10 @@ module clocked_i2s_i2s_module_0_0_i2s_module
   output mclk_resetn_0;
   output fifo_full;
   output empty_int_reg;
-  output fifo_overflow;
+  output fifo_3_qtr;
   output fifo_half;
   output sdata;
+  output fifo_overflow;
   output empty_int_reg_0;
   output [11:0]fifo_count;
   input sys_clk;
@@ -1955,8 +1973,8 @@ module clocked_i2s_i2s_module_0_0_i2s_module
   wire \data_reg_reg[23]_i_2 ;
   wire empty_int_reg;
   wire empty_int_reg_0;
+  wire fifo_3_qtr;
   wire [11:0]fifo_count;
-  wire [11:0]fifo_count_reg;
   wire fifo_full;
   wire fifo_half;
   wire fifo_inst_n_18;
@@ -1985,7 +2003,9 @@ module clocked_i2s_i2s_module_0_0_i2s_module
   wire fifo_inst_n_41;
   wire fifo_inst_n_42;
   wire fifo_inst_n_43;
+  wire fifo_inst_n_44;
   wire fifo_ov_prev;
+  wire fifo_ov_prev_i_1_n_0;
   wire fifo_overflow;
   wire lrclk;
   wire lrclk_edge;
@@ -2056,7 +2076,7 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .CLR(mclk_resetn_0),
         .D(bclk_sync),
         .Q(bclk_prev));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'hFF40)) 
     bclk_rising_i_1
@@ -2101,7 +2121,7 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .I4(bclk_rising),
         .I5(bit_counter[0]),
         .O(\bit_counter[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \bit_counter[0]_i_3 
@@ -2166,7 +2186,7 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .I4(bit_counter[0]),
         .I5(bit_counter[2]),
         .O(\bit_counter[4]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     \bit_counter[4]_i_4 
@@ -2406,85 +2426,21 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .CLR(mclk_resetn_0),
         .D(fifo_inst_n_34),
         .Q(data_reg[9]));
-  FDRE \fifo_count_reg[0] 
+  FDCE #(
+    .INIT(1'b0)) 
+    fifo_3_qtr_int_reg
        (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[0]),
-        .Q(fifo_count[0]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[10] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[10]),
-        .Q(fifo_count[10]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[11] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[11]),
-        .Q(fifo_count[11]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[1] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[1]),
-        .Q(fifo_count[1]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[2] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[2]),
-        .Q(fifo_count[2]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[3] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[3]),
-        .Q(fifo_count[3]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[4] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[4]),
-        .Q(fifo_count[4]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[5] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[5]),
-        .Q(fifo_count[5]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[6] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[6]),
-        .Q(fifo_count[6]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[7] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[7]),
-        .Q(fifo_count[7]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[8] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[8]),
-        .Q(fifo_count[8]),
-        .R(1'b0));
-  FDRE \fifo_count_reg[9] 
-       (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_count_reg[9]),
-        .Q(fifo_count[9]),
-        .R(1'b0));
+        .CE(1'b1),
+        .CLR(p_0_in),
+        .D(fifo_inst_n_44),
+        .Q(fifo_3_qtr));
   clocked_i2s_i2s_module_0_0_fifo fifo_inst
        (.D({fifo_inst_n_20,fifo_inst_n_21,fifo_inst_n_22,fifo_inst_n_23,fifo_inst_n_24,fifo_inst_n_25,fifo_inst_n_26,fifo_inst_n_27,fifo_inst_n_28,fifo_inst_n_29,fifo_inst_n_30,fifo_inst_n_31,fifo_inst_n_32,fifo_inst_n_33,fifo_inst_n_34,fifo_inst_n_35,fifo_inst_n_36,fifo_inst_n_37,fifo_inst_n_38,fifo_inst_n_39,fifo_inst_n_40,fifo_inst_n_41,fifo_inst_n_42,fifo_inst_n_43}),
-        .O16(fifo_count_reg),
         .data_in(data_in),
         .\data_reg_reg[23]_i_2 (\data_reg_reg[23]_i_2 ),
         .empty_int_reg_0(empty_int_reg),
         .empty_int_reg_1(empty_int_reg_0),
+        .fifo_count(fifo_count),
         .fifo_full(fifo_full),
         .fifo_half(fifo_half),
         .fifo_ov_prev(fifo_ov_prev),
@@ -2499,13 +2455,21 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .push(push),
         .push_0(fifo_inst_n_18),
         .sys_clk(sys_clk),
-        .sys_resetn(sys_resetn));
+        .sys_resetn(sys_resetn),
+        .\wr_ptr_reg[10]_0 (fifo_inst_n_44));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    fifo_ov_prev_i_1
+       (.I0(fifo_overflow),
+        .I1(sys_resetn),
+        .I2(fifo_ov_prev),
+        .O(fifo_ov_prev_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
     fifo_ov_prev_reg
        (.C(sys_clk),
-        .CE(sys_resetn),
-        .D(fifo_overflow),
+        .CE(1'b1),
+        .D(fifo_ov_prev_i_1_n_0),
         .Q(fifo_ov_prev),
         .R(1'b0));
   FDCE #(
@@ -2745,7 +2709,7 @@ module clocked_i2s_i2s_module_0_0_i2s_module
         .I1(sdata_reg_i_20_n_0),
         .O(sdata_reg_reg_i_9_n_0),
         .S(bit_counter[2]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT4 #(
     .INIT(16'h2ECC)) 
     start_transmit_i_1

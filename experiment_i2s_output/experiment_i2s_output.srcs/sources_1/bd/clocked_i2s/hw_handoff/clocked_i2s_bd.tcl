@@ -173,7 +173,6 @@ proc create_root_design { parentCell } {
   set clk_125 [ create_bd_port -dir I -type clk -freq_hz 125000000 clk_125 ]
   set data_in [ create_bd_port -dir I -from 23 -to 0 data_in ]
   set data_ready [ create_bd_port -dir I data_ready ]
-  set drop_count [ create_bd_port -dir O -from 31 -to 0 drop_count ]
   set fifo_count [ create_bd_port -dir O -from 11 -to 0 fifo_count ]
   set fifo_overflow [ create_bd_port -dir O fifo_overflow ]
   set lrclk_out [ create_bd_port -dir O lrclk_out ]
@@ -212,6 +211,36 @@ proc create_root_design { parentCell } {
    CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
 
+  # Create instance: clk_wiz_1, and set properties
+  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
+  set_property -dict [ list \
+   CONFIG.CLKIN1_JITTER_PS {800.0} \
+   CONFIG.CLKIN1_UI_JITTER {0.100} \
+   CONFIG.CLKOUT1_DRIVES {BUFG} \
+   CONFIG.CLKOUT1_JITTER {124.057} \
+   CONFIG.CLKOUT1_PHASE_ERROR {312.996} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125} \
+   CONFIG.CLKOUT2_DRIVES {BUFG} \
+   CONFIG.CLKOUT3_DRIVES {BUFG} \
+   CONFIG.CLKOUT4_DRIVES {BUFG} \
+   CONFIG.CLKOUT5_DRIVES {BUFG} \
+   CONFIG.CLKOUT6_DRIVES {BUFG} \
+   CONFIG.CLKOUT7_DRIVES {BUFG} \
+   CONFIG.JITTER_SEL {Max_I_Jitter} \
+   CONFIG.MMCM_BANDWIDTH {LOW} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {7} \
+   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
+   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {7} \
+   CONFIG.MMCM_COMPENSATION {ZHOLD} \
+   CONFIG.MMCM_REF_JITTER1 {0.100} \
+   CONFIG.PRIMITIVE {PLL} \
+   CONFIG.PRIM_IN_FREQ {125} \
+   CONFIG.RESET_PORT {resetn} \
+   CONFIG.RESET_TYPE {ACTIVE_LOW} \
+   CONFIG.USE_LOCKED {false} \
+ ] $clk_wiz_1
+
   # Create instance: i2s_module_0, and set properties
   set block_name i2s_module
   set block_cell_name i2s_module_0
@@ -235,28 +264,29 @@ proc create_root_design { parentCell } {
    }
   
   # Create port connections
-  connect_bd_net -net Clock_Manager_0_clk_en_12_288MHz [get_bd_pins Clock_Manager_0/clk_en_6_144MHz] [get_bd_pins i2s_module_0/bclk] [get_bd_pins stream_controller_0/bitclk]
-  connect_bd_net -net Clock_Manager_0_clk_en_96kHz [get_bd_pins Clock_Manager_0/clk_en_96kHz] [get_bd_pins i2s_module_0/lrclk] [get_bd_pins stream_controller_0/wordclk]
+  connect_bd_net -net Clock_Manager_0_clk_en_12_288MHz [get_bd_pins Clock_Manager_0/clk_en_6_144MHz] [get_bd_pins i2s_module_0/bclk]
+  connect_bd_net -net Clock_Manager_0_clk_en_96kHz [get_bd_pins Clock_Manager_0/clk_en_96kHz] [get_bd_pins i2s_module_0/lrclk]
   connect_bd_net -net Clock_Manager_0_sync_resetn_100MHz1 [get_bd_pins Clock_Manager_0/sync_resetn_100MHz] [get_bd_pins i2s_module_0/sys_resetn]
   connect_bd_net -net Clock_Manager_0_sync_resetn_125MHz [get_bd_pins Clock_Manager_0/sync_resetn_125MHz] [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net Clock_Manager_0_sync_resetn_24MHz [get_bd_pins Clock_Manager_0/sync_resetn_24MHz] [get_bd_pins i2s_module_0/mclk_resetn]
-  connect_bd_net -net async_resetn_0_1 [get_bd_ports async_resetn] [get_bd_pins Clock_Manager_0/async_resetn]
+  connect_bd_net -net async_resetn_0_1 [get_bd_ports async_resetn] [get_bd_pins Clock_Manager_0/async_resetn] [get_bd_pins clk_wiz_1/resetn]
+  connect_bd_net -net clk_125_1 [get_bd_ports clk_125] [get_bd_pins clk_wiz_1/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports mclk_out] [get_bd_pins Clock_Manager_0/clk_24_576MHz] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins i2s_module_0/mclk]
+  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins Clock_Manager_0/clk_125MHz] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_out1]
   connect_bd_net -net data_in_0_1 [get_bd_ports data_in] [get_bd_pins i2s_module_0/data_in]
   connect_bd_net -net has_data_1 [get_bd_ports data_ready] [get_bd_pins stream_controller_0/has_data]
   connect_bd_net -net i2s_module_0_bclk_out [get_bd_ports bclk_out] [get_bd_pins i2s_module_0/bclk_out]
+  connect_bd_net -net i2s_module_0_fifo_3_qtr [get_bd_pins i2s_module_0/fifo_3_qtr] [get_bd_pins stream_controller_0/fifo_75]
   connect_bd_net -net i2s_module_0_fifo_count [get_bd_ports fifo_count] [get_bd_pins i2s_module_0/fifo_count]
-  connect_bd_net -net i2s_module_0_fifo_empty [get_bd_ports buff_empty] [get_bd_pins i2s_module_0/fifo_empty] [get_bd_pins stream_controller_0/fifo_empty]
+  connect_bd_net -net i2s_module_0_fifo_empty [get_bd_ports buff_empty] [get_bd_pins i2s_module_0/fifo_empty]
   connect_bd_net -net i2s_module_0_fifo_full [get_bd_ports buff_full] [get_bd_pins i2s_module_0/fifo_full] [get_bd_pins stream_controller_0/fifo_full]
-  connect_bd_net -net i2s_module_0_fifo_half [get_bd_ports buff_half] [get_bd_pins i2s_module_0/fifo_half] [get_bd_pins stream_controller_0/fifo_half]
+  connect_bd_net -net i2s_module_0_fifo_half [get_bd_ports buff_half] [get_bd_pins i2s_module_0/fifo_half]
   connect_bd_net -net i2s_module_0_fifo_overflow [get_bd_ports fifo_overflow] [get_bd_pins i2s_module_0/fifo_overflow]
   connect_bd_net -net i2s_module_0_lrclk_out [get_bd_ports lrclk_out] [get_bd_pins i2s_module_0/lrclk_out]
   connect_bd_net -net i2s_module_0_sdata [get_bd_ports sdata] [get_bd_pins i2s_module_0/sdata]
   connect_bd_net -net pl_clk_1 [get_bd_ports clk_100] [get_bd_pins Clock_Manager_0/clk_100MHz] [get_bd_pins i2s_module_0/sys_clk] [get_bd_pins stream_controller_0/sysclk]
-  connect_bd_net -net stream_controller_0_drop_count [get_bd_ports drop_count] [get_bd_pins stream_controller_0/drop_count]
   connect_bd_net -net stream_controller_0_push_en [get_bd_pins i2s_module_0/push] [get_bd_pins stream_controller_0/push_en]
   connect_bd_net -net stream_controller_0_rejection [get_bd_ports rejection] [get_bd_pins stream_controller_0/rejection]
-  connect_bd_net -net sysclk_1 [get_bd_ports clk_125] [get_bd_pins Clock_Manager_0/clk_125MHz] [get_bd_pins clk_wiz_0/clk_in1]
 
   # Create address segments
 

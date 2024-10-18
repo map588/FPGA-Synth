@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="clocked_i2s" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1729122079"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1729122079"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1729122079"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1729122079"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1729237873"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1729237873"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1729237873"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1729237873"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\clocked_i2s_clk_wiz_0_0_1\clocked_i2s_clk_wiz_0_0.xci" Type="IP">
         <Instance HierarchyPath="clk_wiz_0"/>
@@ -34,6 +34,14 @@
       <File Name="ip\clocked_i2s_stream_controller_0_0_1\clocked_i2s_stream_controller_0_0.xci" Type="IP">
         <Instance HierarchyPath="stream_controller_0"/>
         <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="1729109011" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\clocked_i2s_clk_wiz_1_0\clocked_i2s_clk_wiz_1_0.xci" Type="IP">
+        <Instance HierarchyPath="clk_wiz_1"/>
+        <Properties IsEditable="false" IsVisible="true" IsNetlistSimulation="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>

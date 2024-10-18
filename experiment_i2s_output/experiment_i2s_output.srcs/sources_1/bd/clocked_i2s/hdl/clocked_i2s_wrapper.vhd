@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Wed Oct 16 19:41:19 2024
+--Date        : Fri Oct 18 03:51:12 2024
 --Host        : bigolBox running 64-bit major release  (build 9200)
 --Command     : generate_target clocked_i2s_wrapper.bd
 --Design      : clocked_i2s_wrapper
@@ -22,7 +22,6 @@ entity clocked_i2s_wrapper is
     clk_125 : in STD_LOGIC;
     data_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
     data_ready : in STD_LOGIC;
-    drop_count : out STD_LOGIC_VECTOR ( 31 downto 0 );
     fifo_count : out STD_LOGIC_VECTOR ( 11 downto 0 );
     fifo_overflow : out STD_LOGIC;
     lrclk_out : out STD_LOGIC;
@@ -49,8 +48,7 @@ architecture STRUCTURE of clocked_i2s_wrapper is
     buff_full : out STD_LOGIC;
     buff_half : out STD_LOGIC;
     buff_empty : out STD_LOGIC;
-    rejection : out STD_LOGIC;
-    drop_count : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    rejection : out STD_LOGIC
   );
   end component clocked_i2s;
 begin
@@ -65,7 +63,6 @@ clocked_i2s_i: component clocked_i2s
       clk_125 => clk_125,
       data_in(23 downto 0) => data_in(23 downto 0),
       data_ready => data_ready,
-      drop_count(31 downto 0) => drop_count(31 downto 0),
       fifo_count(11 downto 0) => fifo_count(11 downto 0),
       fifo_overflow => fifo_overflow,
       lrclk_out => lrclk_out,

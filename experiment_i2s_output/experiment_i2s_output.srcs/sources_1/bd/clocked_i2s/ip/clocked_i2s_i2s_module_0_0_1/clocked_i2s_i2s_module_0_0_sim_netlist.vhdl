@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Wed Oct 16 09:13:51 2024
+-- Date        : Fri Oct 18 00:46:50 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top clocked_i2s_i2s_module_0_0 -prefix
 --               clocked_i2s_i2s_module_0_0_ clocked_i2s_i2s_module_0_0_sim_netlist.vhdl
@@ -22,10 +22,11 @@ entity clocked_i2s_i2s_module_0_0_fifo is
     empty_int_reg_0 : out STD_LOGIC;
     fifo_half : out STD_LOGIC;
     empty_int_reg_1 : out STD_LOGIC;
-    O16 : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    fifo_count : out STD_LOGIC_VECTOR ( 11 downto 0 );
     push_0 : out STD_LOGIC;
     lrclk_edge_reg : out STD_LOGIC;
     D : out STD_LOGIC_VECTOR ( 23 downto 0 );
+    \wr_ptr_reg[10]_0\ : out STD_LOGIC;
     sys_clk : in STD_LOGIC;
     mclk : in STD_LOGIC;
     data_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
@@ -41,7 +42,6 @@ entity clocked_i2s_i2s_module_0_0_fifo is
 end clocked_i2s_i2s_module_0_0_fifo;
 
 architecture STRUCTURE of clocked_i2s_i2s_module_0_0_fifo is
-  signal \^o16\ : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal empty_int_i_2_n_0 : STD_LOGIC;
   signal empty_int_i_3_n_0 : STD_LOGIC;
   signal empty_int_i_4_n_0 : STD_LOGIC;
@@ -51,6 +51,7 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_fifo is
   signal empty_int_reg_i_1_n_1 : STD_LOGIC;
   signal empty_int_reg_i_1_n_2 : STD_LOGIC;
   signal empty_int_reg_i_1_n_3 : STD_LOGIC;
+  signal \^fifo_count\ : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal \^fifo_full\ : STD_LOGIC;
   signal \^fifo_half\ : STD_LOGIC;
   signal full_int0 : STD_LOGIC;
@@ -202,35 +203,37 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_fifo is
   signal \NLW_rd_ptr_reg_rep[10]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 2 );
   signal \NLW_wr_ptr_reg[8]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \data_reg[0]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_reg[10]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \data_reg[11]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \data_reg[12]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \data_reg[13]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \data_reg[14]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \data_reg[15]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \data_reg[16]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \data_reg[17]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \data_reg[18]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \data_reg[19]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \data_reg[1]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \data_reg[20]_i_1\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \data_reg[21]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \data_reg[22]_i_1\ : label is "soft_lutpair11";
-  attribute SOFT_HLUTNM of \data_reg[23]_i_1\ : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \data_reg[23]_i_3\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \data_reg[2]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \data_reg[3]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \data_reg[4]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \data_reg[5]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \data_reg[6]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \data_reg[7]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \data_reg[8]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \data_reg[9]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_reg[0]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \data_reg[10]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \data_reg[11]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \data_reg[12]_i_1\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \data_reg[13]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \data_reg[14]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \data_reg[15]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \data_reg[16]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \data_reg[17]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \data_reg[18]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \data_reg[19]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \data_reg[1]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \data_reg[20]_i_1\ : label is "soft_lutpair11";
+  attribute SOFT_HLUTNM of \data_reg[21]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \data_reg[22]_i_1\ : label is "soft_lutpair12";
+  attribute SOFT_HLUTNM of \data_reg[23]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \data_reg[23]_i_3\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \data_reg[2]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \data_reg[3]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \data_reg[4]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \data_reg[5]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \data_reg[6]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \data_reg[7]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_reg[8]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \data_reg[9]_i_1\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of fifo_3_qtr_int_i_1 : label is "soft_lutpair0";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of full_int1_carry : label is 35;
   attribute ADDER_THRESHOLD of \full_int1_carry__0\ : label is 35;
   attribute ADDER_THRESHOLD of \full_int1_carry__1\ : label is 35;
+  attribute SOFT_HLUTNM of half_int_i_2 : label is "soft_lutpair0";
   attribute \MEM.PORTA.DATA_BIT_LAYOUT\ : string;
   attribute \MEM.PORTA.DATA_BIT_LAYOUT\ of mem_reg_0 : label is "p2_d16";
   attribute \MEM.PORTB.DATA_BIT_LAYOUT\ : string;
@@ -264,36 +267,36 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_fifo is
   attribute ram_offset of mem_reg_1 : label is 0;
   attribute ram_slice_begin of mem_reg_1 : label is 18;
   attribute ram_slice_end of mem_reg_1 : label is 23;
-  attribute SOFT_HLUTNM of pop_en_i_1 : label is "soft_lutpair12";
-  attribute SOFT_HLUTNM of \rd_gray[10]_i_1\ : label is "soft_lutpair13";
-  attribute SOFT_HLUTNM of \rd_gray[1]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \rd_gray[2]_i_1\ : label is "soft_lutpair17";
-  attribute SOFT_HLUTNM of \rd_gray[3]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \rd_gray[4]_i_1\ : label is "soft_lutpair16";
-  attribute SOFT_HLUTNM of \rd_gray[5]_i_1\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \rd_gray[6]_i_1\ : label is "soft_lutpair15";
-  attribute SOFT_HLUTNM of \rd_gray[7]_i_1\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \rd_gray[8]_i_1\ : label is "soft_lutpair14";
-  attribute SOFT_HLUTNM of \rd_gray[9]_i_1\ : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of pop_en_i_1 : label is "soft_lutpair13";
+  attribute SOFT_HLUTNM of \rd_gray[10]_i_1\ : label is "soft_lutpair14";
+  attribute SOFT_HLUTNM of \rd_gray[1]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \rd_gray[2]_i_1\ : label is "soft_lutpair18";
+  attribute SOFT_HLUTNM of \rd_gray[3]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \rd_gray[4]_i_1\ : label is "soft_lutpair17";
+  attribute SOFT_HLUTNM of \rd_gray[5]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \rd_gray[6]_i_1\ : label is "soft_lutpair16";
+  attribute SOFT_HLUTNM of \rd_gray[7]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \rd_gray[8]_i_1\ : label is "soft_lutpair15";
+  attribute SOFT_HLUTNM of \rd_gray[9]_i_1\ : label is "soft_lutpair14";
   attribute ADDER_THRESHOLD of \rd_ptr_reg[0]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \rd_ptr_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \rd_ptr_reg[8]_i_1\ : label is 11;
-  attribute SOFT_HLUTNM of \wr_gray[0]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \wr_gray[1]_i_1\ : label is "soft_lutpair18";
-  attribute SOFT_HLUTNM of \wr_gray[2]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \wr_gray[3]_i_1\ : label is "soft_lutpair19";
-  attribute SOFT_HLUTNM of \wr_gray[4]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \wr_gray[5]_i_1\ : label is "soft_lutpair20";
-  attribute SOFT_HLUTNM of \wr_gray[6]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \wr_gray[7]_i_1\ : label is "soft_lutpair21";
-  attribute SOFT_HLUTNM of \wr_gray[8]_i_1\ : label is "soft_lutpair22";
-  attribute SOFT_HLUTNM of \wr_gray[9]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \wr_gray[0]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \wr_gray[1]_i_1\ : label is "soft_lutpair19";
+  attribute SOFT_HLUTNM of \wr_gray[2]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \wr_gray[3]_i_1\ : label is "soft_lutpair20";
+  attribute SOFT_HLUTNM of \wr_gray[4]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \wr_gray[5]_i_1\ : label is "soft_lutpair21";
+  attribute SOFT_HLUTNM of \wr_gray[6]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \wr_gray[7]_i_1\ : label is "soft_lutpair22";
+  attribute SOFT_HLUTNM of \wr_gray[8]_i_1\ : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of \wr_gray[9]_i_1\ : label is "soft_lutpair23";
   attribute ADDER_THRESHOLD of \wr_ptr_reg[0]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \wr_ptr_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \wr_ptr_reg[8]_i_1\ : label is 11;
 begin
-  O16(11 downto 0) <= \^o16\(11 downto 0);
   empty_int_reg_0 <= \^empty_int_reg_0\;
+  fifo_count(11 downto 0) <= \^fifo_count\(11 downto 0);
   fifo_full <= \^fifo_full\;
   fifo_half <= \^fifo_half\;
   mclk_resetn_0 <= \^mclk_resetn_0\;
@@ -626,6 +629,16 @@ empty_int_reg_i_1: unisim.vcomponents.CARRY4
       S(1) => empty_int_i_4_n_0,
       S(0) => empty_int_i_5_n_0
     );
+fifo_3_qtr_int_i_1: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"EA"
+    )
+        port map (
+      I0 => \^fifo_count\(11),
+      I1 => \^fifo_count\(10),
+      I2 => \^fifo_count\(9),
+      O => \wr_ptr_reg[10]_0\
+    );
 fifo_overflow_int_i_1: unisim.vcomponents.LUT4
     generic map(
       INIT => X"CF88"
@@ -646,7 +659,7 @@ full_int1_carry: unisim.vcomponents.CARRY4
       CO(0) => full_int1_carry_n_3,
       CYINIT => '1',
       DI(3 downto 0) => write_count_reg(3 downto 0),
-      O(3 downto 0) => \^o16\(3 downto 0),
+      O(3 downto 0) => \^fifo_count\(3 downto 0),
       S(3) => full_int1_carry_i_1_n_0,
       S(2) => full_int1_carry_i_2_n_0,
       S(1) => full_int1_carry_i_3_n_0,
@@ -661,7 +674,7 @@ full_int1_carry: unisim.vcomponents.CARRY4
       CO(0) => \full_int1_carry__0_n_3\,
       CYINIT => '0',
       DI(3 downto 0) => write_count_reg(7 downto 4),
-      O(3 downto 0) => \^o16\(7 downto 4),
+      O(3 downto 0) => \^fifo_count\(7 downto 4),
       S(3) => \full_int1_carry__0_i_1_n_0\,
       S(2) => \full_int1_carry__0_i_2_n_0\,
       S(1) => \full_int1_carry__0_i_3_n_0\,
@@ -713,7 +726,7 @@ full_int1_carry: unisim.vcomponents.CARRY4
       CYINIT => '0',
       DI(3) => '0',
       DI(2 downto 0) => write_count_reg(10 downto 8),
-      O(3 downto 0) => \^o16\(11 downto 8),
+      O(3 downto 0) => \^fifo_count\(11 downto 8),
       S(3) => \full_int1_carry__1_i_1_n_0\,
       S(2) => \full_int1_carry__1_i_2_n_0\,
       S(1) => \full_int1_carry__1_i_3_n_0\,
@@ -796,12 +809,12 @@ full_int_i_1: unisim.vcomponents.LUT6
       INIT => X"ABAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => \^o16\(11),
+      I0 => \^fifo_count\(11),
       I1 => full_int_i_3_n_0,
       I2 => full_int_i_4_n_0,
-      I3 => \^o16\(1),
-      I4 => \^o16\(3),
-      I5 => \^o16\(2),
+      I3 => \^fifo_count\(1),
+      I4 => \^fifo_count\(3),
+      I5 => \^fifo_count\(2),
       O => full_int0
     );
 full_int_i_2: unisim.vcomponents.LUT1
@@ -817,10 +830,10 @@ full_int_i_3: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => \^o16\(5),
-      I1 => \^o16\(4),
-      I2 => \^o16\(7),
-      I3 => \^o16\(6),
+      I0 => \^fifo_count\(5),
+      I1 => \^fifo_count\(4),
+      I2 => \^fifo_count\(7),
+      I3 => \^fifo_count\(6),
       O => full_int_i_3_n_0
     );
 full_int_i_4: unisim.vcomponents.LUT4
@@ -828,10 +841,10 @@ full_int_i_4: unisim.vcomponents.LUT4
       INIT => X"7FFF"
     )
         port map (
-      I0 => \^o16\(9),
-      I1 => \^o16\(8),
-      I2 => \^o16\(0),
-      I3 => \^o16\(10),
+      I0 => \^fifo_count\(9),
+      I1 => \^fifo_count\(8),
+      I2 => \^fifo_count\(0),
+      I3 => \^fifo_count\(10),
       O => full_int_i_4_n_0
     );
 full_int_reg: unisim.vcomponents.FDCE
@@ -851,7 +864,7 @@ half_int_i_1: unisim.vcomponents.LUT6
     )
         port map (
       I0 => half_int_i_2_n_0,
-      I1 => \^o16\(11),
+      I1 => \^fifo_count\(11),
       I2 => full_int_i_3_n_0,
       I3 => full_int_i_4_n_0,
       I4 => half_int_i_3_n_0,
@@ -863,8 +876,8 @@ half_int_i_2: unisim.vcomponents.LUT4
       INIT => X"EFE0"
     )
         port map (
-      I0 => \^o16\(11),
-      I1 => \^o16\(10),
+      I0 => \^fifo_count\(11),
+      I1 => \^fifo_count\(10),
       I2 => sys_resetn,
       I3 => \^fifo_half\,
       O => half_int_i_2_n_0
@@ -874,9 +887,9 @@ half_int_i_3: unisim.vcomponents.LUT3
       INIT => X"7F"
     )
         port map (
-      I0 => \^o16\(1),
-      I1 => \^o16\(3),
-      I2 => \^o16\(2),
+      I0 => \^fifo_count\(1),
+      I1 => \^fifo_count\(3),
+      I2 => \^fifo_count\(2),
       O => half_int_i_3_n_0
     );
 half_int_reg: unisim.vcomponents.FDRE
@@ -2481,9 +2494,10 @@ entity clocked_i2s_i2s_module_0_0_i2s_module is
     mclk_resetn_0 : out STD_LOGIC;
     fifo_full : out STD_LOGIC;
     empty_int_reg : out STD_LOGIC;
-    fifo_overflow : out STD_LOGIC;
+    fifo_3_qtr : out STD_LOGIC;
     fifo_half : out STD_LOGIC;
     sdata : out STD_LOGIC;
+    fifo_overflow : out STD_LOGIC;
     empty_int_reg_0 : out STD_LOGIC;
     fifo_count : out STD_LOGIC_VECTOR ( 11 downto 0 );
     sys_clk : in STD_LOGIC;
@@ -2518,7 +2532,6 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_i2s_module is
   signal \bit_counter[4]_i_3_n_0\ : STD_LOGIC;
   signal \bit_counter[4]_i_4_n_0\ : STD_LOGIC;
   signal data_reg : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal fifo_count_reg : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal fifo_inst_n_18 : STD_LOGIC;
   signal fifo_inst_n_19 : STD_LOGIC;
   signal fifo_inst_n_20 : STD_LOGIC;
@@ -2545,7 +2558,9 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_i2s_module is
   signal fifo_inst_n_41 : STD_LOGIC;
   signal fifo_inst_n_42 : STD_LOGIC;
   signal fifo_inst_n_43 : STD_LOGIC;
+  signal fifo_inst_n_44 : STD_LOGIC;
   signal fifo_ov_prev : STD_LOGIC;
+  signal fifo_ov_prev_i_1_n_0 : STD_LOGIC;
   signal \^fifo_overflow\ : STD_LOGIC;
   signal lrclk_edge : STD_LOGIC;
   signal lrclk_meta : STD_LOGIC;
@@ -2580,10 +2595,10 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0_i2s_module is
   signal start_transmit : STD_LOGIC;
   signal start_transmit_i_1_n_0 : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of bclk_rising_i_1 : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \bit_counter[0]_i_3\ : label is "soft_lutpair24";
-  attribute SOFT_HLUTNM of \bit_counter[4]_i_4\ : label is "soft_lutpair23";
-  attribute SOFT_HLUTNM of start_transmit_i_1 : label is "soft_lutpair23";
+  attribute SOFT_HLUTNM of bclk_rising_i_1 : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \bit_counter[0]_i_3\ : label is "soft_lutpair25";
+  attribute SOFT_HLUTNM of \bit_counter[4]_i_4\ : label is "soft_lutpair24";
+  attribute SOFT_HLUTNM of start_transmit_i_1 : label is "soft_lutpair24";
 begin
   fifo_overflow <= \^fifo_overflow\;
   mclk_resetn_0 <= \^mclk_resetn_0\;
@@ -3103,101 +3118,16 @@ bclk_sync_reg: unisim.vcomponents.FDCE
       D => fifo_inst_n_34,
       Q => data_reg(9)
     );
-\fifo_count_reg[0]\: unisim.vcomponents.FDRE
-     port map (
+fifo_3_qtr_int_reg: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
       C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(0),
-      Q => fifo_count(0),
-      R => '0'
-    );
-\fifo_count_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(10),
-      Q => fifo_count(10),
-      R => '0'
-    );
-\fifo_count_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(11),
-      Q => fifo_count(11),
-      R => '0'
-    );
-\fifo_count_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(1),
-      Q => fifo_count(1),
-      R => '0'
-    );
-\fifo_count_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(2),
-      Q => fifo_count(2),
-      R => '0'
-    );
-\fifo_count_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(3),
-      Q => fifo_count(3),
-      R => '0'
-    );
-\fifo_count_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(4),
-      Q => fifo_count(4),
-      R => '0'
-    );
-\fifo_count_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(5),
-      Q => fifo_count(5),
-      R => '0'
-    );
-\fifo_count_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(6),
-      Q => fifo_count(6),
-      R => '0'
-    );
-\fifo_count_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(7),
-      Q => fifo_count(7),
-      R => '0'
-    );
-\fifo_count_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(8),
-      Q => fifo_count(8),
-      R => '0'
-    );
-\fifo_count_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => sys_clk,
-      CE => sys_resetn,
-      D => fifo_count_reg(9),
-      Q => fifo_count(9),
-      R => '0'
+      CE => '1',
+      CLR => p_0_in,
+      D => fifo_inst_n_44,
+      Q => fifo_3_qtr
     );
 fifo_inst: entity work.clocked_i2s_i2s_module_0_0_fifo
      port map (
@@ -3225,11 +3155,11 @@ fifo_inst: entity work.clocked_i2s_i2s_module_0_0_fifo
       D(2) => fifo_inst_n_41,
       D(1) => fifo_inst_n_42,
       D(0) => fifo_inst_n_43,
-      O16(11 downto 0) => fifo_count_reg(11 downto 0),
       data_in(23 downto 0) => data_in(23 downto 0),
       \data_reg_reg[23]_i_2\ => \data_reg_reg[23]_i_2\,
       empty_int_reg_0 => empty_int_reg,
       empty_int_reg_1 => empty_int_reg_0,
+      fifo_count(11 downto 0) => fifo_count(11 downto 0),
       fifo_full => fifo_full,
       fifo_half => fifo_half,
       fifo_ov_prev => fifo_ov_prev,
@@ -3244,7 +3174,18 @@ fifo_inst: entity work.clocked_i2s_i2s_module_0_0_fifo
       push => push,
       push_0 => fifo_inst_n_18,
       sys_clk => sys_clk,
-      sys_resetn => sys_resetn
+      sys_resetn => sys_resetn,
+      \wr_ptr_reg[10]_0\ => fifo_inst_n_44
+    );
+fifo_ov_prev_i_1: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"B8"
+    )
+        port map (
+      I0 => \^fifo_overflow\,
+      I1 => sys_resetn,
+      I2 => fifo_ov_prev,
+      O => fifo_ov_prev_i_1_n_0
     );
 fifo_ov_prev_reg: unisim.vcomponents.FDRE
     generic map(
@@ -3252,8 +3193,8 @@ fifo_ov_prev_reg: unisim.vcomponents.FDRE
     )
         port map (
       C => sys_clk,
-      CE => sys_resetn,
-      D => \^fifo_overflow\,
+      CE => '1',
+      D => fifo_ov_prev_i_1_n_0,
       Q => fifo_ov_prev,
       R => '0'
     );
@@ -3615,6 +3556,7 @@ entity clocked_i2s_i2s_module_0_0 is
     bclk_out : out STD_LOGIC;
     lrclk_out : out STD_LOGIC;
     fifo_full : out STD_LOGIC;
+    fifo_3_qtr : out STD_LOGIC;
     fifo_half : out STD_LOGIC;
     fifo_empty : out STD_LOGIC;
     fifo_overflow : out STD_LOGIC;
@@ -3634,7 +3576,7 @@ end clocked_i2s_i2s_module_0_0;
 
 architecture STRUCTURE of clocked_i2s_i2s_module_0_0 is
   signal U0_n_0 : STD_LOGIC;
-  signal U0_n_6 : STD_LOGIC;
+  signal U0_n_7 : STD_LOGIC;
   signal \^bclk\ : STD_LOGIC;
   signal \data_reg_reg[23]_i_2_n_0\ : STD_LOGIC;
   signal \^lrclk\ : STD_LOGIC;
@@ -3643,7 +3585,7 @@ architecture STRUCTURE of clocked_i2s_i2s_module_0_0 is
   attribute x_interface_parameter : string;
   attribute x_interface_parameter of mclk_resetn : signal is "XIL_INTERFACENAME mclk_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of sys_clk : signal is "xilinx.com:signal:clock:1.0 sys_clk CLK";
-  attribute x_interface_parameter of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_resetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN clocked_i2s_sys_clk_0, INSERT_VIP 0";
+  attribute x_interface_parameter of sys_clk : signal is "XIL_INTERFACENAME sys_clk, ASSOCIATED_RESET sys_resetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0";
   attribute x_interface_info of sys_resetn : signal is "xilinx.com:signal:reset:1.0 sys_resetn RST";
   attribute x_interface_parameter of sys_resetn : signal is "XIL_INTERFACENAME sys_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0";
 begin
@@ -3657,7 +3599,8 @@ U0: entity work.clocked_i2s_i2s_module_0_0_i2s_module
       data_in(23 downto 0) => data_in(23 downto 0),
       \data_reg_reg[23]_i_2\ => \data_reg_reg[23]_i_2_n_0\,
       empty_int_reg => fifo_empty,
-      empty_int_reg_0 => U0_n_6,
+      empty_int_reg_0 => U0_n_7,
+      fifo_3_qtr => fifo_3_qtr,
       fifo_count(11 downto 0) => fifo_count(11 downto 0),
       fifo_full => fifo_full,
       fifo_half => fifo_half,
@@ -3676,7 +3619,7 @@ U0: entity work.clocked_i2s_i2s_module_0_0_i2s_module
       C => mclk,
       CE => '1',
       CLR => U0_n_0,
-      D => U0_n_6,
+      D => U0_n_7,
       Q => \data_reg_reg[23]_i_2_n_0\
     );
 end STRUCTURE;

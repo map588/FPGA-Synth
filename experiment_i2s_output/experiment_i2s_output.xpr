@@ -52,9 +52,10 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../project_ip/full_i2s_update"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../project_ip/full_i2s_module"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../project_ip/project_ip"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../project_ip/i2s_buffered_interface"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../project_ip/i2s_fifo_clocked"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../ip_repo"/>
     <Option Name="IPOutputRepo" Val="C:/Users/Matt/Documents/Vivado_Projects/experiment_i2s_output/experiment_i2s_output.cache/ip"/>
     <Option Name="IPDefaultOutputPath" Val="C:/Users/Matt/Documents/Vivado_Projects/experiment_i2s_output/experiment_i2s_output.gen/sources_1"/>
@@ -65,20 +66,20 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/../../../experiment_i2s_output/experiment_i2s_output.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/../../../experiment_i2s_output/experiment_i2s_output.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="115"/>
+    <Option Name="WTXSimLaunchSim" Val="172"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="49"/>
-    <Option Name="WTModelSimExportSim" Val="49"/>
-    <Option Name="WTQuestaExportSim" Val="49"/>
-    <Option Name="WTIesExportSim" Val="49"/>
-    <Option Name="WTVcsExportSim" Val="49"/>
-    <Option Name="WTRivieraExportSim" Val="49"/>
-    <Option Name="WTActivehdlExportSim" Val="49"/>
+    <Option Name="WTXSimExportSim" Val="87"/>
+    <Option Name="WTModelSimExportSim" Val="86"/>
+    <Option Name="WTQuestaExportSim" Val="86"/>
+    <Option Name="WTIesExportSim" Val="86"/>
+    <Option Name="WTVcsExportSim" Val="86"/>
+    <Option Name="WTRivieraExportSim" Val="86"/>
+    <Option Name="WTActivehdlExportSim" Val="86"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -135,9 +136,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="clocked_i2s.bd" FileRelPathName="ip/clocked_i2s_stream_controller_0_0_1/clocked_i2s_stream_controller_0_0.xci">
-          <Proxy FileSetName="clocked_i2s_stream_controller_0_0"/>
-        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/clocked_i2s/hdl/clocked_i2s_wrapper.vhd">
         <FileInfo>
@@ -150,36 +148,6 @@
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../i2x_transmitter/i2x_transmitter.srcs/sim_1/imports/Vivado_Projects/RNG.vhd"/>
           <Attr Name="ImportTime" Val="1725918536"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../experiment_i2s_output/experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/i2x_transmitter/i2x_transmitter.srcs/utils_1/common_utils.vhd">
-        <FileInfo RelPath="experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/i2x_transmitter/i2x_transmitter.srcs/utils_1/common_utils.vhd">
-          <Attr Name="Library" Val="synth_lib"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../i2x_transmitter/i2x_transmitter.srcs/utils_1/common_utils.vhd"/>
-          <Attr Name="ImportTime" Val="1728908503"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../experiment_i2s_output/experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/midi_decoder_fifo/midi_decoder_fifo/midi_decoder_fifo.srcs/sources_1/imports/midi_fifo_decoder/src/work/cc_lut_pkg.vhd">
-        <FileInfo RelPath="experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/midi_decoder_fifo/midi_decoder_fifo/midi_decoder_fifo.srcs/sources_1/imports/midi_fifo_decoder/src/work/cc_lut_pkg.vhd">
-          <Attr Name="Library" Val="synth_lib"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../midi_decoder_fifo/midi_decoder_fifo/midi_decoder_fifo.srcs/sources_1/imports/midi_fifo_decoder/src/work/cc_lut_pkg.vhd"/>
-          <Attr Name="ImportTime" Val="1728780249"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../experiment_i2s_output/experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/synth_sources/sources_1/midi_lut_pkg.vhd">
-        <FileInfo RelPath="experiment_i2s_output.srcs/sources_1/imports/Vivado_Projects/synth_sources/sources_1/midi_lut_pkg.vhd">
-          <Attr Name="Library" Val="synth_lib"/>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../synth_sources/sources_1/midi_lut_pkg.vhd"/>
-          <Attr Name="ImportTime" Val="1728769519"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -234,7 +202,6 @@
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/../../../i2s_clock_managed/clocked_i2s_tb_behav.wcfg"/>
-        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
@@ -255,12 +222,6 @@
       <Config>
         <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_2/imports/PYNQ-data/PYNQ-Z1_C.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="clocked_i2s_stream_controller_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clocked_i2s_stream_controller_0_0">
-      <Config>
-        <Option Name="TopModule" Val="clocked_i2s_stream_controller_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
   </FileSets>
@@ -285,7 +246,9 @@
   <Runs Version="1" Minor="15">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_2" Description="Performs optimizations which creates alternative logic technology mapping, including disabling LUT combining, forcing F7/F8/F9 to logic, increasing the threshold of shift register inference." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PPRDIR/../../../i2s_clock_managed/i2s_clock_managed.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Flow_AlternateRoutability" Flow="Vivado Synthesis 2021"/>
+        <StratHandle Name="Flow_AlternateRoutability" Flow="Vivado Synthesis 2021">
+          <Desc>Performs optimizations which creates alternative logic technology mapping, including disabling LUT combining, forcing F7/F8/F9 to logic, increasing the threshold of shift register inference.</Desc>
+        </StratHandle>
         <Step Id="synth_design">
           <Option Id="NoCombineLuts">1</Option>
           <Option Id="ShregMinSize">10</Option>
@@ -297,21 +260,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="clocked_i2s_stream_controller_0_0_synth_1" Type="Ft3:Synth" SrcSet="clocked_i2s_stream_controller_0_0" Part="xc7z020clg400-1" ConstrsSet="clocked_i2s_stream_controller_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/clocked_i2s_stream_controller_0_0_synth_1" IncludeInArchive="true" IsChild="false" AutoIncrementalDir="$PSRCDIR/utils_1/imports/clocked_i2s_stream_controller_0_0_synth_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2021"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_2" Description="Combines retiming in phys_opt_design with extra placement optimization and higher router delay cost." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../i2s_clock_managed/i2s_clock_managed.srcs/utils_1/imports/impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Performance_Retiming" Flow="Vivado Implementation 2021"/>
+        <StratHandle Name="Performance_Retiming" Flow="Vivado Implementation 2021">
+          <Desc>Combines retiming in phys_opt_design with extra placement optimization and higher router delay cost.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -462,25 +415,6 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
       </ReportStrategy>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="clocked_i2s_stream_controller_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="clocked_i2s_stream_controller_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="clocked_i2s_stream_controller_0_0_synth_1" IncludeInArchive="false" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/clocked_i2s_stream_controller_0_0_impl_1">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2021"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>

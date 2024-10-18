@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Wed Oct 16 19:26:26 2024
+// Date        : Fri Oct 18 03:43:23 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/experiment_i2s_output/experiment_i2s_output.srcs/sources_1/bd/clocked_i2s/ip/clocked_i2s_stream_controller_0_0_1/clocked_i2s_stream_controller_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top clocked_i2s_stream_controller_0_0 -prefix
+//               clocked_i2s_stream_controller_0_0_ clocked_i2s_stream_controller_0_0_sim_netlist.v
 // Design      : clocked_i2s_stream_controller_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,559 +17,290 @@
 (* NotValidForBitStream *)
 module clocked_i2s_stream_controller_0_0
    (fifo_full,
-    fifo_half,
-    fifo_empty,
+    fifo_75,
     sysclk,
-    bitclk,
-    wordclk,
     has_data,
     push_en,
-    rejection,
-    drop_count);
+    rejection);
   input fifo_full;
-  input fifo_half;
-  input fifo_empty;
+  input fifo_75;
   input sysclk;
-  input bitclk;
-  input wordclk;
   input has_data;
   output push_en;
   output rejection;
-  output [31:0]drop_count;
 
-  wire bitclk;
-  wire [31:0]drop_count;
+  wire fifo_75;
   wire fifo_full;
-  wire fifo_half;
   wire has_data;
   wire push_en;
   wire rejection;
   wire sysclk;
-  wire wordclk;
 
   clocked_i2s_stream_controller_0_0_stream_controller U0
-       (.bitclk(bitclk),
-        .drop_count(drop_count),
+       (.fifo_75(fifo_75),
         .fifo_full(fifo_full),
-        .fifo_half(fifo_half),
         .has_data(has_data),
         .push_en(push_en),
         .rejection(rejection),
-        .sysclk(sysclk),
-        .wordclk(wordclk));
+        .sysclk(sysclk));
 endmodule
 
-(* ORIG_REF_NAME = "stream_controller" *) 
 module clocked_i2s_stream_controller_0_0_stream_controller
    (push_en,
-    drop_count,
     rejection,
     sysclk,
-    bitclk,
-    wordclk,
-    fifo_full,
-    fifo_half,
-    has_data);
+    has_data,
+    fifo_75,
+    fifo_full);
   output push_en;
-  output [31:0]drop_count;
   output rejection;
   input sysclk;
-  input bitclk;
-  input wordclk;
-  input fifo_full;
-  input fifo_half;
   input has_data;
+  input fifo_75;
+  input fifo_full;
 
-  wire bitclk;
-  wire bitclk_sync;
-  wire current_clock;
-  wire current_clock05_out;
-  wire current_clock_i_2_n_0;
-  wire current_clock_reg_i_1_n_0;
-  wire [31:0]drop_count;
-  wire \drop_count_i[3]_i_2_n_0 ;
-  wire \drop_count_i_reg[11]_i_1_n_0 ;
-  wire \drop_count_i_reg[11]_i_1_n_1 ;
-  wire \drop_count_i_reg[11]_i_1_n_2 ;
-  wire \drop_count_i_reg[11]_i_1_n_3 ;
-  wire \drop_count_i_reg[11]_i_1_n_4 ;
-  wire \drop_count_i_reg[11]_i_1_n_5 ;
-  wire \drop_count_i_reg[11]_i_1_n_6 ;
-  wire \drop_count_i_reg[11]_i_1_n_7 ;
-  wire \drop_count_i_reg[15]_i_1_n_0 ;
-  wire \drop_count_i_reg[15]_i_1_n_1 ;
-  wire \drop_count_i_reg[15]_i_1_n_2 ;
-  wire \drop_count_i_reg[15]_i_1_n_3 ;
-  wire \drop_count_i_reg[15]_i_1_n_4 ;
-  wire \drop_count_i_reg[15]_i_1_n_5 ;
-  wire \drop_count_i_reg[15]_i_1_n_6 ;
-  wire \drop_count_i_reg[15]_i_1_n_7 ;
-  wire \drop_count_i_reg[19]_i_1_n_0 ;
-  wire \drop_count_i_reg[19]_i_1_n_1 ;
-  wire \drop_count_i_reg[19]_i_1_n_2 ;
-  wire \drop_count_i_reg[19]_i_1_n_3 ;
-  wire \drop_count_i_reg[19]_i_1_n_4 ;
-  wire \drop_count_i_reg[19]_i_1_n_5 ;
-  wire \drop_count_i_reg[19]_i_1_n_6 ;
-  wire \drop_count_i_reg[19]_i_1_n_7 ;
-  wire \drop_count_i_reg[23]_i_1_n_0 ;
-  wire \drop_count_i_reg[23]_i_1_n_1 ;
-  wire \drop_count_i_reg[23]_i_1_n_2 ;
-  wire \drop_count_i_reg[23]_i_1_n_3 ;
-  wire \drop_count_i_reg[23]_i_1_n_4 ;
-  wire \drop_count_i_reg[23]_i_1_n_5 ;
-  wire \drop_count_i_reg[23]_i_1_n_6 ;
-  wire \drop_count_i_reg[23]_i_1_n_7 ;
-  wire \drop_count_i_reg[27]_i_1_n_0 ;
-  wire \drop_count_i_reg[27]_i_1_n_1 ;
-  wire \drop_count_i_reg[27]_i_1_n_2 ;
-  wire \drop_count_i_reg[27]_i_1_n_3 ;
-  wire \drop_count_i_reg[27]_i_1_n_4 ;
-  wire \drop_count_i_reg[27]_i_1_n_5 ;
-  wire \drop_count_i_reg[27]_i_1_n_6 ;
-  wire \drop_count_i_reg[27]_i_1_n_7 ;
-  wire \drop_count_i_reg[31]_i_1_n_1 ;
-  wire \drop_count_i_reg[31]_i_1_n_2 ;
-  wire \drop_count_i_reg[31]_i_1_n_3 ;
-  wire \drop_count_i_reg[31]_i_1_n_4 ;
-  wire \drop_count_i_reg[31]_i_1_n_5 ;
-  wire \drop_count_i_reg[31]_i_1_n_6 ;
-  wire \drop_count_i_reg[31]_i_1_n_7 ;
-  wire \drop_count_i_reg[3]_i_1_n_0 ;
-  wire \drop_count_i_reg[3]_i_1_n_1 ;
-  wire \drop_count_i_reg[3]_i_1_n_2 ;
-  wire \drop_count_i_reg[3]_i_1_n_3 ;
-  wire \drop_count_i_reg[3]_i_1_n_4 ;
-  wire \drop_count_i_reg[3]_i_1_n_5 ;
-  wire \drop_count_i_reg[3]_i_1_n_6 ;
-  wire \drop_count_i_reg[3]_i_1_n_7 ;
-  wire \drop_count_i_reg[7]_i_1_n_0 ;
-  wire \drop_count_i_reg[7]_i_1_n_1 ;
-  wire \drop_count_i_reg[7]_i_1_n_2 ;
-  wire \drop_count_i_reg[7]_i_1_n_3 ;
-  wire \drop_count_i_reg[7]_i_1_n_4 ;
-  wire \drop_count_i_reg[7]_i_1_n_5 ;
-  wire \drop_count_i_reg[7]_i_1_n_6 ;
-  wire \drop_count_i_reg[7]_i_1_n_7 ;
+  wire \counter[9]_i_1_n_0 ;
+  wire \counter[9]_i_3_n_0 ;
+  wire [9:0]counter_reg;
+  wire fifo_75;
   wire fifo_full;
-  wire fifo_half;
   wire has_data;
-  wire has_data_latched;
+  wire [9:0]plusOp;
   wire push_en;
+  wire push_en_internal;
   wire rejection;
-  wire rejection_i_1_n_0;
+  wire rejection_internal_i_1_n_0;
   wire sysclk;
-  wire sysclk_sync;
-  wire wordclk;
-  wire wordclk_sync;
-  wire [3:3]\NLW_drop_count_i_reg[31]_i_1_CO_UNCONNECTED ;
 
-  FDRE #(
-    .INIT(1'b0)) 
-    bitclk_sync_reg
-       (.C(sysclk),
-        .CE(1'b1),
-        .D(bitclk),
-        .Q(bitclk_sync),
-        .R(1'b0));
-  LUT5 #(
-    .INIT(32'h20202F20)) 
-    current_clock_i_2
-       (.I0(bitclk),
-        .I1(bitclk_sync),
-        .I2(fifo_half),
-        .I3(sysclk),
-        .I4(sysclk_sync),
-        .O(current_clock_i_2_n_0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    current_clock_i_3
-       (.I0(wordclk),
-        .I1(wordclk_sync),
-        .O(current_clock05_out));
-  FDRE #(
-    .INIT(1'b0)) 
-    current_clock_reg
-       (.C(sysclk),
-        .CE(1'b1),
-        .D(current_clock_reg_i_1_n_0),
-        .Q(current_clock),
-        .R(1'b0));
-  MUXF7 current_clock_reg_i_1
-       (.I0(current_clock_i_2_n_0),
-        .I1(current_clock05_out),
-        .O(current_clock_reg_i_1_n_0),
-        .S(fifo_full));
   LUT1 #(
     .INIT(2'h1)) 
-    \drop_count_i[3]_i_2 
-       (.I0(drop_count[0]),
-        .O(\drop_count_i[3]_i_2_n_0 ));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[0] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[3]_i_1_n_7 ),
-        .Q(drop_count[0]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[10] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[11]_i_1_n_5 ),
-        .Q(drop_count[10]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[11] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[11]_i_1_n_4 ),
-        .Q(drop_count[11]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[11]_i_1 
-       (.CI(\drop_count_i_reg[7]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[11]_i_1_n_0 ,\drop_count_i_reg[11]_i_1_n_1 ,\drop_count_i_reg[11]_i_1_n_2 ,\drop_count_i_reg[11]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[11]_i_1_n_4 ,\drop_count_i_reg[11]_i_1_n_5 ,\drop_count_i_reg[11]_i_1_n_6 ,\drop_count_i_reg[11]_i_1_n_7 }),
-        .S(drop_count[11:8]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[12] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[15]_i_1_n_7 ),
-        .Q(drop_count[12]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[13] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[15]_i_1_n_6 ),
-        .Q(drop_count[13]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[14] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[15]_i_1_n_5 ),
-        .Q(drop_count[14]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[15] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[15]_i_1_n_4 ),
-        .Q(drop_count[15]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[15]_i_1 
-       (.CI(\drop_count_i_reg[11]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[15]_i_1_n_0 ,\drop_count_i_reg[15]_i_1_n_1 ,\drop_count_i_reg[15]_i_1_n_2 ,\drop_count_i_reg[15]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[15]_i_1_n_4 ,\drop_count_i_reg[15]_i_1_n_5 ,\drop_count_i_reg[15]_i_1_n_6 ,\drop_count_i_reg[15]_i_1_n_7 }),
-        .S(drop_count[15:12]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[16] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[19]_i_1_n_7 ),
-        .Q(drop_count[16]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[17] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[19]_i_1_n_6 ),
-        .Q(drop_count[17]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[18] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[19]_i_1_n_5 ),
-        .Q(drop_count[18]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[19] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[19]_i_1_n_4 ),
-        .Q(drop_count[19]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[19]_i_1 
-       (.CI(\drop_count_i_reg[15]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[19]_i_1_n_0 ,\drop_count_i_reg[19]_i_1_n_1 ,\drop_count_i_reg[19]_i_1_n_2 ,\drop_count_i_reg[19]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[19]_i_1_n_4 ,\drop_count_i_reg[19]_i_1_n_5 ,\drop_count_i_reg[19]_i_1_n_6 ,\drop_count_i_reg[19]_i_1_n_7 }),
-        .S(drop_count[19:16]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[1] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[3]_i_1_n_6 ),
-        .Q(drop_count[1]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[20] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[23]_i_1_n_7 ),
-        .Q(drop_count[20]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[21] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[23]_i_1_n_6 ),
-        .Q(drop_count[21]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[22] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[23]_i_1_n_5 ),
-        .Q(drop_count[22]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[23] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[23]_i_1_n_4 ),
-        .Q(drop_count[23]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[23]_i_1 
-       (.CI(\drop_count_i_reg[19]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[23]_i_1_n_0 ,\drop_count_i_reg[23]_i_1_n_1 ,\drop_count_i_reg[23]_i_1_n_2 ,\drop_count_i_reg[23]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[23]_i_1_n_4 ,\drop_count_i_reg[23]_i_1_n_5 ,\drop_count_i_reg[23]_i_1_n_6 ,\drop_count_i_reg[23]_i_1_n_7 }),
-        .S(drop_count[23:20]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[24] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[27]_i_1_n_7 ),
-        .Q(drop_count[24]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[25] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[27]_i_1_n_6 ),
-        .Q(drop_count[25]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[26] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[27]_i_1_n_5 ),
-        .Q(drop_count[26]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[27] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[27]_i_1_n_4 ),
-        .Q(drop_count[27]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[27]_i_1 
-       (.CI(\drop_count_i_reg[23]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[27]_i_1_n_0 ,\drop_count_i_reg[27]_i_1_n_1 ,\drop_count_i_reg[27]_i_1_n_2 ,\drop_count_i_reg[27]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[27]_i_1_n_4 ,\drop_count_i_reg[27]_i_1_n_5 ,\drop_count_i_reg[27]_i_1_n_6 ,\drop_count_i_reg[27]_i_1_n_7 }),
-        .S(drop_count[27:24]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[28] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[31]_i_1_n_7 ),
-        .Q(drop_count[28]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[29] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[31]_i_1_n_6 ),
-        .Q(drop_count[29]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[2] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[3]_i_1_n_5 ),
-        .Q(drop_count[2]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[30] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[31]_i_1_n_5 ),
-        .Q(drop_count[30]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[31] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[31]_i_1_n_4 ),
-        .Q(drop_count[31]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[31]_i_1 
-       (.CI(\drop_count_i_reg[27]_i_1_n_0 ),
-        .CO({\NLW_drop_count_i_reg[31]_i_1_CO_UNCONNECTED [3],\drop_count_i_reg[31]_i_1_n_1 ,\drop_count_i_reg[31]_i_1_n_2 ,\drop_count_i_reg[31]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[31]_i_1_n_4 ,\drop_count_i_reg[31]_i_1_n_5 ,\drop_count_i_reg[31]_i_1_n_6 ,\drop_count_i_reg[31]_i_1_n_7 }),
-        .S(drop_count[31:28]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[3] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[3]_i_1_n_4 ),
-        .Q(drop_count[3]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[3]_i_1 
-       (.CI(1'b0),
-        .CO({\drop_count_i_reg[3]_i_1_n_0 ,\drop_count_i_reg[3]_i_1_n_1 ,\drop_count_i_reg[3]_i_1_n_2 ,\drop_count_i_reg[3]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
-        .O({\drop_count_i_reg[3]_i_1_n_4 ,\drop_count_i_reg[3]_i_1_n_5 ,\drop_count_i_reg[3]_i_1_n_6 ,\drop_count_i_reg[3]_i_1_n_7 }),
-        .S({drop_count[3:1],\drop_count_i[3]_i_2_n_0 }));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[4] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[7]_i_1_n_7 ),
-        .Q(drop_count[4]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[5] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[7]_i_1_n_6 ),
-        .Q(drop_count[5]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[6] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[7]_i_1_n_5 ),
-        .Q(drop_count[6]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[7] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[7]_i_1_n_4 ),
-        .Q(drop_count[7]),
-        .R(1'b0));
-  (* ADDER_THRESHOLD = "11" *) 
-  CARRY4 \drop_count_i_reg[7]_i_1 
-       (.CI(\drop_count_i_reg[3]_i_1_n_0 ),
-        .CO({\drop_count_i_reg[7]_i_1_n_0 ,\drop_count_i_reg[7]_i_1_n_1 ,\drop_count_i_reg[7]_i_1_n_2 ,\drop_count_i_reg[7]_i_1_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\drop_count_i_reg[7]_i_1_n_4 ,\drop_count_i_reg[7]_i_1_n_5 ,\drop_count_i_reg[7]_i_1_n_6 ,\drop_count_i_reg[7]_i_1_n_7 }),
-        .S(drop_count[7:4]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[8] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[11]_i_1_n_7 ),
-        .Q(drop_count[8]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \drop_count_i_reg[9] 
-       (.C(sysclk),
-        .CE(rejection_i_1_n_0),
-        .D(\drop_count_i_reg[11]_i_1_n_6 ),
-        .Q(drop_count[9]),
-        .R(1'b0));
+    \counter[0]_i_1 
+       (.I0(counter_reg[0]),
+        .O(plusOp[0]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT2 #(
+    .INIT(4'h6)) 
+    \counter[1]_i_1 
+       (.I0(counter_reg[0]),
+        .I1(counter_reg[1]),
+        .O(plusOp[1]));
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  LUT3 #(
+    .INIT(8'h78)) 
+    \counter[2]_i_1 
+       (.I0(counter_reg[1]),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[2]),
+        .O(plusOp[2]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hF100)) 
-    push_en_internal_i_1
-       (.I0(fifo_full),
-        .I1(fifo_half),
-        .I2(current_clock),
-        .I3(has_data),
-        .O(has_data_latched));
+    .INIT(16'h7F80)) 
+    \counter[3]_i_1 
+       (.I0(counter_reg[2]),
+        .I1(counter_reg[0]),
+        .I2(counter_reg[1]),
+        .I3(counter_reg[3]),
+        .O(plusOp[3]));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h7FFF8000)) 
+    \counter[4]_i_1 
+       (.I0(counter_reg[3]),
+        .I1(counter_reg[1]),
+        .I2(counter_reg[0]),
+        .I3(counter_reg[2]),
+        .I4(counter_reg[4]),
+        .O(plusOp[4]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \counter[5]_i_1 
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[2]),
+        .I2(counter_reg[0]),
+        .I3(counter_reg[1]),
+        .I4(counter_reg[3]),
+        .I5(counter_reg[5]),
+        .O(plusOp[5]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT2 #(
+    .INIT(4'h9)) 
+    \counter[6]_i_1 
+       (.I0(\counter[9]_i_3_n_0 ),
+        .I1(counter_reg[6]),
+        .O(plusOp[6]));
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  LUT3 #(
+    .INIT(8'hD2)) 
+    \counter[7]_i_1 
+       (.I0(counter_reg[6]),
+        .I1(\counter[9]_i_3_n_0 ),
+        .I2(counter_reg[7]),
+        .O(plusOp[7]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'hDF20)) 
+    \counter[8]_i_1 
+       (.I0(counter_reg[7]),
+        .I1(\counter[9]_i_3_n_0 ),
+        .I2(counter_reg[6]),
+        .I3(counter_reg[8]),
+        .O(plusOp[8]));
+  LUT5 #(
+    .INIT(32'h00800000)) 
+    \counter[9]_i_1 
+       (.I0(counter_reg[9]),
+        .I1(counter_reg[8]),
+        .I2(counter_reg[6]),
+        .I3(\counter[9]_i_3_n_0 ),
+        .I4(counter_reg[7]),
+        .O(\counter[9]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hF7FF0800)) 
+    \counter[9]_i_2 
+       (.I0(counter_reg[8]),
+        .I1(counter_reg[6]),
+        .I2(\counter[9]_i_3_n_0 ),
+        .I3(counter_reg[7]),
+        .I4(counter_reg[9]),
+        .O(plusOp[9]));
+  LUT6 #(
+    .INIT(64'h7FFFFFFFFFFFFFFF)) 
+    \counter[9]_i_3 
+       (.I0(counter_reg[4]),
+        .I1(counter_reg[2]),
+        .I2(counter_reg[0]),
+        .I3(counter_reg[1]),
+        .I4(counter_reg[3]),
+        .I5(counter_reg[5]),
+        .O(\counter[9]_i_3_n_0 ));
   FDRE #(
-    .INIT(1'b0)) 
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[0] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[0]),
+        .Q(counter_reg[0]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[1] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[1]),
+        .Q(counter_reg[1]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[2] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[2]),
+        .Q(counter_reg[2]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[3] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[3]),
+        .Q(counter_reg[3]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[4] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[4]),
+        .Q(counter_reg[4]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[5] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[5]),
+        .Q(counter_reg[5]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[6] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[6]),
+        .Q(counter_reg[6]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[7] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[7]),
+        .Q(counter_reg[7]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[8] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[8]),
+        .Q(counter_reg[8]),
+        .R(\counter[9]_i_1_n_0 ));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    \counter_reg[9] 
+       (.C(sysclk),
+        .CE(1'b1),
+        .D(plusOp[9]),
+        .Q(counter_reg[9]),
+        .R(\counter[9]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'h000002AA)) 
+    push_en_internal_i_1
+       (.I0(has_data),
+        .I1(counter_reg[1]),
+        .I2(counter_reg[0]),
+        .I3(fifo_75),
+        .I4(fifo_full),
+        .O(push_en_internal));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
     push_en_internal_reg
        (.C(sysclk),
         .CE(1'b1),
-        .D(has_data_latched),
+        .D(push_en_internal),
         .Q(push_en),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'h00E0)) 
-    rejection_i_1
-       (.I0(fifo_full),
-        .I1(fifo_half),
-        .I2(has_data),
-        .I3(current_clock),
-        .O(rejection_i_1_n_0));
-  FDRE rejection_reg
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT5 #(
+    .INIT(32'hFFE00000)) 
+    rejection_internal_i_1
+       (.I0(counter_reg[1]),
+        .I1(counter_reg[0]),
+        .I2(fifo_75),
+        .I3(fifo_full),
+        .I4(has_data),
+        .O(rejection_internal_i_1_n_0));
+  FDRE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    rejection_internal_reg
        (.C(sysclk),
         .CE(1'b1),
-        .D(rejection_i_1_n_0),
+        .D(rejection_internal_i_1_n_0),
         .Q(rejection),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    sysclk_sync_reg
-       (.C(sysclk),
-        .CE(1'b1),
-        .D(sysclk),
-        .Q(sysclk_sync),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    wordclk_sync_reg
-       (.C(sysclk),
-        .CE(1'b1),
-        .D(wordclk),
-        .Q(wordclk_sync),
         .R(1'b0));
 endmodule
 `ifndef GLBL

@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x821B64AF4EAE8D93",
+      "boundary_crc": "0xCD8BED1BD663996A",
       "device": "xc7z020clg400-1",
       "name": "clocked_i2s",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -13,7 +13,8 @@
       "clk_wiz_0": "",
       "Clock_Manager_0": "",
       "i2s_module_0": "",
-      "stream_controller_0": ""
+      "stream_controller_0": "",
+      "clk_wiz_1": ""
     },
     "ports": {
       "clk_125": {
@@ -177,11 +178,6 @@
       },
       "rejection": {
         "direction": "O"
-      },
-      "drop_count": {
-        "direction": "O",
-        "left": "31",
-        "right": "0"
       }
     },
     "components": {
@@ -250,15 +246,15 @@
             "parameters": {
               "FREQ_HZ": {
                 "value": "125000000",
-                "value_src": "user_prop"
+                "value_src": "ip_prop"
               },
               "PHASE": {
                 "value": "0.0",
-                "value_src": "default_prop"
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "clocked_i2s_sysclk",
-                "value_src": "default_prop"
+                "value": "/clk_wiz_1_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -432,6 +428,9 @@
               }
             }
           },
+          "fifo_3_qtr": {
+            "direction": "O"
+          },
           "fifo_half": {
             "direction": "O",
             "parameters": {
@@ -472,16 +471,7 @@
               }
             }
           },
-          "fifo_half": {
-            "direction": "I",
-            "parameters": {
-              "PortWidth": {
-                "value": "1",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "fifo_empty": {
+          "fifo_75": {
             "direction": "I"
           },
           "sysclk": {
@@ -500,12 +490,6 @@
                 "value_src": "ip_prop"
               }
             }
-          },
-          "bitclk": {
-            "direction": "I"
-          },
-          "wordclk": {
-            "direction": "I"
           },
           "has_data": {
             "direction": "I",
@@ -529,11 +513,87 @@
           },
           "rejection": {
             "direction": "O"
+          }
+        }
+      },
+      "clk_wiz_1": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "clocked_i2s_clk_wiz_1_0",
+        "parameters": {
+          "CLKIN1_JITTER_PS": {
+            "value": "800.0"
           },
-          "drop_count": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
+          "CLKIN1_UI_JITTER": {
+            "value": "0.100"
+          },
+          "CLKOUT1_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT1_JITTER": {
+            "value": "124.057"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "312.996"
+          },
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "125"
+          },
+          "CLKOUT2_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT3_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT4_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT5_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT6_DRIVES": {
+            "value": "BUFG"
+          },
+          "CLKOUT7_DRIVES": {
+            "value": "BUFG"
+          },
+          "JITTER_SEL": {
+            "value": "Max_I_Jitter"
+          },
+          "MMCM_BANDWIDTH": {
+            "value": "LOW"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "7"
+          },
+          "MMCM_CLKIN1_PERIOD": {
+            "value": "8.000"
+          },
+          "MMCM_CLKIN2_PERIOD": {
+            "value": "10.0"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "7"
+          },
+          "MMCM_COMPENSATION": {
+            "value": "ZHOLD"
+          },
+          "MMCM_REF_JITTER1": {
+            "value": "0.100"
+          },
+          "PRIMITIVE": {
+            "value": "PLL"
+          },
+          "PRIM_IN_FREQ": {
+            "value": "125"
+          },
+          "RESET_PORT": {
+            "value": "resetn"
+          },
+          "RESET_TYPE": {
+            "value": "ACTIVE_LOW"
+          },
+          "USE_LOCKED": {
+            "value": "false"
           }
         }
       }
@@ -542,15 +602,13 @@
       "Clock_Manager_0_clk_en_12_288MHz": {
         "ports": [
           "Clock_Manager_0/clk_en_6_144MHz",
-          "i2s_module_0/bclk",
-          "stream_controller_0/bitclk"
+          "i2s_module_0/bclk"
         ]
       },
       "Clock_Manager_0_clk_en_96kHz": {
         "ports": [
           "Clock_Manager_0/clk_en_96kHz",
-          "i2s_module_0/lrclk",
-          "stream_controller_0/wordclk"
+          "i2s_module_0/lrclk"
         ]
       },
       "Clock_Manager_0_sync_resetn_100MHz1": {
@@ -574,15 +632,29 @@
       "async_resetn_0_1": {
         "ports": [
           "async_resetn",
-          "Clock_Manager_0/async_resetn"
+          "Clock_Manager_0/async_resetn",
+          "clk_wiz_1/resetn"
+        ]
+      },
+      "clk_125_1": {
+        "ports": [
+          "clk_125",
+          "clk_wiz_1/clk_in1"
         ]
       },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
           "Clock_Manager_0/clk_24_576MHz",
-          "i2s_module_0/mclk",
-          "mclk_out"
+          "mclk_out",
+          "i2s_module_0/mclk"
+        ]
+      },
+      "clk_wiz_1_clk_out1": {
+        "ports": [
+          "clk_wiz_1/clk_out1",
+          "clk_wiz_0/clk_in1",
+          "Clock_Manager_0/clk_125MHz"
         ]
       },
       "data_in_0_1": {
@@ -603,6 +675,12 @@
           "bclk_out"
         ]
       },
+      "i2s_module_0_fifo_3_qtr": {
+        "ports": [
+          "i2s_module_0/fifo_3_qtr",
+          "stream_controller_0/fifo_75"
+        ]
+      },
       "i2s_module_0_fifo_count": {
         "ports": [
           "i2s_module_0/fifo_count",
@@ -612,8 +690,7 @@
       "i2s_module_0_fifo_empty": {
         "ports": [
           "i2s_module_0/fifo_empty",
-          "buff_empty",
-          "stream_controller_0/fifo_empty"
+          "buff_empty"
         ]
       },
       "i2s_module_0_fifo_full": {
@@ -626,8 +703,7 @@
       "i2s_module_0_fifo_half": {
         "ports": [
           "i2s_module_0/fifo_half",
-          "buff_half",
-          "stream_controller_0/fifo_half"
+          "buff_half"
         ]
       },
       "i2s_module_0_fifo_overflow": {
@@ -656,12 +732,6 @@
           "stream_controller_0/sysclk"
         ]
       },
-      "stream_controller_0_drop_count": {
-        "ports": [
-          "stream_controller_0/drop_count",
-          "drop_count"
-        ]
-      },
       "stream_controller_0_push_en": {
         "ports": [
           "stream_controller_0/push_en",
@@ -672,13 +742,6 @@
         "ports": [
           "stream_controller_0/rejection",
           "rejection"
-        ]
-      },
-      "sysclk_1": {
-        "ports": [
-          "clk_125",
-          "Clock_Manager_0/clk_125MHz",
-          "clk_wiz_0/clk_in1"
         ]
       }
     }

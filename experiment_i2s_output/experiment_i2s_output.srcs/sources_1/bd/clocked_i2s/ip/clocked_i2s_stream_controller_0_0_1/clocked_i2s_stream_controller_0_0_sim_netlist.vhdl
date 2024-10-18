@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Wed Oct 16 19:26:26 2024
+-- Date        : Fri Oct 18 03:43:23 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/experiment_i2s_output/experiment_i2s_output.srcs/sources_1/bd/clocked_i2s/ip/clocked_i2s_stream_controller_0_0_1/clocked_i2s_stream_controller_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top clocked_i2s_stream_controller_0_0 -prefix
+--               clocked_i2s_stream_controller_0_0_ clocked_i2s_stream_controller_0_0_sim_netlist.vhdl
 -- Design      : clocked_i2s_stream_controller_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,698 +17,329 @@ use UNISIM.VCOMPONENTS.ALL;
 entity clocked_i2s_stream_controller_0_0_stream_controller is
   port (
     push_en : out STD_LOGIC;
-    drop_count : out STD_LOGIC_VECTOR ( 31 downto 0 );
     rejection : out STD_LOGIC;
     sysclk : in STD_LOGIC;
-    bitclk : in STD_LOGIC;
-    wordclk : in STD_LOGIC;
-    fifo_full : in STD_LOGIC;
-    fifo_half : in STD_LOGIC;
-    has_data : in STD_LOGIC
+    has_data : in STD_LOGIC;
+    fifo_75 : in STD_LOGIC;
+    fifo_full : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of clocked_i2s_stream_controller_0_0_stream_controller : entity is "stream_controller";
 end clocked_i2s_stream_controller_0_0_stream_controller;
 
 architecture STRUCTURE of clocked_i2s_stream_controller_0_0_stream_controller is
-  signal bitclk_sync : STD_LOGIC;
-  signal current_clock : STD_LOGIC;
-  signal current_clock05_out : STD_LOGIC;
-  signal current_clock_i_2_n_0 : STD_LOGIC;
-  signal current_clock_reg_i_1_n_0 : STD_LOGIC;
-  signal \^drop_count\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \drop_count_i[3]_i_2_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[11]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[15]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[19]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[23]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[27]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[31]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[3]_i_1_n_7\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_0\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_1\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_2\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_3\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_4\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_5\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_6\ : STD_LOGIC;
-  signal \drop_count_i_reg[7]_i_1_n_7\ : STD_LOGIC;
-  signal has_data_latched : STD_LOGIC;
-  signal rejection_i_1_n_0 : STD_LOGIC;
-  signal sysclk_sync : STD_LOGIC;
-  signal wordclk_sync : STD_LOGIC;
-  signal \NLW_drop_count_i_reg[31]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
-  attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[11]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[15]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[19]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[23]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[27]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[31]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[3]_i_1\ : label is 11;
-  attribute ADDER_THRESHOLD of \drop_count_i_reg[7]_i_1\ : label is 11;
+  signal \counter[9]_i_1_n_0\ : STD_LOGIC;
+  signal \counter[9]_i_3_n_0\ : STD_LOGIC;
+  signal counter_reg : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal plusOp : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal push_en_internal : STD_LOGIC;
+  signal rejection_internal_i_1_n_0 : STD_LOGIC;
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \counter[1]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \counter[2]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \counter[3]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter[4]_i_1\ : label is "soft_lutpair0";
+  attribute SOFT_HLUTNM of \counter[6]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \counter[7]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \counter[8]_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \counter[9]_i_2\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of push_en_internal_i_1 : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of rejection_internal_i_1 : label is "soft_lutpair2";
 begin
-  drop_count(31 downto 0) <= \^drop_count\(31 downto 0);
-bitclk_sync_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => '1',
-      D => bitclk,
-      Q => bitclk_sync,
-      R => '0'
-    );
-current_clock_i_2: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"20202F20"
-    )
-        port map (
-      I0 => bitclk,
-      I1 => bitclk_sync,
-      I2 => fifo_half,
-      I3 => sysclk,
-      I4 => sysclk_sync,
-      O => current_clock_i_2_n_0
-    );
-current_clock_i_3: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => wordclk,
-      I1 => wordclk_sync,
-      O => current_clock05_out
-    );
-current_clock_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => '1',
-      D => current_clock_reg_i_1_n_0,
-      Q => current_clock,
-      R => '0'
-    );
-current_clock_reg_i_1: unisim.vcomponents.MUXF7
-     port map (
-      I0 => current_clock_i_2_n_0,
-      I1 => current_clock05_out,
-      O => current_clock_reg_i_1_n_0,
-      S => fifo_full
-    );
-\drop_count_i[3]_i_2\: unisim.vcomponents.LUT1
+\counter[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => \^drop_count\(0),
-      O => \drop_count_i[3]_i_2_n_0\
+      I0 => counter_reg(0),
+      O => plusOp(0)
     );
-\drop_count_i_reg[0]\: unisim.vcomponents.FDRE
+\counter[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
-      INIT => '0'
+      INIT => X"6"
+    )
+        port map (
+      I0 => counter_reg(0),
+      I1 => counter_reg(1),
+      O => plusOp(1)
+    );
+\counter[2]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"78"
+    )
+        port map (
+      I0 => counter_reg(1),
+      I1 => counter_reg(0),
+      I2 => counter_reg(2),
+      O => plusOp(2)
+    );
+\counter[3]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7F80"
+    )
+        port map (
+      I0 => counter_reg(2),
+      I1 => counter_reg(0),
+      I2 => counter_reg(1),
+      I3 => counter_reg(3),
+      O => plusOp(3)
+    );
+\counter[4]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"7FFF8000"
+    )
+        port map (
+      I0 => counter_reg(3),
+      I1 => counter_reg(1),
+      I2 => counter_reg(0),
+      I3 => counter_reg(2),
+      I4 => counter_reg(4),
+      O => plusOp(4)
+    );
+\counter[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFF80000000"
+    )
+        port map (
+      I0 => counter_reg(4),
+      I1 => counter_reg(2),
+      I2 => counter_reg(0),
+      I3 => counter_reg(1),
+      I4 => counter_reg(3),
+      I5 => counter_reg(5),
+      O => plusOp(5)
+    );
+\counter[6]_i_1\: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"9"
+    )
+        port map (
+      I0 => \counter[9]_i_3_n_0\,
+      I1 => counter_reg(6),
+      O => plusOp(6)
+    );
+\counter[7]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"D2"
+    )
+        port map (
+      I0 => counter_reg(6),
+      I1 => \counter[9]_i_3_n_0\,
+      I2 => counter_reg(7),
+      O => plusOp(7)
+    );
+\counter[8]_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"DF20"
+    )
+        port map (
+      I0 => counter_reg(7),
+      I1 => \counter[9]_i_3_n_0\,
+      I2 => counter_reg(6),
+      I3 => counter_reg(8),
+      O => plusOp(8)
+    );
+\counter[9]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"00800000"
+    )
+        port map (
+      I0 => counter_reg(9),
+      I1 => counter_reg(8),
+      I2 => counter_reg(6),
+      I3 => \counter[9]_i_3_n_0\,
+      I4 => counter_reg(7),
+      O => \counter[9]_i_1_n_0\
+    );
+\counter[9]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"F7FF0800"
+    )
+        port map (
+      I0 => counter_reg(8),
+      I1 => counter_reg(6),
+      I2 => \counter[9]_i_3_n_0\,
+      I3 => counter_reg(7),
+      I4 => counter_reg(9),
+      O => plusOp(9)
+    );
+\counter[9]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"7FFFFFFFFFFFFFFF"
+    )
+        port map (
+      I0 => counter_reg(4),
+      I1 => counter_reg(2),
+      I2 => counter_reg(0),
+      I3 => counter_reg(1),
+      I4 => counter_reg(3),
+      I5 => counter_reg(5),
+      O => \counter[9]_i_3_n_0\
+    );
+\counter_reg[0]\: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[3]_i_1_n_7\,
-      Q => \^drop_count\(0),
-      R => '0'
+      CE => '1',
+      D => plusOp(0),
+      Q => counter_reg(0),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[10]\: unisim.vcomponents.FDRE
+\counter_reg[1]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[11]_i_1_n_5\,
-      Q => \^drop_count\(10),
-      R => '0'
+      CE => '1',
+      D => plusOp(1),
+      Q => counter_reg(1),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[11]\: unisim.vcomponents.FDRE
+\counter_reg[2]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[11]_i_1_n_4\,
-      Q => \^drop_count\(11),
-      R => '0'
+      CE => '1',
+      D => plusOp(2),
+      Q => counter_reg(2),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[11]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[7]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[11]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[11]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[11]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[11]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[11]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[11]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[11]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[11]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(11 downto 8)
-    );
-\drop_count_i_reg[12]\: unisim.vcomponents.FDRE
+\counter_reg[3]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[15]_i_1_n_7\,
-      Q => \^drop_count\(12),
-      R => '0'
+      CE => '1',
+      D => plusOp(3),
+      Q => counter_reg(3),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[13]\: unisim.vcomponents.FDRE
+\counter_reg[4]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[15]_i_1_n_6\,
-      Q => \^drop_count\(13),
-      R => '0'
+      CE => '1',
+      D => plusOp(4),
+      Q => counter_reg(4),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[14]\: unisim.vcomponents.FDRE
+\counter_reg[5]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[15]_i_1_n_5\,
-      Q => \^drop_count\(14),
-      R => '0'
+      CE => '1',
+      D => plusOp(5),
+      Q => counter_reg(5),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[15]\: unisim.vcomponents.FDRE
+\counter_reg[6]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[15]_i_1_n_4\,
-      Q => \^drop_count\(15),
-      R => '0'
+      CE => '1',
+      D => plusOp(6),
+      Q => counter_reg(6),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[15]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[11]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[15]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[15]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[15]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[15]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[15]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[15]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[15]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[15]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(15 downto 12)
-    );
-\drop_count_i_reg[16]\: unisim.vcomponents.FDRE
+\counter_reg[7]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[19]_i_1_n_7\,
-      Q => \^drop_count\(16),
-      R => '0'
+      CE => '1',
+      D => plusOp(7),
+      Q => counter_reg(7),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[17]\: unisim.vcomponents.FDRE
+\counter_reg[8]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[19]_i_1_n_6\,
-      Q => \^drop_count\(17),
-      R => '0'
+      CE => '1',
+      D => plusOp(8),
+      Q => counter_reg(8),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[18]\: unisim.vcomponents.FDRE
+\counter_reg[9]\: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[19]_i_1_n_5\,
-      Q => \^drop_count\(18),
-      R => '0'
+      CE => '1',
+      D => plusOp(9),
+      Q => counter_reg(9),
+      R => \counter[9]_i_1_n_0\
     );
-\drop_count_i_reg[19]\: unisim.vcomponents.FDRE
+push_en_internal_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => '0'
+      INIT => X"000002AA"
     )
         port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[19]_i_1_n_4\,
-      Q => \^drop_count\(19),
-      R => '0'
-    );
-\drop_count_i_reg[19]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[15]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[19]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[19]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[19]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[19]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[19]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[19]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[19]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[19]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(19 downto 16)
-    );
-\drop_count_i_reg[1]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[3]_i_1_n_6\,
-      Q => \^drop_count\(1),
-      R => '0'
-    );
-\drop_count_i_reg[20]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[23]_i_1_n_7\,
-      Q => \^drop_count\(20),
-      R => '0'
-    );
-\drop_count_i_reg[21]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[23]_i_1_n_6\,
-      Q => \^drop_count\(21),
-      R => '0'
-    );
-\drop_count_i_reg[22]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[23]_i_1_n_5\,
-      Q => \^drop_count\(22),
-      R => '0'
-    );
-\drop_count_i_reg[23]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[23]_i_1_n_4\,
-      Q => \^drop_count\(23),
-      R => '0'
-    );
-\drop_count_i_reg[23]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[19]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[23]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[23]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[23]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[23]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[23]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[23]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[23]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[23]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(23 downto 20)
-    );
-\drop_count_i_reg[24]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[27]_i_1_n_7\,
-      Q => \^drop_count\(24),
-      R => '0'
-    );
-\drop_count_i_reg[25]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[27]_i_1_n_6\,
-      Q => \^drop_count\(25),
-      R => '0'
-    );
-\drop_count_i_reg[26]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[27]_i_1_n_5\,
-      Q => \^drop_count\(26),
-      R => '0'
-    );
-\drop_count_i_reg[27]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[27]_i_1_n_4\,
-      Q => \^drop_count\(27),
-      R => '0'
-    );
-\drop_count_i_reg[27]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[23]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[27]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[27]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[27]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[27]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[27]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[27]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[27]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[27]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(27 downto 24)
-    );
-\drop_count_i_reg[28]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[31]_i_1_n_7\,
-      Q => \^drop_count\(28),
-      R => '0'
-    );
-\drop_count_i_reg[29]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[31]_i_1_n_6\,
-      Q => \^drop_count\(29),
-      R => '0'
-    );
-\drop_count_i_reg[2]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[3]_i_1_n_5\,
-      Q => \^drop_count\(2),
-      R => '0'
-    );
-\drop_count_i_reg[30]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[31]_i_1_n_5\,
-      Q => \^drop_count\(30),
-      R => '0'
-    );
-\drop_count_i_reg[31]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[31]_i_1_n_4\,
-      Q => \^drop_count\(31),
-      R => '0'
-    );
-\drop_count_i_reg[31]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[27]_i_1_n_0\,
-      CO(3) => \NLW_drop_count_i_reg[31]_i_1_CO_UNCONNECTED\(3),
-      CO(2) => \drop_count_i_reg[31]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[31]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[31]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[31]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[31]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[31]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[31]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(31 downto 28)
-    );
-\drop_count_i_reg[3]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[3]_i_1_n_4\,
-      Q => \^drop_count\(3),
-      R => '0'
-    );
-\drop_count_i_reg[3]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => \drop_count_i_reg[3]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[3]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[3]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[3]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0001",
-      O(3) => \drop_count_i_reg[3]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[3]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[3]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[3]_i_1_n_7\,
-      S(3 downto 1) => \^drop_count\(3 downto 1),
-      S(0) => \drop_count_i[3]_i_2_n_0\
-    );
-\drop_count_i_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[7]_i_1_n_7\,
-      Q => \^drop_count\(4),
-      R => '0'
-    );
-\drop_count_i_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[7]_i_1_n_6\,
-      Q => \^drop_count\(5),
-      R => '0'
-    );
-\drop_count_i_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[7]_i_1_n_5\,
-      Q => \^drop_count\(6),
-      R => '0'
-    );
-\drop_count_i_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[7]_i_1_n_4\,
-      Q => \^drop_count\(7),
-      R => '0'
-    );
-\drop_count_i_reg[7]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \drop_count_i_reg[3]_i_1_n_0\,
-      CO(3) => \drop_count_i_reg[7]_i_1_n_0\,
-      CO(2) => \drop_count_i_reg[7]_i_1_n_1\,
-      CO(1) => \drop_count_i_reg[7]_i_1_n_2\,
-      CO(0) => \drop_count_i_reg[7]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3) => \drop_count_i_reg[7]_i_1_n_4\,
-      O(2) => \drop_count_i_reg[7]_i_1_n_5\,
-      O(1) => \drop_count_i_reg[7]_i_1_n_6\,
-      O(0) => \drop_count_i_reg[7]_i_1_n_7\,
-      S(3 downto 0) => \^drop_count\(7 downto 4)
-    );
-\drop_count_i_reg[8]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[11]_i_1_n_7\,
-      Q => \^drop_count\(8),
-      R => '0'
-    );
-\drop_count_i_reg[9]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => rejection_i_1_n_0,
-      D => \drop_count_i_reg[11]_i_1_n_6\,
-      Q => \^drop_count\(9),
-      R => '0'
-    );
-push_en_internal_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"F100"
-    )
-        port map (
-      I0 => fifo_full,
-      I1 => fifo_half,
-      I2 => current_clock,
-      I3 => has_data,
-      O => has_data_latched
+      I0 => has_data,
+      I1 => counter_reg(1),
+      I2 => counter_reg(0),
+      I3 => fifo_75,
+      I4 => fifo_full,
+      O => push_en_internal
     );
 push_en_internal_reg: unisim.vcomponents.FDRE
     generic map(
-      INIT => '0'
+      INIT => '0',
+      IS_C_INVERTED => '1'
     )
         port map (
       C => sysclk,
       CE => '1',
-      D => has_data_latched,
+      D => push_en_internal,
       Q => push_en,
       R => '0'
     );
-rejection_i_1: unisim.vcomponents.LUT4
+rejection_internal_i_1: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00E0"
+      INIT => X"FFE00000"
     )
         port map (
-      I0 => fifo_full,
-      I1 => fifo_half,
-      I2 => has_data,
-      I3 => current_clock,
-      O => rejection_i_1_n_0
+      I0 => counter_reg(1),
+      I1 => counter_reg(0),
+      I2 => fifo_75,
+      I3 => fifo_full,
+      I4 => has_data,
+      O => rejection_internal_i_1_n_0
     );
-rejection_reg: unisim.vcomponents.FDRE
-     port map (
+rejection_internal_reg: unisim.vcomponents.FDRE
+    generic map(
+      INIT => '0',
+      IS_C_INVERTED => '1'
+    )
+        port map (
       C => sysclk,
       CE => '1',
-      D => rejection_i_1_n_0,
+      D => rejection_internal_i_1_n_0,
       Q => rejection,
-      R => '0'
-    );
-sysclk_sync_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => '1',
-      D => sysclk,
-      Q => sysclk_sync,
-      R => '0'
-    );
-wordclk_sync_reg: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => sysclk,
-      CE => '1',
-      D => wordclk,
-      Q => wordclk_sync,
       R => '0'
     );
 end STRUCTURE;
@@ -719,15 +350,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity clocked_i2s_stream_controller_0_0 is
   port (
     fifo_full : in STD_LOGIC;
-    fifo_half : in STD_LOGIC;
-    fifo_empty : in STD_LOGIC;
+    fifo_75 : in STD_LOGIC;
     sysclk : in STD_LOGIC;
-    bitclk : in STD_LOGIC;
-    wordclk : in STD_LOGIC;
     has_data : in STD_LOGIC;
     push_en : out STD_LOGIC;
-    rejection : out STD_LOGIC;
-    drop_count : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    rejection : out STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of clocked_i2s_stream_controller_0_0 : entity is true;
@@ -745,14 +372,11 @@ architecture STRUCTURE of clocked_i2s_stream_controller_0_0 is
 begin
 U0: entity work.clocked_i2s_stream_controller_0_0_stream_controller
      port map (
-      bitclk => bitclk,
-      drop_count(31 downto 0) => drop_count(31 downto 0),
+      fifo_75 => fifo_75,
       fifo_full => fifo_full,
-      fifo_half => fifo_half,
       has_data => has_data,
       push_en => push_en,
       rejection => rejection,
-      sysclk => sysclk,
-      wordclk => wordclk
+      sysclk => sysclk
     );
 end STRUCTURE;

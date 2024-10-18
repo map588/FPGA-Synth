@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Wed Oct 16 09:13:51 2024
+// Date        : Fri Oct 18 00:46:50 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top clocked_i2s_i2s_module_0_0 -prefix
 //               clocked_i2s_i2s_module_0_0_ clocked_i2s_i2s_module_0_0_stub.v
@@ -15,9 +15,9 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "i2s_module,Vivado 2021.1" *)
 module clocked_i2s_i2s_module_0_0(sys_clk, sys_resetn, mclk_resetn, mclk, bclk, 
-  lrclk, data_in, push, sdata, bclk_out, lrclk_out, fifo_full, fifo_half, fifo_empty, fifo_overflow, 
-  fifo_count)
-/* synthesis syn_black_box black_box_pad_pin="sys_clk,sys_resetn,mclk_resetn,mclk,bclk,lrclk,data_in[23:0],push,sdata,bclk_out,lrclk_out,fifo_full,fifo_half,fifo_empty,fifo_overflow,fifo_count[11:0]" */;
+  lrclk, data_in, push, sdata, bclk_out, lrclk_out, fifo_full, fifo_3_qtr, fifo_half, fifo_empty, 
+  fifo_overflow, fifo_count)
+/* synthesis syn_black_box black_box_pad_pin="sys_clk,sys_resetn,mclk_resetn,mclk,bclk,lrclk,data_in[23:0],push,sdata,bclk_out,lrclk_out,fifo_full,fifo_3_qtr,fifo_half,fifo_empty,fifo_overflow,fifo_count[11:0]" */;
   input sys_clk;
   input sys_resetn;
   input mclk_resetn;
@@ -30,6 +30,7 @@ module clocked_i2s_i2s_module_0_0(sys_clk, sys_resetn, mclk_resetn, mclk, bclk,
   output bclk_out;
   output lrclk_out;
   output fifo_full;
+  output fifo_3_qtr;
   output fifo_half;
   output fifo_empty;
   output fifo_overflow;

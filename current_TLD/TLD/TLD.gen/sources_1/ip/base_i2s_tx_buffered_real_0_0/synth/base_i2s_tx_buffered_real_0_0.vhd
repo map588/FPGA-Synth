@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:i2s_tx_buffered_real:1.0
--- IP Revision: 4
+-- IP Revision: 5
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -100,7 +100,7 @@ ARCHITECTURE base_i2s_tx_buffered_real_0_0_arch OF base_i2s_tx_buffered_real_0_0
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF base_i2s_tx_buffered_real_0_0_arch : ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=i2s_tx_buffered_real,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=i2s_tx_buffered_real,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "IPI";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
@@ -115,7 +115,7 @@ ARCHITECTURE base_i2s_tx_buffered_real_0_0_arch OF base_i2s_tx_buffered_real_0_0
   ATTRIBUTE X_INTERFACE_INFO OF lrclk_out: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK.LRCLK_OUT CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF clk_125: SIGNAL IS "XIL_INTERFACENAME CLK.CLK_125, FREQ_HZ 125000000, PHASE 0.0, FREQ_TOLERANCE_HZ 0, CLK_DOMAIN base_sysclk, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk_125: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK.CLK_125 CLK";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF clk_100: SIGNAL IS "XIL_INTERFACENAME CLK.CLK_100, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clocks_n_sets/clk_wiz_1_clk_out1, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF clk_100: SIGNAL IS "XIL_INTERFACENAME CLK.CLK_100, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF clk_100: SIGNAL IS "xilinx.com:signal:clock:1.0 CLK.CLK_100 CLK";
   ATTRIBUTE X_INTERFACE_PARAMETER OF buff_half: SIGNAL IS "XIL_INTERFACENAME INTR.BUFF_HALF, SENSITIVITY LEVEL_HIGH, PortWidth 1";
   ATTRIBUTE X_INTERFACE_INFO OF buff_half: SIGNAL IS "xilinx.com:signal:interrupt:1.0 INTR.BUFF_HALF INTERRUPT";

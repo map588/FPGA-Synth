@@ -128,7 +128,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     M_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -155,7 +155,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     M_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_M_AXI_GP0_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,12,1,1,1,1,1>("M_AXI_GP0_transactor", M_AXI_GP0_transactor_param_props);
 
@@ -234,7 +234,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     S_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "6");
     S_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     S_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -262,7 +262,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     S_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     S_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_S_AXI_GP0_transactor = new xtlm::xaximm_pin2xtlm_t<32,32,6,1,1,1,1,1>("S_AXI_GP0_transactor", S_AXI_GP0_transactor_param_props);
 
@@ -405,7 +405,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     M_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -432,7 +432,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     M_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_M_AXI_GP0_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,12,1,1,1,1,1>("M_AXI_GP0_transactor", M_AXI_GP0_transactor_param_props);
 
@@ -511,7 +511,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     S_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "6");
     S_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     S_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -539,7 +539,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     S_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     S_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_S_AXI_GP0_transactor = new xtlm::xaximm_pin2xtlm_t<32,32,6,1,1,1,1,1>("S_AXI_GP0_transactor", S_AXI_GP0_transactor_param_props);
 
@@ -682,7 +682,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     M_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -709,7 +709,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     M_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     M_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_M_AXI_GP0_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,12,1,1,1,1,1>("M_AXI_GP0_transactor", M_AXI_GP0_transactor_param_props);
 
@@ -788,7 +788,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     S_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "6");
     S_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     S_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -816,7 +816,7 @@ void base_ps7_0_0::before_end_of_elaboration()
     S_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     S_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     S_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_S_AXI_GP0_transactor = new xtlm::xaximm_pin2xtlm_t<32,32,6,1,1,1,1,1>("S_AXI_GP0_transactor", S_AXI_GP0_transactor_param_props);
 
@@ -948,7 +948,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     M_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -975,7 +975,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     M_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     M_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_M_AXI_GP0_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,12,1,1,1,1,1>("M_AXI_GP0_transactor", M_AXI_GP0_transactor_param_props);
   mp_M_AXI_GP0_transactor->ARVALID(M_AXI_GP0_ARVALID);
@@ -1035,7 +1035,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     S_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     S_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "6");
     S_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     S_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1063,7 +1063,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     S_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     S_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     S_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_S_AXI_GP0_transactor = new xtlm::xaximm_pin2xtlm_t<32,32,6,1,1,1,1,1>("S_AXI_GP0_transactor", S_AXI_GP0_transactor_param_props);
   mp_S_AXI_GP0_transactor->ARREADY(S_AXI_GP0_ARREADY);
@@ -1225,7 +1225,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     M_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     M_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    M_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     M_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "12");
     M_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     M_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1252,7 +1252,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     M_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     M_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     M_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    M_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_M_AXI_GP0_transactor = new xtlm::xaximm_xtlm2pin_t<32,32,12,1,1,1,1,1>("M_AXI_GP0_transactor", M_AXI_GP0_transactor_param_props);
   mp_M_AXI_GP0_transactor->ARVALID(M_AXI_GP0_ARVALID);
@@ -1312,7 +1312,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     S_AXI_GP0_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
     S_AXI_GP0_transactor_param_props.addLong("DATA_WIDTH", "32");
-    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_GP0_transactor_param_props.addLong("FREQ_HZ", "1e+08");
     S_AXI_GP0_transactor_param_props.addLong("ID_WIDTH", "6");
     S_AXI_GP0_transactor_param_props.addLong("ADDR_WIDTH", "32");
     S_AXI_GP0_transactor_param_props.addLong("AWUSER_WIDTH", "0");
@@ -1340,7 +1340,7 @@ base_ps7_0_0::base_ps7_0_0(const sc_core::sc_module_name& nm) : base_ps7_0_0_sc(
     S_AXI_GP0_transactor_param_props.addFloat("PHASE", "0.0");
     S_AXI_GP0_transactor_param_props.addString("PROTOCOL", "AXI3");
     S_AXI_GP0_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
-    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "/clocks_n_sets/clk_wiz_1_clk_out1");
+    S_AXI_GP0_transactor_param_props.addString("CLK_DOMAIN", "base_ps7_0_0_FCLK_CLK0");
 
     mp_S_AXI_GP0_transactor = new xtlm::xaximm_pin2xtlm_t<32,32,6,1,1,1,1,1>("S_AXI_GP0_transactor", S_AXI_GP0_transactor_param_props);
   mp_S_AXI_GP0_transactor->ARREADY(S_AXI_GP0_ARREADY);

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct 18 03:51:13 2024" VIVADOVERSION="2021.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Oct 18 10:43:53 2024" VIVADOVERSION="2021.1">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="clocked_i2s" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -31,9 +31,7 @@
     </PORT>
     <PORT DIR="I" NAME="clk_100" SIGIS="undef" SIGNAME="External_Ports_clk_100">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="Clock_Manager_0" PORT="clk_100MHz"/>
-        <CONNECTION INSTANCE="i2s_module_0" PORT="sys_clk"/>
-        <CONNECTION INSTANCE="stream_controller_0" PORT="sysclk"/>
+        <CONNECTION INSTANCE="util_ds_buf_0" PORT="BUFG_I"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="async_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_async_resetn">
@@ -104,9 +102,9 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="clk_100MHz" SIGIS="undef" SIGNAME="External_Ports_clk_100">
+        <PORT DIR="I" NAME="clk_100MHz" SIGIS="undef" SIGNAME="util_ds_buf_0_BUFG_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_100"/>
+            <CONNECTION INSTANCE="util_ds_buf_0" PORT="BUFG_O"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="async_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="External_Ports_async_resetn">
@@ -1355,9 +1353,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="External_Ports_clk_100">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="sys_clk" SIGIS="clk" SIGNAME="util_ds_buf_0_BUFG_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_100"/>
+            <CONNECTION INSTANCE="util_ds_buf_0" PORT="BUFG_O"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="sys_resetn" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="Clock_Manager_0_sync_resetn_100MHz">
@@ -1461,9 +1459,9 @@
             <CONNECTION INSTANCE="i2s_module_0" PORT="fifo_3_qtr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="sysclk" SIGIS="undef" SIGNAME="External_Ports_clk_100">
+        <PORT DIR="I" NAME="sysclk" SIGIS="undef" SIGNAME="util_ds_buf_0_BUFG_O">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="clk_100"/>
+            <CONNECTION INSTANCE="util_ds_buf_0" PORT="BUFG_O"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="has_data" SIGIS="undef" SIGNAME="External_Ports_data_ready">
@@ -1479,6 +1477,38 @@
         <PORT DIR="O" NAME="rejection" SIGIS="undef" SIGNAME="stream_controller_0_rejection">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="rejection"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="25" FULLNAME="/util_ds_buf_0" HWVERSION="2.2" INSTANCE="util_ds_buf_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="util_ds_buf" VLNV="xilinx.com:ip:util_ds_buf:2.2">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_BUF_TYPE" VALUE="BUFG"/>
+        <PARAMETER NAME="C_SIZE" VALUE="1"/>
+        <PARAMETER NAME="C_BUFGCE_DIV" VALUE="1"/>
+        <PARAMETER NAME="C_BUFG_GT_SYNC" VALUE="0"/>
+        <PARAMETER NAME="C_SIM_DEVICE" VALUE="VERSAL_AI_CORE_ES1"/>
+        <PARAMETER NAME="C_OBUFDS_GTE5_ADV" VALUE="&quot;00&quot;"/>
+        <PARAMETER NAME="C_REFCLK_ICNTL_TX" VALUE="&quot;00000&quot;"/>
+        <PARAMETER NAME="Component_Name" VALUE="clocked_i2s_util_ds_buf_0_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="BOARD_PARAMETER"/>
+        <PARAMETER NAME="DIFF_CLK_IN_BOARD_INTERFACE" VALUE="Custom"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" LEFT="0" NAME="BUFG_I" RIGHT="0" SIGIS="clk" SIGNAME="External_Ports_clk_100">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_100"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" LEFT="0" NAME="BUFG_O" RIGHT="0" SIGIS="clk" SIGNAME="util_ds_buf_0_BUFG_O">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Clock_Manager_0" PORT="clk_100MHz"/>
+            <CONNECTION INSTANCE="i2s_module_0" PORT="sys_clk"/>
+            <CONNECTION INSTANCE="stream_controller_0" PORT="sysclk"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

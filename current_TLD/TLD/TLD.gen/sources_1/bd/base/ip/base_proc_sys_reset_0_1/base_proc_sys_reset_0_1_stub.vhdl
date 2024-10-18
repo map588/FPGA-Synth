@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Oct 18 07:29:37 2024
+-- Date        : Fri Oct 18 10:26:45 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top base_proc_sys_reset_0_1 -prefix
---               base_proc_sys_reset_0_1_ base_proc_sys_reset_0_1_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/current_TLD/TLD/TLD.gen/sources_1/bd/base/ip/base_proc_sys_reset_0_1/base_proc_sys_reset_0_1_stub.vhdl
 -- Design      : base_proc_sys_reset_0_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

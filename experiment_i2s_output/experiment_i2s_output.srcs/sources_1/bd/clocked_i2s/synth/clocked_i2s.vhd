@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Fri Oct 18 03:51:12 2024
+--Date        : Fri Oct 18 10:43:53 2024
 --Host        : bigolBox running 64-bit major release  (build 9200)
 --Command     : generate_target clocked_i2s.bd
 --Design      : clocked_i2s
@@ -30,7 +30,7 @@ entity clocked_i2s is
     sdata : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of clocked_i2s : entity is "clocked_i2s,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=clocked_i2s,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of clocked_i2s : entity is "clocked_i2s,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=clocked_i2s,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=6,numReposBlks=6,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_board_cnt=4,da_clkrst_cnt=3,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of clocked_i2s : entity is "clocked_i2s.hwdef";
 end clocked_i2s;
@@ -97,12 +97,19 @@ architecture STRUCTURE of clocked_i2s is
     clk_out1 : out STD_LOGIC
   );
   end component clocked_i2s_clk_wiz_1_0;
+  component clocked_i2s_util_ds_buf_0_0 is
+  port (
+    BUFG_I : in STD_LOGIC_VECTOR ( 0 to 0 );
+    BUFG_O : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component clocked_i2s_util_ds_buf_0_0;
   signal Clock_Manager_0_clk_en_12_288MHz : STD_LOGIC;
   signal Clock_Manager_0_clk_en_96kHz : STD_LOGIC;
   signal Clock_Manager_0_sync_resetn_100MHz1 : STD_LOGIC;
   signal Clock_Manager_0_sync_resetn_125MHz : STD_LOGIC;
   signal Clock_Manager_0_sync_resetn_24MHz : STD_LOGIC;
   signal async_resetn_0_1 : STD_LOGIC;
+  signal clk_100_1 : STD_LOGIC;
   signal clk_125_1 : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_1_clk_out1 : STD_LOGIC;
@@ -117,7 +124,7 @@ architecture STRUCTURE of clocked_i2s is
   signal i2s_module_0_fifo_overflow : STD_LOGIC;
   signal i2s_module_0_lrclk_out : STD_LOGIC;
   signal i2s_module_0_sdata : STD_LOGIC;
-  signal pl_clk_1 : STD_LOGIC;
+  signal pl_clk_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal stream_controller_0_push_en : STD_LOGIC;
   signal stream_controller_0_rejection : STD_LOGIC;
   signal NLW_Clock_Manager_0_sync_reset_100MHz_UNCONNECTED : STD_LOGIC;
@@ -143,6 +150,7 @@ begin
   buff_empty <= i2s_module_0_fifo_empty;
   buff_full <= i2s_module_0_fifo_full;
   buff_half <= i2s_module_0_fifo_half;
+  clk_100_1 <= clk_100;
   clk_125_1 <= clk_125;
   data_in_0_1(23 downto 0) <= data_in(23 downto 0);
   fifo_count(11 downto 0) <= i2s_module_0_fifo_count(11 downto 0);
@@ -150,13 +158,12 @@ begin
   has_data_1 <= data_ready;
   lrclk_out <= i2s_module_0_lrclk_out;
   mclk_out <= clk_wiz_0_clk_out1;
-  pl_clk_1 <= clk_100;
   rejection <= stream_controller_0_rejection;
   sdata <= i2s_module_0_sdata;
 Clock_Manager_0: component clocked_i2s_Clock_Manager_0_0
      port map (
       async_resetn => async_resetn_0_1,
-      clk_100MHz => pl_clk_1,
+      clk_100MHz => pl_clk_1(0),
       clk_125MHz => clk_wiz_1_clk_out1,
       clk_24_576MHz => clk_wiz_0_clk_out1,
       clk_en_6_144MHz => Clock_Manager_0_clk_en_12_288MHz,
@@ -197,7 +204,7 @@ i2s_module_0: component clocked_i2s_i2s_module_0_0
       mclk_resetn => Clock_Manager_0_sync_resetn_24MHz,
       push => stream_controller_0_push_en,
       sdata => i2s_module_0_sdata,
-      sys_clk => pl_clk_1,
+      sys_clk => pl_clk_1(0),
       sys_resetn => Clock_Manager_0_sync_resetn_100MHz1
     );
 stream_controller_0: component clocked_i2s_stream_controller_0_0
@@ -207,6 +214,11 @@ stream_controller_0: component clocked_i2s_stream_controller_0_0
       has_data => has_data_1,
       push_en => stream_controller_0_push_en,
       rejection => stream_controller_0_rejection,
-      sysclk => pl_clk_1
+      sysclk => pl_clk_1(0)
+    );
+util_ds_buf_0: component clocked_i2s_util_ds_buf_0_0
+     port map (
+      BUFG_I(0) => clk_100_1,
+      BUFG_O(0) => pl_clk_1(0)
     );
 end STRUCTURE;

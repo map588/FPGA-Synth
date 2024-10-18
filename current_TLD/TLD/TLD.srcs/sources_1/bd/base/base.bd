@@ -16,16 +16,15 @@
       "envelope_stub_0": "",
       "oscilator_stub_0": "",
       "xlconstant_0": "",
-      "i2s_tx_buffered_real_0": "",
       "midi_interface_0": "",
       "clocks_n_sets": {
         "proc_sys_reset_1": "",
         "proc_sys_reset_2": "",
         "proc_sys_reset_3": "",
-        "clk_wiz_0": "",
-        "clk_wiz_1": ""
+        "clk_wiz_0": ""
       },
-      "midi_decoder_0": ""
+      "midi_decoder_0": "",
+      "i2s_tx_buffered_real_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -1928,16 +1927,12 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
+                "value": "1e+08",
+                "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
-                "value": "/clocks_n_sets/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "base_ps7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
               }
             }
           },
@@ -2005,16 +2000,12 @@
             "direction": "I",
             "parameters": {
               "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
+                "value": "1e+08",
+                "value_src": "user_prop"
               },
               "CLK_DOMAIN": {
-                "value": "/clocks_n_sets/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "base_ps7_0_0_FCLK_CLK0",
+                "value_src": "default_prop"
               }
             }
           },
@@ -2085,12 +2076,6 @@
             "value": "0"
           }
         }
-      },
-      "i2s_tx_buffered_real_0": {
-        "vlnv": "xilinx.com:user:i2s_tx_buffered_real:1.0",
-        "xci_name": "base_i2s_tx_buffered_real_0_0",
-        "xci_path": "..\\..\\ip\\base_i2s_tx_buffered_real_0_0\\base_i2s_tx_buffered_real_0_0.xci",
-        "inst_hier_path": "i2s_tx_buffered_real_0"
       },
       "midi_interface_0": {
         "vlnv": "xilinx.com:module_ref:midi_interface:1.0",
@@ -2257,10 +2242,10 @@
                 "value": "BUFGCE"
               },
               "CLKOUT1_JITTER": {
-                "value": "446.763"
+                "value": "290.478"
               },
               "CLKOUT1_PHASE_ERROR": {
-                "value": "313.282"
+                "value": "133.882"
               },
               "CLKOUT1_REQUESTED_OUT_FREQ": {
                 "value": "10"
@@ -2293,102 +2278,25 @@
                 "value": "OPTIMIZED"
               },
               "MMCM_CLKFBOUT_MULT_F": {
-                "value": "41"
+                "value": "15.625"
               },
               "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "82"
+                "value": "78.125"
               },
               "MMCM_COMPENSATION": {
                 "value": "ZHOLD"
               },
               "MMCM_DIVCLK_DIVIDE": {
-                "value": "5"
+                "value": "2"
               },
               "PRIMITIVE": {
-                "value": "PLL"
+                "value": "MMCM"
               },
               "RESET_PORT": {
                 "value": "resetn"
               },
               "RESET_TYPE": {
                 "value": "ACTIVE_LOW"
-              },
-              "USE_SAFE_CLOCK_STARTUP": {
-                "value": "true"
-              }
-            }
-          },
-          "clk_wiz_1": {
-            "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-            "xci_name": "base_clk_wiz_0_1",
-            "xci_path": "ip\\base_clk_wiz_0_1\\base_clk_wiz_0_1.xci",
-            "inst_hier_path": "clocks_n_sets/clk_wiz_1",
-            "parameters": {
-              "CLKOUT1_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT1_JITTER": {
-                "value": "137.681"
-              },
-              "CLKOUT1_PHASE_ERROR": {
-                "value": "105.461"
-              },
-              "CLKOUT1_REQUESTED_OUT_FREQ": {
-                "value": "100"
-              },
-              "CLKOUT2_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT3_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT4_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT5_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT6_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "CLKOUT7_DRIVES": {
-                "value": "BUFGCE"
-              },
-              "ENABLE_CLOCK_MONITOR": {
-                "value": "false"
-              },
-              "FEEDBACK_SOURCE": {
-                "value": "FDBK_AUTO"
-              },
-              "JITTER_SEL": {
-                "value": "No_Jitter"
-              },
-              "MMCM_BANDWIDTH": {
-                "value": "OPTIMIZED"
-              },
-              "MMCM_CLKFBOUT_MULT_F": {
-                "value": "9"
-              },
-              "MMCM_CLKOUT0_DIVIDE_F": {
-                "value": "9"
-              },
-              "MMCM_COMPENSATION": {
-                "value": "ZHOLD"
-              },
-              "MMCM_DIVCLK_DIVIDE": {
-                "value": "1"
-              },
-              "PRIMITIVE": {
-                "value": "PLL"
-              },
-              "RESET_PORT": {
-                "value": "resetn"
-              },
-              "RESET_TYPE": {
-                "value": "ACTIVE_LOW"
-              },
-              "USE_CLOCK_SEQUENCING": {
-                "value": "false"
               },
               "USE_SAFE_CLOCK_STARTUP": {
                 "value": "true"
@@ -2408,12 +2316,6 @@
             "ports": [
               "clk_wiz_0/locked",
               "proc_sys_reset_2/aux_reset_in"
-            ]
-          },
-          "clk_wiz_1_locked": {
-            "ports": [
-              "clk_wiz_1/locked",
-              "proc_sys_reset_1/dcm_locked"
             ]
           },
           "proc_sys_reset_1_peripheral_aresetn": {
@@ -2436,7 +2338,7 @@
           },
           "ps7_0_FCLK_CLK0": {
             "ports": [
-              "clk_wiz_1/clk_out1",
+              "clk_in2",
               "clk_out1",
               "proc_sys_reset_1/slowest_sync_clk"
             ]
@@ -2445,12 +2347,6 @@
             "ports": [
               "slowest_sync_clk",
               "proc_sys_reset_2/slowest_sync_clk"
-            ]
-          },
-          "ps7_0_FCLK_CLK2": {
-            "ports": [
-              "clk_in2",
-              "clk_wiz_1/clk_in1"
             ]
           },
           "ps7_0_FCLK_CLK3": {
@@ -2463,7 +2359,6 @@
             "ports": [
               "ext_reset_in",
               "proc_sys_reset_2/ext_reset_in",
-              "clk_wiz_1/resetn",
               "proc_sys_reset_3/ext_reset_in",
               "proc_sys_reset_1/ext_reset_in"
             ]
@@ -2481,6 +2376,12 @@
         "xci_name": "base_midi_decoder_0_0",
         "xci_path": "ip\\base_midi_decoder_0_0\\base_midi_decoder_0_0.xci",
         "inst_hier_path": "midi_decoder_0"
+      },
+      "i2s_tx_buffered_real_0": {
+        "vlnv": "xilinx.com:user:i2s_tx_buffered_real:1.0",
+        "xci_name": "base_i2s_tx_buffered_real_0_0",
+        "xci_path": "..\\..\\ip\\base_i2s_tx_buffered_real_0_0\\base_i2s_tx_buffered_real_0_0.xci",
+        "inst_hier_path": "i2s_tx_buffered_real_0"
       }
     },
     "interface_nets": {
@@ -2631,8 +2532,7 @@
         "ports": [
           "clocks_n_sets/peripheral_aresetn",
           "envelope_stub_0/rst_n",
-          "oscilator_stub_0/rst_n",
-          "i2s_tx_buffered_real_0/async_resetn"
+          "oscilator_stub_0/rst_n"
         ]
       },
       "proc_sys_reset_2_peripheral_aresetn": {
@@ -2654,8 +2554,7 @@
           "envelope_stub_0/clk",
           "ps7_0/M_AXI_GP0_ACLK",
           "ps7_0/S_AXI_GP0_ACLK",
-          "oscilator_stub_0/clk",
-          "i2s_tx_buffered_real_0/clk_100"
+          "oscilator_stub_0/clk"
         ]
       },
       "ps7_0_FCLK_CLK1": {
@@ -2668,7 +2567,8 @@
       "ps7_0_FCLK_CLK2": {
         "ports": [
           "ps7_0/FCLK_CLK0",
-          "clocks_n_sets/clk_in2"
+          "clocks_n_sets/clk_in2",
+          "i2s_tx_buffered_real_0/clk_100"
         ]
       },
       "ps7_0_FCLK_CLK3": {
@@ -2680,7 +2580,8 @@
       "ps7_0_FCLK_RESET0_N": {
         "ports": [
           "ps7_0/FCLK_RESET0_N",
-          "clocks_n_sets/ext_reset_in"
+          "clocks_n_sets/ext_reset_in",
+          "i2s_tx_buffered_real_0/async_resetn"
         ]
       },
       "ps7_0_FCLK_RESET2_N": {

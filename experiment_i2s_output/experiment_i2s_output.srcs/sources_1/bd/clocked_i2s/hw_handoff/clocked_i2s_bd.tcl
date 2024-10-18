@@ -263,6 +263,12 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: util_ds_buf_0, and set properties
+  set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_0 ]
+  set_property -dict [ list \
+   CONFIG.C_BUF_TYPE {BUFG} \
+ ] $util_ds_buf_0
+
   # Create port connections
   connect_bd_net -net Clock_Manager_0_clk_en_12_288MHz [get_bd_pins Clock_Manager_0/clk_en_6_144MHz] [get_bd_pins i2s_module_0/bclk]
   connect_bd_net -net Clock_Manager_0_clk_en_96kHz [get_bd_pins Clock_Manager_0/clk_en_96kHz] [get_bd_pins i2s_module_0/lrclk]
@@ -270,6 +276,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Clock_Manager_0_sync_resetn_125MHz [get_bd_pins Clock_Manager_0/sync_resetn_125MHz] [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net Clock_Manager_0_sync_resetn_24MHz [get_bd_pins Clock_Manager_0/sync_resetn_24MHz] [get_bd_pins i2s_module_0/mclk_resetn]
   connect_bd_net -net async_resetn_0_1 [get_bd_ports async_resetn] [get_bd_pins Clock_Manager_0/async_resetn] [get_bd_pins clk_wiz_1/resetn]
+  connect_bd_net -net clk_100_1 [get_bd_ports clk_100] [get_bd_pins util_ds_buf_0/BUFG_I]
   connect_bd_net -net clk_125_1 [get_bd_ports clk_125] [get_bd_pins clk_wiz_1/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports mclk_out] [get_bd_pins Clock_Manager_0/clk_24_576MHz] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins i2s_module_0/mclk]
   connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins Clock_Manager_0/clk_125MHz] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_out1]
@@ -284,7 +291,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net i2s_module_0_fifo_overflow [get_bd_ports fifo_overflow] [get_bd_pins i2s_module_0/fifo_overflow]
   connect_bd_net -net i2s_module_0_lrclk_out [get_bd_ports lrclk_out] [get_bd_pins i2s_module_0/lrclk_out]
   connect_bd_net -net i2s_module_0_sdata [get_bd_ports sdata] [get_bd_pins i2s_module_0/sdata]
-  connect_bd_net -net pl_clk_1 [get_bd_ports clk_100] [get_bd_pins Clock_Manager_0/clk_100MHz] [get_bd_pins i2s_module_0/sys_clk] [get_bd_pins stream_controller_0/sysclk]
+  connect_bd_net -net pl_clk_1 [get_bd_pins Clock_Manager_0/clk_100MHz] [get_bd_pins i2s_module_0/sys_clk] [get_bd_pins stream_controller_0/sysclk] [get_bd_pins util_ds_buf_0/BUFG_O]
   connect_bd_net -net stream_controller_0_push_en [get_bd_pins i2s_module_0/push] [get_bd_pins stream_controller_0/push_en]
   connect_bd_net -net stream_controller_0_rejection [get_bd_ports rejection] [get_bd_pins stream_controller_0/rejection]
 

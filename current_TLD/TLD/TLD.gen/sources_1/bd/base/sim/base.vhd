@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Fri Oct 18 09:25:04 2024
+--Date        : Fri Oct 18 10:58:23 2024
 --Host        : bigolBox running 64-bit major release  (build 9200)
 --Command     : generate_target base.bd
 --Design      : base
@@ -77,23 +77,13 @@ architecture STRUCTURE of clocks_n_sets_imp_14UKFJB is
     locked : out STD_LOGIC
   );
   end component base_clk_wiz_0_0;
-  component base_clk_wiz_0_1 is
-  port (
-    resetn : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-  end component base_clk_wiz_0_1;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_0_locked : STD_LOGIC;
-  signal clk_wiz_1_locked : STD_LOGIC;
   signal proc_sys_reset_1_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal proc_sys_reset_2_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal proc_sys_reset_3_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal ps7_0_FCLK_CLK0 : STD_LOGIC;
   signal ps7_0_FCLK_CLK1 : STD_LOGIC;
-  signal ps7_0_FCLK_CLK2 : STD_LOGIC;
   signal ps7_0_FCLK_CLK3 : STD_LOGIC;
   signal ps7_0_FCLK_RESET0_N : STD_LOGIC;
   signal ps7_0_FCLK_RESET2_N : STD_LOGIC;
@@ -115,8 +105,8 @@ begin
   peripheral_aresetn(0) <= proc_sys_reset_1_peripheral_aresetn(0);
   peripheral_aresetn1(0) <= proc_sys_reset_2_peripheral_aresetn(0);
   peripheral_reset(0) <= proc_sys_reset_3_peripheral_reset(0);
+  ps7_0_FCLK_CLK0 <= clk_in2;
   ps7_0_FCLK_CLK1 <= slowest_sync_clk;
-  ps7_0_FCLK_CLK2 <= clk_in2;
   ps7_0_FCLK_CLK3 <= clk_in1;
   ps7_0_FCLK_RESET0_N <= ext_reset_in;
   ps7_0_FCLK_RESET2_N <= resetn;
@@ -127,18 +117,11 @@ clk_wiz_0: component base_clk_wiz_0_0
       locked => clk_wiz_0_locked,
       resetn => ps7_0_FCLK_RESET2_N
     );
-clk_wiz_1: component base_clk_wiz_0_1
-     port map (
-      clk_in1 => ps7_0_FCLK_CLK2,
-      clk_out1 => ps7_0_FCLK_CLK0,
-      locked => clk_wiz_1_locked,
-      resetn => ps7_0_FCLK_RESET0_N
-    );
 proc_sys_reset_1: component base_proc_sys_reset_0_1
      port map (
       aux_reset_in => '1',
       bus_struct_reset(0) => NLW_proc_sys_reset_1_bus_struct_reset_UNCONNECTED(0),
-      dcm_locked => clk_wiz_1_locked,
+      dcm_locked => '1',
       ext_reset_in => ps7_0_FCLK_RESET0_N,
       interconnect_aresetn(0) => NLW_proc_sys_reset_1_interconnect_aresetn_UNCONNECTED(0),
       mb_debug_sys_rst => '0',
@@ -209,7 +192,7 @@ entity base is
     sysclk : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of base : entity is "base,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=1,bdsource=USER,da_axi4_cnt=10,da_axi4_s2mm_cnt=1,da_board_cnt=16,da_clkrst_cnt=12,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of base : entity is "base,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=base,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=1,bdsource=USER,da_axi4_cnt=10,da_axi4_s2mm_cnt=1,da_board_cnt=16,da_clkrst_cnt=12,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of base : entity is "base.hwdef";
 end base;
@@ -361,25 +344,6 @@ architecture STRUCTURE of base is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component base_xlconstant_0_0;
-  component base_i2s_tx_buffered_real_0_0 is
-  port (
-    async_resetn : in STD_LOGIC;
-    bclk_out : out STD_LOGIC;
-    buff_empty : out STD_LOGIC;
-    buff_full : out STD_LOGIC;
-    buff_half : out STD_LOGIC;
-    clk_100 : in STD_LOGIC;
-    clk_125 : in STD_LOGIC;
-    data_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    data_ready : in STD_LOGIC;
-    fifo_count : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    fifo_overflow : out STD_LOGIC;
-    lrclk_out : out STD_LOGIC;
-    mclk_out : out STD_LOGIC;
-    rejection : out STD_LOGIC;
-    sdata : out STD_LOGIC
-  );
-  end component base_i2s_tx_buffered_real_0_0;
   component base_midi_interface_0_0 is
   port (
     fast_clk : in STD_LOGIC;
@@ -414,6 +378,25 @@ architecture STRUCTURE of base is
     wave_sel : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component base_midi_decoder_0_0;
+  component base_i2s_tx_buffered_real_0_0 is
+  port (
+    async_resetn : in STD_LOGIC;
+    bclk_out : out STD_LOGIC;
+    buff_empty : out STD_LOGIC;
+    buff_full : out STD_LOGIC;
+    buff_half : out STD_LOGIC;
+    clk_100 : in STD_LOGIC;
+    clk_125 : in STD_LOGIC;
+    data_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    data_ready : in STD_LOGIC;
+    fifo_count : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    fifo_overflow : out STD_LOGIC;
+    lrclk_out : out STD_LOGIC;
+    mclk_out : out STD_LOGIC;
+    rejection : out STD_LOGIC;
+    sdata : out STD_LOGIC
+  );
+  end component base_i2s_tx_buffered_real_0_0;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal i2s_tx_buffered_real_0_bclk_out : STD_LOGIC;
   signal i2s_tx_buffered_real_0_buff_half : STD_LOGIC;
@@ -585,12 +568,12 @@ envelope_stub_0: component base_envelope_stub_0_0
     );
 i2s_tx_buffered_real_0: component base_i2s_tx_buffered_real_0_0
      port map (
-      async_resetn => proc_sys_reset_1_peripheral_aresetn(0),
+      async_resetn => ps7_0_FCLK_RESET0_N,
       bclk_out => i2s_tx_buffered_real_0_bclk_out,
       buff_empty => NLW_i2s_tx_buffered_real_0_buff_empty_UNCONNECTED,
       buff_full => NLW_i2s_tx_buffered_real_0_buff_full_UNCONNECTED,
       buff_half => i2s_tx_buffered_real_0_buff_half,
-      clk_100 => ps7_0_FCLK_CLK0,
+      clk_100 => ps7_0_FCLK_CLK2,
       clk_125 => sysclk_1,
       data_in(23 downto 0) => oscilator_stub_0_outout_oscilator(23 downto 0),
       data_ready => oscilator_stub_0_ready,

@@ -180,8 +180,8 @@ proc create_hier_cell_clocks_n_sets { parentCell nameHier } {
   set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
   set_property -dict [ list \
    CONFIG.CLKOUT1_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT1_JITTER {446.763} \
-   CONFIG.CLKOUT1_PHASE_ERROR {313.282} \
+   CONFIG.CLKOUT1_JITTER {290.478} \
+   CONFIG.CLKOUT1_PHASE_ERROR {133.882} \
    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10} \
    CONFIG.CLKOUT2_DRIVES {BUFGCE} \
    CONFIG.CLKOUT3_DRIVES {BUFGCE} \
@@ -192,43 +192,15 @@ proc create_hier_cell_clocks_n_sets { parentCell nameHier } {
    CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
    CONFIG.JITTER_SEL {No_Jitter} \
    CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {41} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {82} \
+   CONFIG.MMCM_CLKFBOUT_MULT_F {15.625} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
    CONFIG.MMCM_COMPENSATION {ZHOLD} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {5} \
-   CONFIG.PRIMITIVE {PLL} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
+   CONFIG.PRIMITIVE {MMCM} \
    CONFIG.RESET_PORT {resetn} \
    CONFIG.RESET_TYPE {ACTIVE_LOW} \
    CONFIG.USE_SAFE_CLOCK_STARTUP {true} \
  ] $clk_wiz_0
-
-  # Create instance: clk_wiz_1, and set properties
-  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT1_JITTER {137.681} \
-   CONFIG.CLKOUT1_PHASE_ERROR {105.461} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {100} \
-   CONFIG.CLKOUT2_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT3_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT4_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT5_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT6_DRIVES {BUFGCE} \
-   CONFIG.CLKOUT7_DRIVES {BUFGCE} \
-   CONFIG.ENABLE_CLOCK_MONITOR {false} \
-   CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
-   CONFIG.JITTER_SEL {No_Jitter} \
-   CONFIG.MMCM_BANDWIDTH {OPTIMIZED} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {9} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {9} \
-   CONFIG.MMCM_COMPENSATION {ZHOLD} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.PRIMITIVE {PLL} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_CLOCK_SEQUENCING {false} \
-   CONFIG.USE_SAFE_CLOCK_STARTUP {true} \
- ] $clk_wiz_1
 
   # Create instance: proc_sys_reset_1, and set properties
   set proc_sys_reset_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1 ]
@@ -251,15 +223,13 @@ proc create_hier_cell_clocks_n_sets { parentCell nameHier } {
   # Create port connections
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_out2] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins proc_sys_reset_3/slowest_sync_clk]
   connect_bd_net -net clk_wiz_0_locked [get_bd_pins clk_wiz_0/locked] [get_bd_pins proc_sys_reset_2/aux_reset_in]
-  connect_bd_net -net clk_wiz_1_locked [get_bd_pins clk_wiz_1/locked] [get_bd_pins proc_sys_reset_1/dcm_locked]
   connect_bd_net -net proc_sys_reset_1_peripheral_aresetn [get_bd_pins peripheral_aresetn] [get_bd_pins proc_sys_reset_1/peripheral_aresetn]
   connect_bd_net -net proc_sys_reset_2_peripheral_aresetn [get_bd_pins peripheral_aresetn1] [get_bd_pins proc_sys_reset_2/peripheral_aresetn]
   connect_bd_net -net proc_sys_reset_3_peripheral_reset [get_bd_pins peripheral_reset] [get_bd_pins proc_sys_reset_3/peripheral_reset]
-  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins clk_out1] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins proc_sys_reset_1/slowest_sync_clk]
+  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins clk_in2] [get_bd_pins clk_out1] [get_bd_pins proc_sys_reset_1/slowest_sync_clk]
   connect_bd_net -net ps7_0_FCLK_CLK1 [get_bd_pins slowest_sync_clk] [get_bd_pins proc_sys_reset_2/slowest_sync_clk]
-  connect_bd_net -net ps7_0_FCLK_CLK2 [get_bd_pins clk_in2] [get_bd_pins clk_wiz_1/clk_in1]
   connect_bd_net -net ps7_0_FCLK_CLK3 [get_bd_pins clk_in1] [get_bd_pins clk_wiz_0/clk_in1]
-  connect_bd_net -net ps7_0_FCLK_RESET0_N [get_bd_pins ext_reset_in] [get_bd_pins clk_wiz_1/resetn] [get_bd_pins proc_sys_reset_1/ext_reset_in] [get_bd_pins proc_sys_reset_2/ext_reset_in] [get_bd_pins proc_sys_reset_3/ext_reset_in]
+  connect_bd_net -net ps7_0_FCLK_RESET0_N [get_bd_pins ext_reset_in] [get_bd_pins proc_sys_reset_1/ext_reset_in] [get_bd_pins proc_sys_reset_2/ext_reset_in] [get_bd_pins proc_sys_reset_3/ext_reset_in]
   connect_bd_net -net ps7_0_FCLK_RESET2_N [get_bd_pins resetn] [get_bd_pins clk_wiz_0/resetn]
 
   # Restore current instance
@@ -1256,14 +1226,14 @@ Flash#unassigned#unassigned#unassigned#unassigned#unassigned#UART 0#UART 0#Enet\
   connect_bd_net -net midi_rx_1 [get_bd_ports midi_rx] [get_bd_pins midi_interface_0/uart_rx]
   connect_bd_net -net oscilator_stub_0_outout_oscilator [get_bd_pins i2s_tx_buffered_real_0/data_in] [get_bd_pins oscilator_stub_0/outout_oscilator]
   connect_bd_net -net oscilator_stub_0_ready [get_bd_pins i2s_tx_buffered_real_0/data_ready] [get_bd_pins oscilator_stub_0/output_ready]
-  connect_bd_net -net proc_sys_reset_1_peripheral_aresetn [get_bd_pins clocks_n_sets/peripheral_aresetn] [get_bd_pins envelope_stub_0/rst_n] [get_bd_pins i2s_tx_buffered_real_0/async_resetn] [get_bd_pins oscilator_stub_0/rst_n]
+  connect_bd_net -net proc_sys_reset_1_peripheral_aresetn [get_bd_pins clocks_n_sets/peripheral_aresetn] [get_bd_pins envelope_stub_0/rst_n] [get_bd_pins oscilator_stub_0/rst_n]
   connect_bd_net -net proc_sys_reset_2_peripheral_aresetn [get_bd_pins clocks_n_sets/peripheral_aresetn1] [get_bd_pins midi_interface_0/rstn]
   connect_bd_net -net proc_sys_reset_3_peripheral_reset [get_bd_pins clocks_n_sets/peripheral_reset] [get_bd_pins midi_decoder_0/clear_params] [get_bd_pins midi_decoder_0/rst]
-  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins clocks_n_sets/clk_out1] [get_bd_pins envelope_stub_0/clk] [get_bd_pins i2s_tx_buffered_real_0/clk_100] [get_bd_pins oscilator_stub_0/clk] [get_bd_pins ps7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0/S_AXI_GP0_ACLK]
+  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins clocks_n_sets/clk_out1] [get_bd_pins envelope_stub_0/clk] [get_bd_pins oscilator_stub_0/clk] [get_bd_pins ps7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0/S_AXI_GP0_ACLK]
   connect_bd_net -net ps7_0_FCLK_CLK1 [get_bd_pins clocks_n_sets/slowest_sync_clk] [get_bd_pins midi_interface_0/clk] [get_bd_pins ps7_0/FCLK_CLK1]
-  connect_bd_net -net ps7_0_FCLK_CLK2 [get_bd_pins clocks_n_sets/clk_in2] [get_bd_pins ps7_0/FCLK_CLK0]
+  connect_bd_net -net ps7_0_FCLK_CLK2 [get_bd_pins clocks_n_sets/clk_in2] [get_bd_pins i2s_tx_buffered_real_0/clk_100] [get_bd_pins ps7_0/FCLK_CLK0]
   connect_bd_net -net ps7_0_FCLK_CLK3 [get_bd_pins clocks_n_sets/clk_in1] [get_bd_pins ps7_0/FCLK_CLK2]
-  connect_bd_net -net ps7_0_FCLK_RESET0_N [get_bd_pins clocks_n_sets/ext_reset_in] [get_bd_pins ps7_0/FCLK_RESET0_N]
+  connect_bd_net -net ps7_0_FCLK_RESET0_N [get_bd_pins clocks_n_sets/ext_reset_in] [get_bd_pins i2s_tx_buffered_real_0/async_resetn] [get_bd_pins ps7_0/FCLK_RESET0_N]
   connect_bd_net -net ps7_0_FCLK_RESET2_N [get_bd_pins clocks_n_sets/resetn] [get_bd_pins ps7_0/FCLK_RESET2_N]
   connect_bd_net -net sysclk_1 [get_bd_ports sysclk] [get_bd_pins i2s_tx_buffered_real_0/clk_125]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins midi_decoder_0/pop_ctrl] [get_bd_pins midi_decoder_0/pop_en] [get_bd_pins xlconstant_0/dout]

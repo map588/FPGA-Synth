@@ -14,7 +14,8 @@
       "Clock_Manager_0": "",
       "i2s_module_0": "",
       "stream_controller_0": "",
-      "clk_wiz_1": ""
+      "clk_wiz_1": "",
+      "util_ds_buf_0": ""
     },
     "ports": {
       "clk_125": {
@@ -280,15 +281,15 @@
             "parameters": {
               "FREQ_HZ": {
                 "value": "100000000",
-                "value_src": "ip_prop"
+                "value_src": "default_prop"
               },
               "PHASE": {
                 "value": "0.0",
-                "value_src": "ip_prop"
+                "value_src": "default_prop"
               },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "clocked_i2s_util_ds_buf_0_0_BUFG_O",
+                "value_src": "default_prop"
               }
             }
           },
@@ -345,17 +346,9 @@
                 "value": "sys_resetn",
                 "value_src": "constant"
               },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "clocked_i2s_util_ds_buf_0_0_BUFG_O",
+                "value_src": "default_prop"
               }
             }
           },
@@ -478,16 +471,16 @@
             "direction": "I",
             "parameters": {
               "CLK_DOMAIN": {
-                "value": "/clk_wiz_1_clk_out1",
-                "value_src": "ip_prop"
+                "value": "clocked_i2s_util_ds_buf_0_0_BUFG_O",
+                "value_src": "default_prop"
               },
               "FREQ_HZ": {
                 "value": "100000000",
-                "value_src": "ip_prop"
+                "value_src": "default_prop"
               },
               "PHASE": {
                 "value": "0.0",
-                "value_src": "ip_prop"
+                "value_src": "default_prop"
               }
             }
           },
@@ -596,6 +589,15 @@
             "value": "false"
           }
         }
+      },
+      "util_ds_buf_0": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "xci_name": "clocked_i2s_util_ds_buf_0_0",
+        "parameters": {
+          "C_BUF_TYPE": {
+            "value": "BUFG"
+          }
+        }
       }
     },
     "nets": {
@@ -634,6 +636,12 @@
           "async_resetn",
           "Clock_Manager_0/async_resetn",
           "clk_wiz_1/resetn"
+        ]
+      },
+      "clk_100_1": {
+        "ports": [
+          "clk_100",
+          "util_ds_buf_0/BUFG_I"
         ]
       },
       "clk_125_1": {
@@ -726,7 +734,7 @@
       },
       "pl_clk_1": {
         "ports": [
-          "clk_100",
+          "util_ds_buf_0/BUFG_O",
           "Clock_Manager_0/clk_100MHz",
           "i2s_module_0/sys_clk",
           "stream_controller_0/sysclk"

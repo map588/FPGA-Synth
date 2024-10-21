@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Fri Oct 18 10:58:55 2024
+// Date        : Sat Oct 19 21:54:59 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/current_TLD/TLD/TLD.gen/sources_1/ip/base_i2s_tx_buffered_real_0_0/base_i2s_tx_buffered_real_0_0_sim_netlist.v
@@ -113,6 +113,8 @@ module base_i2s_tx_buffered_real_0_0_Clock_Manager
   wire bclk_out;
   wire clk_100;
   wire clk_100_int;
+  wire clk_100_meta;
+  wire clk_100_sync;
   wire clk_en_96kHz_i_i_1_n_0;
   wire clk_en_96kHz_i_i_2_n_0;
   wire clk_out1;
@@ -131,19 +133,33 @@ module base_i2s_tx_buffered_real_0_0_Clock_Manager
   wire p_0_in;
   wire [0:0]\reset_sync_ff_100MHz_reg[1]_0 ;
   wire \reset_sync_ff_100MHz_reg_n_0_[0] ;
+  wire [0:0]reset_sync_ff_125MHz;
   wire [0:0]\reset_sync_ff_125MHz_reg[1]_0 ;
-  wire \reset_sync_ff_125MHz_reg_n_0_[0] ;
+  wire [0:0]reset_sync_ff_24MHz;
   wire \reset_sync_ff_24MHz[1]_i_1_n_0 ;
   wire \reset_sync_ff_24MHz_reg[1]_0 ;
-  wire \reset_sync_ff_24MHz_reg_n_0_[0] ;
   wire toggle_12_288MHz;
   wire toggle_12_288MHz_i_1_n_0;
   wire toggle_6_144MHz_i_1_n_0;
 
-  (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG buf_100
-       (.I(clk_100),
-        .O(clk_100_int));
+  FDCE clk_100_int_reg
+       (.C(clk_100),
+        .CE(1'b1),
+        .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
+        .D(clk_100_sync),
+        .Q(clk_100_int));
+  FDCE clk_100_meta_reg
+       (.C(clk_100),
+        .CE(1'b1),
+        .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
+        .D(clk_100),
+        .Q(clk_100_meta));
+  FDCE clk_100_sync_reg
+       (.C(clk_100),
+        .CE(1'b1),
+        .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
+        .D(clk_100_meta),
+        .Q(clk_100_sync));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -349,14 +365,14 @@ module base_i2s_tx_buffered_real_0_0_Clock_Manager
         .CE(1'b1),
         .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
         .D(1'b1),
-        .Q(\reset_sync_ff_125MHz_reg_n_0_[0] ));
+        .Q(reset_sync_ff_125MHz));
   FDCE #(
     .INIT(1'b1)) 
     \reset_sync_ff_125MHz_reg[1] 
        (.C(CLK),
         .CE(1'b1),
         .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
-        .D(\reset_sync_ff_125MHz_reg_n_0_[0] ),
+        .D(reset_sync_ff_125MHz),
         .Q(\reset_sync_ff_125MHz_reg[1]_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -370,14 +386,14 @@ module base_i2s_tx_buffered_real_0_0_Clock_Manager
         .CE(1'b1),
         .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
         .D(1'b1),
-        .Q(\reset_sync_ff_24MHz_reg_n_0_[0] ));
+        .Q(reset_sync_ff_24MHz));
   FDCE #(
     .INIT(1'b1)) 
     \reset_sync_ff_24MHz_reg[1] 
        (.C(clk_out1),
         .CE(1'b1),
         .CLR(\reset_sync_ff_24MHz[1]_i_1_n_0 ),
-        .D(\reset_sync_ff_24MHz_reg_n_0_[0] ),
+        .D(reset_sync_ff_24MHz),
         .Q(Q));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT1 #(

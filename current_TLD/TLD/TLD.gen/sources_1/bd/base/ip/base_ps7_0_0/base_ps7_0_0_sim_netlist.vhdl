@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Oct 18 10:26:47 2024
+-- Date        : Sun Oct 20 05:43:37 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/current_TLD/TLD/TLD.gen/sources_1/bd/base/ip/base_ps7_0_0/base_ps7_0_0_sim_netlist.vhdl
@@ -723,7 +723,7 @@ entity base_ps7_0_0_processing_system7_v5_5_processing_system7 is
   attribute C_FCLK_CLK1_BUF : string;
   attribute C_FCLK_CLK1_BUF of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "TRUE";
   attribute C_FCLK_CLK2_BUF : string;
-  attribute C_FCLK_CLK2_BUF of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "TRUE";
+  attribute C_FCLK_CLK2_BUF of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "FALSE";
   attribute C_FCLK_CLK3_BUF : string;
   attribute C_FCLK_CLK3_BUF of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "FALSE";
   attribute C_GP0_EN_MODIFIABLE_TXN : integer;
@@ -795,13 +795,13 @@ entity base_ps7_0_0_processing_system7_v5_5_processing_system7 is
   attribute C_USE_DEFAULT_ACP_USER_VAL : integer;
   attribute C_USE_DEFAULT_ACP_USER_VAL of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_M_AXI_GP0 : integer;
-  attribute C_USE_M_AXI_GP0 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 1;
+  attribute C_USE_M_AXI_GP0 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_M_AXI_GP1 : integer;
   attribute C_USE_M_AXI_GP1 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_S_AXI_ACP : integer;
   attribute C_USE_S_AXI_ACP of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_S_AXI_GP0 : integer;
-  attribute C_USE_S_AXI_GP0 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 1;
+  attribute C_USE_S_AXI_GP0 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_S_AXI_GP1 : integer;
   attribute C_USE_S_AXI_GP1 of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
   attribute C_USE_S_AXI_HP0 : integer;
@@ -817,7 +817,7 @@ entity base_ps7_0_0_processing_system7_v5_5_processing_system7 is
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5_5_processing_system7";
   attribute POWER : string;
-  attribute POWER of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={650} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={525} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={7} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} />/>";
+  attribute POWER of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={650} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={525} readRate={0.5} writeRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={7} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of base_ps7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
 end base_ps7_0_0_processing_system7_v5_5_processing_system7;
@@ -826,15 +826,11 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal \<const0>\ : STD_LOGIC;
   signal ENET0_MDIO_T_n : STD_LOGIC;
   signal ENET1_MDIO_T_n : STD_LOGIC;
-  signal FCLK_CLK_unbuffered : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal FCLK_CLK_unbuffered : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal I2C0_SCL_T_n : STD_LOGIC;
   signal I2C0_SDA_T_n : STD_LOGIC;
   signal I2C1_SCL_T_n : STD_LOGIC;
   signal I2C1_SDA_T_n : STD_LOGIC;
-  signal \^m_axi_gp0_arcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^m_axi_gp0_arsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^m_axi_gp0_awcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^m_axi_gp0_awsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal PS7_i_n_0 : STD_LOGIC;
   signal PS7_i_n_1 : STD_LOGIC;
   signal PS7_i_n_10 : STD_LOGIC;
@@ -959,6 +955,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1107 : STD_LOGIC;
   signal PS7_i_n_1108 : STD_LOGIC;
   signal PS7_i_n_1109 : STD_LOGIC;
+  signal PS7_i_n_111 : STD_LOGIC;
   signal PS7_i_n_1110 : STD_LOGIC;
   signal PS7_i_n_1111 : STD_LOGIC;
   signal PS7_i_n_1112 : STD_LOGIC;
@@ -969,6 +966,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1117 : STD_LOGIC;
   signal PS7_i_n_1118 : STD_LOGIC;
   signal PS7_i_n_1119 : STD_LOGIC;
+  signal PS7_i_n_112 : STD_LOGIC;
   signal PS7_i_n_1120 : STD_LOGIC;
   signal PS7_i_n_1121 : STD_LOGIC;
   signal PS7_i_n_1122 : STD_LOGIC;
@@ -979,6 +977,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1127 : STD_LOGIC;
   signal PS7_i_n_1128 : STD_LOGIC;
   signal PS7_i_n_1129 : STD_LOGIC;
+  signal PS7_i_n_113 : STD_LOGIC;
   signal PS7_i_n_1130 : STD_LOGIC;
   signal PS7_i_n_1131 : STD_LOGIC;
   signal PS7_i_n_1132 : STD_LOGIC;
@@ -989,6 +988,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1137 : STD_LOGIC;
   signal PS7_i_n_1138 : STD_LOGIC;
   signal PS7_i_n_1139 : STD_LOGIC;
+  signal PS7_i_n_114 : STD_LOGIC;
   signal PS7_i_n_1140 : STD_LOGIC;
   signal PS7_i_n_1141 : STD_LOGIC;
   signal PS7_i_n_1142 : STD_LOGIC;
@@ -999,6 +999,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1147 : STD_LOGIC;
   signal PS7_i_n_1148 : STD_LOGIC;
   signal PS7_i_n_1149 : STD_LOGIC;
+  signal PS7_i_n_115 : STD_LOGIC;
   signal PS7_i_n_1150 : STD_LOGIC;
   signal PS7_i_n_1151 : STD_LOGIC;
   signal PS7_i_n_1152 : STD_LOGIC;
@@ -1009,6 +1010,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_1157 : STD_LOGIC;
   signal PS7_i_n_1158 : STD_LOGIC;
   signal PS7_i_n_1159 : STD_LOGIC;
+  signal PS7_i_n_116 : STD_LOGIC;
   signal PS7_i_n_1160 : STD_LOGIC;
   signal PS7_i_n_1161 : STD_LOGIC;
   signal PS7_i_n_1162 : STD_LOGIC;
@@ -1271,8 +1273,44 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_149 : STD_LOGIC;
   signal PS7_i_n_150 : STD_LOGIC;
   signal PS7_i_n_151 : STD_LOGIC;
+  signal PS7_i_n_152 : STD_LOGIC;
+  signal PS7_i_n_153 : STD_LOGIC;
+  signal PS7_i_n_154 : STD_LOGIC;
+  signal PS7_i_n_155 : STD_LOGIC;
+  signal PS7_i_n_156 : STD_LOGIC;
+  signal PS7_i_n_157 : STD_LOGIC;
+  signal PS7_i_n_158 : STD_LOGIC;
+  signal PS7_i_n_159 : STD_LOGIC;
   signal PS7_i_n_16 : STD_LOGIC;
+  signal PS7_i_n_160 : STD_LOGIC;
+  signal PS7_i_n_161 : STD_LOGIC;
+  signal PS7_i_n_162 : STD_LOGIC;
+  signal PS7_i_n_163 : STD_LOGIC;
+  signal PS7_i_n_164 : STD_LOGIC;
+  signal PS7_i_n_165 : STD_LOGIC;
+  signal PS7_i_n_166 : STD_LOGIC;
+  signal PS7_i_n_167 : STD_LOGIC;
+  signal PS7_i_n_168 : STD_LOGIC;
+  signal PS7_i_n_169 : STD_LOGIC;
   signal PS7_i_n_17 : STD_LOGIC;
+  signal PS7_i_n_170 : STD_LOGIC;
+  signal PS7_i_n_171 : STD_LOGIC;
+  signal PS7_i_n_172 : STD_LOGIC;
+  signal PS7_i_n_173 : STD_LOGIC;
+  signal PS7_i_n_174 : STD_LOGIC;
+  signal PS7_i_n_175 : STD_LOGIC;
+  signal PS7_i_n_176 : STD_LOGIC;
+  signal PS7_i_n_177 : STD_LOGIC;
+  signal PS7_i_n_178 : STD_LOGIC;
+  signal PS7_i_n_179 : STD_LOGIC;
+  signal PS7_i_n_180 : STD_LOGIC;
+  signal PS7_i_n_181 : STD_LOGIC;
+  signal PS7_i_n_182 : STD_LOGIC;
+  signal PS7_i_n_183 : STD_LOGIC;
+  signal PS7_i_n_184 : STD_LOGIC;
+  signal PS7_i_n_185 : STD_LOGIC;
+  signal PS7_i_n_186 : STD_LOGIC;
+  signal PS7_i_n_187 : STD_LOGIC;
   signal PS7_i_n_188 : STD_LOGIC;
   signal PS7_i_n_189 : STD_LOGIC;
   signal PS7_i_n_19 : STD_LOGIC;
@@ -1323,6 +1361,8 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_23 : STD_LOGIC;
   signal PS7_i_n_230 : STD_LOGIC;
   signal PS7_i_n_231 : STD_LOGIC;
+  signal PS7_i_n_232 : STD_LOGIC;
+  signal PS7_i_n_233 : STD_LOGIC;
   signal PS7_i_n_234 : STD_LOGIC;
   signal PS7_i_n_235 : STD_LOGIC;
   signal PS7_i_n_236 : STD_LOGIC;
@@ -1330,7 +1370,19 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_238 : STD_LOGIC;
   signal PS7_i_n_239 : STD_LOGIC;
   signal PS7_i_n_24 : STD_LOGIC;
+  signal PS7_i_n_240 : STD_LOGIC;
+  signal PS7_i_n_241 : STD_LOGIC;
+  signal PS7_i_n_242 : STD_LOGIC;
+  signal PS7_i_n_243 : STD_LOGIC;
+  signal PS7_i_n_244 : STD_LOGIC;
+  signal PS7_i_n_245 : STD_LOGIC;
+  signal PS7_i_n_246 : STD_LOGIC;
+  signal PS7_i_n_247 : STD_LOGIC;
+  signal PS7_i_n_248 : STD_LOGIC;
+  signal PS7_i_n_249 : STD_LOGIC;
   signal PS7_i_n_25 : STD_LOGIC;
+  signal PS7_i_n_250 : STD_LOGIC;
+  signal PS7_i_n_251 : STD_LOGIC;
   signal PS7_i_n_252 : STD_LOGIC;
   signal PS7_i_n_253 : STD_LOGIC;
   signal PS7_i_n_254 : STD_LOGIC;
@@ -1348,7 +1400,11 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_265 : STD_LOGIC;
   signal PS7_i_n_266 : STD_LOGIC;
   signal PS7_i_n_267 : STD_LOGIC;
+  signal PS7_i_n_268 : STD_LOGIC;
+  signal PS7_i_n_269 : STD_LOGIC;
   signal PS7_i_n_27 : STD_LOGIC;
+  signal PS7_i_n_270 : STD_LOGIC;
+  signal PS7_i_n_271 : STD_LOGIC;
   signal PS7_i_n_272 : STD_LOGIC;
   signal PS7_i_n_273 : STD_LOGIC;
   signal PS7_i_n_274 : STD_LOGIC;
@@ -1420,7 +1476,13 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_336 : STD_LOGIC;
   signal PS7_i_n_337 : STD_LOGIC;
   signal PS7_i_n_338 : STD_LOGIC;
+  signal PS7_i_n_339 : STD_LOGIC;
   signal PS7_i_n_34 : STD_LOGIC;
+  signal PS7_i_n_340 : STD_LOGIC;
+  signal PS7_i_n_341 : STD_LOGIC;
+  signal PS7_i_n_342 : STD_LOGIC;
+  signal PS7_i_n_343 : STD_LOGIC;
+  signal PS7_i_n_344 : STD_LOGIC;
   signal PS7_i_n_345 : STD_LOGIC;
   signal PS7_i_n_346 : STD_LOGIC;
   signal PS7_i_n_347 : STD_LOGIC;
@@ -1487,11 +1549,107 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_430 : STD_LOGIC;
   signal PS7_i_n_431 : STD_LOGIC;
   signal PS7_i_n_432 : STD_LOGIC;
+  signal PS7_i_n_433 : STD_LOGIC;
+  signal PS7_i_n_434 : STD_LOGIC;
+  signal PS7_i_n_435 : STD_LOGIC;
+  signal PS7_i_n_436 : STD_LOGIC;
+  signal PS7_i_n_437 : STD_LOGIC;
+  signal PS7_i_n_438 : STD_LOGIC;
+  signal PS7_i_n_439 : STD_LOGIC;
   signal PS7_i_n_44 : STD_LOGIC;
+  signal PS7_i_n_440 : STD_LOGIC;
+  signal PS7_i_n_441 : STD_LOGIC;
+  signal PS7_i_n_442 : STD_LOGIC;
+  signal PS7_i_n_443 : STD_LOGIC;
+  signal PS7_i_n_444 : STD_LOGIC;
+  signal PS7_i_n_445 : STD_LOGIC;
+  signal PS7_i_n_446 : STD_LOGIC;
+  signal PS7_i_n_447 : STD_LOGIC;
+  signal PS7_i_n_448 : STD_LOGIC;
+  signal PS7_i_n_449 : STD_LOGIC;
+  signal PS7_i_n_450 : STD_LOGIC;
+  signal PS7_i_n_451 : STD_LOGIC;
+  signal PS7_i_n_452 : STD_LOGIC;
+  signal PS7_i_n_453 : STD_LOGIC;
+  signal PS7_i_n_454 : STD_LOGIC;
+  signal PS7_i_n_455 : STD_LOGIC;
+  signal PS7_i_n_456 : STD_LOGIC;
+  signal PS7_i_n_457 : STD_LOGIC;
+  signal PS7_i_n_458 : STD_LOGIC;
+  signal PS7_i_n_459 : STD_LOGIC;
   signal PS7_i_n_46 : STD_LOGIC;
+  signal PS7_i_n_460 : STD_LOGIC;
+  signal PS7_i_n_461 : STD_LOGIC;
+  signal PS7_i_n_462 : STD_LOGIC;
+  signal PS7_i_n_463 : STD_LOGIC;
+  signal PS7_i_n_464 : STD_LOGIC;
+  signal PS7_i_n_465 : STD_LOGIC;
+  signal PS7_i_n_466 : STD_LOGIC;
+  signal PS7_i_n_467 : STD_LOGIC;
+  signal PS7_i_n_468 : STD_LOGIC;
+  signal PS7_i_n_469 : STD_LOGIC;
+  signal PS7_i_n_470 : STD_LOGIC;
+  signal PS7_i_n_471 : STD_LOGIC;
+  signal PS7_i_n_472 : STD_LOGIC;
+  signal PS7_i_n_473 : STD_LOGIC;
+  signal PS7_i_n_474 : STD_LOGIC;
+  signal PS7_i_n_475 : STD_LOGIC;
+  signal PS7_i_n_476 : STD_LOGIC;
+  signal PS7_i_n_477 : STD_LOGIC;
+  signal PS7_i_n_478 : STD_LOGIC;
+  signal PS7_i_n_479 : STD_LOGIC;
   signal PS7_i_n_48 : STD_LOGIC;
+  signal PS7_i_n_480 : STD_LOGIC;
+  signal PS7_i_n_481 : STD_LOGIC;
+  signal PS7_i_n_482 : STD_LOGIC;
+  signal PS7_i_n_483 : STD_LOGIC;
+  signal PS7_i_n_484 : STD_LOGIC;
+  signal PS7_i_n_485 : STD_LOGIC;
+  signal PS7_i_n_486 : STD_LOGIC;
+  signal PS7_i_n_487 : STD_LOGIC;
+  signal PS7_i_n_488 : STD_LOGIC;
+  signal PS7_i_n_489 : STD_LOGIC;
+  signal PS7_i_n_490 : STD_LOGIC;
+  signal PS7_i_n_491 : STD_LOGIC;
+  signal PS7_i_n_492 : STD_LOGIC;
+  signal PS7_i_n_493 : STD_LOGIC;
+  signal PS7_i_n_494 : STD_LOGIC;
+  signal PS7_i_n_495 : STD_LOGIC;
+  signal PS7_i_n_496 : STD_LOGIC;
+  signal PS7_i_n_497 : STD_LOGIC;
+  signal PS7_i_n_498 : STD_LOGIC;
+  signal PS7_i_n_499 : STD_LOGIC;
   signal PS7_i_n_5 : STD_LOGIC;
   signal PS7_i_n_50 : STD_LOGIC;
+  signal PS7_i_n_500 : STD_LOGIC;
+  signal PS7_i_n_501 : STD_LOGIC;
+  signal PS7_i_n_502 : STD_LOGIC;
+  signal PS7_i_n_503 : STD_LOGIC;
+  signal PS7_i_n_504 : STD_LOGIC;
+  signal PS7_i_n_505 : STD_LOGIC;
+  signal PS7_i_n_506 : STD_LOGIC;
+  signal PS7_i_n_507 : STD_LOGIC;
+  signal PS7_i_n_508 : STD_LOGIC;
+  signal PS7_i_n_509 : STD_LOGIC;
+  signal PS7_i_n_510 : STD_LOGIC;
+  signal PS7_i_n_511 : STD_LOGIC;
+  signal PS7_i_n_512 : STD_LOGIC;
+  signal PS7_i_n_513 : STD_LOGIC;
+  signal PS7_i_n_514 : STD_LOGIC;
+  signal PS7_i_n_515 : STD_LOGIC;
+  signal PS7_i_n_516 : STD_LOGIC;
+  signal PS7_i_n_517 : STD_LOGIC;
+  signal PS7_i_n_518 : STD_LOGIC;
+  signal PS7_i_n_519 : STD_LOGIC;
+  signal PS7_i_n_520 : STD_LOGIC;
+  signal PS7_i_n_521 : STD_LOGIC;
+  signal PS7_i_n_522 : STD_LOGIC;
+  signal PS7_i_n_523 : STD_LOGIC;
+  signal PS7_i_n_524 : STD_LOGIC;
+  signal PS7_i_n_525 : STD_LOGIC;
+  signal PS7_i_n_526 : STD_LOGIC;
+  signal PS7_i_n_527 : STD_LOGIC;
+  signal PS7_i_n_528 : STD_LOGIC;
   signal PS7_i_n_529 : STD_LOGIC;
   signal PS7_i_n_530 : STD_LOGIC;
   signal PS7_i_n_531 : STD_LOGIC;
@@ -1596,8 +1754,40 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_622 : STD_LOGIC;
   signal PS7_i_n_623 : STD_LOGIC;
   signal PS7_i_n_624 : STD_LOGIC;
+  signal PS7_i_n_625 : STD_LOGIC;
+  signal PS7_i_n_626 : STD_LOGIC;
+  signal PS7_i_n_627 : STD_LOGIC;
+  signal PS7_i_n_628 : STD_LOGIC;
+  signal PS7_i_n_629 : STD_LOGIC;
   signal PS7_i_n_63 : STD_LOGIC;
+  signal PS7_i_n_630 : STD_LOGIC;
+  signal PS7_i_n_631 : STD_LOGIC;
+  signal PS7_i_n_632 : STD_LOGIC;
+  signal PS7_i_n_633 : STD_LOGIC;
+  signal PS7_i_n_634 : STD_LOGIC;
+  signal PS7_i_n_635 : STD_LOGIC;
+  signal PS7_i_n_636 : STD_LOGIC;
+  signal PS7_i_n_637 : STD_LOGIC;
+  signal PS7_i_n_638 : STD_LOGIC;
+  signal PS7_i_n_639 : STD_LOGIC;
   signal PS7_i_n_64 : STD_LOGIC;
+  signal PS7_i_n_640 : STD_LOGIC;
+  signal PS7_i_n_641 : STD_LOGIC;
+  signal PS7_i_n_642 : STD_LOGIC;
+  signal PS7_i_n_643 : STD_LOGIC;
+  signal PS7_i_n_644 : STD_LOGIC;
+  signal PS7_i_n_645 : STD_LOGIC;
+  signal PS7_i_n_646 : STD_LOGIC;
+  signal PS7_i_n_647 : STD_LOGIC;
+  signal PS7_i_n_648 : STD_LOGIC;
+  signal PS7_i_n_649 : STD_LOGIC;
+  signal PS7_i_n_650 : STD_LOGIC;
+  signal PS7_i_n_651 : STD_LOGIC;
+  signal PS7_i_n_652 : STD_LOGIC;
+  signal PS7_i_n_653 : STD_LOGIC;
+  signal PS7_i_n_654 : STD_LOGIC;
+  signal PS7_i_n_655 : STD_LOGIC;
+  signal PS7_i_n_656 : STD_LOGIC;
   signal PS7_i_n_657 : STD_LOGIC;
   signal PS7_i_n_658 : STD_LOGIC;
   signal PS7_i_n_659 : STD_LOGIC;
@@ -1642,6 +1832,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_7 : STD_LOGIC;
   signal PS7_i_n_700 : STD_LOGIC;
   signal PS7_i_n_705 : STD_LOGIC;
+  signal PS7_i_n_706 : STD_LOGIC;
   signal PS7_i_n_709 : STD_LOGIC;
   signal PS7_i_n_71 : STD_LOGIC;
   signal PS7_i_n_711 : STD_LOGIC;
@@ -1653,7 +1844,33 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_718 : STD_LOGIC;
   signal PS7_i_n_719 : STD_LOGIC;
   signal PS7_i_n_720 : STD_LOGIC;
+  signal PS7_i_n_721 : STD_LOGIC;
+  signal PS7_i_n_722 : STD_LOGIC;
+  signal PS7_i_n_724 : STD_LOGIC;
+  signal PS7_i_n_725 : STD_LOGIC;
+  signal PS7_i_n_726 : STD_LOGIC;
+  signal PS7_i_n_727 : STD_LOGIC;
+  signal PS7_i_n_728 : STD_LOGIC;
+  signal PS7_i_n_729 : STD_LOGIC;
   signal PS7_i_n_73 : STD_LOGIC;
+  signal PS7_i_n_730 : STD_LOGIC;
+  signal PS7_i_n_731 : STD_LOGIC;
+  signal PS7_i_n_732 : STD_LOGIC;
+  signal PS7_i_n_733 : STD_LOGIC;
+  signal PS7_i_n_734 : STD_LOGIC;
+  signal PS7_i_n_736 : STD_LOGIC;
+  signal PS7_i_n_737 : STD_LOGIC;
+  signal PS7_i_n_738 : STD_LOGIC;
+  signal PS7_i_n_739 : STD_LOGIC;
+  signal PS7_i_n_740 : STD_LOGIC;
+  signal PS7_i_n_741 : STD_LOGIC;
+  signal PS7_i_n_742 : STD_LOGIC;
+  signal PS7_i_n_743 : STD_LOGIC;
+  signal PS7_i_n_744 : STD_LOGIC;
+  signal PS7_i_n_745 : STD_LOGIC;
+  signal PS7_i_n_746 : STD_LOGIC;
+  signal PS7_i_n_747 : STD_LOGIC;
+  signal PS7_i_n_748 : STD_LOGIC;
   signal PS7_i_n_749 : STD_LOGIC;
   signal PS7_i_n_75 : STD_LOGIC;
   signal PS7_i_n_750 : STD_LOGIC;
@@ -1681,6 +1898,18 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_774 : STD_LOGIC;
   signal PS7_i_n_775 : STD_LOGIC;
   signal PS7_i_n_776 : STD_LOGIC;
+  signal PS7_i_n_777 : STD_LOGIC;
+  signal PS7_i_n_778 : STD_LOGIC;
+  signal PS7_i_n_779 : STD_LOGIC;
+  signal PS7_i_n_780 : STD_LOGIC;
+  signal PS7_i_n_781 : STD_LOGIC;
+  signal PS7_i_n_782 : STD_LOGIC;
+  signal PS7_i_n_783 : STD_LOGIC;
+  signal PS7_i_n_784 : STD_LOGIC;
+  signal PS7_i_n_785 : STD_LOGIC;
+  signal PS7_i_n_786 : STD_LOGIC;
+  signal PS7_i_n_787 : STD_LOGIC;
+  signal PS7_i_n_788 : STD_LOGIC;
   signal PS7_i_n_789 : STD_LOGIC;
   signal PS7_i_n_79 : STD_LOGIC;
   signal PS7_i_n_790 : STD_LOGIC;
@@ -1749,6 +1978,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_847 : STD_LOGIC;
   signal PS7_i_n_848 : STD_LOGIC;
   signal PS7_i_n_849 : STD_LOGIC;
+  signal PS7_i_n_85 : STD_LOGIC;
   signal PS7_i_n_850 : STD_LOGIC;
   signal PS7_i_n_851 : STD_LOGIC;
   signal PS7_i_n_852 : STD_LOGIC;
@@ -1804,6 +2034,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_898 : STD_LOGIC;
   signal PS7_i_n_899 : STD_LOGIC;
   signal PS7_i_n_9 : STD_LOGIC;
+  signal PS7_i_n_90 : STD_LOGIC;
   signal PS7_i_n_900 : STD_LOGIC;
   signal PS7_i_n_901 : STD_LOGIC;
   signal PS7_i_n_902 : STD_LOGIC;
@@ -1814,6 +2045,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_907 : STD_LOGIC;
   signal PS7_i_n_908 : STD_LOGIC;
   signal PS7_i_n_909 : STD_LOGIC;
+  signal PS7_i_n_91 : STD_LOGIC;
   signal PS7_i_n_910 : STD_LOGIC;
   signal PS7_i_n_911 : STD_LOGIC;
   signal PS7_i_n_912 : STD_LOGIC;
@@ -1824,6 +2056,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_917 : STD_LOGIC;
   signal PS7_i_n_918 : STD_LOGIC;
   signal PS7_i_n_919 : STD_LOGIC;
+  signal PS7_i_n_92 : STD_LOGIC;
   signal PS7_i_n_920 : STD_LOGIC;
   signal PS7_i_n_921 : STD_LOGIC;
   signal PS7_i_n_922 : STD_LOGIC;
@@ -1834,6 +2067,7 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_927 : STD_LOGIC;
   signal PS7_i_n_928 : STD_LOGIC;
   signal PS7_i_n_929 : STD_LOGIC;
+  signal PS7_i_n_93 : STD_LOGIC;
   signal PS7_i_n_930 : STD_LOGIC;
   signal PS7_i_n_931 : STD_LOGIC;
   signal PS7_i_n_932 : STD_LOGIC;
@@ -1841,6 +2075,8 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   signal PS7_i_n_934 : STD_LOGIC;
   signal PS7_i_n_935 : STD_LOGIC;
   signal PS7_i_n_936 : STD_LOGIC;
+  signal PS7_i_n_94 : STD_LOGIC;
+  signal PS7_i_n_95 : STD_LOGIC;
   signal PS7_i_n_96 : STD_LOGIC;
   signal PS7_i_n_97 : STD_LOGIC;
   signal PS7_i_n_98 : STD_LOGIC;
@@ -1944,7 +2180,6 @@ architecture STRUCTURE of base_ps7_0_0_processing_system7_v5_5_processing_system
   attribute BOX_TYPE of PS_SRSTB_BIBUF : label is "PRIMITIVE";
   attribute BOX_TYPE of \buffer_fclk_clk_0.FCLK_CLK_0_BUFG\ : label is "PRIMITIVE";
   attribute BOX_TYPE of \buffer_fclk_clk_1.FCLK_CLK_1_BUFG\ : label is "PRIMITIVE";
-  attribute BOX_TYPE of \buffer_fclk_clk_2.FCLK_CLK_2_BUFG\ : label is "PRIMITIVE";
   attribute BOX_TYPE of \genblk13[0].MIO_BIBUF\ : label is "PRIMITIVE";
   attribute BOX_TYPE of \genblk13[10].MIO_BIBUF\ : label is "PRIMITIVE";
   attribute BOX_TYPE of \genblk13[11].MIO_BIBUF\ : label is "PRIMITIVE";
@@ -2135,6 +2370,7 @@ begin
   EVENT_STANDBYWFE(0) <= \<const0>\;
   EVENT_STANDBYWFI(1) <= \<const0>\;
   EVENT_STANDBYWFI(0) <= \<const0>\;
+  FCLK_CLK2 <= \<const0>\;
   FCLK_CLK3 <= \<const0>\;
   FCLK_RESET1_N <= \<const0>\;
   FCLK_RESET3_N <= \<const0>\;
@@ -2343,17 +2579,193 @@ begin
   IRQ_P2F_UART1 <= \<const0>\;
   IRQ_P2F_USB0 <= \<const0>\;
   IRQ_P2F_USB1 <= \<const0>\;
-  M_AXI_GP0_ARCACHE(3 downto 2) <= \^m_axi_gp0_arcache\(3 downto 2);
+  M_AXI_GP0_ARADDR(31) <= \<const0>\;
+  M_AXI_GP0_ARADDR(30) <= \<const0>\;
+  M_AXI_GP0_ARADDR(29) <= \<const0>\;
+  M_AXI_GP0_ARADDR(28) <= \<const0>\;
+  M_AXI_GP0_ARADDR(27) <= \<const0>\;
+  M_AXI_GP0_ARADDR(26) <= \<const0>\;
+  M_AXI_GP0_ARADDR(25) <= \<const0>\;
+  M_AXI_GP0_ARADDR(24) <= \<const0>\;
+  M_AXI_GP0_ARADDR(23) <= \<const0>\;
+  M_AXI_GP0_ARADDR(22) <= \<const0>\;
+  M_AXI_GP0_ARADDR(21) <= \<const0>\;
+  M_AXI_GP0_ARADDR(20) <= \<const0>\;
+  M_AXI_GP0_ARADDR(19) <= \<const0>\;
+  M_AXI_GP0_ARADDR(18) <= \<const0>\;
+  M_AXI_GP0_ARADDR(17) <= \<const0>\;
+  M_AXI_GP0_ARADDR(16) <= \<const0>\;
+  M_AXI_GP0_ARADDR(15) <= \<const0>\;
+  M_AXI_GP0_ARADDR(14) <= \<const0>\;
+  M_AXI_GP0_ARADDR(13) <= \<const0>\;
+  M_AXI_GP0_ARADDR(12) <= \<const0>\;
+  M_AXI_GP0_ARADDR(11) <= \<const0>\;
+  M_AXI_GP0_ARADDR(10) <= \<const0>\;
+  M_AXI_GP0_ARADDR(9) <= \<const0>\;
+  M_AXI_GP0_ARADDR(8) <= \<const0>\;
+  M_AXI_GP0_ARADDR(7) <= \<const0>\;
+  M_AXI_GP0_ARADDR(6) <= \<const0>\;
+  M_AXI_GP0_ARADDR(5) <= \<const0>\;
+  M_AXI_GP0_ARADDR(4) <= \<const0>\;
+  M_AXI_GP0_ARADDR(3) <= \<const0>\;
+  M_AXI_GP0_ARADDR(2) <= \<const0>\;
+  M_AXI_GP0_ARADDR(1) <= \<const0>\;
+  M_AXI_GP0_ARADDR(0) <= \<const0>\;
+  M_AXI_GP0_ARBURST(1) <= \<const0>\;
+  M_AXI_GP0_ARBURST(0) <= \<const0>\;
+  M_AXI_GP0_ARCACHE(3) <= \<const0>\;
+  M_AXI_GP0_ARCACHE(2) <= \<const0>\;
   M_AXI_GP0_ARCACHE(1) <= \<const0>\;
-  M_AXI_GP0_ARCACHE(0) <= \^m_axi_gp0_arcache\(0);
+  M_AXI_GP0_ARCACHE(0) <= \<const0>\;
   M_AXI_GP0_ARESETN <= \<const0>\;
+  M_AXI_GP0_ARID(11) <= \<const0>\;
+  M_AXI_GP0_ARID(10) <= \<const0>\;
+  M_AXI_GP0_ARID(9) <= \<const0>\;
+  M_AXI_GP0_ARID(8) <= \<const0>\;
+  M_AXI_GP0_ARID(7) <= \<const0>\;
+  M_AXI_GP0_ARID(6) <= \<const0>\;
+  M_AXI_GP0_ARID(5) <= \<const0>\;
+  M_AXI_GP0_ARID(4) <= \<const0>\;
+  M_AXI_GP0_ARID(3) <= \<const0>\;
+  M_AXI_GP0_ARID(2) <= \<const0>\;
+  M_AXI_GP0_ARID(1) <= \<const0>\;
+  M_AXI_GP0_ARID(0) <= \<const0>\;
+  M_AXI_GP0_ARLEN(3) <= \<const0>\;
+  M_AXI_GP0_ARLEN(2) <= \<const0>\;
+  M_AXI_GP0_ARLEN(1) <= \<const0>\;
+  M_AXI_GP0_ARLEN(0) <= \<const0>\;
+  M_AXI_GP0_ARLOCK(1) <= \<const0>\;
+  M_AXI_GP0_ARLOCK(0) <= \<const0>\;
+  M_AXI_GP0_ARPROT(2) <= \<const0>\;
+  M_AXI_GP0_ARPROT(1) <= \<const0>\;
+  M_AXI_GP0_ARPROT(0) <= \<const0>\;
+  M_AXI_GP0_ARQOS(3) <= \<const0>\;
+  M_AXI_GP0_ARQOS(2) <= \<const0>\;
+  M_AXI_GP0_ARQOS(1) <= \<const0>\;
+  M_AXI_GP0_ARQOS(0) <= \<const0>\;
   M_AXI_GP0_ARSIZE(2) <= \<const0>\;
-  M_AXI_GP0_ARSIZE(1 downto 0) <= \^m_axi_gp0_arsize\(1 downto 0);
-  M_AXI_GP0_AWCACHE(3 downto 2) <= \^m_axi_gp0_awcache\(3 downto 2);
+  M_AXI_GP0_ARSIZE(1) <= \<const0>\;
+  M_AXI_GP0_ARSIZE(0) <= \<const0>\;
+  M_AXI_GP0_ARVALID <= \<const0>\;
+  M_AXI_GP0_AWADDR(31) <= \<const0>\;
+  M_AXI_GP0_AWADDR(30) <= \<const0>\;
+  M_AXI_GP0_AWADDR(29) <= \<const0>\;
+  M_AXI_GP0_AWADDR(28) <= \<const0>\;
+  M_AXI_GP0_AWADDR(27) <= \<const0>\;
+  M_AXI_GP0_AWADDR(26) <= \<const0>\;
+  M_AXI_GP0_AWADDR(25) <= \<const0>\;
+  M_AXI_GP0_AWADDR(24) <= \<const0>\;
+  M_AXI_GP0_AWADDR(23) <= \<const0>\;
+  M_AXI_GP0_AWADDR(22) <= \<const0>\;
+  M_AXI_GP0_AWADDR(21) <= \<const0>\;
+  M_AXI_GP0_AWADDR(20) <= \<const0>\;
+  M_AXI_GP0_AWADDR(19) <= \<const0>\;
+  M_AXI_GP0_AWADDR(18) <= \<const0>\;
+  M_AXI_GP0_AWADDR(17) <= \<const0>\;
+  M_AXI_GP0_AWADDR(16) <= \<const0>\;
+  M_AXI_GP0_AWADDR(15) <= \<const0>\;
+  M_AXI_GP0_AWADDR(14) <= \<const0>\;
+  M_AXI_GP0_AWADDR(13) <= \<const0>\;
+  M_AXI_GP0_AWADDR(12) <= \<const0>\;
+  M_AXI_GP0_AWADDR(11) <= \<const0>\;
+  M_AXI_GP0_AWADDR(10) <= \<const0>\;
+  M_AXI_GP0_AWADDR(9) <= \<const0>\;
+  M_AXI_GP0_AWADDR(8) <= \<const0>\;
+  M_AXI_GP0_AWADDR(7) <= \<const0>\;
+  M_AXI_GP0_AWADDR(6) <= \<const0>\;
+  M_AXI_GP0_AWADDR(5) <= \<const0>\;
+  M_AXI_GP0_AWADDR(4) <= \<const0>\;
+  M_AXI_GP0_AWADDR(3) <= \<const0>\;
+  M_AXI_GP0_AWADDR(2) <= \<const0>\;
+  M_AXI_GP0_AWADDR(1) <= \<const0>\;
+  M_AXI_GP0_AWADDR(0) <= \<const0>\;
+  M_AXI_GP0_AWBURST(1) <= \<const0>\;
+  M_AXI_GP0_AWBURST(0) <= \<const0>\;
+  M_AXI_GP0_AWCACHE(3) <= \<const0>\;
+  M_AXI_GP0_AWCACHE(2) <= \<const0>\;
   M_AXI_GP0_AWCACHE(1) <= \<const0>\;
-  M_AXI_GP0_AWCACHE(0) <= \^m_axi_gp0_awcache\(0);
+  M_AXI_GP0_AWCACHE(0) <= \<const0>\;
+  M_AXI_GP0_AWID(11) <= \<const0>\;
+  M_AXI_GP0_AWID(10) <= \<const0>\;
+  M_AXI_GP0_AWID(9) <= \<const0>\;
+  M_AXI_GP0_AWID(8) <= \<const0>\;
+  M_AXI_GP0_AWID(7) <= \<const0>\;
+  M_AXI_GP0_AWID(6) <= \<const0>\;
+  M_AXI_GP0_AWID(5) <= \<const0>\;
+  M_AXI_GP0_AWID(4) <= \<const0>\;
+  M_AXI_GP0_AWID(3) <= \<const0>\;
+  M_AXI_GP0_AWID(2) <= \<const0>\;
+  M_AXI_GP0_AWID(1) <= \<const0>\;
+  M_AXI_GP0_AWID(0) <= \<const0>\;
+  M_AXI_GP0_AWLEN(3) <= \<const0>\;
+  M_AXI_GP0_AWLEN(2) <= \<const0>\;
+  M_AXI_GP0_AWLEN(1) <= \<const0>\;
+  M_AXI_GP0_AWLEN(0) <= \<const0>\;
+  M_AXI_GP0_AWLOCK(1) <= \<const0>\;
+  M_AXI_GP0_AWLOCK(0) <= \<const0>\;
+  M_AXI_GP0_AWPROT(2) <= \<const0>\;
+  M_AXI_GP0_AWPROT(1) <= \<const0>\;
+  M_AXI_GP0_AWPROT(0) <= \<const0>\;
+  M_AXI_GP0_AWQOS(3) <= \<const0>\;
+  M_AXI_GP0_AWQOS(2) <= \<const0>\;
+  M_AXI_GP0_AWQOS(1) <= \<const0>\;
+  M_AXI_GP0_AWQOS(0) <= \<const0>\;
   M_AXI_GP0_AWSIZE(2) <= \<const0>\;
-  M_AXI_GP0_AWSIZE(1 downto 0) <= \^m_axi_gp0_awsize\(1 downto 0);
+  M_AXI_GP0_AWSIZE(1) <= \<const0>\;
+  M_AXI_GP0_AWSIZE(0) <= \<const0>\;
+  M_AXI_GP0_AWVALID <= \<const0>\;
+  M_AXI_GP0_BREADY <= \<const0>\;
+  M_AXI_GP0_RREADY <= \<const0>\;
+  M_AXI_GP0_WDATA(31) <= \<const0>\;
+  M_AXI_GP0_WDATA(30) <= \<const0>\;
+  M_AXI_GP0_WDATA(29) <= \<const0>\;
+  M_AXI_GP0_WDATA(28) <= \<const0>\;
+  M_AXI_GP0_WDATA(27) <= \<const0>\;
+  M_AXI_GP0_WDATA(26) <= \<const0>\;
+  M_AXI_GP0_WDATA(25) <= \<const0>\;
+  M_AXI_GP0_WDATA(24) <= \<const0>\;
+  M_AXI_GP0_WDATA(23) <= \<const0>\;
+  M_AXI_GP0_WDATA(22) <= \<const0>\;
+  M_AXI_GP0_WDATA(21) <= \<const0>\;
+  M_AXI_GP0_WDATA(20) <= \<const0>\;
+  M_AXI_GP0_WDATA(19) <= \<const0>\;
+  M_AXI_GP0_WDATA(18) <= \<const0>\;
+  M_AXI_GP0_WDATA(17) <= \<const0>\;
+  M_AXI_GP0_WDATA(16) <= \<const0>\;
+  M_AXI_GP0_WDATA(15) <= \<const0>\;
+  M_AXI_GP0_WDATA(14) <= \<const0>\;
+  M_AXI_GP0_WDATA(13) <= \<const0>\;
+  M_AXI_GP0_WDATA(12) <= \<const0>\;
+  M_AXI_GP0_WDATA(11) <= \<const0>\;
+  M_AXI_GP0_WDATA(10) <= \<const0>\;
+  M_AXI_GP0_WDATA(9) <= \<const0>\;
+  M_AXI_GP0_WDATA(8) <= \<const0>\;
+  M_AXI_GP0_WDATA(7) <= \<const0>\;
+  M_AXI_GP0_WDATA(6) <= \<const0>\;
+  M_AXI_GP0_WDATA(5) <= \<const0>\;
+  M_AXI_GP0_WDATA(4) <= \<const0>\;
+  M_AXI_GP0_WDATA(3) <= \<const0>\;
+  M_AXI_GP0_WDATA(2) <= \<const0>\;
+  M_AXI_GP0_WDATA(1) <= \<const0>\;
+  M_AXI_GP0_WDATA(0) <= \<const0>\;
+  M_AXI_GP0_WID(11) <= \<const0>\;
+  M_AXI_GP0_WID(10) <= \<const0>\;
+  M_AXI_GP0_WID(9) <= \<const0>\;
+  M_AXI_GP0_WID(8) <= \<const0>\;
+  M_AXI_GP0_WID(7) <= \<const0>\;
+  M_AXI_GP0_WID(6) <= \<const0>\;
+  M_AXI_GP0_WID(5) <= \<const0>\;
+  M_AXI_GP0_WID(4) <= \<const0>\;
+  M_AXI_GP0_WID(3) <= \<const0>\;
+  M_AXI_GP0_WID(2) <= \<const0>\;
+  M_AXI_GP0_WID(1) <= \<const0>\;
+  M_AXI_GP0_WID(0) <= \<const0>\;
+  M_AXI_GP0_WLAST <= \<const0>\;
+  M_AXI_GP0_WSTRB(3) <= \<const0>\;
+  M_AXI_GP0_WSTRB(2) <= \<const0>\;
+  M_AXI_GP0_WSTRB(1) <= \<const0>\;
+  M_AXI_GP0_WSTRB(0) <= \<const0>\;
+  M_AXI_GP0_WVALID <= \<const0>\;
   M_AXI_GP1_ARADDR(31) <= \<const0>\;
   M_AXI_GP1_ARADDR(30) <= \<const0>\;
   M_AXI_GP1_ARADDR(29) <= \<const0>\;
@@ -2676,6 +3088,60 @@ begin
   S_AXI_ACP_RVALID <= \<const0>\;
   S_AXI_ACP_WREADY <= \<const0>\;
   S_AXI_GP0_ARESETN <= \<const0>\;
+  S_AXI_GP0_ARREADY <= \<const0>\;
+  S_AXI_GP0_AWREADY <= \<const0>\;
+  S_AXI_GP0_BID(5) <= \<const0>\;
+  S_AXI_GP0_BID(4) <= \<const0>\;
+  S_AXI_GP0_BID(3) <= \<const0>\;
+  S_AXI_GP0_BID(2) <= \<const0>\;
+  S_AXI_GP0_BID(1) <= \<const0>\;
+  S_AXI_GP0_BID(0) <= \<const0>\;
+  S_AXI_GP0_BRESP(1) <= \<const0>\;
+  S_AXI_GP0_BRESP(0) <= \<const0>\;
+  S_AXI_GP0_BVALID <= \<const0>\;
+  S_AXI_GP0_RDATA(31) <= \<const0>\;
+  S_AXI_GP0_RDATA(30) <= \<const0>\;
+  S_AXI_GP0_RDATA(29) <= \<const0>\;
+  S_AXI_GP0_RDATA(28) <= \<const0>\;
+  S_AXI_GP0_RDATA(27) <= \<const0>\;
+  S_AXI_GP0_RDATA(26) <= \<const0>\;
+  S_AXI_GP0_RDATA(25) <= \<const0>\;
+  S_AXI_GP0_RDATA(24) <= \<const0>\;
+  S_AXI_GP0_RDATA(23) <= \<const0>\;
+  S_AXI_GP0_RDATA(22) <= \<const0>\;
+  S_AXI_GP0_RDATA(21) <= \<const0>\;
+  S_AXI_GP0_RDATA(20) <= \<const0>\;
+  S_AXI_GP0_RDATA(19) <= \<const0>\;
+  S_AXI_GP0_RDATA(18) <= \<const0>\;
+  S_AXI_GP0_RDATA(17) <= \<const0>\;
+  S_AXI_GP0_RDATA(16) <= \<const0>\;
+  S_AXI_GP0_RDATA(15) <= \<const0>\;
+  S_AXI_GP0_RDATA(14) <= \<const0>\;
+  S_AXI_GP0_RDATA(13) <= \<const0>\;
+  S_AXI_GP0_RDATA(12) <= \<const0>\;
+  S_AXI_GP0_RDATA(11) <= \<const0>\;
+  S_AXI_GP0_RDATA(10) <= \<const0>\;
+  S_AXI_GP0_RDATA(9) <= \<const0>\;
+  S_AXI_GP0_RDATA(8) <= \<const0>\;
+  S_AXI_GP0_RDATA(7) <= \<const0>\;
+  S_AXI_GP0_RDATA(6) <= \<const0>\;
+  S_AXI_GP0_RDATA(5) <= \<const0>\;
+  S_AXI_GP0_RDATA(4) <= \<const0>\;
+  S_AXI_GP0_RDATA(3) <= \<const0>\;
+  S_AXI_GP0_RDATA(2) <= \<const0>\;
+  S_AXI_GP0_RDATA(1) <= \<const0>\;
+  S_AXI_GP0_RDATA(0) <= \<const0>\;
+  S_AXI_GP0_RID(5) <= \<const0>\;
+  S_AXI_GP0_RID(4) <= \<const0>\;
+  S_AXI_GP0_RID(3) <= \<const0>\;
+  S_AXI_GP0_RID(2) <= \<const0>\;
+  S_AXI_GP0_RID(1) <= \<const0>\;
+  S_AXI_GP0_RID(0) <= \<const0>\;
+  S_AXI_GP0_RLAST <= \<const0>\;
+  S_AXI_GP0_RRESP(1) <= \<const0>\;
+  S_AXI_GP0_RRESP(0) <= \<const0>\;
+  S_AXI_GP0_RVALID <= \<const0>\;
+  S_AXI_GP0_WREADY <= \<const0>\;
   S_AXI_GP1_ARESETN <= \<const0>\;
   S_AXI_GP1_ARREADY <= \<const0>\;
   S_AXI_GP1_AWREADY <= \<const0>\;
@@ -3194,6 +3660,9 @@ begin
   UART1_DTRN <= \<const0>\;
   UART1_RTSN <= \<const0>\;
   UART1_TX <= \<const0>\;
+  USB0_PORT_INDCTL(1) <= \<const0>\;
+  USB0_PORT_INDCTL(0) <= \<const0>\;
+  USB0_VBUS_PWRSELECT <= \<const0>\;
   USB1_PORT_INDCTL(1) <= \<const0>\;
   USB1_PORT_INDCTL(0) <= \<const0>\;
   USB1_VBUS_PWRSELECT <= \<const0>\;
@@ -3546,9 +4015,10 @@ PS7_i: unisim.vcomponents.PS7
       EMIOUART1RTSN => PS7_i_n_83,
       EMIOUART1RX => '1',
       EMIOUART1TX => PS7_i_n_84,
-      EMIOUSB0PORTINDCTL(1 downto 0) => USB0_PORT_INDCTL(1 downto 0),
-      EMIOUSB0VBUSPWRFAULT => USB0_VBUS_PWRFAULT,
-      EMIOUSB0VBUSPWRSELECT => USB0_VBUS_PWRSELECT,
+      EMIOUSB0PORTINDCTL(1) => PS7_i_n_232,
+      EMIOUSB0PORTINDCTL(0) => PS7_i_n_233,
+      EMIOUSB0VBUSPWRFAULT => '0',
+      EMIOUSB0VBUSPWRSELECT => PS7_i_n_85,
       EMIOUSB1PORTINDCTL(1) => PS7_i_n_234,
       EMIOUSB1PORTINDCTL(0) => PS7_i_n_235,
       EMIOUSB1VBUSPWRFAULT => '0',
@@ -3562,7 +4032,8 @@ PS7_i: unisim.vcomponents.PS7
       EVENTSTANDBYWFI(1) => PS7_i_n_238,
       EVENTSTANDBYWFI(0) => PS7_i_n_239,
       FCLKCLK(3) => PS7_i_n_705,
-      FCLKCLK(2 downto 0) => FCLK_CLK_unbuffered(2 downto 0),
+      FCLKCLK(2) => PS7_i_n_706,
+      FCLKCLK(1 downto 0) => FCLK_CLK_unbuffered(1 downto 0),
       FCLKCLKTRIGN(3 downto 0) => B"0000",
       FCLKRESETN(3) => PS7_i_n_709,
       FCLKRESETN(2) => FCLK_RESET2_N,
@@ -3647,50 +4118,203 @@ PS7_i: unisim.vcomponents.PS7
       IRQP2F(2) => PS7_i_n_318,
       IRQP2F(1) => PS7_i_n_319,
       IRQP2F(0) => PS7_i_n_320,
-      MAXIGP0ACLK => M_AXI_GP0_ACLK,
-      MAXIGP0ARADDR(31 downto 0) => M_AXI_GP0_ARADDR(31 downto 0),
-      MAXIGP0ARBURST(1 downto 0) => M_AXI_GP0_ARBURST(1 downto 0),
-      MAXIGP0ARCACHE(3 downto 2) => \^m_axi_gp0_arcache\(3 downto 2),
+      MAXIGP0ACLK => '0',
+      MAXIGP0ARADDR(31) => PS7_i_n_433,
+      MAXIGP0ARADDR(30) => PS7_i_n_434,
+      MAXIGP0ARADDR(29) => PS7_i_n_435,
+      MAXIGP0ARADDR(28) => PS7_i_n_436,
+      MAXIGP0ARADDR(27) => PS7_i_n_437,
+      MAXIGP0ARADDR(26) => PS7_i_n_438,
+      MAXIGP0ARADDR(25) => PS7_i_n_439,
+      MAXIGP0ARADDR(24) => PS7_i_n_440,
+      MAXIGP0ARADDR(23) => PS7_i_n_441,
+      MAXIGP0ARADDR(22) => PS7_i_n_442,
+      MAXIGP0ARADDR(21) => PS7_i_n_443,
+      MAXIGP0ARADDR(20) => PS7_i_n_444,
+      MAXIGP0ARADDR(19) => PS7_i_n_445,
+      MAXIGP0ARADDR(18) => PS7_i_n_446,
+      MAXIGP0ARADDR(17) => PS7_i_n_447,
+      MAXIGP0ARADDR(16) => PS7_i_n_448,
+      MAXIGP0ARADDR(15) => PS7_i_n_449,
+      MAXIGP0ARADDR(14) => PS7_i_n_450,
+      MAXIGP0ARADDR(13) => PS7_i_n_451,
+      MAXIGP0ARADDR(12) => PS7_i_n_452,
+      MAXIGP0ARADDR(11) => PS7_i_n_453,
+      MAXIGP0ARADDR(10) => PS7_i_n_454,
+      MAXIGP0ARADDR(9) => PS7_i_n_455,
+      MAXIGP0ARADDR(8) => PS7_i_n_456,
+      MAXIGP0ARADDR(7) => PS7_i_n_457,
+      MAXIGP0ARADDR(6) => PS7_i_n_458,
+      MAXIGP0ARADDR(5) => PS7_i_n_459,
+      MAXIGP0ARADDR(4) => PS7_i_n_460,
+      MAXIGP0ARADDR(3) => PS7_i_n_461,
+      MAXIGP0ARADDR(2) => PS7_i_n_462,
+      MAXIGP0ARADDR(1) => PS7_i_n_463,
+      MAXIGP0ARADDR(0) => PS7_i_n_464,
+      MAXIGP0ARBURST(1) => PS7_i_n_240,
+      MAXIGP0ARBURST(0) => PS7_i_n_241,
+      MAXIGP0ARCACHE(3) => PS7_i_n_721,
+      MAXIGP0ARCACHE(2) => PS7_i_n_722,
       MAXIGP0ARCACHE(1) => NLW_PS7_i_MAXIGP0ARCACHE_UNCONNECTED(1),
-      MAXIGP0ARCACHE(0) => \^m_axi_gp0_arcache\(0),
+      MAXIGP0ARCACHE(0) => PS7_i_n_724,
       MAXIGP0ARESETN => PS7_i_n_89,
-      MAXIGP0ARID(11 downto 0) => M_AXI_GP0_ARID(11 downto 0),
-      MAXIGP0ARLEN(3 downto 0) => M_AXI_GP0_ARLEN(3 downto 0),
-      MAXIGP0ARLOCK(1 downto 0) => M_AXI_GP0_ARLOCK(1 downto 0),
-      MAXIGP0ARPROT(2 downto 0) => M_AXI_GP0_ARPROT(2 downto 0),
-      MAXIGP0ARQOS(3 downto 0) => M_AXI_GP0_ARQOS(3 downto 0),
-      MAXIGP0ARREADY => M_AXI_GP0_ARREADY,
-      MAXIGP0ARSIZE(1 downto 0) => \^m_axi_gp0_arsize\(1 downto 0),
-      MAXIGP0ARVALID => M_AXI_GP0_ARVALID,
-      MAXIGP0AWADDR(31 downto 0) => M_AXI_GP0_AWADDR(31 downto 0),
-      MAXIGP0AWBURST(1 downto 0) => M_AXI_GP0_AWBURST(1 downto 0),
-      MAXIGP0AWCACHE(3 downto 2) => \^m_axi_gp0_awcache\(3 downto 2),
+      MAXIGP0ARID(11) => PS7_i_n_152,
+      MAXIGP0ARID(10) => PS7_i_n_153,
+      MAXIGP0ARID(9) => PS7_i_n_154,
+      MAXIGP0ARID(8) => PS7_i_n_155,
+      MAXIGP0ARID(7) => PS7_i_n_156,
+      MAXIGP0ARID(6) => PS7_i_n_157,
+      MAXIGP0ARID(5) => PS7_i_n_158,
+      MAXIGP0ARID(4) => PS7_i_n_159,
+      MAXIGP0ARID(3) => PS7_i_n_160,
+      MAXIGP0ARID(2) => PS7_i_n_161,
+      MAXIGP0ARID(1) => PS7_i_n_162,
+      MAXIGP0ARID(0) => PS7_i_n_163,
+      MAXIGP0ARLEN(3) => PS7_i_n_725,
+      MAXIGP0ARLEN(2) => PS7_i_n_726,
+      MAXIGP0ARLEN(1) => PS7_i_n_727,
+      MAXIGP0ARLEN(0) => PS7_i_n_728,
+      MAXIGP0ARLOCK(1) => PS7_i_n_242,
+      MAXIGP0ARLOCK(0) => PS7_i_n_243,
+      MAXIGP0ARPROT(2) => PS7_i_n_339,
+      MAXIGP0ARPROT(1) => PS7_i_n_340,
+      MAXIGP0ARPROT(0) => PS7_i_n_341,
+      MAXIGP0ARQOS(3) => PS7_i_n_729,
+      MAXIGP0ARQOS(2) => PS7_i_n_730,
+      MAXIGP0ARQOS(1) => PS7_i_n_731,
+      MAXIGP0ARQOS(0) => PS7_i_n_732,
+      MAXIGP0ARREADY => '0',
+      MAXIGP0ARSIZE(1) => PS7_i_n_244,
+      MAXIGP0ARSIZE(0) => PS7_i_n_245,
+      MAXIGP0ARVALID => PS7_i_n_90,
+      MAXIGP0AWADDR(31) => PS7_i_n_465,
+      MAXIGP0AWADDR(30) => PS7_i_n_466,
+      MAXIGP0AWADDR(29) => PS7_i_n_467,
+      MAXIGP0AWADDR(28) => PS7_i_n_468,
+      MAXIGP0AWADDR(27) => PS7_i_n_469,
+      MAXIGP0AWADDR(26) => PS7_i_n_470,
+      MAXIGP0AWADDR(25) => PS7_i_n_471,
+      MAXIGP0AWADDR(24) => PS7_i_n_472,
+      MAXIGP0AWADDR(23) => PS7_i_n_473,
+      MAXIGP0AWADDR(22) => PS7_i_n_474,
+      MAXIGP0AWADDR(21) => PS7_i_n_475,
+      MAXIGP0AWADDR(20) => PS7_i_n_476,
+      MAXIGP0AWADDR(19) => PS7_i_n_477,
+      MAXIGP0AWADDR(18) => PS7_i_n_478,
+      MAXIGP0AWADDR(17) => PS7_i_n_479,
+      MAXIGP0AWADDR(16) => PS7_i_n_480,
+      MAXIGP0AWADDR(15) => PS7_i_n_481,
+      MAXIGP0AWADDR(14) => PS7_i_n_482,
+      MAXIGP0AWADDR(13) => PS7_i_n_483,
+      MAXIGP0AWADDR(12) => PS7_i_n_484,
+      MAXIGP0AWADDR(11) => PS7_i_n_485,
+      MAXIGP0AWADDR(10) => PS7_i_n_486,
+      MAXIGP0AWADDR(9) => PS7_i_n_487,
+      MAXIGP0AWADDR(8) => PS7_i_n_488,
+      MAXIGP0AWADDR(7) => PS7_i_n_489,
+      MAXIGP0AWADDR(6) => PS7_i_n_490,
+      MAXIGP0AWADDR(5) => PS7_i_n_491,
+      MAXIGP0AWADDR(4) => PS7_i_n_492,
+      MAXIGP0AWADDR(3) => PS7_i_n_493,
+      MAXIGP0AWADDR(2) => PS7_i_n_494,
+      MAXIGP0AWADDR(1) => PS7_i_n_495,
+      MAXIGP0AWADDR(0) => PS7_i_n_496,
+      MAXIGP0AWBURST(1) => PS7_i_n_246,
+      MAXIGP0AWBURST(0) => PS7_i_n_247,
+      MAXIGP0AWCACHE(3) => PS7_i_n_733,
+      MAXIGP0AWCACHE(2) => PS7_i_n_734,
       MAXIGP0AWCACHE(1) => NLW_PS7_i_MAXIGP0AWCACHE_UNCONNECTED(1),
-      MAXIGP0AWCACHE(0) => \^m_axi_gp0_awcache\(0),
-      MAXIGP0AWID(11 downto 0) => M_AXI_GP0_AWID(11 downto 0),
-      MAXIGP0AWLEN(3 downto 0) => M_AXI_GP0_AWLEN(3 downto 0),
-      MAXIGP0AWLOCK(1 downto 0) => M_AXI_GP0_AWLOCK(1 downto 0),
-      MAXIGP0AWPROT(2 downto 0) => M_AXI_GP0_AWPROT(2 downto 0),
-      MAXIGP0AWQOS(3 downto 0) => M_AXI_GP0_AWQOS(3 downto 0),
-      MAXIGP0AWREADY => M_AXI_GP0_AWREADY,
-      MAXIGP0AWSIZE(1 downto 0) => \^m_axi_gp0_awsize\(1 downto 0),
-      MAXIGP0AWVALID => M_AXI_GP0_AWVALID,
-      MAXIGP0BID(11 downto 0) => M_AXI_GP0_BID(11 downto 0),
-      MAXIGP0BREADY => M_AXI_GP0_BREADY,
-      MAXIGP0BRESP(1 downto 0) => M_AXI_GP0_BRESP(1 downto 0),
-      MAXIGP0BVALID => M_AXI_GP0_BVALID,
-      MAXIGP0RDATA(31 downto 0) => M_AXI_GP0_RDATA(31 downto 0),
-      MAXIGP0RID(11 downto 0) => M_AXI_GP0_RID(11 downto 0),
-      MAXIGP0RLAST => M_AXI_GP0_RLAST,
-      MAXIGP0RREADY => M_AXI_GP0_RREADY,
-      MAXIGP0RRESP(1 downto 0) => M_AXI_GP0_RRESP(1 downto 0),
-      MAXIGP0RVALID => M_AXI_GP0_RVALID,
-      MAXIGP0WDATA(31 downto 0) => M_AXI_GP0_WDATA(31 downto 0),
-      MAXIGP0WID(11 downto 0) => M_AXI_GP0_WID(11 downto 0),
-      MAXIGP0WLAST => M_AXI_GP0_WLAST,
-      MAXIGP0WREADY => M_AXI_GP0_WREADY,
-      MAXIGP0WSTRB(3 downto 0) => M_AXI_GP0_WSTRB(3 downto 0),
-      MAXIGP0WVALID => M_AXI_GP0_WVALID,
+      MAXIGP0AWCACHE(0) => PS7_i_n_736,
+      MAXIGP0AWID(11) => PS7_i_n_164,
+      MAXIGP0AWID(10) => PS7_i_n_165,
+      MAXIGP0AWID(9) => PS7_i_n_166,
+      MAXIGP0AWID(8) => PS7_i_n_167,
+      MAXIGP0AWID(7) => PS7_i_n_168,
+      MAXIGP0AWID(6) => PS7_i_n_169,
+      MAXIGP0AWID(5) => PS7_i_n_170,
+      MAXIGP0AWID(4) => PS7_i_n_171,
+      MAXIGP0AWID(3) => PS7_i_n_172,
+      MAXIGP0AWID(2) => PS7_i_n_173,
+      MAXIGP0AWID(1) => PS7_i_n_174,
+      MAXIGP0AWID(0) => PS7_i_n_175,
+      MAXIGP0AWLEN(3) => PS7_i_n_737,
+      MAXIGP0AWLEN(2) => PS7_i_n_738,
+      MAXIGP0AWLEN(1) => PS7_i_n_739,
+      MAXIGP0AWLEN(0) => PS7_i_n_740,
+      MAXIGP0AWLOCK(1) => PS7_i_n_248,
+      MAXIGP0AWLOCK(0) => PS7_i_n_249,
+      MAXIGP0AWPROT(2) => PS7_i_n_342,
+      MAXIGP0AWPROT(1) => PS7_i_n_343,
+      MAXIGP0AWPROT(0) => PS7_i_n_344,
+      MAXIGP0AWQOS(3) => PS7_i_n_741,
+      MAXIGP0AWQOS(2) => PS7_i_n_742,
+      MAXIGP0AWQOS(1) => PS7_i_n_743,
+      MAXIGP0AWQOS(0) => PS7_i_n_744,
+      MAXIGP0AWREADY => '0',
+      MAXIGP0AWSIZE(1) => PS7_i_n_250,
+      MAXIGP0AWSIZE(0) => PS7_i_n_251,
+      MAXIGP0AWVALID => PS7_i_n_91,
+      MAXIGP0BID(11 downto 0) => B"000000000000",
+      MAXIGP0BREADY => PS7_i_n_92,
+      MAXIGP0BRESP(1 downto 0) => B"00",
+      MAXIGP0BVALID => '0',
+      MAXIGP0RDATA(31 downto 0) => B"00000000000000000000000000000000",
+      MAXIGP0RID(11 downto 0) => B"000000000000",
+      MAXIGP0RLAST => '0',
+      MAXIGP0RREADY => PS7_i_n_93,
+      MAXIGP0RRESP(1 downto 0) => B"00",
+      MAXIGP0RVALID => '0',
+      MAXIGP0WDATA(31) => PS7_i_n_497,
+      MAXIGP0WDATA(30) => PS7_i_n_498,
+      MAXIGP0WDATA(29) => PS7_i_n_499,
+      MAXIGP0WDATA(28) => PS7_i_n_500,
+      MAXIGP0WDATA(27) => PS7_i_n_501,
+      MAXIGP0WDATA(26) => PS7_i_n_502,
+      MAXIGP0WDATA(25) => PS7_i_n_503,
+      MAXIGP0WDATA(24) => PS7_i_n_504,
+      MAXIGP0WDATA(23) => PS7_i_n_505,
+      MAXIGP0WDATA(22) => PS7_i_n_506,
+      MAXIGP0WDATA(21) => PS7_i_n_507,
+      MAXIGP0WDATA(20) => PS7_i_n_508,
+      MAXIGP0WDATA(19) => PS7_i_n_509,
+      MAXIGP0WDATA(18) => PS7_i_n_510,
+      MAXIGP0WDATA(17) => PS7_i_n_511,
+      MAXIGP0WDATA(16) => PS7_i_n_512,
+      MAXIGP0WDATA(15) => PS7_i_n_513,
+      MAXIGP0WDATA(14) => PS7_i_n_514,
+      MAXIGP0WDATA(13) => PS7_i_n_515,
+      MAXIGP0WDATA(12) => PS7_i_n_516,
+      MAXIGP0WDATA(11) => PS7_i_n_517,
+      MAXIGP0WDATA(10) => PS7_i_n_518,
+      MAXIGP0WDATA(9) => PS7_i_n_519,
+      MAXIGP0WDATA(8) => PS7_i_n_520,
+      MAXIGP0WDATA(7) => PS7_i_n_521,
+      MAXIGP0WDATA(6) => PS7_i_n_522,
+      MAXIGP0WDATA(5) => PS7_i_n_523,
+      MAXIGP0WDATA(4) => PS7_i_n_524,
+      MAXIGP0WDATA(3) => PS7_i_n_525,
+      MAXIGP0WDATA(2) => PS7_i_n_526,
+      MAXIGP0WDATA(1) => PS7_i_n_527,
+      MAXIGP0WDATA(0) => PS7_i_n_528,
+      MAXIGP0WID(11) => PS7_i_n_176,
+      MAXIGP0WID(10) => PS7_i_n_177,
+      MAXIGP0WID(9) => PS7_i_n_178,
+      MAXIGP0WID(8) => PS7_i_n_179,
+      MAXIGP0WID(7) => PS7_i_n_180,
+      MAXIGP0WID(6) => PS7_i_n_181,
+      MAXIGP0WID(5) => PS7_i_n_182,
+      MAXIGP0WID(4) => PS7_i_n_183,
+      MAXIGP0WID(3) => PS7_i_n_184,
+      MAXIGP0WID(2) => PS7_i_n_185,
+      MAXIGP0WID(1) => PS7_i_n_186,
+      MAXIGP0WID(0) => PS7_i_n_187,
+      MAXIGP0WLAST => PS7_i_n_94,
+      MAXIGP0WREADY => '0',
+      MAXIGP0WSTRB(3) => PS7_i_n_745,
+      MAXIGP0WSTRB(2) => PS7_i_n_746,
+      MAXIGP0WSTRB(1) => PS7_i_n_747,
+      MAXIGP0WSTRB(0) => PS7_i_n_748,
+      MAXIGP0WVALID => PS7_i_n_95,
       MAXIGP1ACLK => '0',
       MAXIGP1ARADDR(31) => PS7_i_n_529,
       MAXIGP1ARADDR(30) => PS7_i_n_530,
@@ -4003,46 +4627,89 @@ PS7_i: unisim.vcomponents.PS7
       SAXIACPWREADY => PS7_i_n_109,
       SAXIACPWSTRB(7 downto 0) => B"00000000",
       SAXIACPWVALID => '0',
-      SAXIGP0ACLK => S_AXI_GP0_ACLK,
-      SAXIGP0ARADDR(31 downto 0) => S_AXI_GP0_ARADDR(31 downto 0),
-      SAXIGP0ARBURST(1 downto 0) => S_AXI_GP0_ARBURST(1 downto 0),
-      SAXIGP0ARCACHE(3 downto 0) => S_AXI_GP0_ARCACHE(3 downto 0),
+      SAXIGP0ACLK => '0',
+      SAXIGP0ARADDR(31 downto 0) => B"00000000000000000000000000000000",
+      SAXIGP0ARBURST(1 downto 0) => B"00",
+      SAXIGP0ARCACHE(3 downto 0) => B"0000",
       SAXIGP0ARESETN => PS7_i_n_110,
-      SAXIGP0ARID(5 downto 0) => S_AXI_GP0_ARID(5 downto 0),
-      SAXIGP0ARLEN(3 downto 0) => S_AXI_GP0_ARLEN(3 downto 0),
-      SAXIGP0ARLOCK(1 downto 0) => S_AXI_GP0_ARLOCK(1 downto 0),
-      SAXIGP0ARPROT(2 downto 0) => S_AXI_GP0_ARPROT(2 downto 0),
-      SAXIGP0ARQOS(3 downto 0) => S_AXI_GP0_ARQOS(3 downto 0),
-      SAXIGP0ARREADY => S_AXI_GP0_ARREADY,
-      SAXIGP0ARSIZE(1 downto 0) => S_AXI_GP0_ARSIZE(1 downto 0),
-      SAXIGP0ARVALID => S_AXI_GP0_ARVALID,
-      SAXIGP0AWADDR(31 downto 0) => S_AXI_GP0_AWADDR(31 downto 0),
-      SAXIGP0AWBURST(1 downto 0) => S_AXI_GP0_AWBURST(1 downto 0),
-      SAXIGP0AWCACHE(3 downto 0) => S_AXI_GP0_AWCACHE(3 downto 0),
-      SAXIGP0AWID(5 downto 0) => S_AXI_GP0_AWID(5 downto 0),
-      SAXIGP0AWLEN(3 downto 0) => S_AXI_GP0_AWLEN(3 downto 0),
-      SAXIGP0AWLOCK(1 downto 0) => S_AXI_GP0_AWLOCK(1 downto 0),
-      SAXIGP0AWPROT(2 downto 0) => S_AXI_GP0_AWPROT(2 downto 0),
-      SAXIGP0AWQOS(3 downto 0) => S_AXI_GP0_AWQOS(3 downto 0),
-      SAXIGP0AWREADY => S_AXI_GP0_AWREADY,
-      SAXIGP0AWSIZE(1 downto 0) => S_AXI_GP0_AWSIZE(1 downto 0),
-      SAXIGP0AWVALID => S_AXI_GP0_AWVALID,
-      SAXIGP0BID(5 downto 0) => S_AXI_GP0_BID(5 downto 0),
-      SAXIGP0BREADY => S_AXI_GP0_BREADY,
-      SAXIGP0BRESP(1 downto 0) => S_AXI_GP0_BRESP(1 downto 0),
-      SAXIGP0BVALID => S_AXI_GP0_BVALID,
-      SAXIGP0RDATA(31 downto 0) => S_AXI_GP0_RDATA(31 downto 0),
-      SAXIGP0RID(5 downto 0) => S_AXI_GP0_RID(5 downto 0),
-      SAXIGP0RLAST => S_AXI_GP0_RLAST,
-      SAXIGP0RREADY => S_AXI_GP0_RREADY,
-      SAXIGP0RRESP(1 downto 0) => S_AXI_GP0_RRESP(1 downto 0),
-      SAXIGP0RVALID => S_AXI_GP0_RVALID,
-      SAXIGP0WDATA(31 downto 0) => S_AXI_GP0_WDATA(31 downto 0),
-      SAXIGP0WID(5 downto 0) => S_AXI_GP0_WID(5 downto 0),
-      SAXIGP0WLAST => S_AXI_GP0_WLAST,
-      SAXIGP0WREADY => S_AXI_GP0_WREADY,
-      SAXIGP0WSTRB(3 downto 0) => S_AXI_GP0_WSTRB(3 downto 0),
-      SAXIGP0WVALID => S_AXI_GP0_WVALID,
+      SAXIGP0ARID(5 downto 0) => B"000000",
+      SAXIGP0ARLEN(3 downto 0) => B"0000",
+      SAXIGP0ARLOCK(1 downto 0) => B"00",
+      SAXIGP0ARPROT(2 downto 0) => B"000",
+      SAXIGP0ARQOS(3 downto 0) => B"0000",
+      SAXIGP0ARREADY => PS7_i_n_111,
+      SAXIGP0ARSIZE(1 downto 0) => B"00",
+      SAXIGP0ARVALID => '0',
+      SAXIGP0AWADDR(31 downto 0) => B"00000000000000000000000000000000",
+      SAXIGP0AWBURST(1 downto 0) => B"00",
+      SAXIGP0AWCACHE(3 downto 0) => B"0000",
+      SAXIGP0AWID(5 downto 0) => B"000000",
+      SAXIGP0AWLEN(3 downto 0) => B"0000",
+      SAXIGP0AWLOCK(1 downto 0) => B"00",
+      SAXIGP0AWPROT(2 downto 0) => B"000",
+      SAXIGP0AWQOS(3 downto 0) => B"0000",
+      SAXIGP0AWREADY => PS7_i_n_112,
+      SAXIGP0AWSIZE(1 downto 0) => B"00",
+      SAXIGP0AWVALID => '0',
+      SAXIGP0BID(5) => PS7_i_n_777,
+      SAXIGP0BID(4) => PS7_i_n_778,
+      SAXIGP0BID(3) => PS7_i_n_779,
+      SAXIGP0BID(2) => PS7_i_n_780,
+      SAXIGP0BID(1) => PS7_i_n_781,
+      SAXIGP0BID(0) => PS7_i_n_782,
+      SAXIGP0BREADY => '0',
+      SAXIGP0BRESP(1) => PS7_i_n_268,
+      SAXIGP0BRESP(0) => PS7_i_n_269,
+      SAXIGP0BVALID => PS7_i_n_113,
+      SAXIGP0RDATA(31) => PS7_i_n_625,
+      SAXIGP0RDATA(30) => PS7_i_n_626,
+      SAXIGP0RDATA(29) => PS7_i_n_627,
+      SAXIGP0RDATA(28) => PS7_i_n_628,
+      SAXIGP0RDATA(27) => PS7_i_n_629,
+      SAXIGP0RDATA(26) => PS7_i_n_630,
+      SAXIGP0RDATA(25) => PS7_i_n_631,
+      SAXIGP0RDATA(24) => PS7_i_n_632,
+      SAXIGP0RDATA(23) => PS7_i_n_633,
+      SAXIGP0RDATA(22) => PS7_i_n_634,
+      SAXIGP0RDATA(21) => PS7_i_n_635,
+      SAXIGP0RDATA(20) => PS7_i_n_636,
+      SAXIGP0RDATA(19) => PS7_i_n_637,
+      SAXIGP0RDATA(18) => PS7_i_n_638,
+      SAXIGP0RDATA(17) => PS7_i_n_639,
+      SAXIGP0RDATA(16) => PS7_i_n_640,
+      SAXIGP0RDATA(15) => PS7_i_n_641,
+      SAXIGP0RDATA(14) => PS7_i_n_642,
+      SAXIGP0RDATA(13) => PS7_i_n_643,
+      SAXIGP0RDATA(12) => PS7_i_n_644,
+      SAXIGP0RDATA(11) => PS7_i_n_645,
+      SAXIGP0RDATA(10) => PS7_i_n_646,
+      SAXIGP0RDATA(9) => PS7_i_n_647,
+      SAXIGP0RDATA(8) => PS7_i_n_648,
+      SAXIGP0RDATA(7) => PS7_i_n_649,
+      SAXIGP0RDATA(6) => PS7_i_n_650,
+      SAXIGP0RDATA(5) => PS7_i_n_651,
+      SAXIGP0RDATA(4) => PS7_i_n_652,
+      SAXIGP0RDATA(3) => PS7_i_n_653,
+      SAXIGP0RDATA(2) => PS7_i_n_654,
+      SAXIGP0RDATA(1) => PS7_i_n_655,
+      SAXIGP0RDATA(0) => PS7_i_n_656,
+      SAXIGP0RID(5) => PS7_i_n_783,
+      SAXIGP0RID(4) => PS7_i_n_784,
+      SAXIGP0RID(3) => PS7_i_n_785,
+      SAXIGP0RID(2) => PS7_i_n_786,
+      SAXIGP0RID(1) => PS7_i_n_787,
+      SAXIGP0RID(0) => PS7_i_n_788,
+      SAXIGP0RLAST => PS7_i_n_114,
+      SAXIGP0RREADY => '0',
+      SAXIGP0RRESP(1) => PS7_i_n_270,
+      SAXIGP0RRESP(0) => PS7_i_n_271,
+      SAXIGP0RVALID => PS7_i_n_115,
+      SAXIGP0WDATA(31 downto 0) => B"00000000000000000000000000000000",
+      SAXIGP0WID(5 downto 0) => B"000000",
+      SAXIGP0WLAST => '0',
+      SAXIGP0WREADY => PS7_i_n_116,
+      SAXIGP0WSTRB(3 downto 0) => B"0000",
+      SAXIGP0WVALID => '0',
       SAXIGP1ACLK => '0',
       SAXIGP1ARADDR(31 downto 0) => B"00000000000000000000000000000000",
       SAXIGP1ARBURST(1 downto 0) => B"00",
@@ -4719,11 +5386,6 @@ PS_SRSTB_BIBUF: unisim.vcomponents.BIBUF
      port map (
       I => FCLK_CLK_unbuffered(1),
       O => FCLK_CLK1
-    );
-\buffer_fclk_clk_2.FCLK_CLK_2_BUFG\: unisim.vcomponents.BUFG
-     port map (
-      I => FCLK_CLK_unbuffered(2),
-      O => FCLK_CLK2
     );
 \genblk13[0].MIO_BIBUF\: unisim.vcomponents.BIBUF
      port map (
@@ -5504,91 +6166,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity base_ps7_0_0 is
   port (
-    USB0_PORT_INDCTL : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    USB0_VBUS_PWRSELECT : out STD_LOGIC;
-    USB0_VBUS_PWRFAULT : in STD_LOGIC;
-    M_AXI_GP0_ARVALID : out STD_LOGIC;
-    M_AXI_GP0_AWVALID : out STD_LOGIC;
-    M_AXI_GP0_BREADY : out STD_LOGIC;
-    M_AXI_GP0_RREADY : out STD_LOGIC;
-    M_AXI_GP0_WLAST : out STD_LOGIC;
-    M_AXI_GP0_WVALID : out STD_LOGIC;
-    M_AXI_GP0_ARID : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    M_AXI_GP0_AWID : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    M_AXI_GP0_WID : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    M_AXI_GP0_ARBURST : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_ARLOCK : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_ARSIZE : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_GP0_AWBURST : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_AWLOCK : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_AWSIZE : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_GP0_ARPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_GP0_AWPROT : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M_AXI_GP0_ARADDR : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_GP0_AWADDR : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_GP0_WDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M_AXI_GP0_ARCACHE : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_ARLEN : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_ARQOS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_AWCACHE : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_AWLEN : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_AWQOS : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_WSTRB : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M_AXI_GP0_ACLK : in STD_LOGIC;
-    M_AXI_GP0_ARREADY : in STD_LOGIC;
-    M_AXI_GP0_AWREADY : in STD_LOGIC;
-    M_AXI_GP0_BVALID : in STD_LOGIC;
-    M_AXI_GP0_RLAST : in STD_LOGIC;
-    M_AXI_GP0_RVALID : in STD_LOGIC;
-    M_AXI_GP0_WREADY : in STD_LOGIC;
-    M_AXI_GP0_BID : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    M_AXI_GP0_RID : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    M_AXI_GP0_BRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_RRESP : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M_AXI_GP0_RDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_GP0_ARREADY : out STD_LOGIC;
-    S_AXI_GP0_AWREADY : out STD_LOGIC;
-    S_AXI_GP0_BVALID : out STD_LOGIC;
-    S_AXI_GP0_RLAST : out STD_LOGIC;
-    S_AXI_GP0_RVALID : out STD_LOGIC;
-    S_AXI_GP0_WREADY : out STD_LOGIC;
-    S_AXI_GP0_BRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_RRESP : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_RDATA : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_GP0_BID : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_GP0_RID : out STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_GP0_ACLK : in STD_LOGIC;
-    S_AXI_GP0_ARVALID : in STD_LOGIC;
-    S_AXI_GP0_AWVALID : in STD_LOGIC;
-    S_AXI_GP0_BREADY : in STD_LOGIC;
-    S_AXI_GP0_RREADY : in STD_LOGIC;
-    S_AXI_GP0_WLAST : in STD_LOGIC;
-    S_AXI_GP0_WVALID : in STD_LOGIC;
-    S_AXI_GP0_ARBURST : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_ARLOCK : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_ARSIZE : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S_AXI_GP0_AWBURST : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_AWLOCK : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S_AXI_GP0_AWSIZE : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S_AXI_GP0_ARPROT : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S_AXI_GP0_AWPROT : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S_AXI_GP0_ARADDR : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_GP0_AWADDR : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_GP0_WDATA : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S_AXI_GP0_ARCACHE : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_ARLEN : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_ARQOS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_AWCACHE : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_AWLEN : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_AWQOS : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_WSTRB : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S_AXI_GP0_ARID : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_GP0_AWID : in STD_LOGIC_VECTOR ( 5 downto 0 );
-    S_AXI_GP0_WID : in STD_LOGIC_VECTOR ( 5 downto 0 );
     IRQ_F2P : in STD_LOGIC_VECTOR ( 15 downto 0 );
     FCLK_CLK0 : out STD_LOGIC;
     FCLK_CLK1 : out STD_LOGIC;
-    FCLK_CLK2 : out STD_LOGIC;
     FCLK_RESET0_N : out STD_LOGIC;
     FCLK_RESET2_N : out STD_LOGIC;
     MIO : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -5624,12 +6204,6 @@ entity base_ps7_0_0 is
 end base_ps7_0_0;
 
 architecture STRUCTURE of base_ps7_0_0 is
-  signal \<const0>\ : STD_LOGIC;
-  signal \<const1>\ : STD_LOGIC;
-  signal \^m_axi_gp0_arcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^m_axi_gp0_arsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal \^m_axi_gp0_awcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^m_axi_gp0_awsize\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_CAN0_PHY_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_CAN1_PHY_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_DMA0_DAVALID_UNCONNECTED : STD_LOGIC;
@@ -5675,6 +6249,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_ENET1_SOF_RX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_ENET1_SOF_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_EVENT_EVENTO_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_FCLK_CLK2_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_FCLK_CLK3_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_FCLK_RESET1_N_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_FCLK_RESET3_N_UNCONNECTED : STD_LOGIC;
@@ -5724,6 +6299,12 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_IRQ_P2F_USB0_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_IRQ_P2F_USB1_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_M_AXI_GP0_ARESETN_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_BREADY_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_RREADY_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_WLAST_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_M_AXI_GP0_WVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_M_AXI_GP1_ARESETN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_M_AXI_GP1_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_M_AXI_GP1_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -5770,6 +6351,12 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_S_AXI_ACP_RVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_ACP_WREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_GP0_ARESETN_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_ARREADY_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_AWREADY_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_BVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_RLAST_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_RVALID_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_S_AXI_GP0_WREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_GP1_ARESETN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_GP1_ARREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_S_AXI_GP1_AWREADY_UNCONNECTED : STD_LOGIC;
@@ -5819,6 +6406,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_UART1_DTRN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_RTSN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_TX_UNCONNECTED : STD_LOGIC;
+  signal NLW_inst_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_USB1_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_WDT_RST_OUT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_DMA0_DATYPE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -5832,10 +6420,27 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_FTMT_P2F_DEBUG_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_inst_GPIO_O_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal NLW_inst_GPIO_T_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
-  signal NLW_inst_M_AXI_GP0_ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal NLW_inst_M_AXI_GP0_ARSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal NLW_inst_M_AXI_GP0_AWCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal NLW_inst_M_AXI_GP0_AWSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 to 2 );
+  signal NLW_inst_M_AXI_GP0_ARADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARLEN_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARLOCK_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARPROT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARQOS_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_ARSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWLEN_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWLOCK_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWPROT_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWQOS_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_inst_M_AXI_GP0_AWSIZE_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_inst_M_AXI_GP0_WDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_inst_M_AXI_GP0_WID_UNCONNECTED : STD_LOGIC_VECTOR ( 11 downto 0 );
+  signal NLW_inst_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_inst_M_AXI_GP1_ARADDR_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_inst_M_AXI_GP1_ARBURST_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_M_AXI_GP1_ARCACHE_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -5868,6 +6473,11 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_S_AXI_ACP_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal NLW_inst_S_AXI_ACP_RID_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal NLW_inst_S_AXI_ACP_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_S_AXI_GP0_BID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal NLW_inst_S_AXI_GP0_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_S_AXI_GP0_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal NLW_inst_S_AXI_GP0_RID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal NLW_inst_S_AXI_GP0_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_GP1_BID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_S_AXI_GP1_BRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_S_AXI_GP1_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -5910,6 +6520,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   signal NLW_inst_S_AXI_HP3_WACOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_inst_S_AXI_HP3_WCOUNT_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_inst_TRACE_DATA_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_inst_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_inst_USB1_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   attribute C_DM_WIDTH : integer;
   attribute C_DM_WIDTH of inst : label is 4;
@@ -5932,7 +6543,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   attribute C_FCLK_CLK1_BUF : string;
   attribute C_FCLK_CLK1_BUF of inst : label is "TRUE";
   attribute C_FCLK_CLK2_BUF : string;
-  attribute C_FCLK_CLK2_BUF of inst : label is "TRUE";
+  attribute C_FCLK_CLK2_BUF of inst : label is "FALSE";
   attribute C_FCLK_CLK3_BUF : string;
   attribute C_FCLK_CLK3_BUF of inst : label is "FALSE";
   attribute C_GP0_EN_MODIFIABLE_TXN : integer;
@@ -6004,13 +6615,13 @@ architecture STRUCTURE of base_ps7_0_0 is
   attribute C_USE_DEFAULT_ACP_USER_VAL : integer;
   attribute C_USE_DEFAULT_ACP_USER_VAL of inst : label is 0;
   attribute C_USE_M_AXI_GP0 : integer;
-  attribute C_USE_M_AXI_GP0 of inst : label is 1;
+  attribute C_USE_M_AXI_GP0 of inst : label is 0;
   attribute C_USE_M_AXI_GP1 : integer;
   attribute C_USE_M_AXI_GP1 of inst : label is 0;
   attribute C_USE_S_AXI_ACP : integer;
   attribute C_USE_S_AXI_ACP of inst : label is 0;
   attribute C_USE_S_AXI_GP0 : integer;
-  attribute C_USE_S_AXI_GP0 of inst : label is 1;
+  attribute C_USE_S_AXI_GP0 of inst : label is 0;
   attribute C_USE_S_AXI_GP1 : integer;
   attribute C_USE_S_AXI_GP1 of inst : label is 0;
   attribute C_USE_S_AXI_HP0 : integer;
@@ -6024,7 +6635,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of inst : label is "base_ps7_0_0.hwdef";
   attribute POWER : string;
-  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={650} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={525} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS33} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={USB} ioStandard={LVCMOS18} bidis={12} ioBank={Vcco_p1} clockFreq={60} usageRate={0.5} /><IO interface={GigE} ioStandard={LVCMOS18} bidis={14} ioBank={Vcco_p1} clockFreq={125.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={7} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={100.0} usageRate={0.5} />/>";
+  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={650} load={0.5} /><MEMORY name={code} memType={DDR3} dataWidth={16} clockFreq={525} readRate={0.5} writeRate={0.5} /><IO interface={SD} ioStandard={LVCMOS18} bidis={7} ioBank={Vcco_p1} clockFreq={50.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS33} bidis={7} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={1300.000} /><PLL domain={Memory} vco={1050.000} /><PLL domain={IO} vco={1600.000} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of inst : label is 0;
   attribute X_INTERFACE_INFO : string;
@@ -6044,46 +6655,14 @@ architecture STRUCTURE of base_ps7_0_0 is
   attribute X_INTERFACE_PARAMETER of FCLK_CLK0 : signal is "XIL_INTERFACENAME FCLK_CLK0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_CLK1 : signal is "xilinx.com:signal:clock:1.0 FCLK_CLK1 CLK";
   attribute X_INTERFACE_PARAMETER of FCLK_CLK1 : signal is "XIL_INTERFACENAME FCLK_CLK1, FREQ_HZ 1e+06, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK1, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of FCLK_CLK2 : signal is "xilinx.com:signal:clock:1.0 FCLK_CLK2 CLK";
-  attribute X_INTERFACE_PARAMETER of FCLK_CLK2 : signal is "XIL_INTERFACENAME FCLK_CLK2, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK2, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_RESET0_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST";
   attribute X_INTERFACE_PARAMETER of FCLK_RESET0_N : signal is "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of FCLK_RESET2_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET2_N RST";
   attribute X_INTERFACE_PARAMETER of FCLK_RESET2_N : signal is "XIL_INTERFACENAME FCLK_RESET2_N, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ACLK : signal is "xilinx.com:signal:clock:1.0 M_AXI_GP0_ACLK CLK";
-  attribute X_INTERFACE_PARAMETER of M_AXI_GP0_ACLK : signal is "XIL_INTERFACENAME M_AXI_GP0_ACLK, ASSOCIATED_BUSIF M_AXI_GP0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARREADY";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARVALID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARVALID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWREADY";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWVALID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWVALID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_BREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BREADY";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_BVALID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BVALID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RLAST : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RLAST";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RREADY";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RVALID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RVALID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WLAST : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WLAST";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WREADY";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WVALID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WVALID";
   attribute X_INTERFACE_INFO of PS_CLK : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
   attribute X_INTERFACE_INFO of PS_PORB : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
   attribute X_INTERFACE_PARAMETER of PS_PORB : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
   attribute X_INTERFACE_INFO of PS_SRSTB : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ACLK : signal is "xilinx.com:signal:clock:1.0 S_AXI_GP0_ACLK CLK";
-  attribute X_INTERFACE_PARAMETER of S_AXI_GP0_ACLK : signal is "XIL_INTERFACENAME S_AXI_GP0_ACLK, ASSOCIATED_BUSIF S_AXI_GP0, FREQ_HZ 1e+08, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARREADY";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARVALID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWREADY";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWVALID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_BREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 BREADY";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_BVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 BVALID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RLAST : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RLAST";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RREADY";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RVALID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WLAST : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WLAST";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WREADY";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WVALID";
-  attribute X_INTERFACE_INFO of USB0_VBUS_PWRFAULT : signal is "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRFAULT";
-  attribute X_INTERFACE_INFO of USB0_VBUS_PWRSELECT : signal is "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 VBUS_PWRSELECT";
   attribute X_INTERFACE_INFO of DDR_Addr : signal is "xilinx.com:interface:ddrx:1.0 DDR ADDR";
   attribute X_INTERFACE_INFO of DDR_BankAddr : signal is "xilinx.com:interface:ddrx:1.0 DDR BA";
   attribute X_INTERFACE_INFO of DDR_DM : signal is "xilinx.com:interface:ddrx:1.0 DDR DM";
@@ -6094,80 +6673,7 @@ architecture STRUCTURE of base_ps7_0_0 is
   attribute X_INTERFACE_INFO of IRQ_F2P : signal is "xilinx.com:signal:interrupt:1.0 IRQ_F2P INTERRUPT";
   attribute X_INTERFACE_PARAMETER of IRQ_F2P : signal is "XIL_INTERFACENAME IRQ_F2P, SENSITIVITY LEVEL_HIGH, PortWidth 16";
   attribute X_INTERFACE_INFO of MIO : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARADDR : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARADDR";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARBURST : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARBURST";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARCACHE : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARCACHE";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARLEN : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARLEN";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARLOCK : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARLOCK";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARPROT : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARPROT";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARQOS : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARQOS";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_ARSIZE : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARSIZE";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWADDR : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWADDR";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWBURST : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWBURST";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWCACHE : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWCACHE";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWLEN : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWLEN";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWLOCK : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWLOCK";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWPROT : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWPROT";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWQOS : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWQOS";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_AWSIZE : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 AWSIZE";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_BID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_BRESP : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 BRESP";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RDATA : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RDATA";
-  attribute X_INTERFACE_PARAMETER of M_AXI_GP0_RDATA : signal is "XIL_INTERFACENAME M_AXI_GP0, SUPPORTS_NARROW_BURST 0, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 32, PROTOCOL AXI3, FREQ_HZ 1e+08, ID_WIDTH 12, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, NUM_READ_THREADS 4, NUM_WRITE_THREADS 4, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_RRESP : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 RRESP";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WDATA : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WDATA";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WID : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WID";
-  attribute X_INTERFACE_INFO of M_AXI_GP0_WSTRB : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 WSTRB";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARADDR : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARADDR";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARBURST : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARBURST";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARCACHE : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARCACHE";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARLEN : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARLEN";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARLOCK : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARLOCK";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARPROT : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARPROT";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARQOS : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARQOS";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_ARSIZE : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 ARSIZE";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWADDR : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWADDR";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWBURST : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWBURST";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWCACHE : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWCACHE";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWLEN : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWLEN";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWLOCK : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWLOCK";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWPROT : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWPROT";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWQOS : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWQOS";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_AWSIZE : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 AWSIZE";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_BID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 BID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_BRESP : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 BRESP";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RDATA : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RDATA";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RID";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_RRESP : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 RRESP";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WDATA : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WDATA";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WID";
-  attribute X_INTERFACE_PARAMETER of S_AXI_GP0_WID : signal is "XIL_INTERFACENAME S_AXI_GP0, NUM_WRITE_OUTSTANDING 8, NUM_READ_OUTSTANDING 8, DATA_WIDTH 32, PROTOCOL AXI3, FREQ_HZ 1e+08, ID_WIDTH 6, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 1, MAX_BURST_LENGTH 16, PHASE 0.0, CLK_DOMAIN base_ps7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
-  attribute X_INTERFACE_INFO of S_AXI_GP0_WSTRB : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WSTRB";
-  attribute X_INTERFACE_INFO of USB0_PORT_INDCTL : signal is "xilinx.com:display_processing_system7:usbctrl:1.0 USBIND_0 PORT_INDCTL";
 begin
-  M_AXI_GP0_ARCACHE(3 downto 2) <= \^m_axi_gp0_arcache\(3 downto 2);
-  M_AXI_GP0_ARCACHE(1) <= \<const1>\;
-  M_AXI_GP0_ARCACHE(0) <= \^m_axi_gp0_arcache\(0);
-  M_AXI_GP0_ARSIZE(2) <= \<const0>\;
-  M_AXI_GP0_ARSIZE(1 downto 0) <= \^m_axi_gp0_arsize\(1 downto 0);
-  M_AXI_GP0_AWCACHE(3 downto 2) <= \^m_axi_gp0_awcache\(3 downto 2);
-  M_AXI_GP0_AWCACHE(1) <= \<const1>\;
-  M_AXI_GP0_AWCACHE(0) <= \^m_axi_gp0_awcache\(0);
-  M_AXI_GP0_AWSIZE(2) <= \<const0>\;
-  M_AXI_GP0_AWSIZE(1 downto 0) <= \^m_axi_gp0_awsize\(1 downto 0);
-GND: unisim.vcomponents.GND
-     port map (
-      G => \<const0>\
-    );
-VCC: unisim.vcomponents.VCC
-     port map (
-      P => \<const1>\
-    );
 inst: entity work.base_ps7_0_0_processing_system7_v5_5_processing_system7
      port map (
       CAN0_PHY_RX => '0',
@@ -6288,7 +6794,7 @@ inst: entity work.base_ps7_0_0_processing_system7_v5_5_processing_system7
       EVENT_STANDBYWFI(1 downto 0) => NLW_inst_EVENT_STANDBYWFI_UNCONNECTED(1 downto 0),
       FCLK_CLK0 => FCLK_CLK0,
       FCLK_CLK1 => FCLK_CLK1,
-      FCLK_CLK2 => FCLK_CLK2,
+      FCLK_CLK2 => NLW_inst_FCLK_CLK2_UNCONNECTED,
       FCLK_CLK3 => NLW_inst_FCLK_CLK3_UNCONNECTED,
       FCLK_CLKTRIG0_N => '0',
       FCLK_CLKTRIG1_N => '0',
@@ -6367,52 +6873,46 @@ inst: entity work.base_ps7_0_0_processing_system7_v5_5_processing_system7
       IRQ_P2F_USB0 => NLW_inst_IRQ_P2F_USB0_UNCONNECTED,
       IRQ_P2F_USB1 => NLW_inst_IRQ_P2F_USB1_UNCONNECTED,
       MIO(53 downto 0) => MIO(53 downto 0),
-      M_AXI_GP0_ACLK => M_AXI_GP0_ACLK,
-      M_AXI_GP0_ARADDR(31 downto 0) => M_AXI_GP0_ARADDR(31 downto 0),
-      M_AXI_GP0_ARBURST(1 downto 0) => M_AXI_GP0_ARBURST(1 downto 0),
-      M_AXI_GP0_ARCACHE(3 downto 2) => \^m_axi_gp0_arcache\(3 downto 2),
-      M_AXI_GP0_ARCACHE(1) => NLW_inst_M_AXI_GP0_ARCACHE_UNCONNECTED(1),
-      M_AXI_GP0_ARCACHE(0) => \^m_axi_gp0_arcache\(0),
+      M_AXI_GP0_ACLK => '0',
+      M_AXI_GP0_ARADDR(31 downto 0) => NLW_inst_M_AXI_GP0_ARADDR_UNCONNECTED(31 downto 0),
+      M_AXI_GP0_ARBURST(1 downto 0) => NLW_inst_M_AXI_GP0_ARBURST_UNCONNECTED(1 downto 0),
+      M_AXI_GP0_ARCACHE(3 downto 0) => NLW_inst_M_AXI_GP0_ARCACHE_UNCONNECTED(3 downto 0),
       M_AXI_GP0_ARESETN => NLW_inst_M_AXI_GP0_ARESETN_UNCONNECTED,
-      M_AXI_GP0_ARID(11 downto 0) => M_AXI_GP0_ARID(11 downto 0),
-      M_AXI_GP0_ARLEN(3 downto 0) => M_AXI_GP0_ARLEN(3 downto 0),
-      M_AXI_GP0_ARLOCK(1 downto 0) => M_AXI_GP0_ARLOCK(1 downto 0),
-      M_AXI_GP0_ARPROT(2 downto 0) => M_AXI_GP0_ARPROT(2 downto 0),
-      M_AXI_GP0_ARQOS(3 downto 0) => M_AXI_GP0_ARQOS(3 downto 0),
-      M_AXI_GP0_ARREADY => M_AXI_GP0_ARREADY,
-      M_AXI_GP0_ARSIZE(2) => NLW_inst_M_AXI_GP0_ARSIZE_UNCONNECTED(2),
-      M_AXI_GP0_ARSIZE(1 downto 0) => \^m_axi_gp0_arsize\(1 downto 0),
-      M_AXI_GP0_ARVALID => M_AXI_GP0_ARVALID,
-      M_AXI_GP0_AWADDR(31 downto 0) => M_AXI_GP0_AWADDR(31 downto 0),
-      M_AXI_GP0_AWBURST(1 downto 0) => M_AXI_GP0_AWBURST(1 downto 0),
-      M_AXI_GP0_AWCACHE(3 downto 2) => \^m_axi_gp0_awcache\(3 downto 2),
-      M_AXI_GP0_AWCACHE(1) => NLW_inst_M_AXI_GP0_AWCACHE_UNCONNECTED(1),
-      M_AXI_GP0_AWCACHE(0) => \^m_axi_gp0_awcache\(0),
-      M_AXI_GP0_AWID(11 downto 0) => M_AXI_GP0_AWID(11 downto 0),
-      M_AXI_GP0_AWLEN(3 downto 0) => M_AXI_GP0_AWLEN(3 downto 0),
-      M_AXI_GP0_AWLOCK(1 downto 0) => M_AXI_GP0_AWLOCK(1 downto 0),
-      M_AXI_GP0_AWPROT(2 downto 0) => M_AXI_GP0_AWPROT(2 downto 0),
-      M_AXI_GP0_AWQOS(3 downto 0) => M_AXI_GP0_AWQOS(3 downto 0),
-      M_AXI_GP0_AWREADY => M_AXI_GP0_AWREADY,
-      M_AXI_GP0_AWSIZE(2) => NLW_inst_M_AXI_GP0_AWSIZE_UNCONNECTED(2),
-      M_AXI_GP0_AWSIZE(1 downto 0) => \^m_axi_gp0_awsize\(1 downto 0),
-      M_AXI_GP0_AWVALID => M_AXI_GP0_AWVALID,
-      M_AXI_GP0_BID(11 downto 0) => M_AXI_GP0_BID(11 downto 0),
-      M_AXI_GP0_BREADY => M_AXI_GP0_BREADY,
-      M_AXI_GP0_BRESP(1 downto 0) => M_AXI_GP0_BRESP(1 downto 0),
-      M_AXI_GP0_BVALID => M_AXI_GP0_BVALID,
-      M_AXI_GP0_RDATA(31 downto 0) => M_AXI_GP0_RDATA(31 downto 0),
-      M_AXI_GP0_RID(11 downto 0) => M_AXI_GP0_RID(11 downto 0),
-      M_AXI_GP0_RLAST => M_AXI_GP0_RLAST,
-      M_AXI_GP0_RREADY => M_AXI_GP0_RREADY,
-      M_AXI_GP0_RRESP(1 downto 0) => M_AXI_GP0_RRESP(1 downto 0),
-      M_AXI_GP0_RVALID => M_AXI_GP0_RVALID,
-      M_AXI_GP0_WDATA(31 downto 0) => M_AXI_GP0_WDATA(31 downto 0),
-      M_AXI_GP0_WID(11 downto 0) => M_AXI_GP0_WID(11 downto 0),
-      M_AXI_GP0_WLAST => M_AXI_GP0_WLAST,
-      M_AXI_GP0_WREADY => M_AXI_GP0_WREADY,
-      M_AXI_GP0_WSTRB(3 downto 0) => M_AXI_GP0_WSTRB(3 downto 0),
-      M_AXI_GP0_WVALID => M_AXI_GP0_WVALID,
+      M_AXI_GP0_ARID(11 downto 0) => NLW_inst_M_AXI_GP0_ARID_UNCONNECTED(11 downto 0),
+      M_AXI_GP0_ARLEN(3 downto 0) => NLW_inst_M_AXI_GP0_ARLEN_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_ARLOCK(1 downto 0) => NLW_inst_M_AXI_GP0_ARLOCK_UNCONNECTED(1 downto 0),
+      M_AXI_GP0_ARPROT(2 downto 0) => NLW_inst_M_AXI_GP0_ARPROT_UNCONNECTED(2 downto 0),
+      M_AXI_GP0_ARQOS(3 downto 0) => NLW_inst_M_AXI_GP0_ARQOS_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_ARREADY => '0',
+      M_AXI_GP0_ARSIZE(2 downto 0) => NLW_inst_M_AXI_GP0_ARSIZE_UNCONNECTED(2 downto 0),
+      M_AXI_GP0_ARVALID => NLW_inst_M_AXI_GP0_ARVALID_UNCONNECTED,
+      M_AXI_GP0_AWADDR(31 downto 0) => NLW_inst_M_AXI_GP0_AWADDR_UNCONNECTED(31 downto 0),
+      M_AXI_GP0_AWBURST(1 downto 0) => NLW_inst_M_AXI_GP0_AWBURST_UNCONNECTED(1 downto 0),
+      M_AXI_GP0_AWCACHE(3 downto 0) => NLW_inst_M_AXI_GP0_AWCACHE_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_AWID(11 downto 0) => NLW_inst_M_AXI_GP0_AWID_UNCONNECTED(11 downto 0),
+      M_AXI_GP0_AWLEN(3 downto 0) => NLW_inst_M_AXI_GP0_AWLEN_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_AWLOCK(1 downto 0) => NLW_inst_M_AXI_GP0_AWLOCK_UNCONNECTED(1 downto 0),
+      M_AXI_GP0_AWPROT(2 downto 0) => NLW_inst_M_AXI_GP0_AWPROT_UNCONNECTED(2 downto 0),
+      M_AXI_GP0_AWQOS(3 downto 0) => NLW_inst_M_AXI_GP0_AWQOS_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_AWREADY => '0',
+      M_AXI_GP0_AWSIZE(2 downto 0) => NLW_inst_M_AXI_GP0_AWSIZE_UNCONNECTED(2 downto 0),
+      M_AXI_GP0_AWVALID => NLW_inst_M_AXI_GP0_AWVALID_UNCONNECTED,
+      M_AXI_GP0_BID(11 downto 0) => B"000000000000",
+      M_AXI_GP0_BREADY => NLW_inst_M_AXI_GP0_BREADY_UNCONNECTED,
+      M_AXI_GP0_BRESP(1 downto 0) => B"00",
+      M_AXI_GP0_BVALID => '0',
+      M_AXI_GP0_RDATA(31 downto 0) => B"00000000000000000000000000000000",
+      M_AXI_GP0_RID(11 downto 0) => B"000000000000",
+      M_AXI_GP0_RLAST => '0',
+      M_AXI_GP0_RREADY => NLW_inst_M_AXI_GP0_RREADY_UNCONNECTED,
+      M_AXI_GP0_RRESP(1 downto 0) => B"00",
+      M_AXI_GP0_RVALID => '0',
+      M_AXI_GP0_WDATA(31 downto 0) => NLW_inst_M_AXI_GP0_WDATA_UNCONNECTED(31 downto 0),
+      M_AXI_GP0_WID(11 downto 0) => NLW_inst_M_AXI_GP0_WID_UNCONNECTED(11 downto 0),
+      M_AXI_GP0_WLAST => NLW_inst_M_AXI_GP0_WLAST_UNCONNECTED,
+      M_AXI_GP0_WREADY => '0',
+      M_AXI_GP0_WSTRB(3 downto 0) => NLW_inst_M_AXI_GP0_WSTRB_UNCONNECTED(3 downto 0),
+      M_AXI_GP0_WVALID => NLW_inst_M_AXI_GP0_WVALID_UNCONNECTED,
       M_AXI_GP1_ACLK => '0',
       M_AXI_GP1_ARADDR(31 downto 0) => NLW_inst_M_AXI_GP1_ARADDR_UNCONNECTED(31 downto 0),
       M_AXI_GP1_ARBURST(1 downto 0) => NLW_inst_M_AXI_GP1_ARBURST_UNCONNECTED(1 downto 0),
@@ -6557,48 +7057,46 @@ inst: entity work.base_ps7_0_0_processing_system7_v5_5_processing_system7
       S_AXI_ACP_WREADY => NLW_inst_S_AXI_ACP_WREADY_UNCONNECTED,
       S_AXI_ACP_WSTRB(7 downto 0) => B"00000000",
       S_AXI_ACP_WVALID => '0',
-      S_AXI_GP0_ACLK => S_AXI_GP0_ACLK,
-      S_AXI_GP0_ARADDR(31 downto 0) => S_AXI_GP0_ARADDR(31 downto 0),
-      S_AXI_GP0_ARBURST(1 downto 0) => S_AXI_GP0_ARBURST(1 downto 0),
-      S_AXI_GP0_ARCACHE(3 downto 0) => S_AXI_GP0_ARCACHE(3 downto 0),
+      S_AXI_GP0_ACLK => '0',
+      S_AXI_GP0_ARADDR(31 downto 0) => B"00000000000000000000000000000000",
+      S_AXI_GP0_ARBURST(1 downto 0) => B"00",
+      S_AXI_GP0_ARCACHE(3 downto 0) => B"0000",
       S_AXI_GP0_ARESETN => NLW_inst_S_AXI_GP0_ARESETN_UNCONNECTED,
-      S_AXI_GP0_ARID(5 downto 0) => S_AXI_GP0_ARID(5 downto 0),
-      S_AXI_GP0_ARLEN(3 downto 0) => S_AXI_GP0_ARLEN(3 downto 0),
-      S_AXI_GP0_ARLOCK(1 downto 0) => S_AXI_GP0_ARLOCK(1 downto 0),
-      S_AXI_GP0_ARPROT(2 downto 0) => S_AXI_GP0_ARPROT(2 downto 0),
-      S_AXI_GP0_ARQOS(3 downto 0) => S_AXI_GP0_ARQOS(3 downto 0),
-      S_AXI_GP0_ARREADY => S_AXI_GP0_ARREADY,
-      S_AXI_GP0_ARSIZE(2) => '0',
-      S_AXI_GP0_ARSIZE(1 downto 0) => S_AXI_GP0_ARSIZE(1 downto 0),
-      S_AXI_GP0_ARVALID => S_AXI_GP0_ARVALID,
-      S_AXI_GP0_AWADDR(31 downto 0) => S_AXI_GP0_AWADDR(31 downto 0),
-      S_AXI_GP0_AWBURST(1 downto 0) => S_AXI_GP0_AWBURST(1 downto 0),
-      S_AXI_GP0_AWCACHE(3 downto 0) => S_AXI_GP0_AWCACHE(3 downto 0),
-      S_AXI_GP0_AWID(5 downto 0) => S_AXI_GP0_AWID(5 downto 0),
-      S_AXI_GP0_AWLEN(3 downto 0) => S_AXI_GP0_AWLEN(3 downto 0),
-      S_AXI_GP0_AWLOCK(1 downto 0) => S_AXI_GP0_AWLOCK(1 downto 0),
-      S_AXI_GP0_AWPROT(2 downto 0) => S_AXI_GP0_AWPROT(2 downto 0),
-      S_AXI_GP0_AWQOS(3 downto 0) => S_AXI_GP0_AWQOS(3 downto 0),
-      S_AXI_GP0_AWREADY => S_AXI_GP0_AWREADY,
-      S_AXI_GP0_AWSIZE(2) => '0',
-      S_AXI_GP0_AWSIZE(1 downto 0) => S_AXI_GP0_AWSIZE(1 downto 0),
-      S_AXI_GP0_AWVALID => S_AXI_GP0_AWVALID,
-      S_AXI_GP0_BID(5 downto 0) => S_AXI_GP0_BID(5 downto 0),
-      S_AXI_GP0_BREADY => S_AXI_GP0_BREADY,
-      S_AXI_GP0_BRESP(1 downto 0) => S_AXI_GP0_BRESP(1 downto 0),
-      S_AXI_GP0_BVALID => S_AXI_GP0_BVALID,
-      S_AXI_GP0_RDATA(31 downto 0) => S_AXI_GP0_RDATA(31 downto 0),
-      S_AXI_GP0_RID(5 downto 0) => S_AXI_GP0_RID(5 downto 0),
-      S_AXI_GP0_RLAST => S_AXI_GP0_RLAST,
-      S_AXI_GP0_RREADY => S_AXI_GP0_RREADY,
-      S_AXI_GP0_RRESP(1 downto 0) => S_AXI_GP0_RRESP(1 downto 0),
-      S_AXI_GP0_RVALID => S_AXI_GP0_RVALID,
-      S_AXI_GP0_WDATA(31 downto 0) => S_AXI_GP0_WDATA(31 downto 0),
-      S_AXI_GP0_WID(5 downto 0) => S_AXI_GP0_WID(5 downto 0),
-      S_AXI_GP0_WLAST => S_AXI_GP0_WLAST,
-      S_AXI_GP0_WREADY => S_AXI_GP0_WREADY,
-      S_AXI_GP0_WSTRB(3 downto 0) => S_AXI_GP0_WSTRB(3 downto 0),
-      S_AXI_GP0_WVALID => S_AXI_GP0_WVALID,
+      S_AXI_GP0_ARID(5 downto 0) => B"000000",
+      S_AXI_GP0_ARLEN(3 downto 0) => B"0000",
+      S_AXI_GP0_ARLOCK(1 downto 0) => B"00",
+      S_AXI_GP0_ARPROT(2 downto 0) => B"000",
+      S_AXI_GP0_ARQOS(3 downto 0) => B"0000",
+      S_AXI_GP0_ARREADY => NLW_inst_S_AXI_GP0_ARREADY_UNCONNECTED,
+      S_AXI_GP0_ARSIZE(2 downto 0) => B"000",
+      S_AXI_GP0_ARVALID => '0',
+      S_AXI_GP0_AWADDR(31 downto 0) => B"00000000000000000000000000000000",
+      S_AXI_GP0_AWBURST(1 downto 0) => B"00",
+      S_AXI_GP0_AWCACHE(3 downto 0) => B"0000",
+      S_AXI_GP0_AWID(5 downto 0) => B"000000",
+      S_AXI_GP0_AWLEN(3 downto 0) => B"0000",
+      S_AXI_GP0_AWLOCK(1 downto 0) => B"00",
+      S_AXI_GP0_AWPROT(2 downto 0) => B"000",
+      S_AXI_GP0_AWQOS(3 downto 0) => B"0000",
+      S_AXI_GP0_AWREADY => NLW_inst_S_AXI_GP0_AWREADY_UNCONNECTED,
+      S_AXI_GP0_AWSIZE(2 downto 0) => B"000",
+      S_AXI_GP0_AWVALID => '0',
+      S_AXI_GP0_BID(5 downto 0) => NLW_inst_S_AXI_GP0_BID_UNCONNECTED(5 downto 0),
+      S_AXI_GP0_BREADY => '0',
+      S_AXI_GP0_BRESP(1 downto 0) => NLW_inst_S_AXI_GP0_BRESP_UNCONNECTED(1 downto 0),
+      S_AXI_GP0_BVALID => NLW_inst_S_AXI_GP0_BVALID_UNCONNECTED,
+      S_AXI_GP0_RDATA(31 downto 0) => NLW_inst_S_AXI_GP0_RDATA_UNCONNECTED(31 downto 0),
+      S_AXI_GP0_RID(5 downto 0) => NLW_inst_S_AXI_GP0_RID_UNCONNECTED(5 downto 0),
+      S_AXI_GP0_RLAST => NLW_inst_S_AXI_GP0_RLAST_UNCONNECTED,
+      S_AXI_GP0_RREADY => '0',
+      S_AXI_GP0_RRESP(1 downto 0) => NLW_inst_S_AXI_GP0_RRESP_UNCONNECTED(1 downto 0),
+      S_AXI_GP0_RVALID => NLW_inst_S_AXI_GP0_RVALID_UNCONNECTED,
+      S_AXI_GP0_WDATA(31 downto 0) => B"00000000000000000000000000000000",
+      S_AXI_GP0_WID(5 downto 0) => B"000000",
+      S_AXI_GP0_WLAST => '0',
+      S_AXI_GP0_WREADY => NLW_inst_S_AXI_GP0_WREADY_UNCONNECTED,
+      S_AXI_GP0_WSTRB(3 downto 0) => B"0000",
+      S_AXI_GP0_WVALID => '0',
       S_AXI_GP1_ACLK => '0',
       S_AXI_GP1_ARADDR(31 downto 0) => B"00000000000000000000000000000000",
       S_AXI_GP1_ARBURST(1 downto 0) => B"00",
@@ -6855,9 +7353,9 @@ inst: entity work.base_ps7_0_0_processing_system7_v5_5_processing_system7
       UART1_RTSN => NLW_inst_UART1_RTSN_UNCONNECTED,
       UART1_RX => '1',
       UART1_TX => NLW_inst_UART1_TX_UNCONNECTED,
-      USB0_PORT_INDCTL(1 downto 0) => USB0_PORT_INDCTL(1 downto 0),
-      USB0_VBUS_PWRFAULT => USB0_VBUS_PWRFAULT,
-      USB0_VBUS_PWRSELECT => USB0_VBUS_PWRSELECT,
+      USB0_PORT_INDCTL(1 downto 0) => NLW_inst_USB0_PORT_INDCTL_UNCONNECTED(1 downto 0),
+      USB0_VBUS_PWRFAULT => '0',
+      USB0_VBUS_PWRSELECT => NLW_inst_USB0_VBUS_PWRSELECT_UNCONNECTED,
       USB1_PORT_INDCTL(1 downto 0) => NLW_inst_USB1_PORT_INDCTL_UNCONNECTED(1 downto 0),
       USB1_VBUS_PWRFAULT => '0',
       USB1_VBUS_PWRSELECT => NLW_inst_USB1_VBUS_PWRSELECT_UNCONNECTED,

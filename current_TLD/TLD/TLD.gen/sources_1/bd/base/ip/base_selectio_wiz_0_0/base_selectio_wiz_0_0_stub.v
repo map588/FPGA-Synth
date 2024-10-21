@@ -1,0 +1,25 @@
+// Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+// --------------------------------------------------------------------------------
+// Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+// Date        : Sun Oct 20 06:01:37 2024
+// Host        : bigolBox running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/current_TLD/TLD/TLD.gen/sources_1/bd/base/ip/base_selectio_wiz_0_0/base_selectio_wiz_0_0_stub.v
+// Design      : base_selectio_wiz_0_0
+// Purpose     : Stub declaration of top-level module interface
+// Device      : xc7z020clg400-1
+// --------------------------------------------------------------------------------
+
+// This empty module with port declaration file causes synthesis tools to infer a black box for IP.
+// The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
+// Please paste the declaration into a Verilog source file or add the file as an additional source.
+module base_selectio_wiz_0_0(data_in_from_pins, data_in_to_device, 
+  delay_locked, ref_clock, clk_in, io_reset)
+/* synthesis syn_black_box black_box_pad_pin="data_in_from_pins[0:0],data_in_to_device[0:0],delay_locked,ref_clock,clk_in,io_reset" */;
+  input [0:0]data_in_from_pins;
+  output [0:0]data_in_to_device;
+  output delay_locked;
+  input ref_clock;
+  input clk_in;
+  input io_reset;
+endmodule

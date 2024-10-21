@@ -1,7 +1,7 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Fri Oct 18 10:58:55 2024
+-- Date        : Sat Oct 19 21:54:59 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/current_TLD/TLD/TLD.gen/sources_1/ip/base_i2s_tx_buffered_real_0_0/base_i2s_tx_buffered_real_0_0_sim_netlist.vhdl
@@ -36,6 +36,8 @@ architecture STRUCTURE of base_i2s_tx_buffered_real_0_0_Clock_Manager is
   signal \^q\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^bclk_out\ : STD_LOGIC;
   signal clk_100_int : STD_LOGIC;
+  signal clk_100_meta : STD_LOGIC;
+  signal clk_100_sync : STD_LOGIC;
   signal clk_en_96kHz_i_i_1_n_0 : STD_LOGIC;
   signal clk_en_96kHz_i_i_2_n_0 : STD_LOGIC;
   signal counter_96kHz : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -52,15 +54,13 @@ architecture STRUCTURE of base_i2s_tx_buffered_real_0_0_Clock_Manager is
   signal \^lrclk_out\ : STD_LOGIC;
   signal \^reset_sync_ff_100mhz_reg[1]_0\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \reset_sync_ff_100MHz_reg_n_0_[0]\ : STD_LOGIC;
-  signal \reset_sync_ff_125MHz_reg_n_0_[0]\ : STD_LOGIC;
+  signal reset_sync_ff_125MHz : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal reset_sync_ff_24MHz : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \reset_sync_ff_24MHz[1]_i_1_n_0\ : STD_LOGIC;
   signal \^reset_sync_ff_24mhz_reg[1]_0\ : STD_LOGIC;
-  signal \reset_sync_ff_24MHz_reg_n_0_[0]\ : STD_LOGIC;
   signal toggle_12_288MHz : STD_LOGIC;
   signal toggle_12_288MHz_i_1_n_0 : STD_LOGIC;
   signal toggle_6_144MHz_i_1_n_0 : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of buf_100 : label is "PRIMITIVE";
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of clk_en_96kHz_i_i_1 : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \counter_96kHz[0]_i_1\ : label is "soft_lutpair4";
@@ -78,10 +78,29 @@ begin
   lrclk_out <= \^lrclk_out\;
   \reset_sync_ff_100MHz_reg[1]_0\(0) <= \^reset_sync_ff_100mhz_reg[1]_0\(0);
   \reset_sync_ff_24MHz_reg[1]_0\ <= \^reset_sync_ff_24mhz_reg[1]_0\;
-buf_100: unisim.vcomponents.BUFG
+clk_100_int_reg: unisim.vcomponents.FDCE
      port map (
-      I => clk_100,
-      O => clk_100_int
+      C => clk_100,
+      CE => '1',
+      CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
+      D => clk_100_sync,
+      Q => clk_100_int
+    );
+clk_100_meta_reg: unisim.vcomponents.FDCE
+     port map (
+      C => clk_100,
+      CE => '1',
+      CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
+      D => clk_100,
+      Q => clk_100_meta
+    );
+clk_100_sync_reg: unisim.vcomponents.FDCE
+     port map (
+      C => clk_100,
+      CE => '1',
+      CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
+      D => clk_100_meta,
+      Q => clk_100_sync
     );
 clk_en_96kHz_i_i_1: unisim.vcomponents.LUT4
     generic map(
@@ -354,7 +373,7 @@ full_int_i_2: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
       D => '1',
-      Q => \reset_sync_ff_125MHz_reg_n_0_[0]\
+      Q => reset_sync_ff_125MHz(0)
     );
 \reset_sync_ff_125MHz_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -364,7 +383,7 @@ full_int_i_2: unisim.vcomponents.LUT1
       C => CLK,
       CE => '1',
       CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
-      D => \reset_sync_ff_125MHz_reg_n_0_[0]\,
+      D => reset_sync_ff_125MHz(0),
       Q => \reset_sync_ff_125MHz_reg[1]_0\(0)
     );
 \reset_sync_ff_24MHz[1]_i_1\: unisim.vcomponents.LUT1
@@ -384,7 +403,7 @@ full_int_i_2: unisim.vcomponents.LUT1
       CE => '1',
       CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
       D => '1',
-      Q => \reset_sync_ff_24MHz_reg_n_0_[0]\
+      Q => reset_sync_ff_24MHz(0)
     );
 \reset_sync_ff_24MHz_reg[1]\: unisim.vcomponents.FDCE
     generic map(
@@ -394,7 +413,7 @@ full_int_i_2: unisim.vcomponents.LUT1
       C => clk_out1,
       CE => '1',
       CLR => \reset_sync_ff_24MHz[1]_i_1_n_0\,
-      D => \reset_sync_ff_24MHz_reg_n_0_[0]\,
+      D => reset_sync_ff_24MHz(0),
       Q => \^q\(0)
     );
 toggle_12_288MHz_i_1: unisim.vcomponents.LUT1

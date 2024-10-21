@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:i2s_tx_buffered_real:1.0
--- IP Revision: 5
+-- IP Revision: 6
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -100,7 +100,7 @@ ARCHITECTURE base_i2s_tx_buffered_real_0_0_arch OF base_i2s_tx_buffered_real_0_0
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF base_i2s_tx_buffered_real_0_0_arch : ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=i2s_tx_buffered_real,x_ipVersion=1.0,x_ipCoreRevision=5,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
+  ATTRIBUTE CORE_GENERATION_INFO OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "base_i2s_tx_buffered_real_0_0,clocked_i2s,{x_ipProduct=Vivado 2021.1,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=i2s_tx_buffered_real,x_ipVersion=1.0,x_ipCoreRevision=6,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;
   ATTRIBUTE IP_DEFINITION_SOURCE OF base_i2s_tx_buffered_real_0_0_arch: ARCHITECTURE IS "IPI";
   ATTRIBUTE X_INTERFACE_INFO : STRING;

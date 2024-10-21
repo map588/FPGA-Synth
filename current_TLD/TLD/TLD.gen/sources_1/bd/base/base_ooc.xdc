@@ -9,6 +9,5 @@
 create_clock -name sysclk -period 8 [get_ports sysclk]
 create_clock -name ps7_0_FCLK_CLK0 -period 10 [get_pins ps7_0/FCLK_CLK0]
 create_clock -name ps7_0_FCLK_CLK1 -period 1000 [get_pins ps7_0/FCLK_CLK1]
-create_clock -name ps7_0_FCLK_CLK2 -period 10 [get_pins ps7_0/FCLK_CLK2]
 
 ################################################################################

@@ -1,7 +1,7 @@
 --Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
---Date        : Fri Oct 18 10:58:23 2024
+--Date        : Sun Oct 20 06:01:07 2024
 --Host        : bigolBox running 64-bit major release  (build 9200)
 --Command     : generate_target base_wrapper.bd
 --Design      : base_wrapper
@@ -37,9 +37,9 @@ entity base_wrapper is
     bclk_out : out STD_LOGIC;
     lrclk_out : out STD_LOGIC;
     mclk_out : out STD_LOGIC;
-    midi_rx : in STD_LOGIC;
     sdata : out STD_LOGIC;
-    sysclk : in STD_LOGIC
+    sysclk : in STD_LOGIC;
+    uart_rx : in STD_LOGIC
   );
 end base_wrapper;
 
@@ -51,7 +51,7 @@ architecture STRUCTURE of base_wrapper is
     lrclk_out : out STD_LOGIC;
     sdata : out STD_LOGIC;
     mclk_out : out STD_LOGIC;
-    midi_rx : in STD_LOGIC;
+    uart_rx : in STD_LOGIC;
     DDR_cas_n : inout STD_LOGIC;
     DDR_cke : inout STD_LOGIC;
     DDR_ck_n : inout STD_LOGIC;
@@ -102,8 +102,8 @@ base_i: component base
       bclk_out => bclk_out,
       lrclk_out => lrclk_out,
       mclk_out => mclk_out,
-      midi_rx => midi_rx,
       sdata => sdata,
-      sysclk => sysclk
+      sysclk => sysclk,
+      uart_rx => uart_rx
     );
 end STRUCTURE;

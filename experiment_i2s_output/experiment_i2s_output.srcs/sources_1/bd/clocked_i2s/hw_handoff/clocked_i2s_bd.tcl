@@ -162,15 +162,16 @@ proc create_root_design { parentCell } {
 
 
   # Create interface ports
+  set DDR [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR ]
+
+  set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+
 
   # Create ports
-  set async_resetn [ create_bd_port -dir I -type rst async_resetn ]
   set bclk_out [ create_bd_port -dir O bclk_out ]
   set buff_empty [ create_bd_port -dir O -type data buff_empty ]
   set buff_full [ create_bd_port -dir O -type intr buff_full ]
   set buff_half [ create_bd_port -dir O -type intr buff_half ]
-  set clk_100 [ create_bd_port -dir I clk_100 ]
-  set clk_125 [ create_bd_port -dir I -type clk -freq_hz 125000000 clk_125 ]
   set data_in [ create_bd_port -dir I -from 23 -to 0 data_in ]
   set data_ready [ create_bd_port -dir I data_ready ]
   set fifo_count [ create_bd_port -dir O -from 11 -to 0 fifo_count ]
@@ -211,36 +212,6 @@ proc create_root_design { parentCell } {
    CONFIG.USE_LOCKED {false} \
  ] $clk_wiz_0
 
-  # Create instance: clk_wiz_1, and set properties
-  set clk_wiz_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_1 ]
-  set_property -dict [ list \
-   CONFIG.CLKIN1_JITTER_PS {800.0} \
-   CONFIG.CLKIN1_UI_JITTER {0.100} \
-   CONFIG.CLKOUT1_DRIVES {BUFG} \
-   CONFIG.CLKOUT1_JITTER {124.057} \
-   CONFIG.CLKOUT1_PHASE_ERROR {312.996} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {125} \
-   CONFIG.CLKOUT2_DRIVES {BUFG} \
-   CONFIG.CLKOUT3_DRIVES {BUFG} \
-   CONFIG.CLKOUT4_DRIVES {BUFG} \
-   CONFIG.CLKOUT5_DRIVES {BUFG} \
-   CONFIG.CLKOUT6_DRIVES {BUFG} \
-   CONFIG.CLKOUT7_DRIVES {BUFG} \
-   CONFIG.JITTER_SEL {Max_I_Jitter} \
-   CONFIG.MMCM_BANDWIDTH {LOW} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {7} \
-   CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
-   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {7} \
-   CONFIG.MMCM_COMPENSATION {ZHOLD} \
-   CONFIG.MMCM_REF_JITTER1 {0.100} \
-   CONFIG.PRIMITIVE {PLL} \
-   CONFIG.PRIM_IN_FREQ {125} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
-   CONFIG.USE_LOCKED {false} \
- ] $clk_wiz_1
-
   # Create instance: i2s_module_0, and set properties
   set block_name i2s_module
   set block_cell_name i2s_module_0
@@ -252,6 +223,80 @@ proc create_root_design { parentCell } {
      return 1
    }
   
+  # Create instance: processing_system7_0, and set properties
+  set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
+  set_property -dict [ list \
+   CONFIG.PCW_ACT_APU_PERIPHERAL_FREQMHZ {666.666687} \
+   CONFIG.PCW_ACT_CAN_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_DCI_PERIPHERAL_FREQMHZ {10.158730} \
+   CONFIG.PCW_ACT_ENET0_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_ENET1_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ {100.000000} \
+   CONFIG.PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ {125.000000} \
+   CONFIG.PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_PCAP_PERIPHERAL_FREQMHZ {200.000000} \
+   CONFIG.PCW_ACT_QSPI_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_SDIO_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_SMC_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_SPI_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_TPIU_PERIPHERAL_FREQMHZ {200.000000} \
+   CONFIG.PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ACT_UART_PERIPHERAL_FREQMHZ {10.000000} \
+   CONFIG.PCW_ACT_WDT_PERIPHERAL_FREQMHZ {111.111115} \
+   CONFIG.PCW_ARMPLL_CTRL_FBDIV {40} \
+   CONFIG.PCW_CAN_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_CAN_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_CLK0_FREQ {100000000} \
+   CONFIG.PCW_CLK1_FREQ {125000000} \
+   CONFIG.PCW_CLK2_FREQ {10000000} \
+   CONFIG.PCW_CLK3_FREQ {10000000} \
+   CONFIG.PCW_CPU_CPU_PLL_FREQMHZ {1333.333} \
+   CONFIG.PCW_CPU_PERIPHERAL_DIVISOR0 {2} \
+   CONFIG.PCW_DCI_PERIPHERAL_DIVISOR0 {15} \
+   CONFIG.PCW_DCI_PERIPHERAL_DIVISOR1 {7} \
+   CONFIG.PCW_DDRPLL_CTRL_FBDIV {32} \
+   CONFIG.PCW_DDR_DDR_PLL_FREQMHZ {1066.667} \
+   CONFIG.PCW_DDR_PERIPHERAL_DIVISOR0 {2} \
+   CONFIG.PCW_DDR_RAM_HIGHADDR {0x1FFFFFFF} \
+   CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_ENET0_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_ENET1_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_EN_CLK1_PORT {1} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR0 {5} \
+   CONFIG.PCW_FCLK0_PERIPHERAL_DIVISOR1 {2} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR0 {4} \
+   CONFIG.PCW_FCLK1_PERIPHERAL_DIVISOR1 {2} \
+   CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_FCLK2_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_FCLK3_PERIPHERAL_DIVISOR1 {1} \
+   CONFIG.PCW_FCLK_CLK1_BUF {TRUE} \
+   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100} \
+   CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {125} \
+   CONFIG.PCW_FPGA_FCLK0_ENABLE {1} \
+   CONFIG.PCW_FPGA_FCLK1_ENABLE {1} \
+   CONFIG.PCW_FPGA_FCLK2_ENABLE {0} \
+   CONFIG.PCW_FPGA_FCLK3_ENABLE {0} \
+   CONFIG.PCW_I2C_PERIPHERAL_FREQMHZ {25} \
+   CONFIG.PCW_IOPLL_CTRL_FBDIV {30} \
+   CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
+   CONFIG.PCW_PCAP_PERIPHERAL_DIVISOR0 {5} \
+   CONFIG.PCW_QSPI_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_SDIO_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_SMC_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_SPI_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_TPIU_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_UART_PERIPHERAL_DIVISOR0 {1} \
+   CONFIG.PCW_UIPARAM_ACT_DDR_FREQ_MHZ {533.333374} \
+ ] $processing_system7_0
+
   # Create instance: stream_controller_0, and set properties
   set block_name stream_controller
   set block_cell_name stream_controller_0
@@ -263,11 +308,15 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: util_ds_buf_0, and set properties
-  set util_ds_buf_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_0 ]
+  # Create instance: util_ds_buf_1, and set properties
+  set util_ds_buf_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.2 util_ds_buf_1 ]
   set_property -dict [ list \
-   CONFIG.C_BUF_TYPE {BUFG} \
- ] $util_ds_buf_0
+   CONFIG.C_BUF_TYPE {BUFH} \
+ ] $util_ds_buf_1
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
+  connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
 
   # Create port connections
   connect_bd_net -net Clock_Manager_0_clk_en_12_288MHz [get_bd_pins Clock_Manager_0/clk_en_6_144MHz] [get_bd_pins i2s_module_0/bclk]
@@ -275,11 +324,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net Clock_Manager_0_sync_resetn_100MHz1 [get_bd_pins Clock_Manager_0/sync_resetn_100MHz] [get_bd_pins i2s_module_0/sys_resetn]
   connect_bd_net -net Clock_Manager_0_sync_resetn_125MHz [get_bd_pins Clock_Manager_0/sync_resetn_125MHz] [get_bd_pins clk_wiz_0/resetn]
   connect_bd_net -net Clock_Manager_0_sync_resetn_24MHz [get_bd_pins Clock_Manager_0/sync_resetn_24MHz] [get_bd_pins i2s_module_0/mclk_resetn]
-  connect_bd_net -net async_resetn_0_1 [get_bd_ports async_resetn] [get_bd_pins Clock_Manager_0/async_resetn] [get_bd_pins clk_wiz_1/resetn]
-  connect_bd_net -net clk_100_1 [get_bd_ports clk_100] [get_bd_pins util_ds_buf_0/BUFG_I]
-  connect_bd_net -net clk_125_1 [get_bd_ports clk_125] [get_bd_pins clk_wiz_1/clk_in1]
   connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_ports mclk_out] [get_bd_pins Clock_Manager_0/clk_24_576MHz] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins i2s_module_0/mclk]
-  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins Clock_Manager_0/clk_125MHz] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins clk_wiz_1/clk_out1]
+  connect_bd_net -net clk_wiz_1_clk_out1 [get_bd_pins Clock_Manager_0/clk_125MHz] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins util_ds_buf_1/BUFH_O]
   connect_bd_net -net data_in_0_1 [get_bd_ports data_in] [get_bd_pins i2s_module_0/data_in]
   connect_bd_net -net has_data_1 [get_bd_ports data_ready] [get_bd_pins stream_controller_0/has_data]
   connect_bd_net -net i2s_module_0_bclk_out [get_bd_ports bclk_out] [get_bd_pins i2s_module_0/bclk_out]
@@ -291,7 +337,9 @@ proc create_root_design { parentCell } {
   connect_bd_net -net i2s_module_0_fifo_overflow [get_bd_ports fifo_overflow] [get_bd_pins i2s_module_0/fifo_overflow]
   connect_bd_net -net i2s_module_0_lrclk_out [get_bd_ports lrclk_out] [get_bd_pins i2s_module_0/lrclk_out]
   connect_bd_net -net i2s_module_0_sdata [get_bd_ports sdata] [get_bd_pins i2s_module_0/sdata]
-  connect_bd_net -net pl_clk_1 [get_bd_pins Clock_Manager_0/clk_100MHz] [get_bd_pins i2s_module_0/sys_clk] [get_bd_pins stream_controller_0/sysclk] [get_bd_pins util_ds_buf_0/BUFG_O]
+  connect_bd_net -net pl_clk_1 [get_bd_pins Clock_Manager_0/clk_100MHz] [get_bd_pins i2s_module_0/sys_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins stream_controller_0/sysclk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_pins processing_system7_0/FCLK_CLK1] [get_bd_pins util_ds_buf_1/BUFH_I]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins Clock_Manager_0/async_resetn] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
   connect_bd_net -net stream_controller_0_push_en [get_bd_pins i2s_module_0/push] [get_bd_pins stream_controller_0/push_en]
   connect_bd_net -net stream_controller_0_rejection [get_bd_ports rejection] [get_bd_pins stream_controller_0/rejection]
 

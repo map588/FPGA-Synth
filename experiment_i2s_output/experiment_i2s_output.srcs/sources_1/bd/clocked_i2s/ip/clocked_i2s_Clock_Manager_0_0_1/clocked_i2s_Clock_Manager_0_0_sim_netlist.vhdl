@@ -1,10 +1,10 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
--- Date        : Thu Oct 17 22:25:07 2024
+-- Date        : Sat Oct 26 00:01:22 2024
 -- Host        : bigolBox running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top clocked_i2s_Clock_Manager_0_0 -prefix
---               clocked_i2s_Clock_Manager_0_0_ clocked_i2s_Clock_Manager_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/experiment_i2s_output/experiment_i2s_output.srcs/sources_1/bd/clocked_i2s/ip/clocked_i2s_Clock_Manager_0_0_1/clocked_i2s_Clock_Manager_0_0_sim_netlist.vhdl
 -- Design      : clocked_i2s_Clock_Manager_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,37 +16,38 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity clocked_i2s_Clock_Manager_0_0_Clock_Manager is
   port (
+    clk_en_6_144MHz : out STD_LOGIC;
+    clk_en_96kHz : out STD_LOGIC;
     sync_resetn_24MHz : out STD_LOGIC;
-    sync_reset_24MHz : out STD_LOGIC;
     sync_resetn_100MHz : out STD_LOGIC;
     sync_resetn_125MHz : out STD_LOGIC;
+    sync_reset_24MHz : out STD_LOGIC;
     sync_reset_100MHz : out STD_LOGIC;
     sync_reset_125MHz : out STD_LOGIC;
-    clk_en_96kHz : out STD_LOGIC;
-    clk_en_6_144MHz : out STD_LOGIC;
     clk_24_576MHz : in STD_LOGIC;
     clk_100MHz : in STD_LOGIC;
     clk_125MHz : in STD_LOGIC;
     async_resetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of clocked_i2s_Clock_Manager_0_0_Clock_Manager : entity is "Clock_Manager";
 end clocked_i2s_Clock_Manager_0_0_Clock_Manager;
 
 architecture STRUCTURE of clocked_i2s_Clock_Manager_0_0_Clock_Manager is
-  signal \^clk_en_6_144mhz\ : STD_LOGIC;
-  signal \^clk_en_96khz\ : STD_LOGIC;
-  signal clk_en_96kHz_i_i_1_n_0 : STD_LOGIC;
-  signal clk_en_96kHz_i_i_2_n_0 : STD_LOGIC;
-  signal counter_96kHz : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \counter_96kHz[6]_i_2_n_0\ : STD_LOGIC;
-  signal \counter_96kHz[7]_i_2_n_0\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[0]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[1]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[2]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[3]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[4]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[5]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[6]\ : STD_LOGIC;
-  signal \counter_96kHz_reg_n_0_[7]\ : STD_LOGIC;
+  signal I : STD_LOGIC;
+  signal div256_counter : STD_LOGIC_VECTOR ( 7 downto 0 );
+  attribute RTL_KEEP : string;
+  attribute RTL_KEEP of div256_counter : signal is "true";
+  signal \div256_counter[6]_i_2_n_0\ : STD_LOGIC;
+  signal \div256_counter[7]_i_2_n_0\ : STD_LOGIC;
+  signal \div256_counter[7]_i_3_n_0\ : STD_LOGIC;
+  signal \div256_counter__0\ : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal \div4_counter[0]_i_1_n_0\ : STD_LOGIC;
+  signal \div4_counter__0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  attribute RTL_KEEP of \div4_counter__0\ : signal is "true";
+  signal div4_counter_n_0 : STD_LOGIC;
+  signal enable_96k : STD_LOGIC;
+  signal enable_96k_i_1_n_0 : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
   signal reset_sync_ff_100MHz : STD_LOGIC_VECTOR ( 0 to 0 );
   signal reset_sync_ff_125MHz : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -56,171 +57,169 @@ architecture STRUCTURE of clocked_i2s_Clock_Manager_0_0_Clock_Manager is
   signal \^sync_resetn_100mhz\ : STD_LOGIC;
   signal \^sync_resetn_125mhz\ : STD_LOGIC;
   signal \^sync_resetn_24mhz\ : STD_LOGIC;
-  signal toggle_12_288MHz : STD_LOGIC;
-  signal toggle_6_144MHz_i_1_n_0 : STD_LOGIC;
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of clk_en_96kHz_i_i_1 : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \counter_96kHz[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \counter_96kHz[1]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \counter_96kHz[2]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter_96kHz[3]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \counter_96kHz[4]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \counter_96kHz[6]_i_2\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \counter_96kHz[7]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of toggle_12_288MHz_i_1 : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of toggle_6_144MHz_i_1 : label is "soft_lutpair4";
+  attribute BOX_TYPE : string;
+  attribute BOX_TYPE of BUFH_inst_6MHz : label is "PRIMITIVE";
+  attribute BOX_TYPE of BUFH_inst_96kHz : label is "PRIMITIVE";
+  attribute KEEP : string;
+  attribute KEEP of \div256_counter_reg[0]\ : label is "yes";
+  attribute equivalent_register_removal : string;
+  attribute equivalent_register_removal of \div256_counter_reg[0]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[1]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[1]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[2]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[2]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[3]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[3]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[4]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[4]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[5]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[5]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[6]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[6]\ : label is "no";
+  attribute KEEP of \div256_counter_reg[7]\ : label is "yes";
+  attribute equivalent_register_removal of \div256_counter_reg[7]\ : label is "no";
+  attribute KEEP of \div4_counter_reg[0]\ : label is "yes";
+  attribute equivalent_register_removal of \div4_counter_reg[0]\ : label is "no";
+  attribute KEEP of \div4_counter_reg[1]\ : label is "yes";
+  attribute equivalent_register_removal of \div4_counter_reg[1]\ : label is "no";
 begin
-  clk_en_6_144MHz <= \^clk_en_6_144mhz\;
-  clk_en_96kHz <= \^clk_en_96khz\;
   sync_reset_24MHz <= \^sync_reset_24mhz\;
   sync_resetn_100MHz <= \^sync_resetn_100mhz\;
   sync_resetn_125MHz <= \^sync_resetn_125mhz\;
   sync_resetn_24MHz <= \^sync_resetn_24mhz\;
-clk_en_96kHz_i_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7F80"
-    )
-        port map (
-      I0 => \counter_96kHz_reg_n_0_[7]\,
-      I1 => clk_en_96kHz_i_i_2_n_0,
-      I2 => \counter_96kHz_reg_n_0_[6]\,
-      I3 => \^clk_en_96khz\,
-      O => clk_en_96kHz_i_i_1_n_0
+BUFH_inst_6MHz: unisim.vcomponents.BUFH
+     port map (
+      I => I,
+      O => clk_en_6_144MHz
     );
-clk_en_96kHz_i_i_2: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \counter_96kHz_reg_n_0_[4]\,
-      I1 => \counter_96kHz_reg_n_0_[2]\,
-      I2 => \counter_96kHz_reg_n_0_[1]\,
-      I3 => \counter_96kHz_reg_n_0_[0]\,
-      I4 => \counter_96kHz_reg_n_0_[3]\,
-      I5 => \counter_96kHz_reg_n_0_[5]\,
-      O => clk_en_96kHz_i_i_2_n_0
+BUFH_inst_96kHz: unisim.vcomponents.BUFH
+     port map (
+      I => enable_96k,
+      O => clk_en_96kHz
     );
-clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clk_24_576MHz,
-      CE => '1',
-      CLR => \^sync_reset_24mhz\,
-      D => clk_en_96kHz_i_i_1_n_0,
-      Q => \^clk_en_96khz\
-    );
-\counter_96kHz[0]_i_1\: unisim.vcomponents.LUT1
+\div256_counter[0]_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[0]\,
-      O => counter_96kHz(0)
+      I0 => div256_counter(0),
+      O => \div256_counter__0\(0)
     );
-\counter_96kHz[1]_i_1\: unisim.vcomponents.LUT2
+\div256_counter[1]_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"6"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[0]\,
-      I1 => \counter_96kHz_reg_n_0_[1]\,
-      O => counter_96kHz(1)
+      I0 => div256_counter(0),
+      I1 => div256_counter(1),
+      O => \div256_counter__0\(1)
     );
-\counter_96kHz[2]_i_1\: unisim.vcomponents.LUT3
+\div256_counter[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"6A"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[2]\,
-      I1 => \counter_96kHz_reg_n_0_[0]\,
-      I2 => \counter_96kHz_reg_n_0_[1]\,
-      O => counter_96kHz(2)
+      I0 => div256_counter(2),
+      I1 => div256_counter(0),
+      I2 => div256_counter(1),
+      O => \div256_counter__0\(2)
     );
-\counter_96kHz[3]_i_1\: unisim.vcomponents.LUT4
+\div256_counter[3]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"6AAA"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[3]\,
-      I1 => \counter_96kHz_reg_n_0_[0]\,
-      I2 => \counter_96kHz_reg_n_0_[1]\,
-      I3 => \counter_96kHz_reg_n_0_[2]\,
-      O => counter_96kHz(3)
+      I0 => div256_counter(3),
+      I1 => div256_counter(0),
+      I2 => div256_counter(1),
+      I3 => div256_counter(2),
+      O => \div256_counter__0\(3)
     );
-\counter_96kHz[4]_i_1\: unisim.vcomponents.LUT5
+\div256_counter[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"6AAAAAAA"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[4]\,
-      I1 => \counter_96kHz_reg_n_0_[2]\,
-      I2 => \counter_96kHz_reg_n_0_[1]\,
-      I3 => \counter_96kHz_reg_n_0_[0]\,
-      I4 => \counter_96kHz_reg_n_0_[3]\,
-      O => counter_96kHz(4)
+      I0 => div256_counter(4),
+      I1 => div256_counter(2),
+      I2 => div256_counter(1),
+      I3 => div256_counter(0),
+      I4 => div256_counter(3),
+      O => \div256_counter__0\(4)
     );
-\counter_96kHz[5]_i_1\: unisim.vcomponents.LUT6
+\div256_counter[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[5]\,
-      I1 => \counter_96kHz_reg_n_0_[3]\,
-      I2 => \counter_96kHz_reg_n_0_[0]\,
-      I3 => \counter_96kHz_reg_n_0_[1]\,
-      I4 => \counter_96kHz_reg_n_0_[2]\,
-      I5 => \counter_96kHz_reg_n_0_[4]\,
-      O => counter_96kHz(5)
+      I0 => div256_counter(5),
+      I1 => div256_counter(3),
+      I2 => div256_counter(0),
+      I3 => div256_counter(1),
+      I4 => div256_counter(2),
+      I5 => div256_counter(4),
+      O => \div256_counter__0\(5)
     );
-\counter_96kHz[6]_i_1\: unisim.vcomponents.LUT6
+\div256_counter[6]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"6AAAAAAAAAAAAAAA"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[6]\,
-      I1 => \counter_96kHz_reg_n_0_[4]\,
-      I2 => \counter_96kHz_reg_n_0_[2]\,
-      I3 => \counter_96kHz[6]_i_2_n_0\,
-      I4 => \counter_96kHz_reg_n_0_[3]\,
-      I5 => \counter_96kHz_reg_n_0_[5]\,
-      O => counter_96kHz(6)
+      I0 => div256_counter(6),
+      I1 => div256_counter(4),
+      I2 => div256_counter(2),
+      I3 => \div256_counter[6]_i_2_n_0\,
+      I4 => div256_counter(3),
+      I5 => div256_counter(5),
+      O => \div256_counter__0\(6)
     );
-\counter_96kHz[6]_i_2\: unisim.vcomponents.LUT2
+\div256_counter[6]_i_2\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"8"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[1]\,
-      I1 => \counter_96kHz_reg_n_0_[0]\,
-      O => \counter_96kHz[6]_i_2_n_0\
+      I0 => div256_counter(1),
+      I1 => div256_counter(0),
+      O => \div256_counter[6]_i_2_n_0\
     );
-\counter_96kHz[7]_i_1\: unisim.vcomponents.LUT4
+\div256_counter[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"B8CC"
     )
         port map (
-      I0 => \counter_96kHz[7]_i_2_n_0\,
-      I1 => \counter_96kHz_reg_n_0_[7]\,
-      I2 => clk_en_96kHz_i_i_2_n_0,
-      I3 => \counter_96kHz_reg_n_0_[6]\,
-      O => counter_96kHz(7)
+      I0 => \div256_counter[7]_i_2_n_0\,
+      I1 => div256_counter(7),
+      I2 => \div256_counter[7]_i_3_n_0\,
+      I3 => div256_counter(6),
+      O => \div256_counter__0\(7)
     );
-\counter_96kHz[7]_i_2\: unisim.vcomponents.LUT6
+\div256_counter[7]_i_2\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"7FFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \counter_96kHz_reg_n_0_[4]\,
-      I1 => \counter_96kHz_reg_n_0_[2]\,
-      I2 => \counter_96kHz_reg_n_0_[0]\,
-      I3 => \counter_96kHz_reg_n_0_[1]\,
-      I4 => \counter_96kHz_reg_n_0_[3]\,
-      I5 => \counter_96kHz_reg_n_0_[5]\,
-      O => \counter_96kHz[7]_i_2_n_0\
+      I0 => div256_counter(4),
+      I1 => div256_counter(2),
+      I2 => div256_counter(0),
+      I3 => div256_counter(1),
+      I4 => div256_counter(3),
+      I5 => div256_counter(5),
+      O => \div256_counter[7]_i_2_n_0\
     );
-\counter_96kHz_reg[0]\: unisim.vcomponents.FDCE
+\div256_counter[7]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"8000000000000000"
+    )
+        port map (
+      I0 => div256_counter(4),
+      I1 => div256_counter(2),
+      I2 => div256_counter(1),
+      I3 => div256_counter(0),
+      I4 => div256_counter(3),
+      I5 => div256_counter(5),
+      O => \div256_counter[7]_i_3_n_0\
+    );
+\div256_counter_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -228,10 +227,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(0),
-      Q => \counter_96kHz_reg_n_0_[0]\
+      D => \div256_counter__0\(0),
+      Q => div256_counter(0)
     );
-\counter_96kHz_reg[1]\: unisim.vcomponents.FDCE
+\div256_counter_reg[1]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -239,10 +238,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(1),
-      Q => \counter_96kHz_reg_n_0_[1]\
+      D => \div256_counter__0\(1),
+      Q => div256_counter(1)
     );
-\counter_96kHz_reg[2]\: unisim.vcomponents.FDCE
+\div256_counter_reg[2]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -250,10 +249,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(2),
-      Q => \counter_96kHz_reg_n_0_[2]\
+      D => \div256_counter__0\(2),
+      Q => div256_counter(2)
     );
-\counter_96kHz_reg[3]\: unisim.vcomponents.FDCE
+\div256_counter_reg[3]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -261,10 +260,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(3),
-      Q => \counter_96kHz_reg_n_0_[3]\
+      D => \div256_counter__0\(3),
+      Q => div256_counter(3)
     );
-\counter_96kHz_reg[4]\: unisim.vcomponents.FDCE
+\div256_counter_reg[4]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -272,10 +271,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(4),
-      Q => \counter_96kHz_reg_n_0_[4]\
+      D => \div256_counter__0\(4),
+      Q => div256_counter(4)
     );
-\counter_96kHz_reg[5]\: unisim.vcomponents.FDCE
+\div256_counter_reg[5]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -283,10 +282,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(5),
-      Q => \counter_96kHz_reg_n_0_[5]\
+      D => \div256_counter__0\(5),
+      Q => div256_counter(5)
     );
-\counter_96kHz_reg[6]\: unisim.vcomponents.FDCE
+\div256_counter_reg[6]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -294,10 +293,10 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(6),
-      Q => \counter_96kHz_reg_n_0_[6]\
+      D => \div256_counter__0\(6),
+      Q => div256_counter(6)
     );
-\counter_96kHz_reg[7]\: unisim.vcomponents.FDCE
+\div256_counter_reg[7]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
@@ -305,8 +304,85 @@ clk_en_96kHz_i_reg: unisim.vcomponents.FDCE
       C => clk_24_576MHz,
       CE => '1',
       CLR => \^sync_reset_24mhz\,
-      D => counter_96kHz(7),
-      Q => \counter_96kHz_reg_n_0_[7]\
+      D => \div256_counter__0\(7),
+      Q => div256_counter(7)
+    );
+div4_counter: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => \div4_counter__0\(1),
+      I1 => \div4_counter__0\(0),
+      O => div4_counter_n_0
+    );
+\div4_counter[0]_i_1\: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \div4_counter__0\(0),
+      O => \div4_counter[0]_i_1_n_0\
+    );
+\div4_counter_reg[0]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_24_576MHz,
+      CE => '1',
+      CLR => \^sync_reset_24mhz\,
+      D => \div4_counter[0]_i_1_n_0\,
+      Q => \div4_counter__0\(0)
+    );
+\div4_counter_reg[1]\: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_24_576MHz,
+      CE => '1',
+      CLR => \^sync_reset_24mhz\,
+      D => div4_counter_n_0,
+      Q => \div4_counter__0\(1)
+    );
+enable_6MHz_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => \div4_counter__0\(1),
+      O => p_0_in
+    );
+enable_6MHz_reg: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_24_576MHz,
+      CE => '1',
+      CLR => \^sync_reset_24mhz\,
+      D => p_0_in,
+      Q => I
+    );
+enable_96k_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => div256_counter(7),
+      O => enable_96k_i_1_n_0
+    );
+enable_96k_reg: unisim.vcomponents.FDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      C => clk_24_576MHz,
+      CE => '1',
+      CLR => \^sync_reset_24mhz\,
+      D => enable_96k_i_1_n_0,
+      Q => enable_96k
     );
 \reset_sync_ff_100MHz_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -405,45 +481,6 @@ sync_reset_24MHz_INST_0: unisim.vcomponents.LUT1
         port map (
       I0 => \^sync_resetn_24mhz\,
       O => \^sync_reset_24mhz\
-    );
-toggle_12_288MHz_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => toggle_12_288MHz,
-      O => p_0_in
-    );
-toggle_12_288MHz_reg: unisim.vcomponents.FDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clk_24_576MHz,
-      CE => '1',
-      CLR => \^sync_reset_24mhz\,
-      D => p_0_in,
-      Q => toggle_12_288MHz
-    );
-toggle_6_144MHz_i_1: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"6"
-    )
-        port map (
-      I0 => toggle_12_288MHz,
-      I1 => \^clk_en_6_144mhz\,
-      O => toggle_6_144MHz_i_1_n_0
-    );
-toggle_6_144MHz_reg: unisim.vcomponents.FDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => clk_24_576MHz,
-      CE => '1',
-      CLR => \^sync_reset_24mhz\,
-      D => toggle_6_144MHz_i_1_n_0,
-      Q => \^clk_en_6_144mhz\
     );
 end STRUCTURE;
 library IEEE;

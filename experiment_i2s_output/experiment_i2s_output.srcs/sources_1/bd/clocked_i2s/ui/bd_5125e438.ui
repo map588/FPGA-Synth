@@ -1,61 +1,56 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.5",
-   "Default View_TopLeft":"-365,-135",
+   "Default View_ScaleFactor":"1.29118",
+   "Default View_TopLeft":"-129,0",
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS-threadsafe
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port port-id_clk_125 -pg 1 -lvl 0 -x -30 -y 390 -defaultsOSRD
-preplace port port-id_data_ready -pg 1 -lvl 0 -x -30 -y 560 -defaultsOSRD
-preplace port port-id_fifo_overflow -pg 1 -lvl 5 -x 1170 -y 300 -defaultsOSRD
-preplace port port-id_clk_100 -pg 1 -lvl 0 -x -30 -y 300 -defaultsOSRD
-preplace port port-id_async_resetn -pg 1 -lvl 0 -x -30 -y 160 -defaultsOSRD
-preplace port port-id_lrclk_out -pg 1 -lvl 5 -x 1170 -y 180 -defaultsOSRD
-preplace port port-id_bclk_out -pg 1 -lvl 5 -x 1170 -y 150 -defaultsOSRD
-preplace port port-id_sdata -pg 1 -lvl 5 -x 1170 -y 120 -defaultsOSRD
-preplace port port-id_mclk_out -pg 1 -lvl 5 -x 1170 -y 360 -defaultsOSRD
-preplace port port-id_buff_full -pg 1 -lvl 5 -x 1170 -y 210 -defaultsOSRD
-preplace port port-id_buff_half -pg 1 -lvl 5 -x 1170 -y 240 -defaultsOSRD
-preplace port port-id_buff_empty -pg 1 -lvl 5 -x 1170 -y 270 -defaultsOSRD
-preplace port port-id_rejection -pg 1 -lvl 5 -x 1170 -y 540 -defaultsOSRD
-preplace portBus data_in -pg 1 -lvl 0 -x -30 -y 270 -defaultsOSRD
-preplace portBus fifo_count -pg 1 -lvl 5 -x 1170 -y 330 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 3 -x 630 -y 350 -defaultsOSRD
-preplace inst Clock_Manager_0 -pg 1 -lvl 3 -x 630 -y 130 -defaultsOSRD
-preplace inst i2s_module_0 -pg 1 -lvl 4 -x 990 -y 220 -defaultsOSRD
-preplace inst stream_controller_0 -pg 1 -lvl 3 -x 630 -y 530 -defaultsOSRD
-preplace inst clk_wiz_1 -pg 1 -lvl 2 -x 330 -y 380 -defaultsOSRD
-preplace inst util_ds_buf_0 -pg 1 -lvl 1 -x 110 -y 340 -defaultsOSRD
-preplace netloc Clock_Manager_0_clk_en_12_288MHz 1 3 1 850 60n
-preplace netloc Clock_Manager_0_clk_en_96kHz 1 3 1 800 80n
-preplace netloc Clock_Manager_0_sync_resetn_100MHz1 1 3 1 820 160n
-preplace netloc Clock_Manager_0_sync_resetn_125MHz 1 2 2 460 -10 790
-preplace netloc Clock_Manager_0_sync_resetn_24MHz 1 3 1 830 120n
-preplace netloc async_resetn_0_1 1 0 3 NJ 160 230 160 NJ
-preplace netloc clk_125_1 1 0 2 -10J 400 220
-preplace netloc clk_wiz_0_clk_out1 1 2 3 470 0 840 360 NJ
-preplace netloc clk_wiz_1_clk_out1 1 2 1 420 100n
-preplace netloc data_in_0_1 1 0 4 NJ 270 N 270 NJ 270 NJ
-preplace netloc has_data_1 1 0 3 NJ 560 N 560 NJ
-preplace netloc i2s_module_0_bclk_out 1 4 1 1140J 150n
-preplace netloc i2s_module_0_fifo_3_qtr 1 2 3 450 -20 NJ -20 1130
-preplace netloc i2s_module_0_fifo_count 1 4 1 1130J 300n
-preplace netloc i2s_module_0_fifo_empty 1 4 1 1140J 260n
-preplace netloc i2s_module_0_fifo_full 1 2 3 440 -30 NJ -30 1150
-preplace netloc i2s_module_0_fifo_half 1 4 1 NJ 240
-preplace netloc i2s_module_0_fifo_overflow 1 4 1 1150J 280n
-preplace netloc i2s_module_0_lrclk_out 1 4 1 NJ 180
-preplace netloc i2s_module_0_sdata 1 4 1 1140J 120n
-preplace netloc pl_clk_1 1 1 3 220 310 430 260 810
-preplace netloc stream_controller_0_push_en 1 3 1 850 290n
-preplace netloc stream_controller_0_rejection 1 3 2 NJ 540 NJ
-preplace netloc clk_100_1 1 0 1 -10 300n
-levelinfo -pg 1 -30 110 330 630 990 1170
-pagesize -pg 1 -db -bbox -sgen -160 -60 1320 620
+preplace port DDR -pg 1 -lvl 6 -x 1830 -y 850 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1830 -y 880 -defaultsOSRD
+preplace port port-id_lrclk_out -pg 1 -lvl 6 -x 1830 -y 620 -defaultsOSRD
+preplace port port-id_bclk_out -pg 1 -lvl 6 -x 1830 -y 590 -defaultsOSRD
+preplace port port-id_sdata -pg 1 -lvl 6 -x 1830 -y 560 -defaultsOSRD
+preplace port port-id_mclk_out -pg 1 -lvl 6 -x 1830 -y 510 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 4 -x 1310 -y 540 -defaultsOSRD
+preplace inst stream_controller_0 -pg 1 -lvl 3 -x 950 -y 460 -defaultsOSRD
+preplace inst i2s_module_0 -pg 1 -lvl 5 -x 1650 -y 650 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 2 -x 580 -y 940 -defaultsOSRD
+preplace inst Clock_Manager_0 -pg 1 -lvl 3 -x 950 -y 730 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 210 -y 910 -defaultsOSRD
+preplace inst oscilator_stub_0 -pg 1 -lvl 4 -x 1310 -y 210 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 580 -y 760 -defaultsOSRD
+preplace inst RNG_N_0 -pg 1 -lvl 3 -x 950 -y 70 -defaultsOSRD
+preplace inst RNG_N_1 -pg 1 -lvl 3 -x 950 -y 290 -defaultsOSRD
+preplace netloc Clock_Manager_0_clk_en_12_288MHz 1 3 2 N 660 NJ
+preplace netloc Clock_Manager_0_clk_en_96kHz 1 3 2 N 680 NJ
+preplace netloc Clock_Manager_0_sync_resetn_100MHz1 1 3 2 1130 610 1500J
+preplace netloc Clock_Manager_0_sync_resetn_125MHz 1 3 1 1120 530n
+preplace netloc Clock_Manager_0_sync_resetn_24MHz 1 3 2 1140 620 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 4 790 600 1110J 630 1510 510 NJ
+preplace netloc clk_wiz_1_clk_out1 1 2 2 780 550 NJ
+preplace netloc i2s_module_0_bclk_out 1 5 1 NJ 590
+preplace netloc i2s_module_0_fifo_3_qtr 1 2 4 790 370 NJ 370 NJ 370 1790
+preplace netloc i2s_module_0_fifo_full 1 2 4 780 360 NJ 360 NJ 360 1800
+preplace netloc i2s_module_0_lrclk_out 1 5 1 1810J 610n
+preplace netloc i2s_module_0_sdata 1 5 1 1810J 560n
+preplace netloc pl_clk_1 1 0 5 20 800 400 660 760 140 1110 60 1500J
+preplace netloc stream_controller_0_push_en 1 3 2 N 450 1480J
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 1 NJ 940
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 410 1000 790
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 2 750 150 N
+preplace netloc stream_controller_0_rejection 1 3 1 1110 170n
+preplace netloc oscilator_stub_0_output_ready 1 2 3 770 160 1140J 70 1480
+preplace netloc oscilator_stub_0_outout_oscilator 1 4 1 1490 220n
+preplace netloc RNG_N_0_RND 1 3 1 1120 70n
+preplace netloc RNG_N_1_RND 1 3 1 N 290
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 860 NJ 860 NJ 860 NJ 860 1800J
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 880 NJ 880 NJ 880 NJ 880 NJ
+levelinfo -pg 1 0 210 580 950 1310 1650 1830
+pagesize -pg 1 -db -bbox -sgen 0 0 1940 1020
 "
 }
 {
-   "da_board_cnt":"4",
+   "da_board_cnt":"5",
    "da_clkrst_cnt":"3",
-   "da_ps7_cnt":"1"
+   "da_ps7_cnt":"2"
 }

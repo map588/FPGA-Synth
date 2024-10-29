@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Thu Oct 17 22:25:07 2024
+// Date        : Sat Oct 26 00:01:22 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top clocked_i2s_Clock_Manager_0_0 -prefix
-//               clocked_i2s_Clock_Manager_0_0_ clocked_i2s_Clock_Manager_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/experiment_i2s_output/experiment_i2s_output.srcs/sources_1/bd/clocked_i2s/ip/clocked_i2s_Clock_Manager_0_0_1/clocked_i2s_Clock_Manager_0_0_stub.v
 // Design      : clocked_i2s_Clock_Manager_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1

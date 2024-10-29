@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="180,498.351 ns"></ZoomStartTime>
-      <ZoomEndTime time="181,750.637 ns"></ZoomEndTime>
-      <Cursor1Time time="181,541.922 ns"></Cursor1Time>
+      <ZoomStartTime time="213,871.160 ns"></ZoomStartTime>
+      <ZoomEndTime time="215,284.197 ns"></ZoomEndTime>
+      <Cursor1Time time="215,048.690 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="305"></NameColumnWidth>
+      <NameColumnWidth column_width="293"></NameColumnWidth>
       <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="17" />
    <wave_markers>
       <marker time="1008042507" label="" />
       <marker time="243315974" label="" />
@@ -32,6 +32,10 @@
    <wvobject fp_name="/clocked_i2s_tb/pl_clk" type="logic">
       <obj_property name="ElementShortName">pl_clk</obj_property>
       <obj_property name="ObjectShortName">pl_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/clocked_i2s_tb/uut/clocked_i2s_i/Clock_Manager_0/clk_24_576MHz" type="logic">
+      <obj_property name="ElementShortName">clk_24_576MHz</obj_property>
+      <obj_property name="ObjectShortName">clk_24_576MHz</obj_property>
    </wvobject>
    <wvobject fp_name="/clocked_i2s_tb/bclk_out" type="logic">
       <obj_property name="ElementShortName">bclk_out</obj_property>

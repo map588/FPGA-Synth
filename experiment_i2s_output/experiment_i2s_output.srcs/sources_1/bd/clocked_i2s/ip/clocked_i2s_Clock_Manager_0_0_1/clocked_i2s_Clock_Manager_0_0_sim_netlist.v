@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Thu Oct 17 22:25:07 2024
+// Date        : Sat Oct 26 00:01:22 2024
 // Host        : bigolBox running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top clocked_i2s_Clock_Manager_0_0 -prefix
-//               clocked_i2s_Clock_Manager_0_0_ clocked_i2s_Clock_Manager_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/Matt/Documents/Vivado_Projects/git_clone/FPGA_Synth/experiment_i2s_output/experiment_i2s_output.srcs/sources_1/bd/clocked_i2s/ip/clocked_i2s_Clock_Manager_0_0_1/clocked_i2s_Clock_Manager_0_0_sim_netlist.v
 // Design      : clocked_i2s_Clock_Manager_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,31 +12,34 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-module clocked_i2s_Clock_Manager_0_0_Clock_Manager
-   (sync_resetn_24MHz,
-    sync_reset_24MHz,
-    sync_resetn_100MHz,
-    sync_resetn_125MHz,
-    sync_reset_100MHz,
-    sync_reset_125MHz,
-    clk_en_96kHz,
-    clk_en_6_144MHz,
+(* CHECK_LICENSE_TYPE = "clocked_i2s_Clock_Manager_0_0,Clock_Manager,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
+(* x_core_info = "Clock_Manager,Vivado 2021.1" *) 
+(* NotValidForBitStream *)
+module clocked_i2s_Clock_Manager_0_0
+   (clk_125MHz,
     clk_24_576MHz,
     clk_100MHz,
-    clk_125MHz,
-    async_resetn);
-  output sync_resetn_24MHz;
-  output sync_reset_24MHz;
-  output sync_resetn_100MHz;
-  output sync_resetn_125MHz;
-  output sync_reset_100MHz;
-  output sync_reset_125MHz;
-  output clk_en_96kHz;
-  output clk_en_6_144MHz;
+    async_resetn,
+    clk_en_6_144MHz,
+    clk_en_96kHz,
+    sync_reset_24MHz,
+    sync_resetn_24MHz,
+    sync_reset_100MHz,
+    sync_resetn_100MHz,
+    sync_reset_125MHz,
+    sync_resetn_125MHz);
+  input clk_125MHz;
   input clk_24_576MHz;
   input clk_100MHz;
-  input clk_125MHz;
-  input async_resetn;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 async_resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME async_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input async_resetn;
+  output clk_en_6_144MHz;
+  output clk_en_96kHz;
+  output sync_reset_24MHz;
+  output sync_resetn_24MHz;
+  output sync_reset_100MHz;
+  output sync_resetn_100MHz;
+  output sync_reset_125MHz;
+  output sync_resetn_125MHz;
 
   wire async_resetn;
   wire clk_100MHz;
@@ -44,19 +47,72 @@ module clocked_i2s_Clock_Manager_0_0_Clock_Manager
   wire clk_24_576MHz;
   wire clk_en_6_144MHz;
   wire clk_en_96kHz;
-  wire clk_en_96kHz_i_i_1_n_0;
-  wire clk_en_96kHz_i_i_2_n_0;
-  wire [7:0]counter_96kHz;
-  wire \counter_96kHz[6]_i_2_n_0 ;
-  wire \counter_96kHz[7]_i_2_n_0 ;
-  wire \counter_96kHz_reg_n_0_[0] ;
-  wire \counter_96kHz_reg_n_0_[1] ;
-  wire \counter_96kHz_reg_n_0_[2] ;
-  wire \counter_96kHz_reg_n_0_[3] ;
-  wire \counter_96kHz_reg_n_0_[4] ;
-  wire \counter_96kHz_reg_n_0_[5] ;
-  wire \counter_96kHz_reg_n_0_[6] ;
-  wire \counter_96kHz_reg_n_0_[7] ;
+  wire sync_reset_100MHz;
+  wire sync_reset_125MHz;
+  wire sync_reset_24MHz;
+  wire sync_resetn_100MHz;
+  wire sync_resetn_125MHz;
+  wire sync_resetn_24MHz;
+
+  clocked_i2s_Clock_Manager_0_0_Clock_Manager U0
+       (.async_resetn(async_resetn),
+        .clk_100MHz(clk_100MHz),
+        .clk_125MHz(clk_125MHz),
+        .clk_24_576MHz(clk_24_576MHz),
+        .clk_en_6_144MHz(clk_en_6_144MHz),
+        .clk_en_96kHz(clk_en_96kHz),
+        .sync_reset_100MHz(sync_reset_100MHz),
+        .sync_reset_125MHz(sync_reset_125MHz),
+        .sync_reset_24MHz(sync_reset_24MHz),
+        .sync_resetn_100MHz(sync_resetn_100MHz),
+        .sync_resetn_125MHz(sync_resetn_125MHz),
+        .sync_resetn_24MHz(sync_resetn_24MHz));
+endmodule
+
+(* ORIG_REF_NAME = "Clock_Manager" *) 
+module clocked_i2s_Clock_Manager_0_0_Clock_Manager
+   (clk_en_6_144MHz,
+    clk_en_96kHz,
+    sync_resetn_24MHz,
+    sync_resetn_100MHz,
+    sync_resetn_125MHz,
+    sync_reset_24MHz,
+    sync_reset_100MHz,
+    sync_reset_125MHz,
+    clk_24_576MHz,
+    clk_100MHz,
+    clk_125MHz,
+    async_resetn);
+  output clk_en_6_144MHz;
+  output clk_en_96kHz;
+  output sync_resetn_24MHz;
+  output sync_resetn_100MHz;
+  output sync_resetn_125MHz;
+  output sync_reset_24MHz;
+  output sync_reset_100MHz;
+  output sync_reset_125MHz;
+  input clk_24_576MHz;
+  input clk_100MHz;
+  input clk_125MHz;
+  input async_resetn;
+
+  wire I;
+  wire async_resetn;
+  wire clk_100MHz;
+  wire clk_125MHz;
+  wire clk_24_576MHz;
+  wire clk_en_6_144MHz;
+  wire clk_en_96kHz;
+  (* RTL_KEEP = "true" *) wire [7:0]div256_counter;
+  wire \div256_counter[6]_i_2_n_0 ;
+  wire \div256_counter[7]_i_2_n_0 ;
+  wire \div256_counter[7]_i_3_n_0 ;
+  wire [7:0]div256_counter__0;
+  wire \div4_counter[0]_i_1_n_0 ;
+  (* RTL_KEEP = "true" *) wire [1:0]div4_counter__0;
+  wire div4_counter_n_0;
+  wire enable_96k;
+  wire enable_96k_i_1_n_0;
   wire p_0_in;
   wire [0:0]reset_sync_ff_100MHz;
   wire [0:0]reset_sync_ff_125MHz;
@@ -68,186 +124,241 @@ module clocked_i2s_Clock_Manager_0_0_Clock_Manager
   wire sync_resetn_100MHz;
   wire sync_resetn_125MHz;
   wire sync_resetn_24MHz;
-  wire toggle_12_288MHz;
-  wire toggle_6_144MHz_i_1_n_0;
 
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h7F80)) 
-    clk_en_96kHz_i_i_1
-       (.I0(\counter_96kHz_reg_n_0_[7] ),
-        .I1(clk_en_96kHz_i_i_2_n_0),
-        .I2(\counter_96kHz_reg_n_0_[6] ),
-        .I3(clk_en_96kHz),
-        .O(clk_en_96kHz_i_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    clk_en_96kHz_i_i_2
-       (.I0(\counter_96kHz_reg_n_0_[4] ),
-        .I1(\counter_96kHz_reg_n_0_[2] ),
-        .I2(\counter_96kHz_reg_n_0_[1] ),
-        .I3(\counter_96kHz_reg_n_0_[0] ),
-        .I4(\counter_96kHz_reg_n_0_[3] ),
-        .I5(\counter_96kHz_reg_n_0_[5] ),
-        .O(clk_en_96kHz_i_i_2_n_0));
-  FDCE #(
-    .INIT(1'b0)) 
-    clk_en_96kHz_i_reg
-       (.C(clk_24_576MHz),
-        .CE(1'b1),
-        .CLR(sync_reset_24MHz),
-        .D(clk_en_96kHz_i_i_1_n_0),
-        .Q(clk_en_96kHz));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFH BUFH_inst_6MHz
+       (.I(I),
+        .O(clk_en_6_144MHz));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFH BUFH_inst_96kHz
+       (.I(enable_96k),
+        .O(clk_en_96kHz));
   LUT1 #(
     .INIT(2'h1)) 
-    \counter_96kHz[0]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[0] ),
-        .O(counter_96kHz[0]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+    \div256_counter[0]_i_1 
+       (.I0(div256_counter[0]),
+        .O(div256_counter__0[0]));
   LUT2 #(
     .INIT(4'h6)) 
-    \counter_96kHz[1]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[0] ),
-        .I1(\counter_96kHz_reg_n_0_[1] ),
-        .O(counter_96kHz[1]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+    \div256_counter[1]_i_1 
+       (.I0(div256_counter[0]),
+        .I1(div256_counter[1]),
+        .O(div256_counter__0[1]));
   LUT3 #(
     .INIT(8'h6A)) 
-    \counter_96kHz[2]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[2] ),
-        .I1(\counter_96kHz_reg_n_0_[0] ),
-        .I2(\counter_96kHz_reg_n_0_[1] ),
-        .O(counter_96kHz[2]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+    \div256_counter[2]_i_1 
+       (.I0(div256_counter[2]),
+        .I1(div256_counter[0]),
+        .I2(div256_counter[1]),
+        .O(div256_counter__0[2]));
   LUT4 #(
     .INIT(16'h6AAA)) 
-    \counter_96kHz[3]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[3] ),
-        .I1(\counter_96kHz_reg_n_0_[0] ),
-        .I2(\counter_96kHz_reg_n_0_[1] ),
-        .I3(\counter_96kHz_reg_n_0_[2] ),
-        .O(counter_96kHz[3]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+    \div256_counter[3]_i_1 
+       (.I0(div256_counter[3]),
+        .I1(div256_counter[0]),
+        .I2(div256_counter[1]),
+        .I3(div256_counter[2]),
+        .O(div256_counter__0[3]));
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
-    \counter_96kHz[4]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[4] ),
-        .I1(\counter_96kHz_reg_n_0_[2] ),
-        .I2(\counter_96kHz_reg_n_0_[1] ),
-        .I3(\counter_96kHz_reg_n_0_[0] ),
-        .I4(\counter_96kHz_reg_n_0_[3] ),
-        .O(counter_96kHz[4]));
+    \div256_counter[4]_i_1 
+       (.I0(div256_counter[4]),
+        .I1(div256_counter[2]),
+        .I2(div256_counter[1]),
+        .I3(div256_counter[0]),
+        .I4(div256_counter[3]),
+        .O(div256_counter__0[4]));
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
-    \counter_96kHz[5]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[5] ),
-        .I1(\counter_96kHz_reg_n_0_[3] ),
-        .I2(\counter_96kHz_reg_n_0_[0] ),
-        .I3(\counter_96kHz_reg_n_0_[1] ),
-        .I4(\counter_96kHz_reg_n_0_[2] ),
-        .I5(\counter_96kHz_reg_n_0_[4] ),
-        .O(counter_96kHz[5]));
+    \div256_counter[5]_i_1 
+       (.I0(div256_counter[5]),
+        .I1(div256_counter[3]),
+        .I2(div256_counter[0]),
+        .I3(div256_counter[1]),
+        .I4(div256_counter[2]),
+        .I5(div256_counter[4]),
+        .O(div256_counter__0[5]));
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
-    \counter_96kHz[6]_i_1 
-       (.I0(\counter_96kHz_reg_n_0_[6] ),
-        .I1(\counter_96kHz_reg_n_0_[4] ),
-        .I2(\counter_96kHz_reg_n_0_[2] ),
-        .I3(\counter_96kHz[6]_i_2_n_0 ),
-        .I4(\counter_96kHz_reg_n_0_[3] ),
-        .I5(\counter_96kHz_reg_n_0_[5] ),
-        .O(counter_96kHz[6]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+    \div256_counter[6]_i_1 
+       (.I0(div256_counter[6]),
+        .I1(div256_counter[4]),
+        .I2(div256_counter[2]),
+        .I3(\div256_counter[6]_i_2_n_0 ),
+        .I4(div256_counter[3]),
+        .I5(div256_counter[5]),
+        .O(div256_counter__0[6]));
   LUT2 #(
     .INIT(4'h8)) 
-    \counter_96kHz[6]_i_2 
-       (.I0(\counter_96kHz_reg_n_0_[1] ),
-        .I1(\counter_96kHz_reg_n_0_[0] ),
-        .O(\counter_96kHz[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+    \div256_counter[6]_i_2 
+       (.I0(div256_counter[1]),
+        .I1(div256_counter[0]),
+        .O(\div256_counter[6]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hB8CC)) 
-    \counter_96kHz[7]_i_1 
-       (.I0(\counter_96kHz[7]_i_2_n_0 ),
-        .I1(\counter_96kHz_reg_n_0_[7] ),
-        .I2(clk_en_96kHz_i_i_2_n_0),
-        .I3(\counter_96kHz_reg_n_0_[6] ),
-        .O(counter_96kHz[7]));
+    \div256_counter[7]_i_1 
+       (.I0(\div256_counter[7]_i_2_n_0 ),
+        .I1(div256_counter[7]),
+        .I2(\div256_counter[7]_i_3_n_0 ),
+        .I3(div256_counter[6]),
+        .O(div256_counter__0[7]));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \counter_96kHz[7]_i_2 
-       (.I0(\counter_96kHz_reg_n_0_[4] ),
-        .I1(\counter_96kHz_reg_n_0_[2] ),
-        .I2(\counter_96kHz_reg_n_0_[0] ),
-        .I3(\counter_96kHz_reg_n_0_[1] ),
-        .I4(\counter_96kHz_reg_n_0_[3] ),
-        .I5(\counter_96kHz_reg_n_0_[5] ),
-        .O(\counter_96kHz[7]_i_2_n_0 ));
+    \div256_counter[7]_i_2 
+       (.I0(div256_counter[4]),
+        .I1(div256_counter[2]),
+        .I2(div256_counter[0]),
+        .I3(div256_counter[1]),
+        .I4(div256_counter[3]),
+        .I5(div256_counter[5]),
+        .O(\div256_counter[7]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h8000000000000000)) 
+    \div256_counter[7]_i_3 
+       (.I0(div256_counter[4]),
+        .I1(div256_counter[2]),
+        .I2(div256_counter[1]),
+        .I3(div256_counter[0]),
+        .I4(div256_counter[3]),
+        .I5(div256_counter[5]),
+        .O(\div256_counter[7]_i_3_n_0 ));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[0] 
+    \div256_counter_reg[0] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[0]),
-        .Q(\counter_96kHz_reg_n_0_[0] ));
+        .D(div256_counter__0[0]),
+        .Q(div256_counter[0]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[1] 
+    \div256_counter_reg[1] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[1]),
-        .Q(\counter_96kHz_reg_n_0_[1] ));
+        .D(div256_counter__0[1]),
+        .Q(div256_counter[1]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[2] 
+    \div256_counter_reg[2] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[2]),
-        .Q(\counter_96kHz_reg_n_0_[2] ));
+        .D(div256_counter__0[2]),
+        .Q(div256_counter[2]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[3] 
+    \div256_counter_reg[3] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[3]),
-        .Q(\counter_96kHz_reg_n_0_[3] ));
+        .D(div256_counter__0[3]),
+        .Q(div256_counter[3]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[4] 
+    \div256_counter_reg[4] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[4]),
-        .Q(\counter_96kHz_reg_n_0_[4] ));
+        .D(div256_counter__0[4]),
+        .Q(div256_counter[4]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[5] 
+    \div256_counter_reg[5] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[5]),
-        .Q(\counter_96kHz_reg_n_0_[5] ));
+        .D(div256_counter__0[5]),
+        .Q(div256_counter[5]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[6] 
+    \div256_counter_reg[6] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[6]),
-        .Q(\counter_96kHz_reg_n_0_[6] ));
+        .D(div256_counter__0[6]),
+        .Q(div256_counter[6]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
   FDCE #(
     .INIT(1'b0)) 
-    \counter_96kHz_reg[7] 
+    \div256_counter_reg[7] 
        (.C(clk_24_576MHz),
         .CE(1'b1),
         .CLR(sync_reset_24MHz),
-        .D(counter_96kHz[7]),
-        .Q(\counter_96kHz_reg_n_0_[7] ));
+        .D(div256_counter__0[7]),
+        .Q(div256_counter[7]));
+  LUT2 #(
+    .INIT(4'h6)) 
+    div4_counter
+       (.I0(div4_counter__0[1]),
+        .I1(div4_counter__0[0]),
+        .O(div4_counter_n_0));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \div4_counter[0]_i_1 
+       (.I0(div4_counter__0[0]),
+        .O(\div4_counter[0]_i_1_n_0 ));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
+  FDCE #(
+    .INIT(1'b0)) 
+    \div4_counter_reg[0] 
+       (.C(clk_24_576MHz),
+        .CE(1'b1),
+        .CLR(sync_reset_24MHz),
+        .D(\div4_counter[0]_i_1_n_0 ),
+        .Q(div4_counter__0[0]));
+  (* KEEP = "yes" *) 
+  (* equivalent_register_removal = "no" *) 
+  FDCE #(
+    .INIT(1'b0)) 
+    \div4_counter_reg[1] 
+       (.C(clk_24_576MHz),
+        .CE(1'b1),
+        .CLR(sync_reset_24MHz),
+        .D(div4_counter_n_0),
+        .Q(div4_counter__0[1]));
+  LUT1 #(
+    .INIT(2'h1)) 
+    enable_6MHz_i_1
+       (.I0(div4_counter__0[1]),
+        .O(p_0_in));
+  FDCE #(
+    .INIT(1'b0)) 
+    enable_6MHz_reg
+       (.C(clk_24_576MHz),
+        .CE(1'b1),
+        .CLR(sync_reset_24MHz),
+        .D(p_0_in),
+        .Q(I));
+  LUT1 #(
+    .INIT(2'h1)) 
+    enable_96k_i_1
+       (.I0(div256_counter[7]),
+        .O(enable_96k_i_1_n_0));
+  FDCE #(
+    .INIT(1'b0)) 
+    enable_96k_reg
+       (.C(clk_24_576MHz),
+        .CE(1'b1),
+        .CLR(sync_reset_24MHz),
+        .D(enable_96k_i_1_n_0),
+        .Q(enable_96k));
   FDCE #(
     .INIT(1'b1)) 
     \reset_sync_ff_100MHz_reg[0] 
@@ -316,92 +427,6 @@ module clocked_i2s_Clock_Manager_0_0_Clock_Manager
     sync_reset_24MHz_INST_0
        (.I0(sync_resetn_24MHz),
         .O(sync_reset_24MHz));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT1 #(
-    .INIT(2'h1)) 
-    toggle_12_288MHz_i_1
-       (.I0(toggle_12_288MHz),
-        .O(p_0_in));
-  FDCE #(
-    .INIT(1'b0)) 
-    toggle_12_288MHz_reg
-       (.C(clk_24_576MHz),
-        .CE(1'b1),
-        .CLR(sync_reset_24MHz),
-        .D(p_0_in),
-        .Q(toggle_12_288MHz));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h6)) 
-    toggle_6_144MHz_i_1
-       (.I0(toggle_12_288MHz),
-        .I1(clk_en_6_144MHz),
-        .O(toggle_6_144MHz_i_1_n_0));
-  FDCE #(
-    .INIT(1'b0)) 
-    toggle_6_144MHz_reg
-       (.C(clk_24_576MHz),
-        .CE(1'b1),
-        .CLR(sync_reset_24MHz),
-        .D(toggle_6_144MHz_i_1_n_0),
-        .Q(clk_en_6_144MHz));
-endmodule
-
-(* CHECK_LICENSE_TYPE = "clocked_i2s_Clock_Manager_0_0,Clock_Manager,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 
-(* x_core_info = "Clock_Manager,Vivado 2021.1" *) 
-(* NotValidForBitStream *)
-module clocked_i2s_Clock_Manager_0_0
-   (clk_125MHz,
-    clk_24_576MHz,
-    clk_100MHz,
-    async_resetn,
-    clk_en_6_144MHz,
-    clk_en_96kHz,
-    sync_reset_24MHz,
-    sync_resetn_24MHz,
-    sync_reset_100MHz,
-    sync_resetn_100MHz,
-    sync_reset_125MHz,
-    sync_resetn_125MHz);
-  input clk_125MHz;
-  input clk_24_576MHz;
-  input clk_100MHz;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 async_resetn RST" *) (* x_interface_parameter = "XIL_INTERFACENAME async_resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input async_resetn;
-  output clk_en_6_144MHz;
-  output clk_en_96kHz;
-  output sync_reset_24MHz;
-  output sync_resetn_24MHz;
-  output sync_reset_100MHz;
-  output sync_resetn_100MHz;
-  output sync_reset_125MHz;
-  output sync_resetn_125MHz;
-
-  wire async_resetn;
-  wire clk_100MHz;
-  wire clk_125MHz;
-  wire clk_24_576MHz;
-  wire clk_en_6_144MHz;
-  wire clk_en_96kHz;
-  wire sync_reset_100MHz;
-  wire sync_reset_125MHz;
-  wire sync_reset_24MHz;
-  wire sync_resetn_100MHz;
-  wire sync_resetn_125MHz;
-  wire sync_resetn_24MHz;
-
-  clocked_i2s_Clock_Manager_0_0_Clock_Manager U0
-       (.async_resetn(async_resetn),
-        .clk_100MHz(clk_100MHz),
-        .clk_125MHz(clk_125MHz),
-        .clk_24_576MHz(clk_24_576MHz),
-        .clk_en_6_144MHz(clk_en_6_144MHz),
-        .clk_en_96kHz(clk_en_96kHz),
-        .sync_reset_100MHz(sync_reset_100MHz),
-        .sync_reset_125MHz(sync_reset_125MHz),
-        .sync_reset_24MHz(sync_reset_24MHz),
-        .sync_resetn_100MHz(sync_resetn_100MHz),
-        .sync_resetn_125MHz(sync_resetn_125MHz),
-        .sync_resetn_24MHz(sync_resetn_24MHz));
 endmodule
 `ifndef GLBL
 `define GLBL

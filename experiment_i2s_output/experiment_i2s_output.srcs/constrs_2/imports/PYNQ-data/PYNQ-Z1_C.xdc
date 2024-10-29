@@ -189,3 +189,12 @@ create_clock -period 8.000 -name sys_clk_pin -waveform {0.000 4.000} -add [get_p
 
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { crypto_sda }]; #IO_25_35 Sch=crypto_sda
 
+# Mark the clock enable paths for level-based enables
+#set_multicycle_path -setup 2 -from [get_pins toggle_6MHz_reg/C] -to [get_pins BUFHCE_inst_6MHz/CE]
+#set_multicycle_path -hold 1 -from [get_pins toggle_6MHz_reg/C] -to [get_pins BUFHCE_inst_6MHz/CE]
+
+#set_multicycle_path -setup 128 -from [get_pins toggle_96kHz_reg/C] -to [get_pins BUFHCE_inst_96kHz/CE]
+#set_multicycle_path -hold 127 -from [get_pins toggle_96kHz_reg/C] -to [get_pins BUFHCE_inst_96kHz/CE]
+
+# Ensure clock enable signals are registered
+#set_property IOB TRUE [get_cells {*BUFHCE_inst_*/CE}]

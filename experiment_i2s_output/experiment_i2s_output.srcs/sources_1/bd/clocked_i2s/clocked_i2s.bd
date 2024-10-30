@@ -17,8 +17,9 @@
       "processing_system7_0": "",
       "oscilator_stub_0": "",
       "proc_sys_reset_0": "",
-      "RNG_N_0": "",
-      "RNG_N_1": ""
+      "param_file_0": "",
+      "fifo_generator_0": "",
+      "fifo_reader_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -679,56 +680,187 @@
         "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
         "xci_name": "clocked_i2s_proc_sys_reset_0_0"
       },
-      "RNG_N_0": {
-        "vlnv": "xilinx.com:module_ref:RNG_N:1.0",
-        "xci_name": "clocked_i2s_RNG_N_0_0",
-        "parameters": {
-          "n": {
-            "value": "7"
-          }
-        },
+      "param_file_0": {
+        "vlnv": "xilinx.com:module_ref:param_file:1.0",
+        "xci_name": "clocked_i2s_param_file_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "RNG_N",
+          "ref_name": "param_file",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "sysclk": {
+          "change": {
             "direction": "I"
           },
-          "RESET": {
-            "type": "rst",
+          "clk": {
+            "type": "clk",
             "direction": "I"
           },
-          "RND": {
-            "direction": "O",
+          "clear": {
+            "direction": "I"
+          },
+          "param": {
+            "direction": "I",
             "left": "6",
+            "right": "0"
+          },
+          "value": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "wave_sel": {
+            "direction": "O",
+            "left": "1",
+            "right": "0"
+          },
+          "vca_adsr": {
+            "direction": "O",
+            "left": "27",
+            "right": "0"
+          },
+          "vcf_adsr": {
+            "direction": "O",
+            "left": "27",
+            "right": "0"
+          },
+          "mod_adsr": {
+            "direction": "O",
+            "left": "27",
             "right": "0"
           }
         }
       },
-      "RNG_N_1": {
-        "vlnv": "xilinx.com:module_ref:RNG_N:1.0",
-        "xci_name": "clocked_i2s_RNG_N_0_1",
+      "fifo_generator_0": {
+        "vlnv": "xilinx.com:ip:fifo_generator:13.2",
+        "xci_name": "clocked_i2s_fifo_generator_0_0",
         "parameters": {
-          "n": {
-            "value": "7"
+          "DATA_WIDTH": {
+            "value": "32"
+          },
+          "Enable_Data_Counts_rdch": {
+            "value": "true"
+          },
+          "Enable_Safety_Circuit": {
+            "value": "true"
+          },
+          "FIFO_Implementation_rach": {
+            "value": "Common_Clock_Distributed_RAM"
+          },
+          "FIFO_Implementation_wach": {
+            "value": "Common_Clock_Distributed_RAM"
+          },
+          "FIFO_Implementation_wrch": {
+            "value": "Common_Clock_Distributed_RAM"
+          },
+          "Full_Flags_Reset_Value": {
+            "value": "1"
+          },
+          "INTERFACE_TYPE": {
+            "value": "AXI_MEMORY_MAPPED"
+          },
+          "Input_Depth_rdch": {
+            "value": "16"
+          },
+          "PROTOCOL": {
+            "value": "AXI3"
+          },
+          "Programmable_Empty_Type_rdch": {
+            "value": "No_Programmable_Empty_Threshold"
+          },
+          "Programmable_Full_Type_rdch": {
+            "value": "No_Programmable_Full_Threshold"
+          },
+          "rach_type": {
+            "value": "Pass_Through_Wire"
+          },
+          "rdch_type": {
+            "value": "FIFO"
+          },
+          "wach_type": {
+            "value": "Pass_Through_Wire"
+          },
+          "wdch_type": {
+            "value": "Pass_Through_Wire"
+          },
+          "wrch_type": {
+            "value": "Pass_Through_Wire"
           }
         },
+        "interface_ports": {
+          "S_AXI": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Slave",
+            "bridges": [
+              "M_AXI"
+            ]
+          }
+        }
+      },
+      "fifo_reader_0": {
+        "vlnv": "xilinx.com:module_ref:fifo_reader:1.0",
+        "xci_name": "clocked_i2s_fifo_reader_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "RNG_N",
+          "ref_name": "fifo_reader",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "sysclk": {
-            "direction": "I"
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
           },
-          "RESET": {
+          "rst": {
             "type": "rst",
             "direction": "I"
           },
-          "RND": {
+          "not_empty": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "pop_data": {
+            "direction": "O"
+          },
+          "data_valid": {
+            "direction": "O"
+          },
+          "trigger": {
+            "direction": "O"
+          },
+          "trigger_states": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "note_index": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "velocity": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "param_write": {
+            "direction": "O"
+          },
+          "param_number": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "param_value": {
             "direction": "O",
             "left": "6",
             "right": "0"
@@ -747,6 +879,12 @@
         "interface_ports": [
           "FIXED_IO",
           "processing_system7_0/FIXED_IO"
+        ]
+      },
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "fifo_generator_0/S_AXI"
         ]
       }
     },
@@ -781,18 +919,6 @@
           "i2s_module_0/mclk_resetn"
         ]
       },
-      "RNG_N_0_RND": {
-        "ports": [
-          "RNG_N_0/RND",
-          "oscilator_stub_0/note_index"
-        ]
-      },
-      "RNG_N_1_RND": {
-        "ports": [
-          "RNG_N_1/RND",
-          "oscilator_stub_0/velocity"
-        ]
-      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
@@ -806,6 +932,72 @@
           "util_ds_buf_1/BUFH_O",
           "clk_wiz_0/clk_in1",
           "Clock_Manager_0/clk_125MHz"
+        ]
+      },
+      "fifo_generator_0_m_axi_rready": {
+        "ports": [
+          "fifo_generator_0/m_axi_rready",
+          "fifo_reader_0/not_empty"
+        ]
+      },
+      "fifo_generator_0_m_axi_wdata": {
+        "ports": [
+          "fifo_generator_0/m_axi_wdata",
+          "fifo_reader_0/data_in"
+        ]
+      },
+      "fifo_reader_0_data_valid": {
+        "ports": [
+          "fifo_reader_0/data_valid",
+          "oscilator_stub_0/valid"
+        ]
+      },
+      "fifo_reader_0_note_index": {
+        "ports": [
+          "fifo_reader_0/note_index",
+          "oscilator_stub_0/note_index"
+        ]
+      },
+      "fifo_reader_0_param_number": {
+        "ports": [
+          "fifo_reader_0/param_number",
+          "param_file_0/param"
+        ]
+      },
+      "fifo_reader_0_param_value": {
+        "ports": [
+          "fifo_reader_0/param_value",
+          "param_file_0/value"
+        ]
+      },
+      "fifo_reader_0_param_write": {
+        "ports": [
+          "fifo_reader_0/param_write",
+          "param_file_0/change"
+        ]
+      },
+      "fifo_reader_0_pop_data": {
+        "ports": [
+          "fifo_reader_0/pop_data",
+          "fifo_generator_0/m_axi_wready"
+        ]
+      },
+      "fifo_reader_0_trigger": {
+        "ports": [
+          "fifo_reader_0/trigger",
+          "oscilator_stub_0/trigger"
+        ]
+      },
+      "fifo_reader_0_trigger_states": {
+        "ports": [
+          "fifo_reader_0/trigger_states",
+          "oscilator_stub_0/note_state"
+        ]
+      },
+      "fifo_reader_0_velocity": {
+        "ports": [
+          "fifo_reader_0/velocity",
+          "oscilator_stub_0/velocity"
         ]
       },
       "i2s_module_0_bclk_out": {
@@ -850,6 +1042,12 @@
           "stream_controller_0/has_data"
         ]
       },
+      "param_file_0_wave_sel": {
+        "ports": [
+          "param_file_0/wave_sel",
+          "oscilator_stub_0/waveform_sel"
+        ]
+      },
       "pl_clk_1": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
@@ -859,16 +1057,23 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "oscilator_stub_0/clk",
           "proc_sys_reset_0/slowest_sync_clk",
-          "RNG_N_0/sysclk",
-          "RNG_N_1/sysclk"
+          "param_file_0/clk",
+          "fifo_generator_0/s_aclk",
+          "fifo_reader_0/clk"
         ]
       },
       "proc_sys_reset_0_peripheral_aresetn": {
         "ports": [
           "proc_sys_reset_0/peripheral_aresetn",
           "oscilator_stub_0/rst_n",
-          "RNG_N_0/RESET",
-          "RNG_N_1/RESET"
+          "fifo_generator_0/s_aresetn",
+          "fifo_reader_0/rst"
+        ]
+      },
+      "proc_sys_reset_0_peripheral_reset": {
+        "ports": [
+          "proc_sys_reset_0/peripheral_reset",
+          "param_file_0/clear"
         ]
       },
       "processing_system7_0_FCLK_CLK1": {

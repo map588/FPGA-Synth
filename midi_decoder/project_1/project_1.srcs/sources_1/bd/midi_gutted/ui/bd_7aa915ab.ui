@@ -1,0 +1,46 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.5",
+   "Default View_TopLeft":"-559,-203",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port port-id_rstn -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD
+preplace port port-id_push -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_wait_push -pg 1 -lvl 3 -x 690 -y 110 -defaultsOSRD
+preplace port port-id_data_valid -pg 1 -lvl 3 -x 690 -y 240 -defaultsOSRD
+preplace port port-id_param_write -pg 1 -lvl 3 -x 690 -y 390 -defaultsOSRD
+preplace port port-id_pause -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
+preplace port port-id_trigger -pg 1 -lvl 3 -x 690 -y 270 -defaultsOSRD
+preplace portBus data_in -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
+preplace portBus note_index -pg 1 -lvl 3 -x 690 -y 330 -defaultsOSRD
+preplace portBus param_number -pg 1 -lvl 3 -x 690 -y 420 -defaultsOSRD
+preplace portBus param_value -pg 1 -lvl 3 -x 690 -y 450 -defaultsOSRD
+preplace portBus trigger_states -pg 1 -lvl 3 -x 690 -y 300 -defaultsOSRD
+preplace portBus velocity -pg 1 -lvl 3 -x 690 -y 360 -defaultsOSRD
+preplace inst fifo_adapter_0 -pg 1 -lvl 1 -x 180 -y 100 -defaultsOSRD
+preplace inst fifo_reader_0 -pg 1 -lvl 2 -x 490 -y 340 -defaultsOSRD
+preplace netloc clk_1 1 0 2 20 290 NJ
+preplace netloc rstn_1 1 0 2 30 310 NJ
+preplace netloc fifo_adapter_0_data_out 1 1 1 340 70n
+preplace netloc fifo_adapter_0_count 1 1 1 320 90n
+preplace netloc fifo_adapter_0_not_empty 1 1 1 330 130n
+preplace netloc fifo_reader_0_pop_data 1 0 3 40 200 NJ 200 640
+preplace netloc data_in_0_1 1 0 1 NJ 60
+preplace netloc push_0_1 1 0 1 40J 80n
+preplace netloc fifo_adapter_0_wait_push 1 1 2 NJ 110 NJ
+preplace netloc fifo_reader_0_data_valid 1 2 1 650J 240n
+preplace netloc fifo_reader_0_note_index 1 2 1 650J 330n
+preplace netloc fifo_reader_0_param_number 1 2 1 660J 400n
+preplace netloc fifo_reader_0_param_value 1 2 1 640J 420n
+preplace netloc fifo_reader_0_param_write 1 2 1 660J 380n
+preplace netloc pause_0_1 1 0 2 NJ 390 NJ
+preplace netloc fifo_reader_0_trigger 1 2 1 660J 270n
+preplace netloc fifo_reader_0_trigger_states 1 2 1 670J 300n
+preplace netloc fifo_reader_0_velocity 1 2 1 NJ 360
+levelinfo -pg 1 0 180 490 690
+pagesize -pg 1 -db -bbox -sgen -130 0 870 480
+"
+}
+

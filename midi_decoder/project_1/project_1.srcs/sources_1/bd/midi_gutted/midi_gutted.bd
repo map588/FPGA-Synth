@@ -1,0 +1,386 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x19659D79EF6B809E",
+      "device": "xc7z020clg400-1",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/midi_gutted",
+      "name": "midi_gutted",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "fifo_adapter_0": "",
+      "fifo_reader_0": ""
+    },
+    "ports": {
+      "clk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rstn",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "midi_gutted_clk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "rstn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW"
+          }
+        }
+      },
+      "data_in": {
+        "direction": "I",
+        "left": "15",
+        "right": "0"
+      },
+      "push": {
+        "direction": "I"
+      },
+      "wait_push": {
+        "direction": "O"
+      },
+      "data_valid": {
+        "direction": "O"
+      },
+      "note_index": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "param_number": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "param_value": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "param_write": {
+        "direction": "O"
+      },
+      "pause": {
+        "direction": "I"
+      },
+      "trigger": {
+        "direction": "O"
+      },
+      "trigger_states": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "velocity": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      }
+    },
+    "components": {
+      "fifo_adapter_0": {
+        "vlnv": "xilinx.com:module_ref:fifo_adapter:1.0",
+        "xci_name": "midi_gutted_fifo_adapter_0_0",
+        "xci_path": "..\\..\\..\\..\\..\\..\\..\\..\\midi_decoder_fifo\\midi_decoder_fifo\\midi_decoder_fifo.srcs\\sources_1\\bd\\midi_gutted\\ip\\midi_gutted_fifo_adapter_0_0\\midi_gutted_fifo_adapter_0_0.xci",
+        "inst_hier_path": "fifo_adapter_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fifo_adapter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "data_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "push": {
+            "direction": "I"
+          },
+          "pop": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rstn",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "midi_gutted_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "count": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "wait_push": {
+            "direction": "O"
+          },
+          "not_empty": {
+            "direction": "O"
+          }
+        }
+      },
+      "fifo_reader_0": {
+        "vlnv": "xilinx.com:module_ref:fifo_reader:1.0",
+        "xci_name": "midi_gutted_fifo_reader_0_1",
+        "xci_path": "ip\\midi_gutted_fifo_reader_0_1\\midi_gutted_fifo_reader_0_1.xci",
+        "inst_hier_path": "fifo_reader_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "fifo_reader",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rstn",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "midi_gutted_clk",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rstn": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "not_empty": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "count_in": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "pause": {
+            "direction": "I"
+          },
+          "pop_data": {
+            "direction": "O"
+          },
+          "data_valid": {
+            "direction": "O"
+          },
+          "trigger": {
+            "direction": "O"
+          },
+          "trigger_states": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "note_index": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "velocity": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "param_write": {
+            "direction": "O"
+          },
+          "param_number": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "param_value": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_1": {
+        "ports": [
+          "clk",
+          "fifo_adapter_0/clk",
+          "fifo_reader_0/clk"
+        ]
+      },
+      "data_in_0_1": {
+        "ports": [
+          "data_in",
+          "fifo_adapter_0/data_in"
+        ]
+      },
+      "fifo_adapter_0_count": {
+        "ports": [
+          "fifo_adapter_0/count",
+          "fifo_reader_0/count_in"
+        ]
+      },
+      "fifo_adapter_0_data_out": {
+        "ports": [
+          "fifo_adapter_0/data_out",
+          "fifo_reader_0/data_in"
+        ]
+      },
+      "fifo_adapter_0_not_empty": {
+        "ports": [
+          "fifo_adapter_0/not_empty",
+          "fifo_reader_0/not_empty"
+        ]
+      },
+      "fifo_adapter_0_wait_push": {
+        "ports": [
+          "fifo_adapter_0/wait_push",
+          "wait_push"
+        ]
+      },
+      "fifo_reader_0_data_valid": {
+        "ports": [
+          "fifo_reader_0/data_valid",
+          "data_valid"
+        ]
+      },
+      "fifo_reader_0_note_index": {
+        "ports": [
+          "fifo_reader_0/note_index",
+          "note_index"
+        ]
+      },
+      "fifo_reader_0_param_number": {
+        "ports": [
+          "fifo_reader_0/param_number",
+          "param_number"
+        ]
+      },
+      "fifo_reader_0_param_value": {
+        "ports": [
+          "fifo_reader_0/param_value",
+          "param_value"
+        ]
+      },
+      "fifo_reader_0_param_write": {
+        "ports": [
+          "fifo_reader_0/param_write",
+          "param_write"
+        ]
+      },
+      "fifo_reader_0_pop_data": {
+        "ports": [
+          "fifo_reader_0/pop_data",
+          "fifo_adapter_0/pop"
+        ]
+      },
+      "fifo_reader_0_trigger": {
+        "ports": [
+          "fifo_reader_0/trigger",
+          "trigger"
+        ]
+      },
+      "fifo_reader_0_trigger_states": {
+        "ports": [
+          "fifo_reader_0/trigger_states",
+          "trigger_states"
+        ]
+      },
+      "fifo_reader_0_velocity": {
+        "ports": [
+          "fifo_reader_0/velocity",
+          "velocity"
+        ]
+      },
+      "pause_0_1": {
+        "ports": [
+          "pause",
+          "fifo_reader_0/pause"
+        ]
+      },
+      "push_0_1": {
+        "ports": [
+          "push",
+          "fifo_adapter_0/push"
+        ]
+      },
+      "rstn_1": {
+        "ports": [
+          "rstn",
+          "fifo_adapter_0/rstn",
+          "fifo_reader_0/rstn"
+        ]
+      }
+    }
+  }
+}

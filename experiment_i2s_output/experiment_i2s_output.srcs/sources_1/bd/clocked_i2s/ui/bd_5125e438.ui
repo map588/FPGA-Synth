@@ -1,56 +1,69 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.29118",
-   "Default View_TopLeft":"-129,0",
+   "Default View_ScaleFactor":"1.24016",
+   "Default View_TopLeft":"-10,-10",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 6 -x 1830 -y 850 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 6 -x 1830 -y 880 -defaultsOSRD
-preplace port port-id_lrclk_out -pg 1 -lvl 6 -x 1830 -y 620 -defaultsOSRD
-preplace port port-id_bclk_out -pg 1 -lvl 6 -x 1830 -y 590 -defaultsOSRD
-preplace port port-id_sdata -pg 1 -lvl 6 -x 1830 -y 560 -defaultsOSRD
-preplace port port-id_mclk_out -pg 1 -lvl 6 -x 1830 -y 510 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 4 -x 1310 -y 540 -defaultsOSRD
-preplace inst stream_controller_0 -pg 1 -lvl 3 -x 950 -y 460 -defaultsOSRD
-preplace inst i2s_module_0 -pg 1 -lvl 5 -x 1650 -y 650 -defaultsOSRD
-preplace inst util_ds_buf_1 -pg 1 -lvl 2 -x 580 -y 940 -defaultsOSRD
-preplace inst Clock_Manager_0 -pg 1 -lvl 3 -x 950 -y 730 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 210 -y 910 -defaultsOSRD
-preplace inst oscilator_stub_0 -pg 1 -lvl 4 -x 1310 -y 210 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 580 -y 760 -defaultsOSRD
-preplace inst RNG_N_0 -pg 1 -lvl 3 -x 950 -y 70 -defaultsOSRD
-preplace inst RNG_N_1 -pg 1 -lvl 3 -x 950 -y 290 -defaultsOSRD
-preplace netloc Clock_Manager_0_clk_en_12_288MHz 1 3 2 N 660 NJ
-preplace netloc Clock_Manager_0_clk_en_96kHz 1 3 2 N 680 NJ
-preplace netloc Clock_Manager_0_sync_resetn_100MHz1 1 3 2 1130 610 1500J
-preplace netloc Clock_Manager_0_sync_resetn_125MHz 1 3 1 1120 530n
-preplace netloc Clock_Manager_0_sync_resetn_24MHz 1 3 2 1140 620 NJ
-preplace netloc clk_wiz_0_clk_out1 1 2 4 790 600 1110J 630 1510 510 NJ
-preplace netloc clk_wiz_1_clk_out1 1 2 2 780 550 NJ
-preplace netloc i2s_module_0_bclk_out 1 5 1 NJ 590
-preplace netloc i2s_module_0_fifo_3_qtr 1 2 4 790 370 NJ 370 NJ 370 1790
-preplace netloc i2s_module_0_fifo_full 1 2 4 780 360 NJ 360 NJ 360 1800
-preplace netloc i2s_module_0_lrclk_out 1 5 1 1810J 610n
-preplace netloc i2s_module_0_sdata 1 5 1 1810J 560n
-preplace netloc pl_clk_1 1 0 5 20 800 400 660 760 140 1110 60 1500J
-preplace netloc stream_controller_0_push_en 1 3 2 N 450 1480J
-preplace netloc processing_system7_0_FCLK_CLK1 1 1 1 NJ 940
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 410 1000 790
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 2 750 150 N
-preplace netloc stream_controller_0_rejection 1 3 1 1110 170n
-preplace netloc oscilator_stub_0_output_ready 1 2 3 770 160 1140J 70 1480
-preplace netloc oscilator_stub_0_outout_oscilator 1 4 1 1490 220n
-preplace netloc RNG_N_0_RND 1 3 1 1120 70n
-preplace netloc RNG_N_1_RND 1 3 1 N 290
-preplace netloc processing_system7_0_DDR 1 1 5 NJ 860 NJ 860 NJ 860 NJ 860 1800J
-preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 880 NJ 880 NJ 880 NJ 880 NJ
-levelinfo -pg 1 0 210 580 950 1310 1650 1830
-pagesize -pg 1 -db -bbox -sgen 0 0 1940 1020
+preplace port DDR -pg 1 -lvl 7 -x 2230 -y 440 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2230 -y 470 -defaultsOSRD
+preplace port port-id_lrclk_out -pg 1 -lvl 7 -x 2230 -y 720 -defaultsOSRD
+preplace port port-id_bclk_out -pg 1 -lvl 7 -x 2230 -y 690 -defaultsOSRD
+preplace port port-id_sdata -pg 1 -lvl 7 -x 2230 -y 660 -defaultsOSRD
+preplace port port-id_mclk_out -pg 1 -lvl 7 -x 2230 -y 610 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 5 -x 1720 -y 640 -defaultsOSRD
+preplace inst stream_controller_0 -pg 1 -lvl 4 -x 1350 -y 560 -defaultsOSRD
+preplace inst i2s_module_0 -pg 1 -lvl 6 -x 2060 -y 750 -defaultsOSRD
+preplace inst util_ds_buf_1 -pg 1 -lvl 3 -x 980 -y 520 -defaultsOSRD
+preplace inst Clock_Manager_0 -pg 1 -lvl 4 -x 1350 -y 830 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 190 -y 500 -defaultsOSRD
+preplace inst oscilator_stub_0 -pg 1 -lvl 5 -x 1720 -y 140 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 600 -y 330 -defaultsOSRD
+preplace inst param_file_0 -pg 1 -lvl 4 -x 1350 -y 330 -defaultsOSRD
+preplace inst fifo_generator_0 -pg 1 -lvl 2 -x 600 -y 620 -defaultsOSRD
+preplace inst fifo_reader_0 -pg 1 -lvl 3 -x 980 -y 180 -defaultsOSRD
+preplace netloc Clock_Manager_0_clk_en_12_288MHz 1 4 2 N 760 NJ
+preplace netloc Clock_Manager_0_clk_en_96kHz 1 4 2 N 780 NJ
+preplace netloc Clock_Manager_0_sync_resetn_100MHz1 1 4 2 1550 730 1910J
+preplace netloc Clock_Manager_0_sync_resetn_125MHz 1 4 1 1530 630n
+preplace netloc Clock_Manager_0_sync_resetn_24MHz 1 4 2 1510 720 NJ
+preplace netloc clk_wiz_0_clk_out1 1 3 4 1190 700 1510J 710 1920 610 NJ
+preplace netloc clk_wiz_1_clk_out1 1 3 2 1150 650 NJ
+preplace netloc i2s_module_0_bclk_out 1 6 1 NJ 690
+preplace netloc i2s_module_0_fifo_3_qtr 1 3 4 1180 970 NJ 970 NJ 970 2200
+preplace netloc i2s_module_0_fifo_full 1 3 4 1170 960 NJ 960 NJ 960 2210
+preplace netloc i2s_module_0_lrclk_out 1 6 1 2210J 710n
+preplace netloc i2s_module_0_sdata 1 6 1 2210J 660n
+preplace netloc oscilator_stub_0_outout_oscilator 1 5 1 1900 150n
+preplace netloc oscilator_stub_0_output_ready 1 3 3 1190 440 1550J 430 1890
+preplace netloc pl_clk_1 1 0 6 0 610 390 430 790 320 1160 430 1540 440 1910J
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 4 420 440 780 40 NJ 40 1550
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 410J 500 790J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 3 400 490 810J 580 1140
+preplace netloc stream_controller_0_push_en 1 4 2 N 550 1890J
+preplace netloc stream_controller_0_rejection 1 4 1 1530 100n
+preplace netloc fifo_reader_0_trigger 1 3 2 1160J 160 N
+preplace netloc fifo_reader_0_trigger_states 1 3 2 1190J 140 N
+preplace netloc fifo_reader_0_data_valid 1 3 2 NJ 120 N
+preplace netloc param_file_0_wave_sel 1 4 1 1520 180n
+preplace netloc fifo_reader_0_param_write 1 3 1 1160 220n
+preplace netloc fifo_reader_0_param_number 1 3 1 1150 240n
+preplace netloc fifo_reader_0_param_value 1 3 1 1140 260n
+preplace netloc fifo_reader_0_note_index 1 3 2 NJ 180 1510
+preplace netloc fifo_reader_0_velocity 1 3 2 1190 220 NJ
+preplace netloc proc_sys_reset_0_peripheral_reset 1 2 2 N 330 NJ
+preplace netloc fifo_generator_0_m_axi_wdata 1 2 1 820 210n
+preplace netloc fifo_reader_0_pop_data 1 2 2 N 620 1130
+preplace netloc fifo_generator_0_m_axi_rready 1 2 1 800 190n
+preplace netloc processing_system7_0_DDR 1 1 6 NJ 450 NJ 450 NJ 450 NJ 450 NJ 450 2210J
+preplace netloc processing_system7_0_FIXED_IO 1 1 6 380J 460 NJ 460 NJ 460 NJ 460 NJ 460 2210J
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 380 490n
+levelinfo -pg 1 -20 190 600 980 1350 1720 2060 2230
+pagesize -pg 1 -db -bbox -sgen -20 -90 2340 1340
 "
 }
 {
    "da_board_cnt":"5",
-   "da_clkrst_cnt":"3",
+   "da_clkrst_cnt":"5",
    "da_ps7_cnt":"2"
 }
